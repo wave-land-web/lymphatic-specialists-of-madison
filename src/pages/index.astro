@@ -1,49 +1,35 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getImage } from 'astro:assets'
+import heroBackground from '../assets/images/hero-background.png'
+import Layout from '../layouts/Layout.astro'
+
+const heroBackgroundImage = await getImage({ src: heroBackground })
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+  <header class="hero" style={`background-image: url(${heroBackgroundImage.src})`}>
+    <div class="hero-overlay"></div>
+    <div class="flex flex-col gap-4 max-w-2xl px-4 py-16 text-neutral-content">
+      <h1 class="mb-4 text-accent">Madison Lymphatics and Manual Therapy</h1>
+      <p>
+        Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric clinic.
+        We are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD) and
+        have experience and comfort treating: post-surgical patients, cancer patients, chronic
+        lymphatic conditions such as lymphedema and lipedema, as well as those with generalized
+        inflammation, chronic immune impaired conditions (Lyme disease, Ehlors Danlos Syndrome,
+        rheumatoid arthritis, etc), long/post-COVID symptoms and hypersensitivity.
+      </p>
+      <p>
+        Established in 2023, the staff at Madison Lymphatics and Bodywork have a combined experience
+        of 14 years of MLD specific work treating a wide array of patients with complex health
+        histories. Formerly known as Therapeutic Massage Center of Middleton, we strive to empower
+        patients with knowledge and information to help them navigate their health journey.
+      </p>
+      <p class="mb-4">
+        For more information on how Madison Lymphatics and Bodywork can help you achieve your health
+        goals, call us at <a href="tel:6082038550" class="link link-primary">608-203-8550</a>.
+      </p>
+      <a href="/contact" class="btn btn-primary">Book Now</a>
+    </div>
+  </header>
+</Layout>

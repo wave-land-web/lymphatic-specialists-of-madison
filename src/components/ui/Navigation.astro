@@ -1,0 +1,131 @@
+---
+import HeaderLink from '../text/HeaderLink.astro'
+import Hamburger from '../../assets/icons/hamburger.svg'
+import Logo from '../../assets/icons/logo.svg'
+import Chevron from '../../assets/icons/chevron.svg'
+import { NAVIGATION } from '../../consts'
+---
+
+<nav class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <!-- Mobile navigation -->
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <Hamburger class="w-5 h-5" />
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+      >
+        {
+          NAVIGATION.map((link) => {
+            if (link.children) {
+              return (
+                <li>
+                  <HeaderLink href={link.href}>{link.label}</HeaderLink>
+                  <ul class="p-2">
+                    {link.children.map((child) => (
+                      <li>
+                        <HeaderLink href={child.href}>{child.label}</HeaderLink>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              )
+            } else {
+              return (
+                <li>
+                  <HeaderLink href={link.href}>{link.label}</HeaderLink>
+                </li>
+              )
+            }
+          })
+        }
+      </ul>
+    </div>
+    <a href="/" class="btn btn-ghost">
+      <Logo class="w-24" />
+    </a>
+  </div>
+  <!-- Desktop navigation -->
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      {
+        NAVIGATION.map((link, index) => {
+          if (link.children) {
+            return (
+              <li>
+                <button
+                  popovertarget={`popover-${index}`}
+                  style={`anchor-name:--anchor-${index}`}
+                  class="flex items-center gap-1"
+                >
+                  {link.label}
+                  <Chevron class="w-4 h-4 transition-transform duration-200 ease-in-out" />
+                </button>
+                <ul
+                  class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                  id={`popover-${index}`}
+                  style={`position-anchor:--anchor-${index}`}
+                  popover
+                >
+                  {link.children.map((child) => (
+                    <li>
+                      <HeaderLink href={child.href}>{child.label}</HeaderLink>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            )
+          } else {
+            return (
+              <li>
+                <HeaderLink href={link.href}>{link.label}</HeaderLink>
+              </li>
+            )
+          }
+        })
+      }
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a href="/contact" class="btn btn-primary">Book Now</a>
+  </div>
+</nav>
+
+<script>
+  // Find all buttons with popovertarget attribute
+  const popoverButtons = document.querySelectorAll('button[popovertarget]')
+
+  popoverButtons.forEach((button) => {
+    // Find the chevron icon within this button (assumes it's a direct child SVG)
+    const chevron = button.querySelector('svg')
+    const popovertarget = button.getAttribute('popovertarget')
+
+    // Only proceed if we have both chevron and popovertarget
+    if (chevron && popovertarget) {
+      const popover = document.getElementById(popovertarget)
+
+      if (popover) {
+        // Add transition classes to chevron if not already present
+        if (!chevron.classList.contains('transition-transform')) {
+          chevron.classList.add('transition-transform', 'duration-200')
+        }
+
+        // Listen for popover toggle events
+        popover.addEventListener('toggle', () => {
+          // Check if popover is open
+          const isOpen = popover.matches(':popover-open')
+
+          if (isOpen) {
+            // Add rotate-180 class when popover opens
+            chevron.classList.add('rotate-180')
+          } else {
+            // Remove rotate-180 class when popover closes
+            chevron.classList.remove('rotate-180')
+          }
+        })
+      }
+    }
+  })
+</script>
