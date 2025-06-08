@@ -1,35 +1,37 @@
 ---
-import { getImage } from 'astro:assets'
-import heroBackground from '../assets/images/hero-background.png'
+import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
-
-const heroBackgroundImage = await getImage({ src: heroBackground })
 ---
 
 <Layout>
-  <header class="hero" style={`background-image: url(${heroBackgroundImage.src})`}>
-    <div class="hero-overlay"></div>
-    <div class="flex flex-col gap-4 max-w-2xl px-4 py-16 text-neutral-content">
-      <h1 class="mb-4 text-accent">Madison Lymphatics and Manual Therapy</h1>
-      <p>
-        Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric clinic.
-        We are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD) and
-        have experience and comfort treating: post-surgical patients, cancer patients, chronic
-        lymphatic conditions such as lymphedema and lipedema, as well as those with generalized
-        inflammation, chronic immune impaired conditions (Lyme disease, Ehlors Danlos Syndrome,
-        rheumatoid arthritis, etc), long/post-COVID symptoms and hypersensitivity.
-      </p>
-      <p>
-        Established in 2023, the staff at Madison Lymphatics and Bodywork have a combined experience
-        of 14 years of MLD specific work treating a wide array of patients with complex health
-        histories. Formerly known as Therapeutic Massage Center of Middleton, we strive to empower
-        patients with knowledge and information to help them navigate their health journey.
-      </p>
-      <p class="mb-4">
-        For more information on how Madison Lymphatics and Bodywork can help you achieve your health
-        goals, call us at <a href="tel:6082038550" class="link link-primary">608-203-8550</a>.
-      </p>
-      <a href="/contact" class="btn btn-primary">Book Now</a>
-    </div>
-  </header>
+  <PageHeader>
+    <h1 class="mb-4 text-primary text-shadow-lg">Madison Lymphatics and Manual Therapy</h1>
+    <p class="text-shadow-lg">
+      Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric clinic. We
+      are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD) and have
+      experience and comfort treating: post-surgical patients, cancer patients, chronic lymphatic
+      conditions such as lymphedema and lipedema, as well as those with generalized inflammation,
+      chronic immune impaired conditions (Lyme disease, Ehlors Danlos Syndrome, rheumatoid
+      arthritis, etc), long/post-COVID symptoms and hypersensitivity.
+    </p>
+    <p class="text-shadow-lg">
+      Established in 2023, the staff at Madison Lymphatics and Manual Therapy have a combined
+      experience of 14 years of MLD specific work treating a wide array of patients with complex
+      health histories. Formerly known as Therapeutic Massage Center of Middleton, we strive to
+      empower patients with knowledge and information to help them navigate their health journey.
+    </p>
+    <p class="text-shadow-lg">
+      For more information on how Madison Lymphatics and Manual Therapy can help you achieve your
+      health goals, call us at <a href="tel:6082038550" class="link link-primary">608-203-8550</a>.
+    </p>
+    <p class="mb-4 text-sm text-shadow-lg">
+      <em>
+        <strong>Note:</strong> If you are having difficulty getting scheduled at the time/day or with
+        the provider you would like - please don't hesitate to call/text us to be added to our cancellation
+        list as cancellations are common. Sometimes we are booking farther out - we use our cancellation
+        list as a means to get patients in sooner. Thank you.
+      </em>
+    </p>
+    <a href="/contact" class="btn btn-primary w-fit">Book Now</a>
+  </PageHeader>
 </Layout>

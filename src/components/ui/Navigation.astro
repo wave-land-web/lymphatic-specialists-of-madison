@@ -1,13 +1,12 @@
 ---
 import HeaderLink from '../text/HeaderLink.astro'
 import Hamburger from '../../assets/icons/hamburger.svg'
-import Logo from '../../assets/icons/logo.svg'
 import Chevron from '../../assets/icons/chevron.svg'
 import { NAVIGATION } from '../../consts'
 ---
 
-<nav class="navbar bg-base-100 shadow-sm">
-  <div class="navbar-start">
+<nav class="navbar shadow-sm px-(--site-padding-base)">
+  <div class="navbar-start gap-4 lg:gap-0 items-center">
     <!-- Mobile navigation -->
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -15,7 +14,7 @@ import { NAVIGATION } from '../../consts'
       </div>
       <ul
         tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+        class="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow bg-base-100"
       >
         {
           NAVIGATION.map((link) => {
@@ -43,8 +42,8 @@ import { NAVIGATION } from '../../consts'
         }
       </ul>
     </div>
-    <a href="/" class="btn btn-ghost">
-      <Logo class="w-24" />
+    <a href="/">
+      <h1 class="text-2xl font-bold text-primary">MLMT</h1>
     </a>
   </div>
   <!-- Desktop navigation -->

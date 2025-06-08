@@ -1,6 +1,20 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
-  themes: cupcake;
+  themes: emerald;
+}
+
+@theme {
+  --site-padding-base: clamp(1rem, 2vw, 2rem);
+  --site-padding-md: clamp(2rem, 3vw, 3rem);
+  --site-padding-lg: clamp(3rem, 4vw, 4rem);
+
+  --font-nuckle-hairline: var(--font-nuckle-hairline);
+  --font-nuckle-extralight: var(--font-nuckle-extralight);
+  --font-nuckle-light: var(--font-nuckle-light);
+  --font-nuckle-regular: var(--font-nuckle-regular);
+  --font-nuckle-medium: var(--font-nuckle-medium);
+  --font-nuckle-semibold: var(--font-nuckle-semibold);
+  --font-nuckle-bold: var(--font-nuckle-bold);
 }
 
 @layer base {
@@ -8,13 +22,24 @@
     navigation: auto;
   }
 
+  body {
+    @apply bg-base-100 font-nuckle-regular;
+  }
+
+  main,
+  footer {
+    @apply px-(--site-padding-base) py-(--site-padding-lg);
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6 {
-    @apply font-bold text-balance;
+  h6,
+  button,
+  a {
+    @apply text-balance font-nuckle-semibold;
   }
 
   h1 {

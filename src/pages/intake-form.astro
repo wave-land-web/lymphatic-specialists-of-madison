@@ -1,16 +1,10 @@
 ---
-import { getImage } from 'astro:assets'
-import heroBackground from '../assets/images/hero-background.png'
+import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
-
-const heroBackgroundImage = await getImage({ src: heroBackground })
 ---
 
 <Layout title="Intake Form">
-  <header class="hero" style={`background-image: url(${heroBackgroundImage.src})`}>
-    <div class="hero-overlay"></div>
-    <div class="flex flex-col gap-4 max-w-2xl px-4 py-16 text-neutral-content">
-      <h1 class="mb-4 text-accent">Intake Form</h1>
-    </div>
-  </header>
+  <PageHeader>
+    <h1 class="mb-4 text-primary">Intake Form</h1>
+  </PageHeader>
 </Layout>

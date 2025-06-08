@@ -1,5 +1,5 @@
 ---
-// import { Font } from 'astro:assets'
+import { Font } from 'astro:assets'
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from '../consts'
 import '../styles/global.css'
 import Navigation from '../components/ui/Navigation.astro'
@@ -16,7 +16,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const socialImageURL = new URL(socialImage || '/images/og.png', canonicalURL)
 ---
 
-<html lang="en" data-theme="cupcake">
+<html lang="en" data-theme="emerald">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -49,8 +49,14 @@ const socialImageURL = new URL(socialImage || '/images/og.png', canonicalURL)
     <meta name="twitter:image" content={socialImageURL} />
 
     <!-- Preload Fonts -->
-    <!-- <Font cssVariable="--font-poppins" preload />
-    <Font cssVariable="--font-poppins-bold" preload /> -->
+    <Font cssVariable="--font-nuckle-thin" preload />
+    <Font cssVariable="--font-nuckle-semibold" preload />
+    <Font cssVariable="--font-nuckle-regular" preload />
+    <Font cssVariable="--font-nuckle-medium" preload />
+    <Font cssVariable="--font-nuckle-light" preload />
+    <Font cssVariable="--font-nuckle-hairline" preload />
+    <Font cssVariable="--font-nuckle-extralight" preload />
+    <Font cssVariable="--font-nuckle-bold" preload />
 
     <!-- Favicon -->
   </head>
