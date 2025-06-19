@@ -1,8 +1,8 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: emerald;
 }
-
 @plugin "daisyui/theme" {
   name: 'emerald';
   default: false;
@@ -117,7 +117,7 @@
   }
 
   body {
-    @apply bg-base-200 font-nuckle-regular;
+    @apply bg-gradient-to-b from-base-100 to-base-200 font-nuckle-regular;
   }
 
   main,
@@ -130,7 +130,7 @@
   }
 
   section {
-    @apply py-(--site-padding-md);
+    @apply py-(--site-padding-2xl);
   }
 
   h1,
@@ -142,27 +142,33 @@
     @apply text-balance font-nuckle-bold;
   }
 
-  h1 {
+  h1,
+  .h1 {
     @apply text-4xl sm:text-5xl;
   }
 
-  h2 {
+  h2,
+  .h2 {
     @apply text-2xl sm:text-3xl;
   }
 
-  h3 {
+  h3,
+  .h3 {
     @apply text-xl sm:text-2xl;
   }
 
-  h4 {
+  h4,
+  .h4 {
     @apply text-lg sm:text-xl;
   }
 
-  h5 {
+  h5,
+  .h5 {
     @apply text-base sm:text-lg;
   }
 
-  h6 {
+  h6,
+  .h6 {
     @apply text-sm sm:text-base;
   }
 
@@ -174,5 +180,9 @@
   button,
   a {
     @apply text-balance font-nuckle-semibold;
+  }
+
+  img {
+    @apply w-full h-auto object-cover rounded-box shadow-lg;
   }
 }

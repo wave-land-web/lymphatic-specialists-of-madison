@@ -20,7 +20,7 @@ const { id, imageSrc, imageAlt, className, priority = false, quality = 85 } = As
   {
     imageSrc && (
       <Picture
-        class="w-full h-full max-h-[250px] object-cover filter grayscale-100 group-hover:grayscale-0 transition-all duration-200"
+        class="w-full h-full max-h-[250px] object-cover filter grayscale-100 group-hover:grayscale-0 transition-all duration-200 rounded-b-none"
         src={imageSrc}
         alt={imageAlt ?? ''}
         widths={[320, 640, 768, 1024, 1280, 1920]}
