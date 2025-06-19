@@ -1,0 +1,38 @@
+---
+import { Picture } from 'astro:assets'
+
+export interface Props {
+  id: string
+  imageSrc?: any
+  imageAlt?: string
+  className?: string
+  priority?: boolean // For above-the-fold images
+  quality?: number // Image quality (1-100)
+}
+
+const { id, imageSrc, imageAlt, className, priority = false, quality = 85 } = Astro.props
+---
+
+<article
+  id={id}
+  class={`${className} card w-full bg-base-100 border border-base-300 group shadow-sm hover:shadow-lg hover:border-primary transition-all duration-200 overflow-hidden`}
+>
+  {
+    imageSrc && (
+      <Picture
+        class="w-full h-full max-h-[250px] object-cover filter grayscale-100 group-hover:grayscale-0 transition-all duration-200"
+        src={imageSrc}
+        alt={imageAlt ?? ''}
+        widths={[320, 640, 768, 1024, 1280, 1920]}
+        sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+        formats={['avif', 'webp', 'jpeg']}
+        quality={quality}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : 'auto'}
+      />
+    )
+  }
+  <div class="card-body">
+    <slot />
+  </div>
+</article>

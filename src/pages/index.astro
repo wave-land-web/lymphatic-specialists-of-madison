@@ -1,12 +1,30 @@
 ---
+import { getImage } from 'astro:assets'
+import PlaceholderTwoImage from '../assets/images/placeholder-2.jpg'
+import PlaceholderThreeImage from '../assets/images/placeholder-3.jpg'
+import PlaceholderFourImage from '../assets/images/placeholder-4.jpg'
+import PlaceholderFiveImage from '../assets/images/placeholder-5.jpg'
+import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
+import { SERVICES, TESTIMONIALS } from '../consts'
 import Layout from '../layouts/Layout.astro'
+
+const placeholderThreeImage = await getImage({ src: PlaceholderThreeImage })
+
+// Create a mapping of image keys to actual image imports
+const serviceImages: Record<string, any> = {
+  placeholderTwo: PlaceholderTwoImage,
+  placeholderFour: PlaceholderFourImage,
+  placeholderFive: PlaceholderFiveImage,
+}
 ---
 
 <Layout>
   <PageHeader>
-    <h1 class="mb-4 text-primary text-shadow-lg">Madison Lymphatics and Manual Therapy</h1>
-    <p class="text-shadow-lg">
+    <h1 class="mb-4 text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
+      Madison Lymphatics and Manual Therapy
+    </h1>
+    <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
       Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric clinic. We
       are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD) and have
       experience and comfort treating: post-surgical patients, cancer patients, chronic lymphatic
@@ -14,17 +32,17 @@ import Layout from '../layouts/Layout.astro'
       chronic immune impaired conditions (Lyme disease, Ehlors Danlos Syndrome, rheumatoid
       arthritis, etc), long/post-COVID symptoms and hypersensitivity.
     </p>
-    <p class="text-shadow-lg">
+    <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
       Established in 2023, the staff at Madison Lymphatics and Manual Therapy have a combined
       experience of 14 years of MLD specific work treating a wide array of patients with complex
       health histories. Formerly known as Therapeutic Massage Center of Middleton, we strive to
       empower patients with knowledge and information to help them navigate their health journey.
     </p>
-    <p class="text-shadow-lg">
+    <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
       For more information on how Madison Lymphatics and Manual Therapy can help you achieve your
-      health goals, call us at <a href="tel:6082038550" class="link link-primary">608-203-8550</a>.
+      health goals, call us at <a href="tel:6082038550" class="link link-accent">608-203-8550</a>.
     </p>
-    <p class="mb-4 text-sm text-shadow-lg">
+    <p class="mb-4 text-sm text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
       <em>
         <strong>Note:</strong> If you are having difficulty getting scheduled at the time/day or with
         the provider you would like - please don't hesitate to call/text us to be added to our cancellation
@@ -32,6 +50,147 @@ import Layout from '../layouts/Layout.astro'
         list as a means to get patients in sooner. Thank you.
       </em>
     </p>
-    <a href="/contact" class="btn btn-primary w-fit">Book Now</a>
+    <a href="/contact" class="btn btn-primary w-fit lsa lsa-slide-up delay-500 no-repeat">
+      Book Now
+    </a>
   </PageHeader>
+
+  <main>
+    <section id="services" class="wrapper mb-(--site-padding-lg)">
+      <h2 class="mb-(--site-padding-base) lsa lsa-slide-up no-repeat">Therapeutic Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          SERVICES.map((service, index) => (
+            <Card
+              id={service.title}
+              imageSrc={serviceImages[service.imageKey]}
+              imageAlt={`${service.title} service`}
+              className={`lsa lsa-slide-up delay-${index * 100} no-repeat`}
+            >
+              <h3>{service.title}</h3>
+              <p class="mb-2">{service.description}</p>
+              <div class="card-actions justify-end">
+                <a href={service.learnMoreHref} class="btn btn-primary">
+                  Learn More
+                </a>
+                <a
+                  href={service.bookNowHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline"
+                >
+                  Book Now
+                </a>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="hero mb-(--site-padding-lg) p-0 shadow-sm bg-cover bg-center"
+      style={`background-image: url(${placeholderThreeImage.src})`}
+    >
+      <div class="hero-overlay bg-black/60"></div>
+      <div
+        class="wrapper w-full p-(--site-padding-lg) flex flex-col items-start gap-4 text-neutral-content"
+      >
+        <h2 class="mb-(--site-padding-base) text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
+          What Sets Us Apart
+        </h2>
+        <div
+          class="mb-(--site-padding-base) grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full"
+        >
+          <div class="space-y-4">
+            <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+              At Madison Lymphatics and Manual Therapy, we approach our sessions differently than
+              other clinics that you may have been to before.
+            </p>
+            <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+              We always focus on the patient's individual needs, analyzing a number of different
+              aspects of their health, to see how Manual Lymphatic Drainage or Therapeutic Massage
+              would be most beneficial. We believe that educating our patients on their lymphatic
+              imbalances and what may be causing it is imperative to recovery and health.
+            </p>
+            <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+              All of our practitioners are graduates of nationally accredited schools and have
+              thorough knowledge of the lymphatic system, anatomy, physiology, kinesiology, and an
+              understanding of how it all works together.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <p class="text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
+              Before each treatment, we do a full intake with the patient asking questions that will
+              help formulate a session designed for optimal results. We never do pre-choreographed
+              routines and continually strive to provide our patients with unique treatments that
+              produce the desired outcome.
+            </p>
+            <p class="text-shadow-lg lsa lsa-slide-up delay-500 no-repeat">
+              Our practitioners at Madison Lymphatics and Manual Therapy all use the Vodder Method
+              in their Manual Lymphatic Drainage sessions. Modalities that may be used during a
+              typical massage therapy session include Myofascial Release, Trigger Point Therapy,
+              Deep Tissue Massage, Swedish Massage and Cranio-Sacral Therapy.
+            </p>
+            <p class="text-shadow-lg lsa lsa-slide-up delay-600 no-repeat">
+              Sessions at the Madison Lymphatics and Manual Therapy are the perfect compliment to
+              any physical therapy, chiropractic, or naturopathic care.
+            </p>
+          </div>
+        </div>
+
+        <a href="/careers" class="btn btn-primary lsa lsa-slide-up delay-700 no-repeat">
+          About Our Team
+        </a>
+      </div>
+    </section>
+
+    <section id="testimonials" class="bg-base-200 py-(--site-padding-lg)">
+      <div class="wrapper">
+        <h2 class="mb-(--site-padding-base) text-center lsa lsa-slide-up no-repeat">
+          Our Clients Love Us
+        </h2>
+
+        <!-- Carousel items -->
+        <div class="carousel carousel-center mx-auto space-x-4 p-4 w-full">
+          {
+            TESTIMONIALS.map((testimonial) => (
+              <Card
+                id={`testimonial-${testimonial.id}`}
+                className={`carousel-item max-w-lg lsa lsa-slide-up no-repeat`}
+              >
+                <div class="flex mb-4">
+                  {Array.from({ length: testimonial.rating }, (_, i) => (
+                    <svg class="w-5 h-5 text-warning fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
+                <blockquote class="text-base-content mb-6 italic">
+                  <p>
+                    <em>"{testimonial.text}"</em>
+                  </p>
+                </blockquote>
+                <div class="text-right">
+                  <p class="font-semibold text-primary">{testimonial.author}</p>
+                </div>
+              </Card>
+            ))
+          }
+        </div>
+
+        <!-- Carousel navigation -->
+        <div class="flex justify-center gap-2 py-4">
+          {
+            TESTIMONIALS.map((testimonial) => (
+              <a href={`#testimonial-${testimonial.id}`} class="btn btn-sm">
+                {testimonial.id}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
