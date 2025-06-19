@@ -8,7 +8,9 @@ const heroBackgroundImage = await getImage({ src: heroBackground })
 <header class="hero bg-fixed" style={`background-image: url(${heroBackgroundImage.src})`}>
   <div class="hero-overlay bg-black/60"></div>
   <div class="wrapper">
-    <div class="flex flex-col gap-4 max-w-3xl mr-auto py-(--site-padding-lg) text-neutral-content">
+    <div
+      class="flex flex-col gap-4 max-w-3xl mr-auto pt-[calc(var(--site-padding-lg)+var(--nav-height))] pb-(--site-padding-lg) text-neutral-content"
+    >
       <slot />
     </div>
   </div>

@@ -5,7 +5,10 @@ import Chevron from '../../assets/icons/chevron.svg'
 import { NAVIGATION } from '../../consts'
 ---
 
-<nav class="navbar wrapper px-(--site-padding-base) shadow-sm">
+<nav
+  id="main-nav"
+  class="navbar wrapper h-(--nav-height) px-(--site-padding-base) fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-in-out text-neutral-content"
+>
   <!-- Mobile navigation and logo -->
   <div class="navbar-start">
     <div class="flex items-center gap-4">
@@ -14,7 +17,7 @@ import { NAVIGATION } from '../../consts'
           <Hamburger class="w-5 h-5" />
         </label>
       </div>
-      <a href="/" class="btn btn-ghost rounded-none pb-0 pt-1">
+      <a href="/" class="btn btn-dash rounded-none pb-0 pt-1">
         <h1 class="text-2xl font-bold leading-none">
           <span class="sr-only">Madison Lymphatics and Manual Therapy</span>
           MLMT
@@ -26,7 +29,10 @@ import { NAVIGATION } from '../../consts'
     <input id="my-drawer-nav" type="checkbox" class="drawer-toggle" />
     <div class="drawer-side">
       <label for="my-drawer-nav" aria-label="close sidebar" class="drawer-overlay"></label>
-      <ul tabindex="0" class="menu bg-base-100 min-h-full w-80 p-4 border-r-2 border-base-300">
+      <ul
+        tabindex="0"
+        class="menu text-primary-content min-h-full w-80 p-4 border-r-2 border-base-300 bg-base-100/90 backdrop-blur-lg"
+      >
         {
           NAVIGATION.map((link) => {
             if (link.children) {
@@ -72,13 +78,13 @@ import { NAVIGATION } from '../../consts'
                   <Chevron class="w-4 h-4 transition-transform duration-200 ease-in-out" />
                 </button>
                 <ul
-                  class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                  class="dropdown menu w-52 rounded-box text-primary-content shadow-sm bg-base-100/90 backdrop-blur-lg"
                   id={`popover-${index}`}
                   style={`position-anchor:--anchor-${index}`}
                   popover
                 >
                   {link.children.map((child) => (
-                    <li>
+                    <li class="text-primary-content">
                       <HeaderLink href={child.href}>{child.label}</HeaderLink>
                     </li>
                   ))}
@@ -138,4 +144,39 @@ import { NAVIGATION } from '../../consts'
       }
     }
   })
+
+  // Handle scroll-based navigation transparency
+  function handleNavScroll() {
+    const nav = document.getElementById('main-nav')
+    if (!nav) return
+
+    const scrollThreshold = 20
+    const isScrolled = window.scrollY > scrollThreshold
+
+    if (isScrolled) {
+      // Scrolled past threshold - solid background with primary content text
+      nav.classList.add('bg-base-100/90')
+      nav.classList.add('backdrop-blur-lg')
+      nav.classList.add('text-primary-content')
+      nav.classList.add('border-b')
+      nav.classList.add('border-base-300')
+      nav.classList.add('shadow-sm')
+      nav.classList.remove('text-neutral-content')
+    } else {
+      // At the top - transparent background with neutral content text
+      nav.classList.remove('bg-base-100/90')
+      nav.classList.remove('backdrop-blur-lg')
+      nav.classList.remove('text-primary-content')
+      nav.classList.remove('border-b')
+      nav.classList.remove('border-base-300')
+      nav.classList.remove('shadow-sm')
+      nav.classList.add('text-neutral-content')
+    }
+  }
+
+  // Initialize on page load
+  handleNavScroll()
+
+  // Listen for scroll events
+  window.addEventListener('scroll', handleNavScroll)
 </script>

@@ -191,7 +191,7 @@ const serviceImages: Record<string, any> = {
         <div class="flex justify-center gap-2 py-4">
           {
             TESTIMONIALS.map((testimonial) => (
-              <a href={`#testimonial-${testimonial.id}`} class="btn btn-dash btn-sm">
+              <a href={`#testimonial-${testimonial.id}`} class="btn btn-dash btn-md">
                 {testimonial.id}
               </a>
             ))
@@ -349,9 +349,9 @@ const serviceImages: Record<string, any> = {
 
         <!-- Primary and Secondary CTAs -->
         <div
-          class="flex flex-col sm:flex-row gap-4 justify-center items-center lsa lsa-slide-up delay-300 no-repeat"
+          class="flex flex-wrap gap-2 justify-center items-center lsa lsa-slide-up delay-300 no-repeat"
         >
-          <a href="/contact" class="btn btn-accent btn-lg">
+          <a href="/contact" class="btn btn-accent">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -362,7 +362,7 @@ const serviceImages: Record<string, any> = {
             </svg>
             Contact Us
           </a>
-          <a href="/blog" class="btn btn-dash btn-lg">
+          <a href="/blog" class="btn btn-dash">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"

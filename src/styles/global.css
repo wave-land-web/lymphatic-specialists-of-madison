@@ -53,6 +53,8 @@
   --font-nuckle-medium: var(--font-nuckle-medium);
   --font-nuckle-semibold: var(--font-nuckle-semibold);
   --font-nuckle-bold: var(--font-nuckle-bold);
+
+  --nav-height: 5rem;
 }
 
 /* Animations */
@@ -113,7 +115,7 @@
   }
 
   html {
-    @apply scroll-smooth break-words scroll-pt-(--site-padding-3xl);
+    @apply scroll-smooth break-words scroll-pt-[calc(var(--site-padding-3xl)+var(--nav-height))];
   }
 
   body {
