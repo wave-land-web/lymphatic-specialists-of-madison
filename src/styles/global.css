@@ -53,6 +53,8 @@
   --font-nuckle-medium: var(--font-nuckle-medium);
   --font-nuckle-semibold: var(--font-nuckle-semibold);
   --font-nuckle-bold: var(--font-nuckle-bold);
+  --font-lora-italic: var(--font-lora-italic);
+  --font-lora-regular: var(--font-lora-regular);
 
   --nav-height: 5rem;
 }
@@ -111,7 +113,7 @@
   }
 
   ::selection {
-    @apply bg-primary text-primary-content;
+    @apply bg-primary text-primary-content antialiased;
   }
 
   html {
@@ -141,7 +143,7 @@
   h4,
   h5,
   h6 {
-    @apply text-balance font-nuckle-bold;
+    @apply text-balance font-lora-regular font-bold;
   }
 
   h1,

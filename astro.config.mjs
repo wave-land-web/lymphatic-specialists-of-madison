@@ -139,6 +139,28 @@ export default defineConfig({
           },
         ],
       },
+      {
+        provider: 'local',
+        name: 'Lora Italic',
+        cssVariable: '--font-lora-italic',
+        variants: [
+          {
+            src: ['./src/assets/fonts/lora-italic.woff', './src/assets/fonts/lora-italic.woff2'],
+          },
+        ],
+      },
+      {
+        provider: 'local',
+        name: 'Lora Regular',
+        cssVariable: '--font-lora-regular',
+        variants: [
+          {
+            src: ['./src/assets/fonts/lora-regular.woff', './src/assets/fonts/lora-regular.woff2'],
+            weight: '400',
+            style: 'normal',
+          },
+        ],
+      },
     ],
   },
 })
