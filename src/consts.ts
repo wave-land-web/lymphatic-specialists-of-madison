@@ -92,36 +92,18 @@ export const SERVICES = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    text: 'Carmela was amazing! She has a magical touch and was incredibly knowledgeable about my post surgery needs with the lymphatic drain massage. I left feeling relaxed and more comfortable. She also made several recommendations to help me at home, in between appointments. I am looking forward to becoming a regular client.',
-    author: 'Returning Client 60 Min. MLD',
-    rating: 5,
-  },
-  {
-    id: 2,
     text: 'Courtney is so amazing at what she does. Regular sessions with her keep my lymphedema and tightness from scarring controlled. For anyone that has gone through breast cancer treatments I highly recommend Courtney to treat the Lymphedema and scar tissue that happens as a result and provide you relief.',
     author: '60 Min Manual Lymphatic Drainage',
     rating: 5,
   },
   {
-    id: 3,
-    text: "Couldn't be happier with my experiences so far with the lymphatic drainage massage with Carmela. My c section scar was 3.5 years old and I wasn't optimistic that it could be helped, glad I was wrong!",
-    author: 'Returning Client 60 Min. MLD',
-    rating: 5,
-  },
-  {
-    id: 4,
+    id: 2,
     text: 'Courtney is amazing! I have lots of health issues and a sluggish lymph system. I have been seeing her regularly for a while now and her work is helping me tremendously. She is extremely knowledgeable, and in general a super fun and engaging person. Highly recommended seeing her!',
     author: 'Returning Client 60 Min. MLD',
     rating: 5,
   },
   {
-    id: 5,
-    text: 'Carmela has been wonderful. She is knowledgeable about the kind of care I need and is so empathetic. She has helped ease my recovery and I look forward to continuing my care with her. The space is clean and professional. I highly recommend Therapeutic Massage Center if Middleton.',
-    author: 'Returning Client 60 Min. MLD',
-    rating: 5,
-  },
-  {
-    id: 6,
+    id: 3,
     text: "Warm, welcoming atmosphere. Courtney is kind and professional and thorough. I'd recommend her to anyone looking for a lymph massage.",
     author: '60 Min Manual Lymphatic Drainage',
     rating: 5,
