@@ -177,8 +177,9 @@
   }
 
   p,
-  li:not(nav li) {
-    @apply text-sm sm:text-base text-pretty;
+  li:not(nav li),
+  .p {
+    @apply text-sm sm:text-base text-pretty max-w-[65ch];
   }
 
   button,

@@ -191,7 +191,7 @@ const serviceImages: Record<string, any> = {
         <div class="flex justify-center gap-2 py-4">
           {
             TESTIMONIALS.map((testimonial) => (
-              <a href={`#testimonial-${testimonial.id}`} class="btn btn-dash btn-md">
+              <a href={`#testimonial-${testimonial.id}`} class="btn btn-square btn-dash btn-md">
                 {testimonial.id}
               </a>
             ))
@@ -335,12 +335,14 @@ const serviceImages: Record<string, any> = {
           <!-- TODO: hook up to something -->
           <form class="join w-full" method="POST" action="/">
             <input
+              id="email"
               type="email"
               name="email"
               placeholder="Enter your email address"
               class="input input-bordered join-item flex-1"
               required
             />
+            <label class="sr-only" for="email">Email</label>
             <button type="submit" class="btn btn-accent join-item"> Subscribe </button>
           </form>
           <p class="text-sm text-primary-content/80 mt-2">
