@@ -16,1887 +16,1903 @@ import Layout from '../layouts/Layout.astro'
   </PageHeader>
 
   <main class="wrapper">
-    <form class="container lg:max-w-6xl mx-auto flex flex-col gap-8">
-      <p>
-        <span class="text-accent">*</span> indicates required fields
-      </p>
+    <section class="pt-0">
+      <form class="container lg:max-w-6xl mx-auto flex flex-col gap-8">
+        <p class="text-sm text-base-content/80">
+          <span class="text-accent">*</span> indicates required fields
+        </p>
 
-      <!-- Personal Information Section -->
-      <Card id="personal-information">
-        <h2 class="card-title text-2xl mb-6">Personal Information</h2>
+        <!-- Personal Information Section -->
+        <Card id="personal-information">
+          <h2 class="card-title text-2xl mb-6">Personal Information</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Left Column -->
-          <div class="space-y-4">
-            <!-- Name -->
-            <fieldset class="grid grid-cols-2 gap-4">
-              <div class="flex flex-col gap-2">
-                <label for="first-name">First Name <span class="text-accent">*</span></label>
-                <input
-                  id="first-name"
-                  type="text"
-                  placeholder="Jane"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-              <div class="flex flex-col gap-2">
-                <label for="last-name">Last Name <span class="text-accent">*</span></label>
-                <input
-                  id="last-name"
-                  type="text"
-                  placeholder="Doe"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-            </fieldset>
-
-            <!-- Phone Numbers -->
-            <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="flex flex-col gap-2">
-                <label for="phone-day">Phone (day)</label>
-                <input
-                  id="phone-day"
-                  type="tel"
-                  placeholder="(555) 123-4567"
-                  class="input input-bordered w-full"
-                />
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <label for="phone-evening">
-                  Phone (evening) <span class="text-accent">*</span>
-                </label>
-                <input
-                  id="phone-evening"
-                  type="tel"
-                  placeholder="(555) 123-4567"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-            </fieldset>
-
-            <!-- Email and Date of Birth -->
-            <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="flex flex-col gap-2">
-                <label for="email">
-                  Email <span class="text-accent">*</span>
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <label for="date-of-birth">
-                  Date of Birth <span class="text-accent">*</span>
-                </label>
-                <input
-                  id="date-of-birth"
-                  type="date"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-            </fieldset>
-
-            <!-- Pronouns -->
-            <fieldset class="flex flex-col gap-2">
-              <label for="pronouns">What are your pronouns?</label>
-              <input
-                id="pronouns"
-                type="text"
-                placeholder="e.g., she/her, he/him, they/them"
-                class="input input-bordered w-full"
-              />
-            </fieldset>
-          </div>
-
-          <!-- Right Column -->
-          <div class="space-y-4">
-            <!-- Address -->
-            <fieldset class="flex flex-col gap-4">
-              <div class="flex flex-col gap-2">
-                <label for="street-address">Street Address <span class="text-accent">*</span></label
-                >
-                <input
-                  id="street-address"
-                  type="text"
-                  placeholder="123 Main St"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <label for="address-line-2">Address Line 2</label>
-                <input
-                  id="address-line-2"
-                  type="text"
-                  placeholder="Apt 1"
-                  class="input input-bordered w-full"
-                />
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div class="flex flex-col gap-2">
-                  <label for="city">City <span class="text-accent">*</span></label>
-                  <input
-                    id="city"
-                    type="text"
-                    placeholder="New York"
-                    class="input input-bordered w-full"
-                    required
-                  />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <label for="state">State <span class="text-accent">*</span></label>
-                  <input
-                    id="state"
-                    type="text"
-                    placeholder="NY"
-                    class="input input-bordered w-full"
-                    required
-                  />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <label for="zip-code">ZIP Code <span class="text-accent">*</span></label>
-                  <input
-                    id="zip-code"
-                    type="text"
-                    placeholder="55555"
-                    class="input input-bordered w-full"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <label for="country">Country <span class="text-accent">*</span></label>
-                <select id="country" class="select select-bordered w-full" required>
-                  <option value="" disabled selected>Select Country</option>
-                  <option value="Afghanistan">Afghanistan</option><option value="Albania"
-                    >Albania</option
-                  ><option value="Algeria">Algeria</option><option value="American Samoa"
-                    >American Samoa</option
-                  ><option value="Andorra">Andorra</option><option value="Angola">Angola</option
-                  ><option value="Anguilla">Anguilla</option><option value="Antarctica"
-                    >Antarctica</option
-                  ><option value="Antigua and Barbuda">Antigua and Barbuda</option><option
-                    value="Argentina">Argentina</option
-                  ><option value="Armenia">Armenia</option><option value="Aruba">Aruba</option
-                  ><option value="Australia">Australia</option><option value="Austria"
-                    >Austria</option
-                  ><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas"
-                    >Bahamas</option
-                  ><option value="Bahrain">Bahrain</option><option value="Bangladesh"
-                    >Bangladesh</option
-                  ><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option
-                  ><option value="Belgium">Belgium</option><option value="Belize">Belize</option
-                  ><option value="Benin">Benin</option><option value="Bermuda">Bermuda</option
-                  ><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option
-                  ><option value="Bonaire, Sint Eustatius and Saba"
-                    >Bonaire, Sint Eustatius and Saba</option
-                  ><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option
-                    value="Botswana">Botswana</option
-                  ><option value="Bouvet Island">Bouvet Island</option><option value="Brazil"
-                    >Brazil</option
-                  ><option value="British Indian Ocean Territory"
-                    >British Indian Ocean Territory</option
-                  ><option value="Brunei Darussalam">Brunei Darussalam</option><option
-                    value="Bulgaria">Bulgaria</option
-                  ><option value="Burkina Faso">Burkina Faso</option><option value="Burundi"
-                    >Burundi</option
-                  ><option value="Cabo Verde">Cabo Verde</option><option value="Cambodia"
-                    >Cambodia</option
-                  ><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option
-                  ><option value="Cayman Islands">Cayman Islands</option><option
-                    value="Central African Republic">Central African Republic</option
-                  ><option value="Chad">Chad</option><option value="Chile">Chile</option><option
-                    value="China">China</option
-                  ><option value="Christmas Island">Christmas Island</option><option
-                    value="Cocos Islands">Cocos Islands</option
-                  ><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option
-                  ><option value="Congo">Congo</option><option
-                    value="Congo, Democratic Republic of the"
-                    >Congo, Democratic Republic of the</option
-                  ><option value="Cook Islands">Cook Islands</option><option value="Costa Rica"
-                    >Costa Rica</option
-                  ><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option
-                    value="Curaçao">Curaçao</option
-                  ><option value="Cyprus">Cyprus</option><option value="Czechia">Czechia</option
-                  ><option value="Côte d'Ivoire">Côte d'Ivoire</option><option value="Denmark"
-                    >Denmark</option
-                  ><option value="Djibouti">Djibouti</option><option value="Dominica"
-                    >Dominica</option
-                  ><option value="Dominican Republic">Dominican Republic</option><option
-                    value="Ecuador">Ecuador</option
-                  ><option value="Egypt">Egypt</option><option value="El Salvador"
-                    >El Salvador</option
-                  ><option value="Equatorial Guinea">Equatorial Guinea</option><option
-                    value="Eritrea">Eritrea</option
-                  ><option value="Estonia">Estonia</option><option value="Eswatini">Eswatini</option
-                  ><option value="Ethiopia">Ethiopia</option><option value="Falkland Islands"
-                    >Falkland Islands</option
-                  ><option value="Faroe Islands">Faroe Islands</option><option value="Fiji"
-                    >Fiji</option
-                  ><option value="Finland">Finland</option><option value="France">France</option
-                  ><option value="French Guiana">French Guiana</option><option
-                    value="French Polynesia">French Polynesia</option
-                  ><option value="French Southern Territories">French Southern Territories</option
-                  ><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option
-                    value="Georgia">Georgia</option
-                  ><option value="Germany">Germany</option><option value="Ghana">Ghana</option
-                  ><option value="Gibraltar">Gibraltar</option><option value="Greece">Greece</option
-                  ><option value="Greenland">Greenland</option><option value="Grenada"
-                    >Grenada</option
-                  ><option value="Guadeloupe">Guadeloupe</option><option value="Guam">Guam</option
-                  ><option value="Guatemala">Guatemala</option><option value="Guernsey"
-                    >Guernsey</option
-                  ><option value="Guinea">Guinea</option><option value="Guinea-Bissau"
-                    >Guinea-Bissau</option
-                  ><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option
-                    value="Heard Island and McDonald Islands"
-                    >Heard Island and McDonald Islands</option
-                  ><option value="Holy See">Holy See</option><option value="Honduras"
-                    >Honduras</option
-                  ><option value="Hong Kong">Hong Kong</option><option value="Hungary"
-                    >Hungary</option
-                  ><option value="Iceland">Iceland</option><option value="India">India</option
-                  ><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option
-                  ><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option
-                    value="Isle of Man">Isle of Man</option
-                  ><option value="Israel">Israel</option><option value="Italy">Italy</option><option
-                    value="Jamaica">Jamaica</option
-                  ><option value="Japan">Japan</option><option value="Jersey">Jersey</option><option
-                    value="Jordan">Jordan</option
-                  ><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option
-                  ><option value="Kiribati">Kiribati</option><option
-                    value="Korea, Democratic People's Republic of"
-                    >Korea, Democratic People's Republic of</option
-                  ><option value="Korea, Republic of">Korea, Republic of</option><option
-                    value="Kuwait">Kuwait</option
-                  ><option value="Kyrgyzstan">Kyrgyzstan</option><option
-                    value="Lao People's Democratic Republic"
-                    >Lao People's Democratic Republic</option
-                  ><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option
-                  ><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option
-                  ><option value="Libya">Libya</option><option value="Liechtenstein"
-                    >Liechtenstein</option
-                  ><option value="Lithuania">Lithuania</option><option value="Luxembourg"
-                    >Luxembourg</option
-                  ><option value="Macao">Macao</option><option value="Madagascar">Madagascar</option
-                  ><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option
-                  ><option value="Maldives">Maldives</option><option value="Mali">Mali</option
-                  ><option value="Malta">Malta</option><option value="Marshall Islands"
-                    >Marshall Islands</option
-                  ><option value="Martinique">Martinique</option><option value="Mauritania"
-                    >Mauritania</option
-                  ><option value="Mauritius">Mauritius</option><option value="Mayotte"
-                    >Mayotte</option
-                  ><option value="Mexico">Mexico</option><option value="Micronesia"
-                    >Micronesia</option
-                  ><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option
-                  ><option value="Mongolia">Mongolia</option><option value="Montenegro"
-                    >Montenegro</option
-                  ><option value="Montserrat">Montserrat</option><option value="Morocco"
-                    >Morocco</option
-                  ><option value="Mozambique">Mozambique</option><option value="Myanmar"
-                    >Myanmar</option
-                  ><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option
-                  ><option value="Nepal">Nepal</option><option value="Netherlands"
-                    >Netherlands</option
-                  ><option value="New Caledonia">New Caledonia</option><option value="New Zealand"
-                    >New Zealand</option
-                  ><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option
-                  ><option value="Nigeria">Nigeria</option><option value="Niue">Niue</option><option
-                    value="Norfolk Island">Norfolk Island</option
-                  ><option value="North Macedonia">North Macedonia</option><option
-                    value="Northern Mariana Islands">Northern Mariana Islands</option
-                  ><option value="Norway">Norway</option><option value="Oman">Oman</option><option
-                    value="Pakistan">Pakistan</option
-                  ><option value="Palau">Palau</option><option value="Palestine, State of"
-                    >Palestine, State of</option
-                  ><option value="Panama">Panama</option><option value="Papua New Guinea"
-                    >Papua New Guinea</option
-                  ><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option
-                  ><option value="Philippines">Philippines</option><option value="Pitcairn"
-                    >Pitcairn</option
-                  ><option value="Poland">Poland</option><option value="Portugal">Portugal</option
-                  ><option value="Puerto Rico">Puerto Rico</option><option value="Qatar"
-                    >Qatar</option
-                  ><option value="Romania">Romania</option><option value="Russian Federation"
-                    >Russian Federation</option
-                  ><option value="Rwanda">Rwanda</option><option value="Réunion">Réunion</option
-                  ><option value="Saint Barthélemy">Saint Barthélemy</option><option
-                    value="Saint Helena, Ascension and Tristan da Cunha"
-                    >Saint Helena, Ascension and Tristan da Cunha</option
-                  ><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option
-                    value="Saint Lucia">Saint Lucia</option
-                  ><option value="Saint Martin">Saint Martin</option><option
-                    value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option
-                  ><option value="Saint Vincent and the Grenadines"
-                    >Saint Vincent and the Grenadines</option
-                  ><option value="Samoa">Samoa</option><option value="San Marino">San Marino</option
-                  ><option value="Sao Tome and Principe">Sao Tome and Principe</option><option
-                    value="Saudi Arabia">Saudi Arabia</option
-                  ><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option
-                  ><option value="Seychelles">Seychelles</option><option value="Sierra Leone"
-                    >Sierra Leone</option
-                  ><option value="Singapore">Singapore</option><option value="Sint Maarten"
-                    >Sint Maarten</option
-                  ><option value="Slovakia">Slovakia</option><option value="Slovenia"
-                    >Slovenia</option
-                  ><option value="Solomon Islands">Solomon Islands</option><option value="Somalia"
-                    >Somalia</option
-                  ><option value="South Africa">South Africa</option><option
-                    value="South Georgia and the South Sandwich Islands"
-                    >South Georgia and the South Sandwich Islands</option
-                  ><option value="South Sudan">South Sudan</option><option value="Spain"
-                    >Spain</option
-                  ><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option
-                  ><option value="Suriname">Suriname</option><option value="Svalbard and Jan Mayen"
-                    >Svalbard and Jan Mayen</option
-                  ><option value="Sweden">Sweden</option><option value="Switzerland"
-                    >Switzerland</option
-                  ><option value="Syria Arab Republic">Syria Arab Republic</option><option
-                    value="Taiwan">Taiwan</option
-                  ><option value="Tajikistan">Tajikistan</option><option
-                    value="Tanzania, the United Republic of"
-                    >Tanzania, the United Republic of</option
-                  ><option value="Thailand">Thailand</option><option value="Timor-Leste"
-                    >Timor-Leste</option
-                  ><option value="Togo">Togo</option><option value="Tokelau">Tokelau</option><option
-                    value="Tonga">Tonga</option
-                  ><option value="Trinidad and Tobago">Trinidad and Tobago</option><option
-                    value="Tunisia">Tunisia</option
-                  ><option value="Turkmenistan">Turkmenistan</option><option
-                    value="Turks and Caicos Islands">Turks and Caicos Islands</option
-                  ><option value="Tuvalu">Tuvalu</option><option value="Türkiye">Türkiye</option
-                  ><option value="US Minor Outlying Islands">US Minor Outlying Islands</option
-                  ><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option
-                  ><option value="United Arab Emirates">United Arab Emirates</option><option
-                    value="United Kingdom">United Kingdom</option
-                  ><option value="United States">United States</option><option value="Uruguay"
-                    >Uruguay</option
-                  ><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu"
-                    >Vanuatu</option
-                  ><option value="Venezuela">Venezuela</option><option value="Viet Nam"
-                    >Viet Nam</option
-                  ><option value="Virgin Islands, British">Virgin Islands, British</option><option
-                    value="Virgin Islands, U.S.">Virgin Islands, U.S.</option
-                  ><option value="Wallis and Futuna">Wallis and Futuna</option><option
-                    value="Western Sahara">Western Sahara</option
-                  ><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option><option
-                    value="Zimbabwe">Zimbabwe</option
-                  ><option value="Åland Islands">Åland Islands</option>
-                </select>
-              </div>
-            </fieldset>
-          </div>
-        </div>
-      </Card>
-
-      <!-- Emergency Contact Section -->
-      <Card id="emergency-contact">
-        <h2 class="card-title text-2xl mb-6">In Case of Emergency</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="space-y-4">
-            <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="flex flex-col gap-2">
-                <label for="emergency-contact-name">
-                  Emergency Contact <span class="text-accent">*</span>
-                </label>
-                <input
-                  id="emergency-contact-name"
-                  type="text"
-                  placeholder="Contact Name"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <label for="emergency-contact-phone">
-                  Phone <span class="text-accent">*</span>
-                </label>
-                <input
-                  id="emergency-contact-phone"
-                  type="tel"
-                  placeholder="(555) 123-4567"
-                  class="input input-bordered w-full"
-                  required
-                />
-              </div>
-            </fieldset>
-          </div>
-
-          <div class="space-y-4">
-            <fieldset class="flex flex-col gap-2">
-              <label for="emergency-contact-physician">
-                Primary Care Physician and Clinic <span class="text-accent">*</span>
-              </label>
-              <input
-                id="emergency-contact-physician"
-                type="text"
-                placeholder="Dr. Name and Clinic Name"
-                class="input input-bordered w-full"
-                required
-              />
-            </fieldset>
-          </div>
-        </div>
-      </Card>
-
-      <!-- How Did You Hear About Us Section -->
-      <Card id="how-did-you-hear-about-us">
-        <h2 class="card-title text-2xl mb-6">How Did You Hear About Us?</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
-          <div class="grid grid-cols-1 gap-3">
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-search"
-            >
-              <input
-                id="hear-about-search"
-                type="radio"
-                name="hear-about"
-                value="search"
-                class="radio radio-primary"
-              />
-              <span>Search engine (google, etc)</span>
-            </label>
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-doctor"
-            >
-              <input
-                id="hear-about-doctor"
-                type="radio"
-                name="hear-about"
-                value="doctor"
-                class="radio radio-primary"
-              />
-              <span>Doctor/surgeon</span>
-            </label>
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-local"
-            >
-              <input
-                id="hear-about-local"
-                type="radio"
-                name="hear-about"
-                value="local"
-                class="radio radio-primary"
-              />
-              <span>Local business</span>
-            </label>
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-friend"
-            >
-              <input
-                id="hear-about-friend"
-                type="radio"
-                name="hear-about"
-                value="friend"
-                class="radio radio-primary"
-              />
-              <span>Friend or colleague</span>
-            </label>
-          </div>
-
-          <div class="grid grid-cols-1 gap-3">
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-social"
-            >
-              <input
-                id="hear-about-social"
-                type="radio"
-                name="hear-about"
-                value="social"
-                class="radio radio-primary"
-              />
-              <span>Social media</span>
-            </label>
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-blog"
-            >
-              <input
-                id="hear-about-blog"
-                type="radio"
-                name="hear-about"
-                value="blog"
-                class="radio radio-primary"
-              />
-              <span>Blog</span>
-            </label>
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-booksy"
-            >
-              <input
-                id="hear-about-booksy"
-                type="radio"
-                name="hear-about"
-                value="booksy"
-                class="radio radio-primary"
-              />
-              <span>Booksy</span>
-            </label>
-            <label
-              class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="hear-about-other"
-            >
-              <input
-                id="hear-about-other"
-                type="radio"
-                name="hear-about"
-                value="other"
-                class="radio radio-primary"
-              />
-              <span>Other</span>
-            </label>
-          </div>
-          <div class="flex flex-col gap-2">
-            <label for="hear-about-other-specify">Please Specify</label>
-            <input
-              id="hear-about-other-specify"
-              type="text"
-              placeholder="Facebook, Instagram, etc."
-              class="input input-bordered w-full"
-            />
-          </div>
-        </div>
-      </Card>
-
-      <!-- Reason for Seeking MLD Section -->
-      <Card id="reason-for-seeking-mld">
-        <h2 class="card-title text-2xl mb-6">Reason for Seeking Manual Lymphatic Drainage</h2>
-
-        <fieldset class="flex flex-col gap-4">
-          <legend class="p label whitespace-normal mb-2">
-            For what reason are you seeking Manual Lymphatic Drainage? <span class="text-accent"
-              >*</span
-            >
-          </legend>
-
-          <div class="flex flex-wrap items-center gap-2">
-            <label
-              class="label cursor-pointer gap-2 h-full hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="reason-for-seeking-mld-medical"
-            >
-              <input
-                id="reason-for-seeking-mld-medical"
-                type="radio"
-                name="reason"
-                value="medical"
-                class="radio radio-primary"
-                required
-              />
-              <span>Medical reason</span>
-            </label>
-            <label
-              class="label cursor-pointer gap-2 h-full hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="reason-for-seeking-mld-relaxation"
-            >
-              <input
-                id="reason-for-seeking-mld-relaxation"
-                type="radio"
-                name="reason"
-                value="relaxation"
-                class="radio radio-primary"
-              />
-              <span>Relaxation</span>
-            </label>
-            <label
-              class="label cursor-pointer gap-2 h-full hover:bg-base-200 p-3 rounded-full transition-colors"
-              for="reason-for-seeking-mld-other"
-            >
-              <input
-                id="reason-for-seeking-mld-other"
-                type="radio"
-                name="reason"
-                value="other"
-                class="radio radio-primary"
-              />
-              <span>Other</span>
-            </label>
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <label class="p label whitespace-normal" for="reason-for-seeking-mld-medical-start">
-              If you are here for a medical issue, when did the problem start?
-            </label>
-            <input
-              id="reason-for-seeking-mld-medical-start"
-              type="text"
-              placeholder="Please describe when the problem began"
-              class="input input-bordered w-full"
-            />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <label
-              class="p label whitespace-normal"
-              for="reason-for-seeking-mld-medical-description"
-            >
-              Please describe your problem including where it is and its severity. <span
-                class="text-accent">*</span
-              >
-            </label>
-            <textarea
-              id="reason-for-seeking-mld-medical-description"
-              class="textarea textarea-bordered h-32 w-full rounded-box"
-              placeholder="Please provide detailed description..."
-              required></textarea>
-          </div>
-        </fieldset>
-      </Card>
-
-      <!-- Medical Conditions Section -->
-      <Card id="medical-conditions">
-        <h2 class="card-title text-2xl mb-6">Medical Conditions</h2>
-
-        <fieldset class="space-y-8">
-          <legend class="p label whitespace-normal"
-            >In order to create the most beneficial session, please mark all current and previous
-            conditions that apply. If none apply, select other and write n/a.</legend
-          >
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Left Column -->
             <div class="space-y-4">
-              <!-- General Conditions -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  General <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-fever"
-                      />
-                      <label for="medical-conditions-general-fever">Fever</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-cancer-treatment"
-                      />
-                      <label for="medical-conditions-general-cancer-treatment"
-                        >Undergoing cancer treatment</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-last-chemotherapy-session"
-                      />
-                      <label for="medical-conditions-general-last-chemotherapy-session"
-                        >Last chemotherapy session</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-arteriosclerosis"
-                      />
-                      <label for="medical-conditions-general-arteriosclerosis"
-                        >Arteriosclerosis</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-carotid-sinus-issues"
-                      />
-                      <label for="medical-conditions-general-carotid-sinus-issues"
-                        >Carotid sinus issues</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-hyperthyroidism"
-                      />
-                      <label for="medical-conditions-general-hyperthyroidism">Hyperthyroidism</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-liver-cirrhosis"
-                      />
-                      <label for="medical-conditions-general-liver-cirrhosis">Liver Cirrhosis</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-other"
-                      />
-                      <label for="medical-conditions-general-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-general-na"
-                      />
-                      <label for="medical-conditions-general-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-general-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-general-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+              <!-- Name -->
+              <fieldset class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="first-name">First Name <span class="text-accent">*</span></label>
+                  <input
+                    id="first-name"
+                    type="text"
+                    placeholder="Jane"
+                    class="input input-bordered w-full"
+                    required
+                  />
                 </div>
-              </div>
+                <div class="flex flex-col gap-2">
+                  <label for="last-name">Last Name <span class="text-accent">*</span></label>
+                  <input
+                    id="last-name"
+                    type="text"
+                    placeholder="Doe"
+                    class="input input-bordered w-full"
+                    required
+                  />
+                </div>
+              </fieldset>
 
-              <!-- Ears, Nose, Throat -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Ears, Nose, Throat <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-ears-nose-throat-ringing-in-ears"
-                      />
-                      <label for="medical-conditions-ears-nose-throat-ringing-in-ears"
-                        >Ringing in ears</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-ears-nose-throat-sinus-problems"
-                      />
-                      <label for="medical-conditions-ears-nose-throat-sinus-problems"
-                        >Sinus problems</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-ears-nose-throat-earaches"
-                      />
-                      <label for="medical-conditions-ears-nose-throat-earaches">Earaches</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-ears-nose-throat-other"
-                      />
-                      <label for="medical-conditions-ears-nose-throat-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-ears-nose-throat-na"
-                      />
-                      <label for="medical-conditions-ears-nose-throat-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-ears-nose-throat-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-ears-nose-throat-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+              <!-- Phone Numbers -->
+              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="phone-day">Phone (day)</label>
+                  <input
+                    id="phone-day"
+                    type="tel"
+                    placeholder="(123) 456-7890"
+                    class="input input-bordered w-full"
+                  />
                 </div>
-              </div>
 
-              <!-- Cardiovascular -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Cardiovascular <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-chest-pain-or-pressure"
-                      />
-                      <label for="medical-conditions-cardiovascular-chest-pain-or-pressure"
-                        >Chest pain or pressure</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-swelling-of-legs"
-                      />
-                      <label for="medical-conditions-cardiovascular-swelling-of-legs"
-                        >Swelling of legs</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-palpitations"
-                      />
-                      <label for="medical-conditions-cardiovascular-palpitations"
-                        >Palpitations</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-varicose-veins"
-                      />
-                      <label for="medical-conditions-cardiovascular-varicose-veins"
-                        >Varicose veins</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-dizziness"
-                      />
-                      <label for="medical-conditions-cardiovascular-dizziness">Dizziness</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-acute-deep-vein-thrombosis"
-                      />
-                      <label for="medical-conditions-cardiovascular-acute-deep-vein-thrombosis"
-                        >Acute deep vein thrombosis</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-congestive-heart-failure"
-                      />
-                      <label for="medical-conditions-cardiovascular-congestive-heart-failure"
-                        >Congestive heart failure</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-heart-attack"
-                      />
-                      <label for="medical-conditions-cardiovascular-heart-attack"
-                        >Heart attack</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-high-low-blood-pressure"
-                      />
-                      <label for="medical-conditions-cardiovascular-high-low-blood-pressure"
-                        >High/Low blood pressure</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-aneurysm"
-                      />
-                      <label for="medical-conditions-cardiovascular-aneurysm">Aneurysm</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-cardiac-arrhythmia"
-                      />
-                      <label for="medical-conditions-cardiovascular-cardiac-arrhythmia"
-                        >Cardiac arrhythmia</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-other"
-                      />
-                      <label for="medical-conditions-cardiovascular-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-cardiovascular-na"
-                      />
-                      <label for="medical-conditions-cardiovascular-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-cardiovascular-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-cardiovascular-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+                <div class="flex flex-col gap-2">
+                  <label for="phone-evening">
+                    Phone (evening) <span class="text-accent">*</span>
+                  </label>
+                  <input
+                    id="phone-evening"
+                    type="tel"
+                    placeholder="(123) 456-7890"
+                    class="input input-bordered w-full"
+                    required
+                  />
                 </div>
-              </div>
+              </fieldset>
 
-              <!-- Gastro-Intestinal -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Gastro-Intestinal <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-gastro-intestinal-crohns-disease"
-                      />
-                      <label for="medical-conditions-gastro-intestinal-crohns-disease"
-                        >Crohn's disease</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-gastro-intestinal-abdominal-pain"
-                      />
-                      <label for="medical-conditions-gastro-intestinal-abdominal-pain"
-                        >Abdominal pain</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-gastro-intestinal-surgical-implant-mesh-or-other"
-                      />
-                      <label
-                        for="medical-conditions-gastro-intestinal-surgical-implant-mesh-or-other"
-                        >Surgical implant(mesh or other)</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-gastro-intestinal-gi-inflammation"
-                      />
-                      <label for="medical-conditions-gastro-intestinal-gi-inflammation"
-                        >GI inflammation</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-gastro-intestinal-diverticulitis-diverticulosis"
-                      />
-                      <label
-                        for="medical-conditions-gastro-intestinal-diverticulitis-diverticulosis"
-                        >Diverticulitis/Diverticulosis</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-gastro-intestinal-other"
-                      />
-                      <label for="medical-conditions-gastro-intestinal-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-gastro-intestinal-na"
-                      />
-                      <label for="medical-conditions-gastro-intestinal-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-gastro-intestinal-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-gastro-intestinal-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+              <!-- Email and Date of Birth -->
+              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="email">
+                    Email <span class="text-accent">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="your.email@example.com"
+                    class="input input-bordered w-full"
+                    required
+                  />
                 </div>
-              </div>
 
-              <!-- Urinary -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Urinary <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-urinary-kidney-failure"
-                      />
-                      <label for="medical-conditions-urinary-kidney-failure">Kidney failure</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-urinary-kidney-stones"
-                      />
-                      <label for="medical-conditions-urinary-kidney-stones">Kidney stones</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-urinary-urinary-tract-infection"
-                      />
-                      <label for="medical-conditions-urinary-urinary-tract-infection"
-                        >Urinary tract infection</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-urinary-dialysis"
-                      />
-                      <label for="medical-conditions-urinary-dialysis">Dialysis</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-urinary-other"
-                      />
-                      <label for="medical-conditions-urinary-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-urinary-na"
-                      />
-                      <label for="medical-conditions-urinary-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-urinary-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-urinary-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+                <div class="flex flex-col gap-2">
+                  <label for="date-of-birth">
+                    Date of Birth <span class="text-accent">*</span>
+                  </label>
+                  <input
+                    id="date-of-birth"
+                    type="date"
+                    class="input input-bordered w-full"
+                    required
+                  />
                 </div>
-              </div>
+              </fieldset>
+
+              <!-- Pronouns -->
+              <fieldset class="flex flex-col gap-2">
+                <label for="pronouns">What are your pronouns?</label>
+                <input
+                  id="pronouns"
+                  type="text"
+                  placeholder="e.g., she/her, he/him, they/them"
+                  class="input input-bordered w-full"
+                />
+              </fieldset>
             </div>
 
             <!-- Right Column -->
             <div class="space-y-4">
-              <!-- Female Reproductive -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Female Reproductive<span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-female-reproductive-currently-pregnant"
-                      />
-                      <label for="medical-conditions-female-reproductive-currently-pregnant"
-                        >Currently pregnant</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-female-reproductive-currently-menstruating"
-                      />
-                      <label for="medical-conditions-female-reproductive-currently-menstruating"
-                        >Currently menstruating</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-female-reproductive-fibrocystic-breast-disease"
-                      />
-                      <label for="medical-conditions-female-reproductive-fibrocystic-breast-disease"
-                        >Fibrocystic breast disease</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-female-reproductive-iud"
-                      />
-                      <label for="medical-conditions-female-reproductive-iud">IUD</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-female-reproductive-other"
-                      />
-                      <label for="medical-conditions-female-reproductive-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-female-reproductive-na"
-                      />
-                      <label for="medical-conditions-female-reproductive-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-female-reproductive-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-female-reproductive-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+              <!-- Address -->
+              <fieldset class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="street-address"
+                    >Street Address <span class="text-accent">*</span></label
+                  >
+                  <input
+                    id="street-address"
+                    type="text"
+                    placeholder="123 Main St"
+                    class="input input-bordered w-full"
+                    required
+                  />
                 </div>
-              </div>
 
-              <!-- Musculoskeletal -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Musculoskeletal <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-musculoskeletal-osteoporosis"
-                      />
-                      <label for="medical-conditions-musculoskeletal-osteoporosis"
-                        >Osteoporosis</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-musculoskeletal-osteoarthritis"
-                      />
-                      <label for="medical-conditions-musculoskeletal-osteoarthritis"
-                        >Osteoarthritis</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-musculoskeletal-hernia"
-                      />
-                      <label for="medical-conditions-musculoskeletal-hernia">Hernia</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-musculoskeletal-rheumatoid-arthritis"
-                      />
-                      <label for="medical-conditions-musculoskeletal-rheumatoid-arthritis"
-                        >Rheumatoid arthritis</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-musculoskeletal-other"
-                      />
-                      <label for="medical-conditions-musculoskeletal-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-musculoskeletal-na"
-                      />
-                      <label for="medical-conditions-musculoskeletal-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-musculoskeletal-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-musculoskeletal-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+                <div class="flex flex-col gap-2">
+                  <label for="address-line-2">Address Line 2</label>
+                  <input
+                    id="address-line-2"
+                    type="text"
+                    placeholder="Apt 1"
+                    class="input input-bordered w-full"
+                  />
                 </div>
-              </div>
 
-              <!-- Skin -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Skin <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-skin-cellulitis-bacterial-skin-infection"
-                      />
-                      <label for="medical-conditions-skin-cellulitis-bacterial-skin-infection"
-                        >Cellulitis (bacterial skin infection)</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-skin-rash"
-                      />
-                      <label for="medical-conditions-skin-rash">Rash</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-skin-major-scars"
-                      />
-                      <label for="medical-conditions-skin-major-scars">Major scars</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-skin-lumps"
-                      />
-                      <label for="medical-conditions-skin-lumps">Lumps</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-skin-other"
-                      />
-                      <label for="medical-conditions-skin-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-skin-na"
-                      />
-                      <label for="medical-conditions-skin-na">N/A</label>
-                    </div>
-                  </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                   <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-skin-other-specify"
-                      >If other, please explain</label
-                    >
+                    <label for="city">City <span class="text-accent">*</span></label>
                     <input
-                      id="medical-conditions-skin-other-specify"
+                      id="city"
                       type="text"
-                      placeholder="Please describe your condition"
+                      placeholder="New York"
                       class="input input-bordered w-full"
+                      required
                     />
                   </div>
-                </div>
-              </div>
 
-              <!-- Hematologic/Lymphatic -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Hematologic/Lymphatic <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding"
-                      />
-                      <label
-                        for="medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding"
-                        >Cuts that do not stop bleeding</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes-glands"
-                      />
-                      <label
-                        for="medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes-glands"
-                        >Enlarged lymph nodes (glands)</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-lymph-nodes-removed"
-                      />
-                      <label for="medical-conditions-hematologic-lymphatic-lymph-nodes-removed"
-                        >Lymph nodes removed</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-frequent-bruising"
-                      />
-                      <label for="medical-conditions-hematologic-lymphatic-frequent-bruising"
-                        >Frequent bruising</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-hiv-aids"
-                      />
-                      <label for="medical-conditions-hematologic-lymphatic-hiv-aids">HIV/AIDS</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-factor-v-leiden"
-                      />
-                      <label for="medical-conditions-hematologic-lymphatic-factor-v-leiden"
-                        >Factor V Leiden</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-clotting-issues"
-                      />
-                      <label for="medical-conditions-hematologic-lymphatic-clotting-issues"
-                        >Clotting issues</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-hematologic-lymphatic-na"
-                      />
-                      <label for="medical-conditions-hematologic-lymphatic-na">N/A</label>
-                    </div>
-                  </div>
                   <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-hematologic-lymphatic-other-specify"
-                      >If other, please explain</label
-                    >
+                    <label for="state">State <span class="text-accent">*</span></label>
                     <input
-                      id="medical-conditions-hematologic-lymphatic-other-specify"
+                      id="state"
                       type="text"
-                      placeholder="Please describe your condition"
+                      placeholder="NY"
                       class="input input-bordered w-full"
+                      required
                     />
                   </div>
-                </div>
-              </div>
 
-              <!-- Neurological -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Neurological <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-neurological-strokes"
-                      />
-                      <label for="medical-conditions-neurological-strokes">Strokes</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-neurological-seizures"
-                      />
-                      <label for="medical-conditions-neurological-seizures">Seizures</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-neurological-other"
-                      />
-                      <label for="medical-conditions-neurological-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-neurological-na"
-                      />
-                      <label for="medical-conditions-neurological-na">N/A</label>
-                    </div>
-                  </div>
                   <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-neurological-other-specify"
-                      >If other, please explain</label
-                    >
+                    <label for="zip-code">ZIP Code <span class="text-accent">*</span></label>
                     <input
-                      id="medical-conditions-neurological-other-specify"
+                      id="zip-code"
                       type="text"
-                      placeholder="Please describe your condition"
+                      placeholder="12345"
                       class="input input-bordered w-full"
+                      required
                     />
                   </div>
                 </div>
-              </div>
 
-              <!-- Allergies -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Allergies <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-allergies-ear-fullness"
-                      />
-                      <label for="medical-conditions-allergies-ear-fullness">Ear fullness</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-allergies-sinus-congestion"
-                      />
-                      <label for="medical-conditions-allergies-sinus-congestion"
-                        >Sinus congestion</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-allergies-recent-sinus-surgery"
-                      />
-                      <label for="medical-conditions-allergies-recent-sinus-surgery"
-                        >Recent sinus surgery</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-allergies-other"
-                      />
-                      <label for="medical-conditions-allergies-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-allergies-na"
-                      />
-                      <label for="medical-conditions-allergies-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-allergies-other-specify"
-                      >If other, please explain</label
+                <div class="flex flex-col gap-2">
+                  <label for="country">Country <span class="text-accent">*</span></label>
+                  <select id="country" class="select select-bordered w-full" required>
+                    <option value="" disabled selected>Select Country</option>
+                    <option value="Afghanistan">Afghanistan</option><option value="Albania"
+                      >Albania</option
+                    ><option value="Algeria">Algeria</option><option value="American Samoa"
+                      >American Samoa</option
+                    ><option value="Andorra">Andorra</option><option value="Angola">Angola</option
+                    ><option value="Anguilla">Anguilla</option><option value="Antarctica"
+                      >Antarctica</option
+                    ><option value="Antigua and Barbuda">Antigua and Barbuda</option><option
+                      value="Argentina">Argentina</option
+                    ><option value="Armenia">Armenia</option><option value="Aruba">Aruba</option
+                    ><option value="Australia">Australia</option><option value="Austria"
+                      >Austria</option
+                    ><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas"
+                      >Bahamas</option
+                    ><option value="Bahrain">Bahrain</option><option value="Bangladesh"
+                      >Bangladesh</option
+                    ><option value="Barbados">Barbados</option><option value="Belarus"
+                      >Belarus</option
+                    ><option value="Belgium">Belgium</option><option value="Belize">Belize</option
+                    ><option value="Benin">Benin</option><option value="Bermuda">Bermuda</option
+                    ><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option
+                    ><option value="Bonaire, Sint Eustatius and Saba"
+                      >Bonaire, Sint Eustatius and Saba</option
+                    ><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option
+                      value="Botswana">Botswana</option
+                    ><option value="Bouvet Island">Bouvet Island</option><option value="Brazil"
+                      >Brazil</option
+                    ><option value="British Indian Ocean Territory"
+                      >British Indian Ocean Territory</option
+                    ><option value="Brunei Darussalam">Brunei Darussalam</option><option
+                      value="Bulgaria">Bulgaria</option
+                    ><option value="Burkina Faso">Burkina Faso</option><option value="Burundi"
+                      >Burundi</option
+                    ><option value="Cabo Verde">Cabo Verde</option><option value="Cambodia"
+                      >Cambodia</option
+                    ><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option
+                    ><option value="Cayman Islands">Cayman Islands</option><option
+                      value="Central African Republic">Central African Republic</option
+                    ><option value="Chad">Chad</option><option value="Chile">Chile</option><option
+                      value="China">China</option
+                    ><option value="Christmas Island">Christmas Island</option><option
+                      value="Cocos Islands">Cocos Islands</option
+                    ><option value="Colombia">Colombia</option><option value="Comoros"
+                      >Comoros</option
+                    ><option value="Congo">Congo</option><option
+                      value="Congo, Democratic Republic of the"
+                      >Congo, Democratic Republic of the</option
+                    ><option value="Cook Islands">Cook Islands</option><option value="Costa Rica"
+                      >Costa Rica</option
+                    ><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option
+                    ><option value="Curaçao">Curaçao</option><option value="Cyprus">Cyprus</option
+                    ><option value="Czechia">Czechia</option><option value="Côte d'Ivoire"
+                      >Côte d'Ivoire</option
+                    ><option value="Denmark">Denmark</option><option value="Djibouti"
+                      >Djibouti</option
+                    ><option value="Dominica">Dominica</option><option value="Dominican Republic"
+                      >Dominican Republic</option
+                    ><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option
+                    ><option value="El Salvador">El Salvador</option><option
+                      value="Equatorial Guinea">Equatorial Guinea</option
+                    ><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option
+                    ><option value="Eswatini">Eswatini</option><option value="Ethiopia"
+                      >Ethiopia</option
+                    ><option value="Falkland Islands">Falkland Islands</option><option
+                      value="Faroe Islands">Faroe Islands</option
+                    ><option value="Fiji">Fiji</option><option value="Finland">Finland</option
+                    ><option value="France">France</option><option value="French Guiana"
+                      >French Guiana</option
+                    ><option value="French Polynesia">French Polynesia</option><option
+                      value="French Southern Territories">French Southern Territories</option
+                    ><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option
+                    ><option value="Georgia">Georgia</option><option value="Germany">Germany</option
+                    ><option value="Ghana">Ghana</option><option value="Gibraltar">Gibraltar</option
+                    ><option value="Greece">Greece</option><option value="Greenland"
+                      >Greenland</option
+                    ><option value="Grenada">Grenada</option><option value="Guadeloupe"
+                      >Guadeloupe</option
+                    ><option value="Guam">Guam</option><option value="Guatemala">Guatemala</option
+                    ><option value="Guernsey">Guernsey</option><option value="Guinea">Guinea</option
+                    ><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana"
+                      >Guyana</option
+                    ><option value="Haiti">Haiti</option><option
+                      value="Heard Island and McDonald Islands"
+                      >Heard Island and McDonald Islands</option
+                    ><option value="Holy See">Holy See</option><option value="Honduras"
+                      >Honduras</option
+                    ><option value="Hong Kong">Hong Kong</option><option value="Hungary"
+                      >Hungary</option
+                    ><option value="Iceland">Iceland</option><option value="India">India</option
+                    ><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option
+                    ><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option
+                    ><option value="Isle of Man">Isle of Man</option><option value="Israel"
+                      >Israel</option
+                    ><option value="Italy">Italy</option><option value="Jamaica">Jamaica</option
+                    ><option value="Japan">Japan</option><option value="Jersey">Jersey</option
+                    ><option value="Jordan">Jordan</option><option value="Kazakhstan"
+                      >Kazakhstan</option
+                    ><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option
+                    ><option value="Korea, Democratic People's Republic of"
+                      >Korea, Democratic People's Republic of</option
+                    ><option value="Korea, Republic of">Korea, Republic of</option><option
+                      value="Kuwait">Kuwait</option
+                    ><option value="Kyrgyzstan">Kyrgyzstan</option><option
+                      value="Lao People's Democratic Republic"
+                      >Lao People's Democratic Republic</option
+                    ><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option
+                    ><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option
+                    ><option value="Libya">Libya</option><option value="Liechtenstein"
+                      >Liechtenstein</option
+                    ><option value="Lithuania">Lithuania</option><option value="Luxembourg"
+                      >Luxembourg</option
+                    ><option value="Macao">Macao</option><option value="Madagascar"
+                      >Madagascar</option
+                    ><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option
+                    ><option value="Maldives">Maldives</option><option value="Mali">Mali</option
+                    ><option value="Malta">Malta</option><option value="Marshall Islands"
+                      >Marshall Islands</option
+                    ><option value="Martinique">Martinique</option><option value="Mauritania"
+                      >Mauritania</option
+                    ><option value="Mauritius">Mauritius</option><option value="Mayotte"
+                      >Mayotte</option
+                    ><option value="Mexico">Mexico</option><option value="Micronesia"
+                      >Micronesia</option
+                    ><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option
+                    ><option value="Mongolia">Mongolia</option><option value="Montenegro"
+                      >Montenegro</option
+                    ><option value="Montserrat">Montserrat</option><option value="Morocco"
+                      >Morocco</option
+                    ><option value="Mozambique">Mozambique</option><option value="Myanmar"
+                      >Myanmar</option
+                    ><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option
+                    ><option value="Nepal">Nepal</option><option value="Netherlands"
+                      >Netherlands</option
+                    ><option value="New Caledonia">New Caledonia</option><option value="New Zealand"
+                      >New Zealand</option
+                    ><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option
+                    ><option value="Nigeria">Nigeria</option><option value="Niue">Niue</option
+                    ><option value="Norfolk Island">Norfolk Island</option><option
+                      value="North Macedonia">North Macedonia</option
+                    ><option value="Northern Mariana Islands">Northern Mariana Islands</option
+                    ><option value="Norway">Norway</option><option value="Oman">Oman</option><option
+                      value="Pakistan">Pakistan</option
+                    ><option value="Palau">Palau</option><option value="Palestine, State of"
+                      >Palestine, State of</option
+                    ><option value="Panama">Panama</option><option value="Papua New Guinea"
+                      >Papua New Guinea</option
+                    ><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option
+                    ><option value="Philippines">Philippines</option><option value="Pitcairn"
+                      >Pitcairn</option
+                    ><option value="Poland">Poland</option><option value="Portugal">Portugal</option
+                    ><option value="Puerto Rico">Puerto Rico</option><option value="Qatar"
+                      >Qatar</option
+                    ><option value="Romania">Romania</option><option value="Russian Federation"
+                      >Russian Federation</option
+                    ><option value="Rwanda">Rwanda</option><option value="Réunion">Réunion</option
+                    ><option value="Saint Barthélemy">Saint Barthélemy</option><option
+                      value="Saint Helena, Ascension and Tristan da Cunha"
+                      >Saint Helena, Ascension and Tristan da Cunha</option
+                    ><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option
+                      value="Saint Lucia">Saint Lucia</option
+                    ><option value="Saint Martin">Saint Martin</option><option
+                      value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option
+                    ><option value="Saint Vincent and the Grenadines"
+                      >Saint Vincent and the Grenadines</option
+                    ><option value="Samoa">Samoa</option><option value="San Marino"
+                      >San Marino</option
+                    ><option value="Sao Tome and Principe">Sao Tome and Principe</option><option
+                      value="Saudi Arabia">Saudi Arabia</option
+                    ><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option
+                    ><option value="Seychelles">Seychelles</option><option value="Sierra Leone"
+                      >Sierra Leone</option
+                    ><option value="Singapore">Singapore</option><option value="Sint Maarten"
+                      >Sint Maarten</option
+                    ><option value="Slovakia">Slovakia</option><option value="Slovenia"
+                      >Slovenia</option
+                    ><option value="Solomon Islands">Solomon Islands</option><option value="Somalia"
+                      >Somalia</option
+                    ><option value="South Africa">South Africa</option><option
+                      value="South Georgia and the South Sandwich Islands"
+                      >South Georgia and the South Sandwich Islands</option
+                    ><option value="South Sudan">South Sudan</option><option value="Spain"
+                      >Spain</option
+                    ><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option
+                    ><option value="Suriname">Suriname</option><option
+                      value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option
+                    ><option value="Sweden">Sweden</option><option value="Switzerland"
+                      >Switzerland</option
+                    ><option value="Syria Arab Republic">Syria Arab Republic</option><option
+                      value="Taiwan">Taiwan</option
+                    ><option value="Tajikistan">Tajikistan</option><option
+                      value="Tanzania, the United Republic of"
+                      >Tanzania, the United Republic of</option
+                    ><option value="Thailand">Thailand</option><option value="Timor-Leste"
+                      >Timor-Leste</option
+                    ><option value="Togo">Togo</option><option value="Tokelau">Tokelau</option
+                    ><option value="Tonga">Tonga</option><option value="Trinidad and Tobago"
+                      >Trinidad and Tobago</option
+                    ><option value="Tunisia">Tunisia</option><option value="Turkmenistan"
+                      >Turkmenistan</option
+                    ><option value="Turks and Caicos Islands">Turks and Caicos Islands</option
+                    ><option value="Tuvalu">Tuvalu</option><option value="Türkiye">Türkiye</option
+                    ><option value="US Minor Outlying Islands">US Minor Outlying Islands</option
+                    ><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option
+                    ><option value="United Arab Emirates">United Arab Emirates</option><option
+                      value="United Kingdom">United Kingdom</option
+                    ><option value="United States">United States</option><option value="Uruguay"
+                      >Uruguay</option
+                    ><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu"
+                      >Vanuatu</option
+                    ><option value="Venezuela">Venezuela</option><option value="Viet Nam"
+                      >Viet Nam</option
+                    ><option value="Virgin Islands, British">Virgin Islands, British</option><option
+                      value="Virgin Islands, U.S.">Virgin Islands, U.S.</option
+                    ><option value="Wallis and Futuna">Wallis and Futuna</option><option
+                      value="Western Sahara">Western Sahara</option
+                    ><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option
+                    ><option value="Zimbabwe">Zimbabwe</option><option value="Åland Islands"
+                      >Åland Islands</option
                     >
-                    <input
-                      id="medical-conditions-allergies-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
+                  </select>
                 </div>
-              </div>
-
-              <!-- Emotional -->
-              <div class="collapse collapse-arrow bg-base-200">
-                <input type="checkbox" />
-                <h3 class="collapse-title text-lg font-medium">
-                  Emotional <span class="text-accent">*</span>
-                </h3>
-                <div class="collapse-content space-y-8">
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-emotional-stress"
-                      />
-                      <label for="medical-conditions-emotional-stress">Stress</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-emotional-anxiety"
-                      />
-                      <label for="medical-conditions-emotional-anxiety">Anxiety</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-emotional-difficulty-sleeping"
-                      />
-                      <label for="medical-conditions-emotional-difficulty-sleeping"
-                        >Difficulty sleeping</label
-                      >
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-emotional-depression"
-                      />
-                      <label for="medical-conditions-emotional-depression">Depression</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-emotional-other"
-                      />
-                      <label for="medical-conditions-emotional-other">Other</label>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        class="checkbox checkbox-primary"
-                        id="medical-conditions-emotional-na"
-                      />
-                      <label for="medical-conditions-emotional-na">N/A</label>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="medical-conditions-emotional-other-specify"
-                      >If other, please explain</label
-                    >
-                    <input
-                      id="medical-conditions-emotional-other-specify"
-                      type="text"
-                      placeholder="Please describe your condition"
-                      class="input input-bordered w-full"
-                    />
-                  </div>
-                </div>
-              </div>
+              </fieldset>
             </div>
           </div>
-        </fieldset>
-      </Card>
+        </Card>
 
-      <!-- Surgeries Section -->
-      <Card id="surgeries">
-        <h2 class="card-title text-2xl mb-6">Surgeries</h2>
+        <!-- Emergency Contact Section -->
+        <Card id="emergency-contact">
+          <h2 class="card-title text-2xl mb-6">In Case of Emergency</h2>
 
-        <fieldshet id="surgeries-container" class="space-y-8">
-          <legend class="p label whitespace-normal"
-            >Please list all surgeries (including Cesarean section).</legend
-          >
-          <div class="surgery-entry grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <label class="sr-only" for="surgery-name">Surgery</label>
-            <input
-              id="surgery-name"
-              type="text"
-              placeholder="Surgery"
-              class="input input-bordered w-full"
-            />
-            <label class="sr-only" for="surgery-date">Date</label>
-            <input id="surgery-date" type="date" class="input input-bordered w-full" />
-            <label class="sr-only" for="surgery-hospital-and-surgeon">Hospital and Surgeon</label>
-            <div class="flex gap-2">
-              <input
-                id="surgery-hospital-and-surgeon"
-                type="text"
-                placeholder="Hospital and Surgeon"
-                class="input input-bordered w-full flex-1"
-              />
-              <button
-                type="button"
-                class="btn btn-square btn-outline btn-error remove-entry remove-surgery-btn"
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="emergency-contact-name">
+                    Emergency Contact <span class="text-accent">*</span>
+                  </label>
+                  <input
+                    id="emergency-contact-name"
+                    type="text"
+                    placeholder="Contact Name"
+                    class="input input-bordered w-full"
+                    required
+                  />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <label for="emergency-contact-phone">
+                    Phone <span class="text-accent">*</span>
+                  </label>
+                  <input
+                    id="emergency-contact-phone"
+                    type="tel"
+                    placeholder="(555) 123-4567"
+                    class="input input-bordered w-full"
+                    required
+                  />
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="space-y-4">
+              <fieldset class="flex flex-col gap-2">
+                <label for="emergency-contact-physician">
+                  Primary Care Physician and Clinic <span class="text-accent">*</span>
+                </label>
+                <input
+                  id="emergency-contact-physician"
+                  type="text"
+                  placeholder="Dr. Name and Clinic Name"
+                  class="input input-bordered w-full"
+                  required
+                />
+              </fieldset>
+            </div>
+          </div>
+        </Card>
+
+        <!-- How Did You Hear About Us Section -->
+        <Card id="how-did-you-hear-about-us">
+          <h2 class="card-title text-2xl mb-6">How Did You Hear About Us?</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
+            <div class="grid grid-cols-1 gap-3">
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-search"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </fieldshet>
-
-        <button id="add-surgery-button" type="button" class="btn btn-outline btn-primary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"
-            ></path>
-          </svg>
-          Add Surgery
-        </button>
-      </Card>
-
-      <!-- Medications Section -->
-      <Card id="medications">
-        <h2 class="card-title text-2xl mb-6">Medications</h2>
-
-        <fieldset id="medications-container" class="space-y-8">
-          <legend class="p label whitespace-normal">
-            Please list all medications (including vitamins, hormones, and herbs) and reason for
-            prescription.
-          </legend>
-          <div class="medication-entry grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <label class="sr-only" for="medication-name">Medication</label>
-            <input
-              id="medication-name"
-              type="text"
-              placeholder="Medication"
-              class="input input-bordered w-full"
-            />
-            <div class="flex gap-2">
-              <label class="sr-only" for="medication-reason">Reason</label>
-              <input
-                id="medication-reason"
-                type="text"
-                placeholder="Reason"
-                class="input input-bordered w-full flex-1"
-              />
-              <button
-                type="button"
-                class="btn btn-square btn-outline btn-error remove-entry remove-medication-btn"
+                <input
+                  id="hear-about-search"
+                  type="radio"
+                  name="hear-about"
+                  value="search"
+                  class="radio radio-primary"
+                />
+                <span>Search engine (google, etc)</span>
+              </label>
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-doctor"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
+                <input
+                  id="hear-about-doctor"
+                  type="radio"
+                  name="hear-about"
+                  value="doctor"
+                  class="radio radio-primary"
+                />
+                <span>Doctor/surgeon</span>
+              </label>
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-local"
+              >
+                <input
+                  id="hear-about-local"
+                  type="radio"
+                  name="hear-about"
+                  value="local"
+                  class="radio radio-primary"
+                />
+                <span>Local business</span>
+              </label>
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-friend"
+              >
+                <input
+                  id="hear-about-friend"
+                  type="radio"
+                  name="hear-about"
+                  value="friend"
+                  class="radio radio-primary"
+                />
+                <span>Friend or colleague</span>
+              </label>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3">
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-social"
+              >
+                <input
+                  id="hear-about-social"
+                  type="radio"
+                  name="hear-about"
+                  value="social"
+                  class="radio radio-primary"
+                />
+                <span>Social media</span>
+              </label>
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-blog"
+              >
+                <input
+                  id="hear-about-blog"
+                  type="radio"
+                  name="hear-about"
+                  value="blog"
+                  class="radio radio-primary"
+                />
+                <span>Blog</span>
+              </label>
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-booksy"
+              >
+                <input
+                  id="hear-about-booksy"
+                  type="radio"
+                  name="hear-about"
+                  value="booksy"
+                  class="radio radio-primary"
+                />
+                <span>Booksy</span>
+              </label>
+              <label
+                class="label cursor-pointer hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="hear-about-other"
+              >
+                <input
+                  id="hear-about-other"
+                  type="radio"
+                  name="hear-about"
+                  value="other"
+                  class="radio radio-primary"
+                />
+                <span>Other</span>
+              </label>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="hear-about-other-specify">Please Specify</label>
+              <input
+                id="hear-about-other-specify"
+                type="text"
+                placeholder="Facebook, Instagram, etc."
+                class="input input-bordered w-full"
+              />
             </div>
           </div>
-        </fieldset>
+        </Card>
 
-        <button id="add-medication-button" type="button" class="btn btn-outline btn-primary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"
-            ></path>
-          </svg>
-          Add Medication
-        </button>
-      </Card>
+        <!-- Reason for Seeking MLD Section -->
+        <Card id="reason-for-seeking-mld">
+          <h2 class="card-title text-2xl mb-6">Reason for Seeking Manual Lymphatic Drainage</h2>
 
-      <!-- Additional Information Section -->
-      <Card id="additional-information-container">
-        <h2 class="card-title text-2xl mb-6">Additional Information</h2>
+          <fieldset class="flex flex-col gap-4">
+            <legend class="p label whitespace-normal mb-2">
+              For what reason are you seeking Manual Lymphatic Drainage? <span class="text-accent"
+                >*</span
+              >
+            </legend>
 
-        <fieldset class="space-y-8">
-          <legend class="p label whitespace-normal">
-            Is there anything else that your MLD therapist should know about you or your needs
-            before the session?</legend
-          >
-          <label class="sr-only" for="additional-information">Additional Information</label>
-          <textarea
-            id="additional-information"
-            class="textarea h-32 w-full rounded-box"
-            placeholder="Please provide any additional information..."></textarea>
-        </fieldset>
-      </Card>
+            <div class="flex flex-wrap items-center gap-2">
+              <label
+                class="label cursor-pointer gap-2 h-full hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="reason-for-seeking-mld-medical"
+              >
+                <input
+                  id="reason-for-seeking-mld-medical"
+                  type="radio"
+                  name="reason"
+                  value="medical"
+                  class="radio radio-primary"
+                  required
+                />
+                <span>Medical reason</span>
+              </label>
+              <label
+                class="label cursor-pointer gap-2 h-full hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="reason-for-seeking-mld-relaxation"
+              >
+                <input
+                  id="reason-for-seeking-mld-relaxation"
+                  type="radio"
+                  name="reason"
+                  value="relaxation"
+                  class="radio radio-primary"
+                />
+                <span>Relaxation</span>
+              </label>
+              <label
+                class="label cursor-pointer gap-2 h-full hover:bg-base-200 p-3 rounded-full transition-colors"
+                for="reason-for-seeking-mld-other"
+              >
+                <input
+                  id="reason-for-seeking-mld-other"
+                  type="radio"
+                  name="reason"
+                  value="other"
+                  class="radio radio-primary"
+                />
+                <span>Other</span>
+              </label>
+            </div>
 
-      <!-- Consent Section -->
-      <Card id="consent">
-        <h2 class="card-title text-2xl mb-6">Consent and Understanding</h2>
+            <div class="flex flex-col gap-2">
+              <label class="p label whitespace-normal" for="reason-for-seeking-mld-medical-start">
+                If you are here for a medical issue, when did the problem start?
+              </label>
+              <input
+                id="reason-for-seeking-mld-medical-start"
+                type="text"
+                placeholder="Please describe when the problem began"
+                class="input input-bordered w-full"
+              />
+            </div>
 
-        <div class="prose">
-          <p>
-            I understand that the Manual Lymphatic Drainage I receive is provided for the basic
-            purpose of improving the flow of my lymphatic system and also for relaxation. If I
-            experience any pain or discomfort during this session, I will immediately inform the
-            practitioner so that the pressure and/or strokes may be adjusted to my level of comfort.
-            I further understand that massage or bodywork should not be construed as a substitute
-            for medical examination, diagnosis, or treatment and that I should see a physician,
-            chiropractor, or other qualified medical specialist for any mental or physical ailment
-            of which I am aware. I understand that massage/bodywork practitioners are not qualified
-            to perform spinal or skeletal adjustments, diagnose, prescribe, or treat any physical or
-            mental illness, and that nothing said in the course of the session given should be
-            construed as such. Because massage/ bodywork should not be performed under certain
-            medical conditions, I affirm that I have stated all my known medical conditions and
-            answered all questions honestly. I agree to keep the practitioner updated as to any
-            changes in my medical profile and understand that there shall be no liability on the
-            practitioner's part should I fail to do so.
-          </p>
-          <p>
-            *Please Note: Manual Lymphatic Drainage (MLD) is a very powerful modality and certain
-            medical conditions are contraindicated and determine if and when you can receive a
-            session. After the consultation and review of the information you have provided on this
-            form, it will be determined if MLD should be administered to you today. Some conditions
-            will require a note from your doctor before proceeding. Please understand this is for
-            your safety and well-being.
-          </p>
-          <label class="label cursor-pointer">
-            <input type="checkbox" class="checkbox checkbox-primary" required />
-            I understand and agree to the above terms <span class="text-accent">*</span>
-          </label>
-        </div>
-      </Card>
+            <div class="flex flex-col gap-2">
+              <label
+                class="p label whitespace-normal"
+                for="reason-for-seeking-mld-medical-description"
+              >
+                Please describe your problem including where it is and its severity. <span
+                  class="text-accent">*</span
+                >
+              </label>
+              <textarea
+                id="reason-for-seeking-mld-medical-description"
+                class="textarea textarea-bordered h-32 w-full rounded-box"
+                placeholder="Please provide detailed description..."
+                required></textarea>
+            </div>
+          </fieldset>
+        </Card>
 
-      <!-- Minor Consent Section -->
-      <Card id="minor-consent">
-        <h2 class="card-title text-2xl mb-6">Consent to Treatment of Minor</h2>
+        <!-- Medical Conditions Section -->
+        <Card id="medical-conditions">
+          <h2 class="card-title text-2xl mb-6">Medical Conditions</h2>
 
-        <div class="prose">
-          <p>
-            By my signature below, I hereby authorize Dr. Courtney Rolnick, PT, DPT, CMLDT, to
-            administer Manual Lymphatic Drainage techniques to my child or dependent as they deem
-            necessary.
-          </p>
-          <label class="flex flex-col gap-2">
-            <span class="label whitespace-normal">Signature of Parent or Guardian</span>
-            <input
-              type="text"
-              placeholder="Type your full name to sign"
-              class="input input-bordered w-full"
-            />
-          </label>
-        </div>
-      </Card>
+          <fieldset class="space-y-8">
+            <legend class="p label whitespace-normal"
+              >In order to create the most beneficial session, please mark all current and previous
+              conditions that apply. If none apply, select other and write n/a.</legend
+            >
 
-      <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary btn-lg mx-auto block">
-        Submit Intake Form
-      </button>
-    </form>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+              <!-- Left Column -->
+              <div class="space-y-4">
+                <!-- General Conditions -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    General <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-fever"
+                        />
+                        <label for="medical-conditions-general-fever">Fever</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-cancer-treatment"
+                        />
+                        <label for="medical-conditions-general-cancer-treatment"
+                          >Undergoing cancer treatment</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-last-chemotherapy-session"
+                        />
+                        <label for="medical-conditions-general-last-chemotherapy-session"
+                          >Last chemotherapy session</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-arteriosclerosis"
+                        />
+                        <label for="medical-conditions-general-arteriosclerosis"
+                          >Arteriosclerosis</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-carotid-sinus-issues"
+                        />
+                        <label for="medical-conditions-general-carotid-sinus-issues"
+                          >Carotid sinus issues</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-hyperthyroidism"
+                        />
+                        <label for="medical-conditions-general-hyperthyroidism"
+                          >Hyperthyroidism</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-liver-cirrhosis"
+                        />
+                        <label for="medical-conditions-general-liver-cirrhosis"
+                          >Liver Cirrhosis</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-other"
+                        />
+                        <label for="medical-conditions-general-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-general-na"
+                        />
+                        <label for="medical-conditions-general-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-general-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-general-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Ears, Nose, Throat -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Ears, Nose, Throat <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-ears-nose-throat-ringing-in-ears"
+                        />
+                        <label for="medical-conditions-ears-nose-throat-ringing-in-ears"
+                          >Ringing in ears</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-ears-nose-throat-sinus-problems"
+                        />
+                        <label for="medical-conditions-ears-nose-throat-sinus-problems"
+                          >Sinus problems</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-ears-nose-throat-earaches"
+                        />
+                        <label for="medical-conditions-ears-nose-throat-earaches">Earaches</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-ears-nose-throat-other"
+                        />
+                        <label for="medical-conditions-ears-nose-throat-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-ears-nose-throat-na"
+                        />
+                        <label for="medical-conditions-ears-nose-throat-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-ears-nose-throat-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-ears-nose-throat-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Cardiovascular -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Cardiovascular <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-chest-pain-or-pressure"
+                        />
+                        <label for="medical-conditions-cardiovascular-chest-pain-or-pressure"
+                          >Chest pain or pressure</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-swelling-of-legs"
+                        />
+                        <label for="medical-conditions-cardiovascular-swelling-of-legs"
+                          >Swelling of legs</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-palpitations"
+                        />
+                        <label for="medical-conditions-cardiovascular-palpitations"
+                          >Palpitations</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-varicose-veins"
+                        />
+                        <label for="medical-conditions-cardiovascular-varicose-veins"
+                          >Varicose veins</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-dizziness"
+                        />
+                        <label for="medical-conditions-cardiovascular-dizziness">Dizziness</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-acute-deep-vein-thrombosis"
+                        />
+                        <label for="medical-conditions-cardiovascular-acute-deep-vein-thrombosis"
+                          >Acute deep vein thrombosis</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-congestive-heart-failure"
+                        />
+                        <label for="medical-conditions-cardiovascular-congestive-heart-failure"
+                          >Congestive heart failure</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-heart-attack"
+                        />
+                        <label for="medical-conditions-cardiovascular-heart-attack"
+                          >Heart attack</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-high-low-blood-pressure"
+                        />
+                        <label for="medical-conditions-cardiovascular-high-low-blood-pressure"
+                          >High/Low blood pressure</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-aneurysm"
+                        />
+                        <label for="medical-conditions-cardiovascular-aneurysm">Aneurysm</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-cardiac-arrhythmia"
+                        />
+                        <label for="medical-conditions-cardiovascular-cardiac-arrhythmia"
+                          >Cardiac arrhythmia</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-other"
+                        />
+                        <label for="medical-conditions-cardiovascular-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-cardiovascular-na"
+                        />
+                        <label for="medical-conditions-cardiovascular-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-cardiovascular-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-cardiovascular-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gastro-Intestinal -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Gastro-Intestinal <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-gastro-intestinal-crohns-disease"
+                        />
+                        <label for="medical-conditions-gastro-intestinal-crohns-disease"
+                          >Crohn's disease</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-gastro-intestinal-abdominal-pain"
+                        />
+                        <label for="medical-conditions-gastro-intestinal-abdominal-pain"
+                          >Abdominal pain</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-gastro-intestinal-surgical-implant-mesh-or-other"
+                        />
+                        <label
+                          for="medical-conditions-gastro-intestinal-surgical-implant-mesh-or-other"
+                          >Surgical implant(mesh or other)</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-gastro-intestinal-gi-inflammation"
+                        />
+                        <label for="medical-conditions-gastro-intestinal-gi-inflammation"
+                          >GI inflammation</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-gastro-intestinal-diverticulitis-diverticulosis"
+                        />
+                        <label
+                          for="medical-conditions-gastro-intestinal-diverticulitis-diverticulosis"
+                          >Diverticulitis/Diverticulosis</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-gastro-intestinal-other"
+                        />
+                        <label for="medical-conditions-gastro-intestinal-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-gastro-intestinal-na"
+                        />
+                        <label for="medical-conditions-gastro-intestinal-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-gastro-intestinal-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-gastro-intestinal-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Urinary -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Urinary <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-urinary-kidney-failure"
+                        />
+                        <label for="medical-conditions-urinary-kidney-failure">Kidney failure</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-urinary-kidney-stones"
+                        />
+                        <label for="medical-conditions-urinary-kidney-stones">Kidney stones</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-urinary-urinary-tract-infection"
+                        />
+                        <label for="medical-conditions-urinary-urinary-tract-infection"
+                          >Urinary tract infection</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-urinary-dialysis"
+                        />
+                        <label for="medical-conditions-urinary-dialysis">Dialysis</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-urinary-other"
+                        />
+                        <label for="medical-conditions-urinary-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-urinary-na"
+                        />
+                        <label for="medical-conditions-urinary-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-urinary-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-urinary-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div class="space-y-4">
+                <!-- Female Reproductive -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Female Reproductive<span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-female-reproductive-currently-pregnant"
+                        />
+                        <label for="medical-conditions-female-reproductive-currently-pregnant"
+                          >Currently pregnant</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-female-reproductive-currently-menstruating"
+                        />
+                        <label for="medical-conditions-female-reproductive-currently-menstruating"
+                          >Currently menstruating</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-female-reproductive-fibrocystic-breast-disease"
+                        />
+                        <label
+                          for="medical-conditions-female-reproductive-fibrocystic-breast-disease"
+                          >Fibrocystic breast disease</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-female-reproductive-iud"
+                        />
+                        <label for="medical-conditions-female-reproductive-iud">IUD</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-female-reproductive-other"
+                        />
+                        <label for="medical-conditions-female-reproductive-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-female-reproductive-na"
+                        />
+                        <label for="medical-conditions-female-reproductive-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-female-reproductive-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-female-reproductive-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Musculoskeletal -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Musculoskeletal <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-musculoskeletal-osteoporosis"
+                        />
+                        <label for="medical-conditions-musculoskeletal-osteoporosis"
+                          >Osteoporosis</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-musculoskeletal-osteoarthritis"
+                        />
+                        <label for="medical-conditions-musculoskeletal-osteoarthritis"
+                          >Osteoarthritis</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-musculoskeletal-hernia"
+                        />
+                        <label for="medical-conditions-musculoskeletal-hernia">Hernia</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-musculoskeletal-rheumatoid-arthritis"
+                        />
+                        <label for="medical-conditions-musculoskeletal-rheumatoid-arthritis"
+                          >Rheumatoid arthritis</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-musculoskeletal-other"
+                        />
+                        <label for="medical-conditions-musculoskeletal-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-musculoskeletal-na"
+                        />
+                        <label for="medical-conditions-musculoskeletal-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-musculoskeletal-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-musculoskeletal-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Skin -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Skin <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-skin-cellulitis-bacterial-skin-infection"
+                        />
+                        <label for="medical-conditions-skin-cellulitis-bacterial-skin-infection"
+                          >Cellulitis (bacterial skin infection)</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-skin-rash"
+                        />
+                        <label for="medical-conditions-skin-rash">Rash</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-skin-major-scars"
+                        />
+                        <label for="medical-conditions-skin-major-scars">Major scars</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-skin-lumps"
+                        />
+                        <label for="medical-conditions-skin-lumps">Lumps</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-skin-other"
+                        />
+                        <label for="medical-conditions-skin-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-skin-na"
+                        />
+                        <label for="medical-conditions-skin-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-skin-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-skin-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hematologic/Lymphatic -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Hematologic/Lymphatic <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding"
+                        />
+                        <label
+                          for="medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding"
+                          >Cuts that do not stop bleeding</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes-glands"
+                        />
+                        <label
+                          for="medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes-glands"
+                          >Enlarged lymph nodes (glands)</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-lymph-nodes-removed"
+                        />
+                        <label for="medical-conditions-hematologic-lymphatic-lymph-nodes-removed"
+                          >Lymph nodes removed</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-frequent-bruising"
+                        />
+                        <label for="medical-conditions-hematologic-lymphatic-frequent-bruising"
+                          >Frequent bruising</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-hiv-aids"
+                        />
+                        <label for="medical-conditions-hematologic-lymphatic-hiv-aids"
+                          >HIV/AIDS</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-factor-v-leiden"
+                        />
+                        <label for="medical-conditions-hematologic-lymphatic-factor-v-leiden"
+                          >Factor V Leiden</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-clotting-issues"
+                        />
+                        <label for="medical-conditions-hematologic-lymphatic-clotting-issues"
+                          >Clotting issues</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-hematologic-lymphatic-na"
+                        />
+                        <label for="medical-conditions-hematologic-lymphatic-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-hematologic-lymphatic-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-hematologic-lymphatic-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Neurological -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Neurological <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-neurological-strokes"
+                        />
+                        <label for="medical-conditions-neurological-strokes">Strokes</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-neurological-seizures"
+                        />
+                        <label for="medical-conditions-neurological-seizures">Seizures</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-neurological-other"
+                        />
+                        <label for="medical-conditions-neurological-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-neurological-na"
+                        />
+                        <label for="medical-conditions-neurological-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-neurological-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-neurological-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Allergies -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Allergies <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-allergies-ear-fullness"
+                        />
+                        <label for="medical-conditions-allergies-ear-fullness">Ear fullness</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-allergies-sinus-congestion"
+                        />
+                        <label for="medical-conditions-allergies-sinus-congestion"
+                          >Sinus congestion</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-allergies-recent-sinus-surgery"
+                        />
+                        <label for="medical-conditions-allergies-recent-sinus-surgery"
+                          >Recent sinus surgery</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-allergies-other"
+                        />
+                        <label for="medical-conditions-allergies-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-allergies-na"
+                        />
+                        <label for="medical-conditions-allergies-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-allergies-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-allergies-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Emotional -->
+                <div class="collapse collapse-arrow bg-base-200">
+                  <input type="checkbox" />
+                  <h3 class="collapse-title text-lg font-medium">
+                    Emotional <span class="text-accent">*</span>
+                  </h3>
+                  <div class="collapse-content space-y-8">
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-emotional-stress"
+                        />
+                        <label for="medical-conditions-emotional-stress">Stress</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-emotional-anxiety"
+                        />
+                        <label for="medical-conditions-emotional-anxiety">Anxiety</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-emotional-difficulty-sleeping"
+                        />
+                        <label for="medical-conditions-emotional-difficulty-sleeping"
+                          >Difficulty sleeping</label
+                        >
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-emotional-depression"
+                        />
+                        <label for="medical-conditions-emotional-depression">Depression</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-emotional-other"
+                        />
+                        <label for="medical-conditions-emotional-other">Other</label>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          class="checkbox checkbox-primary"
+                          id="medical-conditions-emotional-na"
+                        />
+                        <label for="medical-conditions-emotional-na">N/A</label>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="medical-conditions-emotional-other-specify"
+                        >If other, please explain</label
+                      >
+                      <input
+                        id="medical-conditions-emotional-other-specify"
+                        type="text"
+                        placeholder="Please describe your condition"
+                        class="input input-bordered w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </Card>
+
+        <!-- Surgeries Section -->
+        <Card id="surgeries">
+          <h2 class="card-title text-2xl mb-6">Surgeries</h2>
+
+          <fieldshet id="surgeries-container" class="space-y-8">
+            <legend class="p label whitespace-normal"
+              >Please list all surgeries (including Cesarean section).</legend
+            >
+            <div class="surgery-entry grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <label class="sr-only" for="surgery-name">Surgery</label>
+              <input
+                id="surgery-name"
+                type="text"
+                placeholder="Surgery"
+                class="input input-bordered w-full"
+              />
+              <label class="sr-only" for="surgery-date">Date</label>
+              <input id="surgery-date" type="date" class="input input-bordered w-full" />
+              <label class="sr-only" for="surgery-hospital-and-surgeon">Hospital and Surgeon</label>
+              <div class="flex gap-2">
+                <input
+                  id="surgery-hospital-and-surgeon"
+                  type="text"
+                  placeholder="Hospital and Surgeon"
+                  class="input input-bordered w-full flex-1"
+                />
+                <button
+                  type="button"
+                  class="btn btn-square btn-outline btn-error remove-entry remove-surgery-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </fieldshet>
+
+          <button id="add-surgery-button" type="button" class="btn btn-outline btn-primary">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v16m8-8H4"></path>
+            </svg>
+            Add Surgery
+          </button>
+        </Card>
+
+        <!-- Medications Section -->
+        <Card id="medications">
+          <h2 class="card-title text-2xl mb-6">Medications</h2>
+
+          <fieldset id="medications-container" class="space-y-8">
+            <legend class="p label whitespace-normal">
+              Please list all medications (including vitamins, hormones, and herbs) and reason for
+              prescription.
+            </legend>
+            <div class="medication-entry grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <label class="sr-only" for="medication-name">Medication</label>
+              <input
+                id="medication-name"
+                type="text"
+                placeholder="Medication"
+                class="input input-bordered w-full"
+              />
+              <div class="flex gap-2">
+                <label class="sr-only" for="medication-reason">Reason</label>
+                <input
+                  id="medication-reason"
+                  type="text"
+                  placeholder="Reason"
+                  class="input input-bordered w-full flex-1"
+                />
+                <button
+                  type="button"
+                  class="btn btn-square btn-outline btn-error remove-entry remove-medication-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </fieldset>
+
+          <button id="add-medication-button" type="button" class="btn btn-outline btn-primary">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v16m8-8H4"></path>
+            </svg>
+            Add Medication
+          </button>
+        </Card>
+
+        <!-- Additional Information Section -->
+        <Card id="additional-information-container">
+          <h2 class="card-title text-2xl mb-6">Additional Information</h2>
+
+          <fieldset class="space-y-8">
+            <legend class="p label whitespace-normal">
+              Is there anything else that your MLD therapist should know about you or your needs
+              before the session?</legend
+            >
+            <label class="sr-only" for="additional-information">Additional Information</label>
+            <textarea
+              id="additional-information"
+              class="textarea h-32 w-full rounded-box"
+              placeholder="Please provide any additional information..."></textarea>
+          </fieldset>
+        </Card>
+
+        <!-- Consent Section -->
+        <Card id="consent">
+          <h2 class="card-title text-2xl mb-6">Consent and Understanding</h2>
+
+          <div class="prose">
+            <p>
+              I understand that the Manual Lymphatic Drainage I receive is provided for the basic
+              purpose of improving the flow of my lymphatic system and also for relaxation. If I
+              experience any pain or discomfort during this session, I will immediately inform the
+              practitioner so that the pressure and/or strokes may be adjusted to my level of
+              comfort. I further understand that massage or bodywork should not be construed as a
+              substitute for medical examination, diagnosis, or treatment and that I should see a
+              physician, chiropractor, or other qualified medical specialist for any mental or
+              physical ailment of which I am aware. I understand that massage/bodywork practitioners
+              are not qualified to perform spinal or skeletal adjustments, diagnose, prescribe, or
+              treat any physical or mental illness, and that nothing said in the course of the
+              session given should be construed as such. Because massage/ bodywork should not be
+              performed under certain medical conditions, I affirm that I have stated all my known
+              medical conditions and answered all questions honestly. I agree to keep the
+              practitioner updated as to any changes in my medical profile and understand that there
+              shall be no liability on the practitioner's part should I fail to do so.
+            </p>
+            <p>
+              *Please Note: Manual Lymphatic Drainage (MLD) is a very powerful modality and certain
+              medical conditions are contraindicated and determine if and when you can receive a
+              session. After the consultation and review of the information you have provided on
+              this form, it will be determined if MLD should be administered to you today. Some
+              conditions will require a note from your doctor before proceeding. Please understand
+              this is for your safety and well-being.
+            </p>
+            <label class="label cursor-pointer">
+              <input type="checkbox" class="checkbox checkbox-primary" required />
+              I understand and agree to the above terms <span class="text-accent">*</span>
+            </label>
+          </div>
+        </Card>
+
+        <!-- Minor Consent Section -->
+        <Card id="minor-consent">
+          <h2 class="card-title text-2xl mb-6">Consent to Treatment of Minor</h2>
+
+          <div class="prose">
+            <p>
+              By my signature below, I hereby authorize Dr. Courtney Rolnick, PT, DPT, CMLDT, to
+              administer Manual Lymphatic Drainage techniques to my child or dependent as they deem
+              necessary.
+            </p>
+            <label class="flex flex-col gap-2">
+              <span class="label whitespace-normal">Signature of Parent or Guardian</span>
+              <input
+                type="text"
+                placeholder="Type your full name to sign"
+                class="input input-bordered w-full"
+              />
+            </label>
+          </div>
+        </Card>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-lg btn-primary"> Submit Intake Form </button>
+      </form>
+    </section>
   </main>
 </Layout>
 
