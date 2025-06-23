@@ -1,10 +1,333 @@
 ---
+import ListItem from '../../components/text/ListItem.astro'
+import Card from '../../components/ui/Card.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title="Manual Lymphatic Drainage">
   <PageHeader>
-    <h1 class="mb-4 text-primary">Manual Lymphatic Drainage</h1>
+    <h1 class="mb-4 text-primary lsa lsa-slide-up no-repeat">Manual Lymphatic Drainage</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <div class="prose prose-lg text-neutral-content">
+        <p class="lsa lsa-slide-up delay-100 no-repeat">
+          <!-- TODO: Add link to "manual-lymphatic-drainage-m-l-d" blog post -->
+          <a href="/blog/manual-lymphatic-drainage-m-l-d" class="link link-accent"
+            >Manual Lymphatic Drainage</a
+          >, or MLD, is a gentle yet powerful form of bodywork that is intended to stimulate and
+          encourage the natural movement of the lymph, which carries waste products away from the
+          tissues back towards the heart. It is a technique based on gentle, rhythmic and constant
+          movements that mimic the rhythm of the body's lymphatic system.
+        </p>
+        <p class="lsa lsa-slide-up delay-200 no-repeat">
+          Although lymphatic massage may not be as common as other types of massage modalities, the
+          benefits that it provides are numerous. If you are feeling a bit sluggish, experiencing
+          mild to moderate swelling, experiencing localized or systemic inflammation, recovering
+          from an injury or surgery, or interested in optimizing your immune system MLD could be the
+          therapeutic option for you.
+        </p>
+      </div>
+      <div class="prose prose-lg text-neutral-content">
+        <p class="lsa lsa-slide-up delay-300 no-repeat">
+          Manual Lymphatic Drainage is also extremely effective in treating post-surgical swelling
+          caused by liposuction, abdominoplasty, facelift, breast lift/reduction, and many, many
+          other elective (and non-elective), reconstructive, and cosmetic surgeries. This treatment
+          is also extremely effective in reducing the lumps and bumps that can be associated with
+          liposuction.
+        </p>
+        <p class="lsa lsa-slide-up delay-400 no-repeat">
+          Manual Lymphatic Drainage done at the Madison Lymphatics and Bodywork is performed by
+          Carmela Wiese, LMT, CMLDT. Courtney was trained in the <a
+            href="https://www.vodderschool.com/manual_lymph_drainage_overview2"
+            class="link link-accent">Vodder Technique</a
+          > through Klose Training with Nicola McGill. Courtney is highly trained and has a combined
+          12 years of experience in treating a wide patient population including post-surgical patients,
+          lipedema & lymphedema patients, and those with chronic health problems such as autoimmune disorders.
+        </p>
+      </div>
+    </div>
+
+    <div class="lsa lsa-slide-up delay-500 no-repeat">
+      <a
+        href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary btn-lg max-w-fit"
+      >
+        Book Now
+      </a>
+    </div>
   </PageHeader>
+
+  <main>
+    <!-- Indications Section -->
+    <section id="indications" class="pt-0">
+      <div class="wrapper p-(--site-padding-lg)">
+        <h2 class="h1 font-bold text-primary mb-8 text-center lsa lsa-slide-up no-repeat">
+          Indications
+        </h2>
+        <p class="text-lg md:text-xl text-center mb-12 mx-auto lsa lsa-slide-up no-repeat">
+          MLD is indicated for many…including healthy individuals wanting to boost their immune
+          system or those with (but not limited to) the following conditions:
+        </p>
+
+        <div class="max-w-4xl mx-auto">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-base-content/80">
+            <div class="list">
+              <ListItem
+                number={1}
+                listItemClass="text-base-content"
+                text="Autoimmune diseases (such as rheumatoid arthritis, fibromyalgia, lupus and chronic fatigue syndrome)"
+              />
+              <ListItem number={2} listItemClass="text-base-content" text="Neuropathy" />
+              <ListItem number={3} listItemClass="text-base-content" text="Migraines/Headaches" />
+              <ListItem number={4} listItemClass="text-base-content" text="Tinnitus" />
+              <ListItem number={5} listItemClass="text-base-content" text="Varicose veins" />
+              <ListItem number={6} listItemClass="text-base-content" text="Sinus congestion" />
+              <ListItem number={7} listItemClass="text-base-content" text="Lyme disease" />
+
+              <!-- Mobile only -->
+              <ListItem
+                number={8}
+                listItemClass="md:hidden text-base-content"
+                text="Pre/post-surgical procedures (such as facelift, knee replacement, hip replacement, liposuction surgery, tummy tuck)"
+              />
+              <ListItem
+                number={9}
+                listItemClass="md:hidden text-base-content"
+                text="Metabolic waste removal after CoolSculpting"
+              />
+              <ListItem number={10} listItemClass="md:hidden text-base-content" text="Edema" />
+              <ListItem number={11} listItemClass="md:hidden text-base-content" text="Lymphedema" />
+              <ListItem
+                number={12}
+                listItemClass="md:hidden text-base-content"
+                text="Post-mastectomy swelling"
+              />
+              <ListItem number={13} listItemClass="md:hidden text-base-content" text="Lumpectomy" />
+            </div>
+
+            <!-- Desktop only -->
+            <div class="list hidden md:block">
+              <ListItem
+                number={8}
+                listItemClass="text-base-content"
+                text="Pre/post-surgical procedures (such as facelift, knee replacement, hip replacement, liposuction surgery, tummy tuck)"
+              />
+              <ListItem
+                number={9}
+                listItemClass="text-base-content"
+                text="Metabolic waste removal after CoolSculpting"
+              />
+              <ListItem number={10} listItemClass="text-base-content" text="Edema" />
+              <ListItem number={11} listItemClass="text-base-content" text="Lymphedema" />
+              <ListItem
+                number={12}
+                listItemClass="text-base-content"
+                text="Post-mastectomy swelling"
+              />
+              <ListItem number={13} listItemClass="text-base-content" text="Lumpectomy" />
+            </div>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contraindications Section -->
+    <section id="contraindications" class="bg-secondary/60">
+      <div class="wrapper p-(--site-padding-lg)">
+        <h2 class="h1 font-bold text-secondary-content mb-8 text-center lsa lsa-slide-up no-repeat">
+          Contraindications
+        </h2>
+        <p
+          class="text-lg md:text-xl text-secondary-content text-center mb-12 mx-auto lsa lsa-slide-up no-repeat"
+        >
+          Although MLD is beneficial to a number of conditions, it is not for everybody. Please note
+          that we may need to contact your health care provider for further information on your
+          condition. Contraindications include:
+        </p>
+
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
+          <div class="list text-secondary-content/80">
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={1}
+              text="Congestive heart failure"
+            />
+            <ListItem listItemClass="text-secondary-content" number={2} text="DVT" />
+            <ListItem listItemClass="text-secondary-content" number={3} text="Kidney disorders" />
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={4}
+              text="Acute inflammation or infection/malignancies"
+            />
+
+            <!-- Mobile only -->
+            <ListItem
+              listItemClass="md:hidden text-secondary-content"
+              number={5}
+              text="Arteriosclerosis"
+            />
+            <ListItem
+              listItemClass="md:hidden text-secondary-content"
+              number={6}
+              text="Acute cold/flu"
+            />
+            <ListItem listItemClass="md:hidden text-secondary-content" number={7} text="Fever" />
+            <ListItem
+              listItemClass="md:hidden text-secondary-content"
+              number={8}
+              text="Some medications"
+            />
+          </div>
+
+          <!-- Desktop only -->
+          <div class="list text-secondary-content/80 hidden md:block">
+            <ListItem listItemClass="text-secondary-content" number={5} text="Arteriosclerosis" />
+            <ListItem listItemClass="text-secondary-content" number={6} text="Acute cold/flu" />
+            <ListItem listItemClass="text-secondary-content" number={7} text="Fever" />
+            <ListItem listItemClass="text-secondary-content" number={8} text="Some medications" />
+          </div>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <div class="wrapper p-(--site-padding-lg)">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10 flex flex-col items-center text-center">
+            <h2 class="h1 text-primary mb-3 lsa lsa-slide-up no-repeat">Pricing</h2>
+            <p class="text-base-content/80 text-lg md:text-xl lsa lsa-slide-up no-repeat">
+              The lymphatic system is your body's unsung hero.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 30 Minutes -->
+            <div class="lsa lsa-slide-up no-repeat flex">
+              <Card id="30-minute-session" className="text-center">
+                <div class="flex flex-col items-center gap-4 mb-6">
+                  <h3>30 Minutes</h3>
+                  <span class="h2 font-bold text-primary">$65</span>
+                  <p class="h4 font-semibold">Neck and Face only.</p>
+                </div>
+                <div class="flex flex-col items-center gap-2 mb-6">
+                  <p class="text-base-content/80">Indications include:</p>
+                  <p class="text-base-content/70">Sinus/Tension Headache/Migraine, Puffy Eyes.</p>
+                </div>
+                <div class="card-actions justify-center mt-auto">
+                  <a
+                    href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary w-full"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </Card>
+            </div>
+            <!-- 60 Minutes -->
+            <div class="lsa lsa-slide-up no-repeat flex">
+              <Card
+                id="60-minute-session"
+                className="text-center shadow-lg scale-[1.02] border-2 border-primary lsa lsa-slide-up no-repeat"
+              >
+                <div class="flex flex-col items-center gap-4 mb-6">
+                  <h3>60 Minutes</h3>
+                  <span class="h2 font-bold text-primary">$130</span>
+                  <p class="h4 font-semibold">Neck, Abdominal and Upper or Lower Extremity.</p>
+                </div>
+                <div class="flex flex-col items-center gap-2 mb-6">
+                  <p class="text-base-content/80">Indications include:</p>
+                  <p class="text-base-content/70">
+                    Lymphedema, Chronic Health Issues, Post Traumatic Injury Edema.
+                  </p>
+                </div>
+                <div class="card-actions justify-center mt-auto">
+                  <a
+                    href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary w-full"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </Card>
+            </div>
+            <!-- 90 Minutes -->
+            <div class="lsa lsa-slide-up no-repeat flex">
+              <Card id="90-minute-session" className="text-center">
+                <div class="flex flex-col items-center gap-4 mb-6">
+                  <h3>90 Minutes</h3>
+                  <span class="h2 font-bold text-primary">$195</span>
+                  <p class="h4 font-semibold">Full Body Sequence.</p>
+                </div>
+                <div class="flex flex-col items-center gap-2 mb-6">
+                  <p class="text-base-content/80">Indications include:</p>
+                  <p class="text-base-content/70">
+                    A longer session that allows the practitioner to take extra time to address
+                    areas that need additional attention with more detail.
+                  </p>
+                </div>
+                <div class="card-actions justify-center mt-auto">
+                  <a
+                    href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary w-full"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="bg-gradient-to-r from-primary/10 to-secondary/10">
+      <div class="wrapper px-(--site-padding-lg)">
+        <div class="flex flex-col items-center gap-8 max-w-4xl mx-auto text-center">
+          <h2 class="lsa lsa-slide-up no-repeat">
+            To schedule a Manual Lymphatic Drainage session:
+          </h2>
+
+          <div class="flex flex-wrap gap-2 justify-center">
+            <div class="lsa lsa-slide-up no-repeat">
+              <a
+                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                Book Now
+              </a>
+            </div>
+            <div class="lsa lsa-slide-up no-repeat">
+              <a href="tel:608-203-8550" class="btn btn-dash"> Call 608-203-8550 </a>
+            </div>
+          </div>
+
+          <!-- Important Notes -->
+          <p class="text-sm text-base-content/80 mx-auto lsa lsa-slide-up no-repeat">
+            <em
+              ><span class="text-primary">*</span><span class="font-nuckle-semibold">
+                A couple of points to remember when booking your Manual Lymphatic Drainage session:</span
+              >
+
+              Make sure you schedule at a time that you are able to go home and rest for the
+              remainder of the day as most patients often feel very relaxed after a session. Also,
+              it is not recommended that you come after a big meal. The deep abdominal work can get
+              uncomfortable right after eating. Please also remember to stay hydrated!</em
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

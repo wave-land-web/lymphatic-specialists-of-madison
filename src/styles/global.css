@@ -179,12 +179,12 @@
   p,
   li:not(nav li),
   .p {
-    @apply text-sm sm:text-base text-pretty max-w-[65ch];
+    @apply text-sm sm:text-base text-pretty max-w-[65ch] leading-relaxed;
   }
 
   button,
   a {
-    @apply text-balance font-nuckle-semibold;
+    @apply text-balance font-nuckle-semibold transition-colors duration-200;
   }
 
   img {

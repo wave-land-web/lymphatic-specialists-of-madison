@@ -2,12 +2,14 @@
 export interface Props {
   number: number
   text: string
+  listItemClass?: string
+  numberClass?: string
 }
 
-const { number, text } = Astro.props
+const { number, text, numberClass, listItemClass } = Astro.props
 ---
 
-<li class="list-row items-center lsa lsa-slide-up no-repeat py-2">
-  <div class="text-4xl opacity-30">{number}</div>
+<li class={`list-row items-center lsa lsa-slide-up no-repeat py-2 ${listItemClass}`}>
+  <span class={`text-3xl sm:text-4xl opacity-30 ${numberClass}`}>{number}</span>
   {text}
 </li>
