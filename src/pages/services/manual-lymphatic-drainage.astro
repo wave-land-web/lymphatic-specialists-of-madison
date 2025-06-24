@@ -7,9 +7,11 @@ import Layout from '../../layouts/Layout.astro'
 
 <Layout title="Manual Lymphatic Drainage">
   <PageHeader>
-    <h1 class="mb-4 text-primary lsa lsa-slide-up no-repeat">Manual Lymphatic Drainage</h1>
+    <h1 class="max-w-3xl mb-4 text-primary lsa lsa-slide-up no-repeat">
+      Manual Lymphatic Drainage
+    </h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-      <div class="prose prose-lg text-neutral-content">
+      <div class="prose text-neutral-content">
         <p class="lsa lsa-slide-up delay-100 no-repeat">
           <!-- TODO: Add link to "manual-lymphatic-drainage-m-l-d" blog post -->
           <a href="/blog/manual-lymphatic-drainage-m-l-d" class="link link-accent"
@@ -27,7 +29,7 @@ import Layout from '../../layouts/Layout.astro'
           therapeutic option for you.
         </p>
       </div>
-      <div class="prose prose-lg text-neutral-content">
+      <div class="prose text-neutral-content">
         <p class="lsa lsa-slide-up delay-300 no-repeat">
           Manual Lymphatic Drainage is also extremely effective in treating post-surgical swelling
           caused by liposuction, abdominoplasty, facelift, breast lift/reduction, and many, many
@@ -62,7 +64,7 @@ import Layout from '../../layouts/Layout.astro'
   <main>
     <!-- Indications Section -->
     <section id="indications" class="pt-0">
-      <div class="wrapper p-(--site-padding-lg)">
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <h2 class="h1 font-bold text-primary mb-8 text-center lsa lsa-slide-up no-repeat">
           Indications
         </h2>
@@ -134,13 +136,13 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- Contraindications Section -->
-    <section id="contraindications" class="bg-secondary/60">
-      <div class="wrapper p-(--site-padding-lg)">
-        <h2 class="h1 font-bold text-secondary-content mb-8 text-center lsa lsa-slide-up no-repeat">
+    <section id="contraindications" class="bg-secondary/70">
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
+        <h2 class="h1 mb-8 text-secondary-content text-center lsa lsa-slide-up no-repeat">
           Contraindications
         </h2>
         <p
-          class="text-lg md:text-xl text-secondary-content text-center mb-12 mx-auto lsa lsa-slide-up no-repeat"
+          class="text-lg text-secondary-content md:text-xl text-center mb-12 mx-auto lsa lsa-slide-up no-repeat"
         >
           Although MLD is beneficial to a number of conditions, it is not for everybody. Please note
           that we may need to contact your health care provider for further information on your
@@ -148,7 +150,7 @@ import Layout from '../../layouts/Layout.astro'
         </p>
 
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
-          <div class="list text-secondary-content/80">
+          <div class="list">
             <ListItem
               listItemClass="text-secondary-content"
               number={1}
@@ -182,7 +184,7 @@ import Layout from '../../layouts/Layout.astro'
           </div>
 
           <!-- Desktop only -->
-          <div class="list text-secondary-content/80 hidden md:block">
+          <div class="list hidden md:block">
             <ListItem listItemClass="text-secondary-content" number={5} text="Arteriosclerosis" />
             <ListItem listItemClass="text-secondary-content" number={6} text="Acute cold/flu" />
             <ListItem listItemClass="text-secondary-content" number={7} text="Fever" />
@@ -194,7 +196,7 @@ import Layout from '../../layouts/Layout.astro'
 
     <!-- Pricing Section -->
     <section id="pricing">
-      <div class="wrapper p-(--site-padding-lg)">
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div class="max-w-6xl mx-auto">
           <div class="mb-10 flex flex-col items-center text-center">
             <h2 class="h1 text-primary mb-3 lsa lsa-slide-up no-repeat">Pricing</h2>
@@ -290,8 +292,8 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="bg-gradient-to-r from-primary/10 to-secondary/10">
-      <div class="wrapper px-(--site-padding-lg)">
+    <section id="cta" class="bg-gradient-to-br from-secondary/10 to-primary/10">
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div class="flex flex-col items-center gap-8 max-w-4xl mx-auto text-center">
           <h2 class="lsa lsa-slide-up no-repeat">
             To schedule a Manual Lymphatic Drainage session:

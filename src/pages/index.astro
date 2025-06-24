@@ -23,44 +23,53 @@ const serviceImages: Record<string, any> = {
 ---
 
 <Layout>
-  <PageHeader className="max-w-3xl">
-    <h1 class="mb-4 text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
+  <PageHeader>
+    <h1 class="max-w-3xl mb-4 text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
       Madison Lymphatics and Manual Therapy
     </h1>
-    <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
-      Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric clinic. We
-      are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD) and have
-      experience and comfort treating: post-surgical patients, cancer patients, chronic lymphatic
-      conditions such as lymphedema and lipedema, as well as those with generalized inflammation,
-      chronic immune impaired conditions (Lyme disease, Ehlors Danlos Syndrome, rheumatoid
-      arthritis, etc), long/post-COVID symptoms and hypersensitivity.
-    </p>
-    <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
-      Established in 2023, Madison Lymphatics and Manual Therapy is owned and operated by Courtney
-      Rolnick, PT, DPT, CMLDT, who has 12+ years of MLD specific experience treating a wide array of
-      patients with complex health histories. Formerly known as Therapeutic Massage Center of
-      Middleton, we strive to empower patients with knowledge and information to help them navigate
-      their health journey.
-    </p>
-    <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
-      For more information on how Madison Lymphatics and Manual Therapy can help you achieve your
-      health goals, call us at <a href="tel:6082038550" class="link link-accent">608-203-8550</a>.
-    </p>
-    <p class="mb-4 text-sm text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
-      <em>
-        <strong>Note:</strong> If you are having difficulty getting scheduled at the time/day you would
-        like - please don't hesitate to call/text us to be added to our cancellation list as cancellations
-        are common. Sometimes we are booking farther out - we use our cancellation list as a means to
-        get patients in sooner. Thank you.
-      </em>
-    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <div class="prose text-neutral-content">
+        <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+          Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric
+          clinic. We are a patient-focused environment specializing in Manual Lymphatic Drainage
+          (MLD) and have experience and comfort treating: post-surgical patients, cancer patients,
+          chronic lymphatic conditions such as lymphedema and lipedema, as well as those with
+          generalized inflammation, chronic immune impaired conditions (Lyme disease, Ehlors Danlos
+          Syndrome, rheumatoid arthritis, etc), long/post-COVID symptoms and hypersensitivity.
+        </p>
+        <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+          Established in 2023, Madison Lymphatics and Manual Therapy is owned and operated by
+          Courtney Rolnick, PT, DPT, CMLDT, who has 12+ years of MLD specific experience treating a
+          wide array of patients with complex health histories. Formerly known as Therapeutic
+          Massage Center of Middleton, we strive to empower patients with knowledge and information
+          to help them navigate their health journey.
+        </p>
+      </div>
+      <div class="prose text-neutral-content">
+        <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+          For more information on how Madison Lymphatics and Manual Therapy can help you achieve
+          your health goals, call us at <a href="tel:6082038550" class="link link-accent"
+            >608-203-8550</a
+          >.
+        </p>
+        <p class="mb-4 text-sm text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
+          <em>
+            <strong class="text-primary font-nuckle-semibold">Note:</strong> If you are having difficulty
+            getting scheduled at the time/day you would like - please don't hesitate to call/text us
+            to be added to our cancellation list as cancellations are common. Sometimes we are booking
+            farther out - we use our cancellation list as a means to get patients in sooner. Thank you.
+          </em>
+        </p>
+      </div>
+    </div>
+
     <a href="/contact" class="btn btn-primary w-fit lsa lsa-slide-up delay-500 no-repeat">
       Book Now
     </a>
   </PageHeader>
 
   <main>
-    <section id="services" class="wrapper mb-(--site-padding-2xl)">
+    <section id="services" class="wrapper mb-(--site-padding-2xl) pt-(--site-padding-base)">
       <h2 class="mb-(--site-padding-base) h1 lsa lsa-slide-up no-repeat">Therapeutic Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
@@ -70,7 +79,7 @@ const serviceImages: Record<string, any> = {
                 id={service.title}
                 imageSrc={serviceImages[service.imageKey]}
                 imageAlt={`${service.title} service`}
-                className="h-full"
+                className="h-full border-base-300 hover:border-primary"
               >
                 <h3>{service.title}</h3>
                 <p class="mb-2 text-base-content/80">{service.description}</p>
