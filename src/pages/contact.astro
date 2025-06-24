@@ -7,8 +7,8 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
 
 <Layout title="Contact - Madison Lymphatics & Manual Therapy">
   <PageHeader className="items-center mx-auto text-center">
-    <h1 class="mb-4 text-primary text-shadow-lg lsa lsa-slide-up no-repeat">Contact Us</h1>
-    <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+    <h1 class="text-primary text-shadow-lg lsa lsa-slide-up no-repeat">Contact Us</h1>
+    <p class="text-lg md:text-xl text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
       Get in touch with Madison Lymphatics & Manual Therapy. We're here to answer your questions and
       help you schedule your appointment.
     </p>
@@ -25,7 +25,7 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
           <div class="space-y-6">
             <!-- Call Us Section -->
             <div>
-              <h2 class="card-title text-primary mb-4">
+              <h2 class="card-title text-primary mb-(--site-padding-base)">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
@@ -52,7 +52,7 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
 
             <!-- Visit Us Section -->
             <div class="flex flex-col gap-2">
-              <h2 class="card-title text-primary mb-4">
+              <h2 class="card-title text-primary mb-(--site-padding-base)">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
@@ -97,13 +97,18 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
               we'll get back to you as soon as possible.
             </p>
 
-            <form class="flex flex-col gap-4" method="POST" action="#" id="contact-form">
+            <form
+              class="flex flex-col gap-(--site-padding-base)"
+              method="POST"
+              action="#"
+              id="contact-form"
+            >
               <p class="text-sm text-base-content/80">
                 <span class="text-accent">*</span> indicates required fields
               </p>
 
               <!-- Name Fields -->
-              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
                 <div class="flex flex-col gap-2">
                   <label for="first-name">
                     First Name <span class="text-accent">*</span>
@@ -188,9 +193,9 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
 
     <!-- Google Maps Section - Full Width at Bottom -->
     <section class="lsa lsa-slide-up no-repeat">
-      <div class="mb-8 mx-auto max-w-2xl">
-        <h2 class="text-center text-primary mb-4">Our Location</h2>
-        <p class="text-center text-base-content/80">
+      <div class="flex flex-col gap-(--site-padding-base) mb-(--site-padding-md) mx-auto max-w-2xl">
+        <h2 class="h1 text-center text-primary">Our Location</h2>
+        <p class="text-lg md:text-xl text-center text-base-content/80">
           Find us at the Atwood Professional Building with convenient parking available.
         </p>
       </div>

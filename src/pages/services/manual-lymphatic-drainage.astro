@@ -7,10 +7,8 @@ import Layout from '../../layouts/Layout.astro'
 
 <Layout title="Manual Lymphatic Drainage">
   <PageHeader>
-    <h1 class="max-w-3xl mb-4 text-primary lsa lsa-slide-up no-repeat">
-      Manual Lymphatic Drainage
-    </h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+    <h1 class="max-w-3xl text-primary lsa lsa-slide-up no-repeat">Manual Lymphatic Drainage</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
       <div class="prose text-neutral-content">
         <p class="lsa lsa-slide-up delay-100 no-repeat">
           <!-- TODO: Add link to "manual-lymphatic-drainage-m-l-d" blog post -->
@@ -54,7 +52,7 @@ import Layout from '../../layouts/Layout.astro'
         href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn btn-primary btn-lg max-w-fit"
+        class="btn btn-primary"
       >
         Book Now
       </a>
@@ -64,17 +62,21 @@ import Layout from '../../layouts/Layout.astro'
   <main>
     <!-- Indications Section -->
     <section id="indications" class="pt-0">
-      <div class="wrapper container lg:max-w-screen-xl mx-auto">
-        <h2 class="h1 font-bold text-primary mb-8 text-center lsa lsa-slide-up no-repeat">
+      <div
+        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
+      >
+        <h2 class="h1 font-bold text-primary text-center lsa lsa-slide-up no-repeat">
           Indications
         </h2>
-        <p class="text-lg md:text-xl text-center mb-12 mx-auto lsa lsa-slide-up no-repeat">
+        <p class="text-lg md:text-xl text-center mx-auto lsa lsa-slide-up no-repeat">
           MLD is indicated for many…including healthy individuals wanting to boost their immune
           system or those with (but not limited to) the following conditions:
         </p>
 
         <div class="max-w-4xl mx-auto">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-base-content/80">
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-8 text-base-content/80"
+          >
             <div class="list">
               <ListItem
                 number={1}
@@ -136,20 +138,24 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- Contraindications Section -->
-    <section id="contraindications" class="bg-secondary/70">
-      <div class="wrapper container lg:max-w-screen-xl mx-auto">
-        <h2 class="h1 mb-8 text-secondary-content text-center lsa lsa-slide-up no-repeat">
+    <section id="contraindications" class="bg-gradient-to-br from-secondary/70 to-secondary/80">
+      <div
+        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
+      >
+        <h2 class="h1 text-secondary-content text-center lsa lsa-slide-up no-repeat">
           Contraindications
         </h2>
         <p
-          class="text-lg text-secondary-content md:text-xl text-center mb-12 mx-auto lsa lsa-slide-up no-repeat"
+          class="text-lg text-secondary-content md:text-xl text-center mx-auto lsa lsa-slide-up no-repeat"
         >
           Although MLD is beneficial to a number of conditions, it is not for everybody. Please note
           that we may need to contact your health care provider for further information on your
           condition. Contraindications include:
         </p>
 
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
+        <ul
+          class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-8 max-w-4xl mx-auto"
+        >
           <div class="list">
             <ListItem
               listItemClass="text-secondary-content"
@@ -196,25 +202,23 @@ import Layout from '../../layouts/Layout.astro'
 
     <!-- Pricing Section -->
     <section id="pricing">
-      <div class="wrapper container lg:max-w-screen-xl mx-auto">
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-10 flex flex-col items-center text-center">
-            <h2 class="h1 text-primary mb-3 lsa lsa-slide-up no-repeat">Pricing</h2>
-            <p class="text-base-content/80 text-lg md:text-xl lsa lsa-slide-up no-repeat">
-              The lymphatic system is your body's unsung hero.
-            </p>
-          </div>
+      <div class="wrapper container lg:max-w-screen-xl flex flex-col mx-auto">
+        <div class="max-w-6xl mx-auto flex flex-col gap-(--site-padding-md)">
+          <h2 class="h1 text-secondary text-center lsa lsa-slide-up no-repeat">Pricing</h2>
 
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- 30 Minutes -->
             <div class="lsa lsa-slide-up no-repeat flex">
-              <Card id="30-minute-session" className="text-center">
-                <div class="flex flex-col items-center gap-4 mb-6">
+              <Card
+                id="30-minute-session"
+                className="text-center border border-base-300 hover:border-secondary"
+              >
+                <div class="flex flex-col items-center gap-(--site-padding-base)">
                   <h3>30 Minutes</h3>
-                  <span class="h2 font-bold text-primary">$65</span>
+                  <span class="h2 font-bold text-secondary">$65</span>
                   <p class="h4 font-semibold">Neck and Face only.</p>
                 </div>
-                <div class="flex flex-col items-center gap-2 mb-6">
+                <div>
                   <p class="text-base-content/80">Indications include:</p>
                   <p class="text-base-content/70">Sinus/Tension Headache/Migraine, Puffy Eyes.</p>
                 </div>
@@ -223,7 +227,7 @@ import Layout from '../../layouts/Layout.astro'
                     href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn btn-primary w-full"
+                    class="btn btn-secondary w-full"
                   >
                     Book Now
                   </a>
@@ -234,14 +238,14 @@ import Layout from '../../layouts/Layout.astro'
             <div class="lsa lsa-slide-up no-repeat flex">
               <Card
                 id="60-minute-session"
-                className="text-center shadow-lg scale-[1.02] border-2 border-primary lsa lsa-slide-up no-repeat"
+                className="text-center scale-[1.02] border-2 border-secondary"
               >
-                <div class="flex flex-col items-center gap-4 mb-6">
+                <div class="flex flex-col items-center gap-(--site-padding-base)">
                   <h3>60 Minutes</h3>
-                  <span class="h2 font-bold text-primary">$130</span>
+                  <span class="h2 font-bold text-secondary">$130</span>
                   <p class="h4 font-semibold">Neck, Abdominal and Upper or Lower Extremity.</p>
                 </div>
-                <div class="flex flex-col items-center gap-2 mb-6">
+                <div>
                   <p class="text-base-content/80">Indications include:</p>
                   <p class="text-base-content/70">
                     Lymphedema, Chronic Health Issues, Post Traumatic Injury Edema.
@@ -252,7 +256,7 @@ import Layout from '../../layouts/Layout.astro'
                     href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn btn-primary w-full"
+                    class="btn btn-secondary w-full"
                   >
                     Book Now
                   </a>
@@ -261,13 +265,16 @@ import Layout from '../../layouts/Layout.astro'
             </div>
             <!-- 90 Minutes -->
             <div class="lsa lsa-slide-up no-repeat flex">
-              <Card id="90-minute-session" className="text-center">
-                <div class="flex flex-col items-center gap-4 mb-6">
+              <Card
+                id="90-minute-session"
+                className="text-center border border-base-300 hover:border-secondary"
+              >
+                <div class="flex flex-col items-center gap-(--site-padding-base)">
                   <h3>90 Minutes</h3>
-                  <span class="h2 font-bold text-primary">$195</span>
+                  <span class="h2 font-bold text-secondary">$195</span>
                   <p class="h4 font-semibold">Full Body Sequence.</p>
                 </div>
-                <div class="flex flex-col items-center gap-2 mb-6">
+                <div>
                   <p class="text-base-content/80">Indications include:</p>
                   <p class="text-base-content/70">
                     A longer session that allows the practitioner to take extra time to address
@@ -279,7 +286,7 @@ import Layout from '../../layouts/Layout.astro'
                     href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn btn-primary w-full"
+                    class="btn btn-secondary w-full"
                   >
                     Book Now
                   </a>
@@ -292,7 +299,10 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="bg-gradient-to-br from-secondary/10 to-primary/10">
+    <section
+      id="manual-lymphatic-drainage-cta"
+      class="bg-gradient-to-br from-primary/10 to-secondary/10"
+    >
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div class="flex flex-col items-center gap-8 max-w-4xl mx-auto text-center">
           <h2 class="lsa lsa-slide-up no-repeat">

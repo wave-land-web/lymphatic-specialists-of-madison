@@ -1,10 +1,342 @@
 ---
+import ListItem from '../../components/text/ListItem.astro'
+import Card from '../../components/ui/Card.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title="Therapeutic Bodywork">
   <PageHeader>
-    <h1 class="mb-4 text-primary">Therapeutic Bodywork</h1>
+    <h1 class="text-primary lsa lsa-slide-up no-repeat">Therapeutic Bodywork</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
+      <div class="prose text-neutral-content">
+        <p class="lsa lsa-slide-up delay-100 no-repeat">
+          At Madison Lymphatics and Bodywork, we have extensive knowledge and experience treating a
+          wide range of musculoskeletal conditions. We always focus on the patient's individual
+          needs, analyzing range of motion, looking at posture, and zeroing in on the muscles and
+          soft tissues that may be affected.
+        </p>
+        <p class="lsa lsa-slide-up delay-200 no-repeat">
+          We believe that educating our clients on their pain and what may be causing it is
+          imperative to recovery with therapeutic massage.
+        </p>
+      </div>
+      <div class="prose text-neutral-content">
+        <p class="lsa lsa-slide-up delay-300 no-repeat">
+          Whether you're seeking relief from chronic pain, recovering from an injury, or simply
+          looking to enhance your overall well-being, our therapeutic bodywork services are designed
+          to meet your specific needs and promote healing.
+        </p>
+      </div>
+    </div>
+
+    <div class="lsa lsa-slide-up delay-400 no-repeat">
+      <a
+        href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Book Now
+      </a>
+    </div>
   </PageHeader>
+
+  <main>
+    <!-- Therapeutic Massage Section -->
+    <section id="therapeutic-massage" class="pt-0">
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
+        <h2
+          class="h1 font-bold text-primary mb-(--site-padding-md) text-center lsa lsa-slide-up no-repeat"
+        >
+          Therapeutic Massage
+        </h2>
+        <p class="text-lg md:text-xl text-center mb-12 mx-auto lsa lsa-slide-up no-repeat">
+          Therapeutic massage is an extremely useful tool for treating hundreds of injury, pain, and
+          stress-related conditions and can:
+        </p>
+
+        <div class="max-w-4xl mx-auto">
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-8 text-base-content/80"
+          >
+            <div class="list">
+              <ListItem
+                number={1}
+                listItemClass="text-base-content"
+                text="Alleviate low-back pain, sciatica pain and improve range of motion"
+              />
+              <ListItem
+                number={2}
+                listItemClass="text-base-content"
+                text="Relieve migraine and headache pain"
+              />
+              <ListItem
+                number={3}
+                listItemClass="text-base-content"
+                text="Exercise and stretch weak, tight, or atrophied muscles"
+              />
+              <ListItem
+                number={4}
+                listItemClass="text-base-content"
+                text="Help athletes of any level prepare for, and recover from, strenuous workouts"
+              />
+
+              <!-- Mobile only -->
+              <ListItem
+                number={5}
+                listItemClass="md:hidden text-base-content"
+                text="Provide pain relief and facilitate healing after work- and car- related accidents"
+              />
+              <ListItem
+                number={6}
+                listItemClass="md:hidden text-base-content"
+                text="Reduce post surgery adhesions and swelling"
+              />
+              <ListItem
+                number={7}
+                listItemClass="md:hidden text-base-content"
+                text="Reduce pain and discomfort associated with TMJ, carpal tunnel syndrome, fibromyalgia, and chronic fatigue syndrome"
+              />
+              <ListItem
+                number={8}
+                listItemClass="md:hidden text-base-content"
+                text="Provide support for physical therapy sessions"
+              />
+            </div>
+
+            <!-- Desktop only -->
+            <div class="list hidden md:block">
+              <ListItem
+                number={5}
+                listItemClass="text-base-content"
+                text="Provide pain relief and facilitate healing after work- and car- related accidents"
+              />
+              <ListItem
+                number={6}
+                listItemClass="text-base-content"
+                text="Reduce post surgery adhesions and swelling"
+              />
+              <ListItem
+                number={7}
+                listItemClass="text-base-content"
+                text="Reduce pain and discomfort associated with TMJ, carpal tunnel syndrome, fibromyalgia, and chronic fatigue syndrome"
+              />
+              <ListItem
+                number={8}
+                listItemClass="text-base-content"
+                text="Provide support for physical therapy sessions"
+              />
+            </div>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Relaxation Massage Section -->
+    <section id="relaxation-massage" class="bg-gradient-to-br from-secondary/70 to-secondary/80">
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
+        <h2 class="h1 mb-8 text-secondary-content text-center lsa lsa-slide-up no-repeat">
+          Relaxation Massage
+        </h2>
+        <p
+          class="text-lg text-secondary-content md:text-xl text-center mb-12 mx-auto lsa lsa-slide-up no-repeat"
+        >
+          In contrast, relaxation massage is beneficial to the
+          <a href="/blog/parasympathetic-nervous-system/" class="link"
+            >parasympathetic nervous system</a
+          > and can:
+        </p>
+
+        <ul
+          class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-8 max-w-4xl mx-auto"
+        >
+          <div class="list">
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={1}
+              text="Relax and soften injured, tired, and overused muscles"
+            />
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={2}
+              text="Pump oxygen and nutrients into tissues and vital organs, improving circulation"
+            />
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={3}
+              text="Lessen depression and anxiety"
+            />
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={4}
+              text="Improve the condition of the body's largest organ—the skin"
+            />
+
+            <!-- Mobile only -->
+            <ListItem
+              listItemClass="md:hidden text-secondary-content"
+              number={5}
+              text="Enhance immunity by stimulating lymph flow—the body's natural defense system"
+            />
+            <ListItem
+              listItemClass="md:hidden text-secondary-content"
+              number={6}
+              text="Promote tissue regeneration, reducing scar tissue and stretch marks"
+            />
+            <ListItem
+              listItemClass="md:hidden text-secondary-content"
+              number={7}
+              text="Release endorphins—amino acids that work as the body's natural painkiller"
+            />
+          </div>
+
+          <!-- Desktop only -->
+          <div class="list hidden md:block">
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={5}
+              text="Enhance immunity by stimulating lymph flow—the body's natural defense system"
+            />
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={6}
+              text="Promote tissue regeneration, reducing scar tissue and stretch marks"
+            />
+            <ListItem
+              listItemClass="text-secondary-content"
+              number={7}
+              text="Release endorphins—amino acids that work as the body's natural painkiller"
+            />
+          </div>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10 flex flex-col items-center text-center">
+            <h2 class="h1 text-secondary mb-3 lsa lsa-slide-up no-repeat">Pricing</h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 30 Minutes -->
+            <div class="lsa lsa-slide-up no-repeat flex">
+              <Card
+                id="30-minute-session"
+                className="text-center border border-base-300 hover:border-secondary"
+              >
+                <div class="flex flex-col items-center gap-(--site-padding-base)">
+                  <h3>30 Minutes</h3>
+                  <span class="h2 font-bold text-secondary">$55</span>
+                </div>
+                <div>
+                  <p class="text-base-content/80">
+                    The perfect session length for working on a specific area only, i.e.:
+                    headache/migraine relief, tense neck and shoulder muscles.
+                  </p>
+                </div>
+                <div class="card-actions justify-center mt-auto">
+                  <a
+                    href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary w-full"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </Card>
+            </div>
+            <!-- 60 Minutes -->
+            <div class="lsa lsa-slide-up no-repeat flex">
+              <Card
+                id="60-minute-session"
+                className="text-center scale-[1.02] border-2 border-secondary"
+              >
+                <div class="flex flex-col items-center gap-(--site-padding-base)">
+                  <h3>60 Minutes</h3>
+                  <span class="h2 font-bold text-secondary">$110</span>
+                </div>
+                <div>
+                  <p class="text-base-content/80">
+                    A good choice for those seeking 2-3 areas of focus, i.e.: neck/shoulder/back
+                    pain, lower back/hip tension, or more chronic issues like sciatica.
+                  </p>
+                </div>
+                <div class="card-actions justify-center mt-auto">
+                  <a
+                    href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary w-full"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </Card>
+            </div>
+            <!-- 90 Minutes -->
+            <div class="lsa lsa-slide-up no-repeat flex">
+              <Card
+                id="90-minute-session"
+                className="text-center border border-base-300 hover:border-secondary"
+              >
+                <div class="flex flex-col items-center gap-(--site-padding-base)">
+                  <h3>90 Minutes</h3>
+                  <span class="h2 font-bold text-secondary">$165</span>
+                </div>
+                <div>
+                  <p class="text-base-content/80">
+                    A full body massage can be done thoroughly with the therapist concentrating on
+                    several specific areas of tension
+                  </p>
+                </div>
+                <div class="card-actions justify-center mt-auto">
+                  <a
+                    href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary w-full"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      id="therapeutic-bodywork-cta"
+      class="bg-gradient-to-br from-primary/10 to-secondary/10"
+    >
+      <div class="wrapper container lg:max-w-screen-xl mx-auto">
+        <div class="flex flex-col items-center gap-8 max-w-4xl mx-auto text-center">
+          <h2 class="lsa lsa-slide-up no-repeat">To schedule Massage Therapy:</h2>
+
+          <div class="flex flex-wrap gap-2 justify-center">
+            <div class="lsa lsa-slide-up no-repeat">
+              <a
+                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                Book Now
+              </a>
+            </div>
+            <div class="lsa lsa-slide-up no-repeat">
+              <a href="tel:608-203-8550" class="btn btn-dash"> Call 608-203-8550 </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

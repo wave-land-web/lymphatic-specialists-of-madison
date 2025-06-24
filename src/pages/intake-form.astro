@@ -6,10 +6,10 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title="Manual Lymphatic Drainage Intake Form">
   <PageHeader className="items-center mx-auto text-center">
-    <h1 class="mb-4 text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
+    <h1 class="max-w-3xl mx-auto text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
       Manual Lymphatic Drainage Intake Form
     </h1>
-    <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+    <p class="text-lg md:text-xl text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
       Please fill out the form below to the best of your ability. If you have any questions, please
       contact us.
     </p>
@@ -28,9 +28,9 @@ import Layout from '../layouts/Layout.astro'
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Left Column -->
-            <div class="space-y-4">
+            <div class="space-y-(--site-padding-base)">
               <!-- Name -->
-              <fieldset class="grid grid-cols-2 gap-4">
+              <fieldset class="grid grid-cols-2 gap-(--site-padding-base)">
                 <div class="flex flex-col gap-2">
                   <label for="first-name">First Name <span class="text-accent">*</span></label>
                   <input
@@ -54,7 +54,7 @@ import Layout from '../layouts/Layout.astro'
               </fieldset>
 
               <!-- Phone Numbers -->
-              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
                 <div class="flex flex-col gap-2">
                   <label for="phone-day">Phone (day)</label>
                   <input
@@ -80,7 +80,7 @@ import Layout from '../layouts/Layout.astro'
               </fieldset>
 
               <!-- Email and Date of Birth -->
-              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
                 <div class="flex flex-col gap-2">
                   <label for="email">
                     Email <span class="text-accent">*</span>
@@ -120,9 +120,9 @@ import Layout from '../layouts/Layout.astro'
             </div>
 
             <!-- Right Column -->
-            <div class="space-y-4">
+            <div class="space-y-(--site-padding-base)">
               <!-- Address -->
-              <fieldset class="flex flex-col gap-4">
+              <fieldset class="flex flex-col gap-(--site-padding-base)">
                 <div class="flex flex-col gap-2">
                   <label for="street-address"
                     >Street Address <span class="text-accent">*</span></label
@@ -416,8 +416,8 @@ import Layout from '../layouts/Layout.astro'
           <h2 class="card-title text-2xl mb-6">In Case of Emergency</h2>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="space-y-4">
-              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-(--site-padding-base)">
+              <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
                 <div class="flex flex-col gap-2">
                   <label for="emergency-contact-name">
                     Emergency Contact <span class="text-accent">*</span>
@@ -446,7 +446,7 @@ import Layout from '../layouts/Layout.astro'
               </fieldset>
             </div>
 
-            <div class="space-y-4">
+            <div class="space-y-(--site-padding-base)">
               <fieldset class="flex flex-col gap-2">
                 <label for="emergency-contact-physician">
                   Primary Care Physician and Clinic <span class="text-accent">*</span>
@@ -593,7 +593,7 @@ import Layout from '../layouts/Layout.astro'
         <Card id="reason-for-seeking-mld">
           <h2 class="card-title text-2xl mb-6">Reason for Seeking Manual Lymphatic Drainage</h2>
 
-          <fieldset class="flex flex-col gap-4">
+          <fieldset class="flex flex-col gap-(--site-padding-base)">
             <legend class="p label whitespace-normal mb-2">
               For what reason are you seeking Manual Lymphatic Drainage? <span class="text-accent"
                 >*</span
@@ -683,7 +683,7 @@ import Layout from '../layouts/Layout.astro'
               conditions that apply. If none apply, select other and write n/a.</legend
             >
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Left Column -->
               <div class="space-y-4">
                 <!-- General Conditions -->
@@ -1711,7 +1711,9 @@ import Layout from '../layouts/Layout.astro'
             <legend class="p label whitespace-normal"
               >Please list all surgeries (including Cesarean section).</legend
             >
-            <div class="surgery-entry grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div
+              class="surgery-entry grid grid-cols-1 md:grid-cols-3 gap-(--site-padding-base) mb-(--site-padding-base)"
+            >
               <label class="sr-only" for="surgery-name">Surgery</label>
               <input
                 id="surgery-name"
@@ -1778,7 +1780,9 @@ import Layout from '../layouts/Layout.astro'
               Please list all medications (including vitamins, hormones, and herbs) and reason for
               prescription.
             </legend>
-            <div class="medication-entry grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div
+              class="medication-entry grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) mb-(--site-padding-base)"
+            >
               <label class="sr-only" for="medication-name">Medication</label>
               <input
                 id="medication-name"
@@ -1881,7 +1885,7 @@ import Layout from '../layouts/Layout.astro'
               conditions will require a note from your doctor before proceeding. Please understand
               this is for your safety and well-being.
             </p>
-            <label class="label cursor-pointer">
+            <label class="p label whitespace-normal text-base-content/80">
               <input type="checkbox" class="checkbox checkbox-primary" required />
               I understand and agree to the above terms <span class="text-accent">*</span>
             </label>
@@ -1899,7 +1903,9 @@ import Layout from '../layouts/Layout.astro'
               necessary.
             </p>
             <label class="flex flex-col gap-2">
-              <span class="label whitespace-normal">Signature of Parent or Guardian</span>
+              <span class="p label whitespace-normal text-base-content/80"
+                >Signature of Parent or Guardian</span
+              >
               <input
                 type="text"
                 placeholder="Type your full name to sign"
@@ -1910,7 +1916,7 @@ import Layout from '../layouts/Layout.astro'
         </Card>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-lg btn-primary"> Submit Intake Form </button>
+        <button type="submit" class="btn btn-lg btn-primary w-fit"> Submit Intake Form </button>
       </form>
     </section>
   </main>
@@ -1933,8 +1939,8 @@ import Layout from '../layouts/Layout.astro'
       'grid',
       'grid-cols-1',
       'md:grid-cols-3',
-      'gap-4',
-      'mb-4'
+      'gap-(--site-padding-base)',
+      'mb-(--site-padding-base)'
     )
     newEntry.innerHTML = /* HTML */ `
       <label class="sr-only" for="surgery-name">Surgery</label>
@@ -1994,8 +2000,8 @@ import Layout from '../layouts/Layout.astro'
       'grid',
       'grid-cols-1',
       'md:grid-cols-2',
-      'gap-4',
-      'mb-4'
+      'gap-(--site-padding-base)',
+      'mb-(--site-padding-base)'
     )
     newEntry.innerHTML = /* HTML */ `
       <label class="sr-only" for="medication-name">Medication</label>

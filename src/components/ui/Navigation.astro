@@ -9,7 +9,7 @@ import { NAVIGATION } from '../../consts'
   <div class="navbar wrapper h-(--nav-height) px-(--site-padding-base)">
     <!-- Mobile navigation and logo -->
     <div class="navbar-start">
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-(--site-padding-base)">
         <div class="lg:hidden">
           <label for="my-drawer-nav" aria-label="open sidebar" class="btn btn-square btn-ghost">
             <Hamburger class="w-5 h-5" />
@@ -29,7 +29,7 @@ import { NAVIGATION } from '../../consts'
         <label for="my-drawer-nav" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul
           tabindex="0"
-          class="menu text-primary-content min-h-full w-80 p-4 border-r-2 border-base-300 bg-base-100/90 backdrop-blur-lg"
+          class="menu text-primary-content min-h-full w-80 gap-(--site-padding-base) border-r-2 border-base-300 bg-base-100/90 backdrop-blur-lg"
         >
           {
             NAVIGATION.map((link) => {

@@ -6,7 +6,9 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title="Pricing">
   <PageHeader>
-    <h1 class="mb-4 text-primary text-center lsa lsa-slide-up no-repeat">Pricing</h1>
+    <h1 class="mb-(--site-padding-base) text-primary text-center lsa lsa-slide-up no-repeat">
+      Pricing
+    </h1>
   </PageHeader>
 
   <main>
@@ -14,7 +16,7 @@ import Layout from '../layouts/Layout.astro'
       id="manual-lymphatic-drainage-pricing"
       class="wrapper container lg:max-w-screen-xl mx-auto mb-(--site-padding-2xl) pt-(--site-padding-base)"
     >
-      <h2 class="h1 mb-10 text-center text-primary lsa lsa-slide-up no-repeat">
+      <h2 class="h1 mb-(--site-padding-md) text-center text-primary lsa lsa-slide-up no-repeat">
         Manual Lymphatic Drainage
       </h2>
 
@@ -22,12 +24,12 @@ import Layout from '../layouts/Layout.astro'
         <!-- 30 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
           <Card id="30-minute-session" className="text-center border-base-300 hover:border-primary">
-            <div class="flex flex-col items-center gap-4 mb-6">
+            <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>30 Minutes</h3>
               <span class="h2 font-bold text-primary">$65</span>
               <p class="h4 font-semibold">Neck and Face only.</p>
             </div>
-            <div class="flex flex-col items-center gap-2 mb-6">
+            <div>
               <p class="text-base-content/80">Indications include:</p>
               <p class="text-base-content/70">
                 Sinus/Tension Headache/Migraine, Puffy Eyes. Not all practitioners offer 30 min
@@ -37,6 +39,8 @@ import Layout from '../layouts/Layout.astro'
             <div class="card-actions justify-center mt-auto">
               <a
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary w-full"
               >
                 Book Now
@@ -53,12 +57,12 @@ import Layout from '../layouts/Layout.astro'
             id="60-minute-session"
             className="text-center shadow-lg scale-[1.02] border-2 border-primary"
           >
-            <div class="flex flex-col items-center gap-4 mb-6">
+            <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>60 Minutes</h3>
               <span class="h2 font-bold text-primary">$130</span>
               <p class="h4 font-semibold">Neck, Abdominal and Upper or Lower Extremity.</p>
             </div>
-            <div class="flex flex-col items-center gap-2 mb-6">
+            <div>
               <p class="text-base-content/80">Indications include:</p>
               <p class="text-base-content/70">
                 Lymphedema/Lipidema, Chronic Health Issues, Post-Traumatic Injury Edema, autoimmune
@@ -70,6 +74,8 @@ import Layout from '../layouts/Layout.astro'
             <div class="card-actions justify-center mt-auto">
               <a
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary w-full"
               >
                 Book Now
@@ -83,12 +89,12 @@ import Layout from '../layouts/Layout.astro'
         <!-- 90 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
           <Card id="90-minute-session" className="text-center border-base-300 hover:border-primary">
-            <div class="flex flex-col items-center gap-4 mb-6">
+            <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>90 Minutes</h3>
               <span class="h2 font-bold text-primary">$195</span>
               <p class="h4 font-semibold">Full Body Sequence.</p>
             </div>
-            <div class="flex flex-col items-center gap-2 mb-6">
+            <div>
               <p class="text-base-content/80">Indications include:</p>
               <p class="text-base-content/70">
                 Appropriate for those who feel they need more than the 60 mins session or for more
@@ -98,6 +104,8 @@ import Layout from '../layouts/Layout.astro'
             <div class="card-actions justify-center mt-auto">
               <a
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary w-full"
               >
                 Book Now
@@ -113,11 +121,11 @@ import Layout from '../layouts/Layout.astro'
 
     <section
       id="pre-post-surgical-manual-lymphatic-drainage"
-      class="mb-(--site-padding-2xl) bg-secondary/70"
+      class="mb-(--site-padding-2xl) bg-gradient-to-br from-secondary/70 to-secondary/80"
     >
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <h2
-          class="h1 max-w-2xl mx-auto mb-10 text-center text-secondary-content lsa lsa-slide-up no-repeat"
+          class="h1 max-w-2xl mx-auto mb-(--site-padding-md) text-center text-secondary-content lsa lsa-slide-up no-repeat"
         >
           Pre/Post-Surgical Manual Lymphatic Drainage
         </h2>
@@ -128,12 +136,12 @@ import Layout from '../layouts/Layout.astro'
             id="60-minute-session"
             className="text-center shadow-lg scale-[1.02] border border-base-300 hover:border-secondary max-w-lg mx-auto"
           >
-            <div class="flex flex-col items-center gap-4 mb-6">
+            <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>60 Minutes</h3>
               <span class="h2 font-bold text-secondary">$140</span>
               <p class="h4 font-semibold">For patients with in 6 months of surgical proceedure.</p>
             </div>
-            <div class="flex flex-col items-center gap-2 mb-6">
+            <div>
               <p class="text-base-content/80">Indications include:</p>
               <p class="text-base-content/70">
                 For post-surgical care after mastectomy, abdominoplasty, liposuction, facelift,
@@ -163,19 +171,22 @@ import Layout from '../layouts/Layout.astro'
       id="therapeutic-bodywork"
       class="wrapper container lg:max-w-screen-xl mx-auto mb-(--site-padding-2xl)"
     >
-      <h2 class="h1 mb-10 text-center text-primary lsa lsa-slide-up no-repeat">
+      <h2 class="h1 mb-(--site-padding-md) text-center text-secondary lsa lsa-slide-up no-repeat">
         Therapeutic Bodywork
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- 30 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="30-minute-session" className="text-center border-base-300 hover:border-primary">
-            <div class="flex flex-col items-center gap-4 mb-6">
+          <Card
+            id="30-minute-session"
+            className="text-center border-base-300 hover:border-secondary"
+          >
+            <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>30 Minutes</h3>
-              <span class="h2 font-bold text-primary">$55</span>
+              <span class="h2 font-bold text-secondary">$55</span>
             </div>
-            <div class="flex flex-col items-center gap-2 mb-6">
+            <div>
               <p class="text-base-content/80">
                 The perfect session length for working on a specific area only, i.e.:
                 headache/migraine relief, tense neck and shoulder muscles.
@@ -184,7 +195,9 @@ import Layout from '../layouts/Layout.astro'
             <div class="card-actions justify-center mt-auto">
               <a
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                class="btn btn-primary w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary w-full"
               >
                 Book Now
               </a>
@@ -196,13 +209,13 @@ import Layout from '../layouts/Layout.astro'
         <div class="lsa lsa-slide-up no-repeat flex">
           <Card
             id="60-minute-session"
-            className="text-center shadow-lg scale-[1.02] border-2 border-primary"
+            className="text-center shadow-lg scale-[1.02] border-2 border-secondary"
           >
-            <div class="flex flex-col items-center gap-4 mb-6">
+            <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>60 Minutes</h3>
-              <span class="h2 font-bold text-primary">$110</span>
+              <span class="h2 font-bold text-secondary">$110</span>
             </div>
-            <div class="flex flex-col items-center gap-2 mb-6">
+            <div>
               <p class="text-base-content/80">
                 A good choice for those seeking 2-3 areas of focus, i.e.: neck/shoulder/back pain,
                 lower back/hip tension, or more chronic issues like sciatica.
@@ -211,7 +224,9 @@ import Layout from '../layouts/Layout.astro'
             <div class="card-actions justify-center mt-auto">
               <a
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                class="btn btn-primary w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary w-full"
               >
                 Book Now
               </a>
@@ -221,12 +236,15 @@ import Layout from '../layouts/Layout.astro'
         </div>
         <!-- 90 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="90-minute-session" className="text-center border-base-300 hover:border-primary">
-            <div class="flex flex-col items-center gap-4 mb-6">
+          <Card
+            id="90-minute-session"
+            className="text-center border-base-300 hover:border-secondary"
+          >
+            <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>90 Minutes</h3>
-              <span class="h2 font-bold text-primary">$165</span>
+              <span class="h2 font-bold text-secondary">$165</span>
             </div>
-            <div class="flex flex-col items-center gap-2 mb-6">
+            <div>
               <p class="text-base-content/80">
                 A full body massage can be done thoroughly with the therapist concentrating on
                 several specific areas of tension.
@@ -235,7 +253,9 @@ import Layout from '../layouts/Layout.astro'
             <div class="card-actions justify-center mt-auto">
               <a
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                class="btn btn-primary w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary w-full"
               >
                 Book Now
               </a>
