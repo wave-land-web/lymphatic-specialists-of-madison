@@ -1,10 +1,370 @@
 ---
+import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="FAQ">
-  <PageHeader>
-    <h1 class="mb-(--site-padding-base) text-primary">Frequently Asked Questions</h1>
+  <PageHeader className="items-center mx-auto text-center">
+    <h1 class="text-primary text-shadow-lg lsa lsa-slide-up no-repeat">FAQs</h1>
+    <p class="text-lg md:text-xl text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+      The following are a few frequently asked questions (FAQs) regarding our services. If you have
+      any concerns not addressed here, please feel free to contact us.
+    </p>
   </PageHeader>
+
+  <main>
+    <section class="pt-(--site-padding-base)">
+      <div class="wrapper container lg:max-w-4xl mx-auto">
+        <div class="join join-vertical w-full lsa lsa-slide-up no-repeat shadow-sm rounded-4xl">
+          <!-- FAQ 1: How can I book an appointment -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" checked="checked" />
+            <div class="collapse-title text-lg font-semibold">
+              How can I book an appointment for a session at your clinic?
+            </div>
+            <div class="collapse-content prose prose-sm max-w-none text-base-content/80">
+              <p>
+                Appointments can be scheduled by either booking online or by calling/texting us at
+                608.203.8550. You can also access our waitlist through the Booksy app.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2: What is the Lymphatic System -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">What is the Lymphatic System?</div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  Every day, about 20 liters of plasma (the liquid part of your blood) flow out of
+                  tiny pores in the thin walls of your capillaries. Imagine water seeping out of a
+                  sponge. Where does this liquid go? It delivers oxygen and nutrients to the tissues
+                  surrounding each capillary. The tissues hungrily soak up all the nutrients while
+                  leaving behind waste (like a kid who finishes their food but leaves behind a pile
+                  of sticky napkins).
+                </p>
+                <p>
+                  The plasma doesn't mind cleaning up the mess — it picks up the waste and then
+                  returns to your bloodstream the same way it came, by flowing back through the
+                  pores in your capillary walls. Each day, about 17 liters of plasma return to your
+                  bloodstream in this way. Since 20 liters initially flowed out of your capillary
+                  walls, that means 3 liters are still roaming around in your body's tissues.
+                </p>
+                <p>
+                  That's where your lymphatic system steps in. Tiny lymphatic capillaries pick up
+                  this remaining fluid from your tissues. The fluid changed its name during its
+                  journey: now instead of plasma, it's called lymph. Your lymphatic capillaries move
+                  the lymph into larger tubes called lymphatic vessels.
+                </p>
+                <p>
+                  These vessels keep the lymph moving until it ultimately reaches one of two major
+                  ducts in your upper chest. These are called your right lymphatic duct and thoracic
+                  duct, and they're a bit like highway on-ramps. They merge into large veins called
+                  your subclavian veins and empty the lymph into them. From there, your lymph
+                  reenters your bloodstream and can flow through your body again.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3: How does the Lymphatic System work -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">
+              How does the Lymphatic System work?
+            </div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  <strong
+                    >A good analogy for the lymph system and how inflammation affects the lymph
+                    system:</strong
+                  >
+                </p>
+                <ul>
+                  <li>Imagine your lymph system as a bathtub shower.</li>
+                  <li>Your lymph fluid is shower water.</li>
+                  <li>Your body is the tub.</li>
+                  <li>
+                    Your lymph nodes are the drain (imaging lots of little drains - not one big
+                    one).
+                  </li>
+                  <li>
+                    In a normal healthy lymph system - water from the shower comes out as fast as it
+                    goes down the drain leaving no standing water behind.
+                  </li>
+                </ul>
+                <p>
+                  Now imagine an acute injury or trauma like a sprained ankle - this looks like
+                  turning the shower water off and putting the bathtub water on full blast for a
+                  short period of time. Let's say 20 mins. There is standing water but eventually
+                  your body (the bathtub drains) are able to move this excess fluid through, leaving
+                  no standing water after a couple of days.
+                </p>
+                <p>
+                  Imagine chronic inflammation, like in the case of an autoimmune disease. This
+                  looks like turning the shower water off and putting the bathtub water on a slow
+                  steady stream forever. There is always a small amount of standing water in the
+                  bathtub because this stream is always larger than the amount of shower water and
+                  your drains can only handle the amount of water produced when the shower is turned
+                  on.
+                </p>
+                <p>
+                  Now imagine lymphedema, which can be from lymph node removal, trauma, radiation or
+                  scar tissue. This is like taking away some of the drains. There is no excess
+                  water, just not enough drains to allow for no standing water.
+                </p>
+                <p><strong>What causes inflammation?</strong></p>
+                <p>
+                  Lymph is a by-product of blood flow. With inflammation, we have more blood flow
+                  and then more lymph. Therefore, inflammation affects the lymphatic system.
+                </p>
+                <p>Possible causes of inflammation (although it is different for everyone):</p>
+                <ul>
+                  <li>
+                    Diet: eating foods that create an inflammatory/allergic response to or eating
+                    too little/too much.
+                  </li>
+                  <li>Exercise: too little or too much.</li>
+                  <li>Hormone imbalance.</li>
+                  <li>
+                    Genetics: having a predisposition to something like an autoimmune disease.
+                  </li>
+                  <li>Acute or chronic stress.</li>
+                  <li>High Cortisol levels, (caused often by chronic stress).</li>
+                  <li>Environment: allergens or sensitivities.</li>
+                  <li>Acute trauma like an ankle sprain.</li>
+                </ul>
+                <p>
+                  We look at all of the above factors that could play a role in inflammation and
+                  then assign them as either a pebble, rock or boulder.
+                </p>
+                <p>
+                  We imagine a cylindrical vase filled half way with water and start adding in your
+                  individual inflammatory factors into the vase. We begin to see symptoms of
+                  inflammation when the vase overflows.
+                </p>
+                <p>
+                  For example, if you have an autoimmune disease (this would be a boulder), have a
+                  sensitivity to gluten (pebble) and a close relative just passed away (rock), this
+                  could be enough to tip the water over the edge. We often make referrals to other
+                  professionals that can help manage your pebbles, rocks and boulders so we can
+                  focus on what we do, which is treat the overflow of inflammation (i.e. lymphatic
+                  fluid) that we see.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4: What should I expect during my visit -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">
+              What should I expect during my visit?
+            </div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  Your practitioner will require you to fill out a health history form. <strong
+                    >If you are a new patient, please be sure to fill out your intake form online in
+                    advance by going to the FORMS section of the menu and completing the appropriate
+                    intake form.</strong
+                  > This ensures beginning the session on time.
+                </p>
+                <p>
+                  <em
+                    >Your therapist will begin by asking you intake questions to establish what your
+                    concerns are if there are any conditions needing to be addressed and to
+                    determine if bodywork is appropriate for you.</em
+                  > The therapist may perform certain assessments and testing to evaluate your condition.
+                </p>
+                <p>
+                  Your practitioner will leave the treatment room for you to have privacy while
+                  getting ready for your session. They will knock on the door before they come in.
+                  Once they are in the room, they will make any necessary adjustments for your
+                  comfort before beginning the session. Feel free to ask any questions that may come
+                  up for you.
+                </p>
+                <p>
+                  At the end of the session, feel free to take a moment on the table to stretch and
+                  "come back into your body". <em
+                    >Once you are up and dressed, a conversation about your session will take place
+                    in your treatment room and any questions you may have or suggestions from the
+                    practitioner can be discussed at this time.</em
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5: Where will treatment take place -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">Where will treatment take place?</div>
+            <div class="collapse-content">
+              <p class="text-base-content/80">
+                Your session will take place in a warm, comfortable, quiet room. Soft music will be
+                played to help you relax. You will lie on a table especially designed for your
+                comfort. Lighting and temperature in the treatment rooms are also adjustable to fit
+                your personal liking.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6: What do I wear during treatment -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">
+              What do I wear during my treatment session?
+            </div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  Depending on the primary technique your practitioner uses, you may or may not need
+                  to fully undress. For a full body therapeutic massage, most people undress
+                  completely. However, you may choose to wear underwear. Your massage therapist will
+                  give you privacy to undress, and you will be covered with a sheet and blanket at
+                  all times except the area being worked on.
+                </p>
+                <p>
+                  Manual lymphatic drainage is best performed while the patient is fully undressed,
+                  as restrictive clothing and elastic bands can obstruct good lymphatic flow. That
+                  said, you will always be covered with a sheet or towel during the session.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7: What should I expect after MLD session -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">
+              What should I expect afterward my MLD session?
+            </div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  Massage and MLD can be profoundly relaxing, affecting all your bodies systems.
+                  Give yourself a moment to reorient before slowly getting up. After an initial
+                  period of feeling slowed down, people often experience an increase in energy that
+                  can last for several days.
+                </p>
+                <p>
+                  With Manual Lymphatic Drainage, it's not uncommon for people to feel a number of
+                  symptoms associated with removing inflammation causing/toxins such as headache, or
+                  feeling tired. Sometimes you may not feel dramatic results right away. Watch for
+                  changes over the following days, such as pain relief, increased mobility, or
+                  reduced stress.
+                </p>
+                <p>
+                  Because lymphatic fluid is released through urination, it's not uncommon for
+                  people to find themselves in the bathroom more frequently after a MLD appointment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 8: Does Acupuncture hurt -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">Does Acupuncture hurt?</div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  You might be more sensitive in certain areas, but it shouldn't hurt. Acupuncture
+                  needles are usually not painful on areas of thicker skin and muscles. For example,
+                  your belly and back are less sensitive. Certain points like your hands and feet
+                  might be more sensitive.
+                </p>
+                <p>
+                  If you feel pain, tell your acupuncturist. They'll adjust the needles or choose
+                  other points. Their goal is not to make you feel pain. They will position you
+                  properly and make sure you feel comfortable so that you can relax during your
+                  session.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 9: Should I come in with cold or flu -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">
+              Should I come in for a session if I have a cold or the flu?
+            </div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  No. Receiving massage therapy or manual lymphatic drainage while battling a cold
+                  or influenza is never a good idea. Not only can you easily spread illness to your
+                  practitioner (who is seeing several other clients per day), but you can also
+                  exasperate your symptoms by receiving massage.
+                </p>
+                <p>
+                  Also, if you are currently taking antibiotics for an infection, you will be
+                  required to reschedule your appointment until a time at which you are no longer
+                  taking the medication.
+                </p>
+                <p>
+                  <em
+                    ><strong
+                      >Please note that although the clinic has a strict cancellation policy, we
+                      will never charge you for not coming in due to illness.</strong
+                    ></em
+                  >
+                </p>
+                <p>
+                  If you do come in while ill, your therapist may choose to reschedule your session.
+                  Know that this is for your well-being and the health of our therapists and other
+                  patients.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 10: Are practitioners certified -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">
+              Are your practitioners certified and licensed?
+            </div>
+            <div class="collapse-content">
+              <p class="text-base-content/80">
+                Yes, all practitioners at Madison Lymphatics and Bodywork are fully certified in
+                their professions and are licensed by the State of Wisconsin.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 11: Tipping policy -->
+          <div class="collapse collapse-plus join-item bg-base-100 border-base-300 border">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold">What is your policy on tipping?</div>
+            <div class="collapse-content">
+              <div class="prose prose-sm max-w-none text-base-content/80">
+                <p>
+                  While it is not an obligation to give your practitioner a gratuity, it is always
+                  appreciated. Gratuities can be given at the time of payment or, if you care to be
+                  more discrete, can be left in the treatment room for your practitioner after the
+                  session.
+                </p>
+                <p>
+                  If you looking for an different way to show appreciation for your practitioner,
+                  leaving a positive review online or referring a friend to our clinic is a great
+                  alternative to tipping.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="call-to-action">
+      <NewsletterSubscribe />
+    </section>
+  </main>
 </Layout>
