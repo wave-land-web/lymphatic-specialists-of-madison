@@ -1,16 +1,15 @@
 ---
 import ListItem from '../../components/text/ListItem.astro'
+import PageTitle from '../../components/text/PageTitle.astro'
 import Card from '../../components/ui/Card.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title="Pre/Post-Surgical Manual Lymphatic Drainage">
-  <PageHeader>
-    <h1 class="max-w-3xl text-primary lsa lsa-slide-up no-repeat">
-      Pre/Post-Surgical Manual Lymphatic Drainage
-    </h1>
-    <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+  <PageHeader className="items-center max-w-4xl mx-auto text-center">
+    <PageTitle>Pre/Post-Surgical Manual Lymphatic Drainage</PageTitle>
+    <p class="prose text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
       <a href="/blog/post-surgical-manual-lymphatic-drainage" class="link link-accent"
         >Post-surgical manual lymphatic drainage</a
       > helps clear out excess lymph fluid caused by surgical trauma, which assists in faster healing

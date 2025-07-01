@@ -1,14 +1,13 @@
 ---
+import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Pricing">
-  <PageHeader>
-    <h1 class="mb-(--site-padding-base) text-primary text-center lsa lsa-slide-up no-repeat">
-      Pricing
-    </h1>
+  <PageHeader className="items-center mx-auto text-center">
+    <PageTitle>Pricing</PageTitle>
   </PageHeader>
 
   <main>

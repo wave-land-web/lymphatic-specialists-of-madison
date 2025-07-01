@@ -29,7 +29,7 @@ import { NAVIGATION } from '../../consts'
         <label for="my-drawer-nav" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul
           tabindex="0"
-          class="menu text-primary-content min-h-full w-80 gap-(--site-padding-base) border-r-2 border-base-300 bg-base-100/90 backdrop-blur-lg"
+          class="menu text-base-content min-h-full w-80 gap-2 border-r-2 border-base-300 bg-base-100/90 backdrop-blur-lg"
         >
           {
             NAVIGATION.map((link) => {
@@ -37,7 +37,7 @@ import { NAVIGATION } from '../../consts'
                 return (
                   <li>
                     <HeaderLink href={link.href}>{link.label}</HeaderLink>
-                    <ul class="p-2">
+                    <ul class="menu gap-2">
                       {link.children.map((child) => (
                         <li>
                           <HeaderLink href={child.href}>{child.label}</HeaderLink>
@@ -76,13 +76,13 @@ import { NAVIGATION } from '../../consts'
                     <Chevron class="w-4 h-4 transition-transform duration-200 ease-in-out" />
                   </button>
                   <ul
-                    class="dropdown menu w-52 rounded-box text-primary-content shadow-sm bg-base-100/90 backdrop-blur-lg"
+                    class="dropdown menu max-w-64 rounded-box shadow-sm bg-base-100/90 backdrop-blur-lg text-base-content"
                     id={`popover-${index}`}
                     style={`position-anchor:--anchor-${index}`}
                     popover
                   >
                     {link.children.map((child) => (
-                      <li class="text-primary-content">
+                      <li class="text-base-content">
                         <HeaderLink href={child.href}>{child.label}</HeaderLink>
                       </li>
                     ))}
@@ -156,13 +156,13 @@ import { NAVIGATION } from '../../consts'
       // Scrolled past threshold - solid background with primary content text
       nav.classList.add('bg-base-100/90')
       nav.classList.add('backdrop-blur-lg')
-      nav.classList.add('text-primary-content')
+      nav.classList.add('text-base-content')
       nav.classList.remove('text-neutral-content')
     } else {
       // At the top - transparent background with neutral content text
       nav.classList.remove('bg-base-100/90')
       nav.classList.remove('backdrop-blur-lg')
-      nav.classList.remove('text-primary-content')
+      nav.classList.remove('text-base-content')
       nav.classList.add('text-neutral-content')
     }
   }

@@ -1,11 +1,12 @@
 ---
-import { getImage, Picture } from 'astro:assets'
+import { getImage, Image } from 'astro:assets'
 import LymphaticSystemImage from '../assets/images/lymphatic-system.png'
 import PlaceholderOneImage from '../assets/images/placeholder-1.jpg'
 import PlaceholderTwoImage from '../assets/images/placeholder-2.jpg'
 import PlaceholderFourImage from '../assets/images/placeholder-4.jpg'
 import PlaceholderFiveImage from '../assets/images/placeholder-5.jpg'
 import ListItem from '../components/text/ListItem.astro'
+import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
@@ -24,20 +25,21 @@ const serviceImages: Record<string, any> = {
 
 <Layout>
   <PageHeader>
-    <h1 class="max-w-3xl text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
-      Madison Lymphatics and Manual Therapy
-    </h1>
+    <PageTitle>Madison Lymphatics and Manual Therapy</PageTitle>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
       <div class="prose lg:prose-xl text-neutral-content">
-        <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+        <p class="h3 text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
           Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric
-          clinic. We are a patient-focused environment specializing in Manual Lymphatic Drainage
-          (MLD) and have experience and comfort treating: post-surgical patients, cancer patients,
-          chronic lymphatic conditions such as lymphedema and lipedema, as well as those with
-          generalized inflammation, chronic immune impaired conditions (Lyme disease, Ehlors Danlos
-          Syndrome, rheumatoid arthritis, etc), long/post-COVID symptoms and hypersensitivity.
+          clinic.
         </p>
         <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+          We are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD) and
+          have experience and comfort treating: post-surgical patients, cancer patients, chronic
+          lymphatic conditions such as lymphedema and lipedema, as well as those with generalized
+          inflammation, chronic immune impaired conditions (Lyme disease, Ehlors Danlos Syndrome,
+          rheumatoid arthritis, etc), long/post-COVID symptoms and hypersensitivity.
+        </p>
+        <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
           Established in 2023, Madison Lymphatics and Manual Therapy is owned and operated by
           Courtney Rolnick, PT, DPT, CMLDT, who has 12+ years of MLD specific experience treating a
           wide array of patients with complex health histories. Formerly known as Therapeutic
@@ -46,15 +48,15 @@ const serviceImages: Record<string, any> = {
         </p>
       </div>
       <div class="prose lg:prose-xl text-neutral-content">
-        <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+        <p class="text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
           For more information on how Madison Lymphatics and Manual Therapy can help you achieve
           your health goals, call us at <a href="tel:6082038550" class="link link-accent"
             >608-203-8550</a
           >.
         </p>
-        <p class="text-sm text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
+        <p class="text-sm text-shadow-lg lsa lsa-slide-up delay-500 no-repeat">
           <em>
-            <strong class="text-primary font-nuckle-semibold">Note:</strong> If you are having difficulty
+            <strong class="text-emerald-600 font-nuckle-semibold">Note:</strong> If you are having difficulty
             getting scheduled at the time/day you would like - please don't hesitate to call/text us
             to be added to our cancellation list as cancellations are common. Sometimes we are booking
             farther out - we use our cancellation list as a means to get patients in sooner. Thank you.
@@ -115,11 +117,11 @@ const serviceImages: Record<string, any> = {
       class="hero mb-(--site-padding-2xl) p-0 shadow-sm bg-cover bg-center md:bg-fixed"
       style={`background-image: url(${placeholderOneImage.src});`}
     >
-      <div class="hero-overlay bg-black/60"></div>
+      <div class="hero-overlay bg-black/70"></div>
       <div
         class="wrapper w-full p-(--site-padding-lg) flex flex-col items-start gap-(--site-padding-md) text-neutral-content"
       >
-        <h2 class="h1 text-primary text-shadow-lg lsa lsa-slide-up no-repeat">
+        <h2 class="h1 text-emerald-600 text-shadow-lg lsa lsa-slide-up no-repeat">
           What Sets Us Apart
         </h2>
         <div
@@ -308,11 +310,9 @@ const serviceImages: Record<string, any> = {
           </ul>
         </div>
 
-        <Picture
+        <Image
           src={LymphaticSystemImage}
           alt="Lymphatic System"
-          width={1000}
-          height={1000}
           class="order-first md:order-last lsa lsa-slide-up no-repeat"
         />
       </div>

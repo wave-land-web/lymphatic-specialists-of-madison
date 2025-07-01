@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets'
+import { Image } from 'astro:assets'
 
 export interface Props {
   id: string
@@ -26,13 +26,10 @@ const {
 >
   {
     imageSrc && (
-      <Picture
+      <Image
         class="w-full h-full max-h-[250px] object-cover filter grayscale-100 group-hover:grayscale-0 transition-all duration-200 rounded-b-none shadow-none"
         src={imageSrc}
         alt={imageAlt ?? ''}
-        widths={[320, 640, 768, 1024, 1280, 1920]}
-        sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
-        formats={['avif', 'webp', 'jpeg']}
         quality={quality}
         loading={priority ? 'eager' : 'lazy'}
         fetchpriority={priority ? 'high' : 'auto'}

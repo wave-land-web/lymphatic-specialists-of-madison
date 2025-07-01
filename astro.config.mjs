@@ -19,9 +19,12 @@ export default defineConfig({
       }),
     ],
   },
-
+  image: {
+    responsiveStyles: true,
+    layout: 'full-width',
+  },
   adapter: netlify({
-    imageCDN: false, // See: <https://docs.astro.build/en/guides/integrations-guide/netlify/#netlify-image-cdn-support>
+    imageCDN: false,
     cacheOnDemandPages: true,
   }),
 
