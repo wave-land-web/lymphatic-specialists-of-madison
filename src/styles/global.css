@@ -184,7 +184,8 @@
   }
 
   button,
-  a {
+  a,
+  .a {
     @apply text-balance font-nuckle-semibold transition-colors duration-200;
   }
 
