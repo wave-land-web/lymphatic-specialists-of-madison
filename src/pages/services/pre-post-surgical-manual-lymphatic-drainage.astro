@@ -7,9 +7,11 @@ import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title="Pre/Post-Surgical Manual Lymphatic Drainage">
-  <PageHeader className="items-center max-w-4xl mx-auto text-center">
+  <PageHeader className="max-w-4xl">
     <PageTitle>Pre/Post-Surgical Manual Lymphatic Drainage</PageTitle>
-    <p class="prose text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+    <p
+      class="prose mr-auto text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat"
+    >
       <a href="/blog/post-surgical-manual-lymphatic-drainage" class="link link-accent"
         >Post-surgical manual lymphatic drainage</a
       > helps clear out excess lymph fluid caused by surgical trauma, which assists in faster healing
@@ -52,7 +54,7 @@ import Layout from '../../layouts/Layout.astro'
             therapist gently massages the lymph nodes and then guides post surgical edema towards
             those correlating lymph nodes.
           </p>
-          <p class="font-semibold text-lg md:text-xl lsa lsa-slide-up no-repeat">
+          <p class="h4 lsa lsa-slide-up no-repeat">
             Post-surgical Manual Lymphatic Drainage is NOT deep tissue massage. MLD should NEVER
             hurt to receive. MLD is also NOT opening up incision wounds to push edema out of the
             body.
@@ -63,15 +65,15 @@ import Layout from '../../layouts/Layout.astro'
 
     <section
       id="why-choose-pre-post-surgical-manual-lymphatic-drainage"
-      class="bg-gradient-to-br from-secondary/70 to-secondary/80"
+      class="bg-gradient-to-br from-accent/50 to-accent/70"
     >
       <div
         class="wrapper container lg:max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg) mx-auto"
       >
-        <h2 class="h1 font-bold text-secondary-content lsa lsa-slide-up no-repeat">
+        <h2 class="h1 font-bold text-accent-content lsa lsa-slide-up no-repeat">
           Why choose pre/post-surgical Manual Lymphatic Drainage?
         </h2>
-        <div class="prose lg:prose-xl text-secondary-content">
+        <div class="prose lg:prose-xl text-accent-content">
           <p class="lsa lsa-slide-up no-repeat">
             Oftentimes after surgery, the body will swell with excessive edema both at and proximal
             to the surgical site. This post-operative swelling, while completely normal, can be
@@ -85,7 +87,7 @@ import Layout from '../../layouts/Layout.astro'
             while using the most gentle of touch, Manual Lymphatic Drainage is frequently regarded
             as an imperative part of the surgical recovery process by surgeons worldwide.
           </p>
-          <p class="font-semibold text-lg md:text-xl lsa lsa-slide-up no-repeat">
+          <p class="h4 lsa lsa-slide-up no-repeat">
             Below is a study done by the NIH (National Institutes of Health) showing the benefits of
             post liposuction MLD.
           </p>
@@ -101,10 +103,10 @@ import Layout from '../../layouts/Layout.astro'
 
     <section id="surgical-procedures-we-treat">
       <div class="wrapper container flex flex-col gap-(--site-padding-md) mx-auto">
-        <h2 class="h1 font-bold text-secondary text-center lsa lsa-slide-up no-repeat">
+        <h2 class="h1 font-bold text-accent text-center lsa lsa-slide-up no-repeat">
           Surgical Procedures We Treat
         </h2>
-        <p class="text-lg md:text-xl text-center mx-auto lsa lsa-slide-up no-repeat">
+        <p class="h4 text-center mx-auto lsa lsa-slide-up no-repeat">
           For the last several years, Courtney Rolnick, PT, CMLDT, has been providing post-operative
           manual lymphatic drainage to clients recovering from a wide range of surgeries including:
         </p>
@@ -162,20 +164,23 @@ import Layout from '../../layouts/Layout.astro'
 
     <section
       id="do-you-have-tissue-fibrosis-or-lumps-and-bumps-after-surgery"
-      class="bg-gradient-to-br from-accent/50 to-accent/70"
+      class="bg-gradient-to-br from-primary/80 to-primary/90"
     >
       <div
         class="wrapper container lg:max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg) mx-auto"
       >
-        <h2 class="h1 font-bold text-accent-content lsa lsa-slide-up no-repeat">
+        <h2 class="h1 font-bold text-primary-content lsa lsa-slide-up no-repeat">
           Do you have tissue fibrosis or lumps and bumps after surgery?
         </h2>
-        <div class="prose lg:prose-xl text-accent-content">
-          <p class="lsa lsa-slide-up no-repeat">
+        <div class="prose lg:prose-xl text-primary-content">
+          <p class="h4 lsa lsa-slide-up no-repeat">
             Fibrosis is a build up of scar tissue that can occur as a result of cosmetic surgery
-            which can cause lumps and bumps in the subdermal tissues. It can sometimes be found in
-            the lateral torso, lower abdomen, and back after liposuction. While this consequence of
-            liposuction is not ideal, not to worry. Fibrosis can be treated!
+            which can cause lumps and bumps in the subdermal tissues.
+          </p>
+          <p class="lsa lsa-slide-up no-repeat">
+            It can sometimes be found in the lateral torso, lower abdomen, and back after
+            liposuction. While this consequence of liposuction is not ideal, not to worry. Fibrosis
+            can be treated!
           </p>
           <p class="lsa lsa-slide-up no-repeat">
             Through various techniques, fibrosis and scar tissue can be gently treated causing any
@@ -192,19 +197,17 @@ import Layout from '../../layouts/Layout.astro'
       <div
         class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
-        <h2 class="h1 max-w-2xl mx-auto text-center text-base-content lsa lsa-slide-up no-repeat">
-          Pricing
-        </h2>
+        <h2 class="h1 max-w-2xl mx-auto text-center lsa lsa-slide-up no-repeat">Pricing</h2>
 
         <!-- 60 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
           <Card
             id="60-minute-session"
-            className="text-center shadow-lg scale-[1.02] border border-base-300 hover:border-accent max-w-lg mx-auto"
+            className="text-center shadow-lg scale-[1.02] border border-base-300 hover:border-primary max-w-lg mx-auto"
           >
             <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>60 Minutes</h3>
-              <span class="h2 font-bold text-accent">$140</span>
+              <span class="h2 font-bold text-primary">$140</span>
               <p class="h4 font-semibold">Post-Surgical Manual Lymphatic Drainage Session</p>
             </div>
             <div>
@@ -215,7 +218,7 @@ import Layout from '../../layouts/Layout.astro'
               href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-accent w-full"
+              class="btn btn-primary w-full"
             >
               Book Now
             </a>
@@ -225,10 +228,7 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section
-      id="pre-post-surgical-manual-lymphatic-drainage-cta"
-      class="bg-gradient-to-br from-secondary/10 to-accent/10"
-    >
+    <section id="pre-post-surgical-manual-lymphatic-drainage-cta" class="bg-primary/5">
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div class="flex flex-col items-center gap-8 max-w-4xl mx-auto text-center">
           <h2 class="lsa lsa-slide-up no-repeat">
@@ -241,7 +241,7 @@ import Layout from '../../layouts/Layout.astro'
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn-secondary"
+                class="btn btn-primary"
               >
                 Book Now
               </a>

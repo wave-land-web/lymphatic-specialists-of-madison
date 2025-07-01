@@ -69,7 +69,7 @@ import Layout from '../../layouts/Layout.astro'
         <h2 class="h1 font-bold text-primary text-center lsa lsa-slide-up no-repeat">
           Indications
         </h2>
-        <p class="text-lg md:text-xl text-center mx-auto lsa lsa-slide-up no-repeat">
+        <p class="h4 text-center mx-auto lsa lsa-slide-up no-repeat">
           MLD is indicated for many…including healthy individuals wanting to boost their immune
           system or those with (but not limited to) the following conditions:
         </p>
@@ -137,16 +137,12 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- Contraindications Section -->
-    <section id="contraindications" class="bg-gradient-to-br from-secondary/70 to-secondary/80">
+    <section id="contraindications" class="bg-gradient-to-br from-primary/80 to-primary/90">
       <div
-        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
+        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto text-primary-content"
       >
-        <h2 class="h1 text-secondary-content text-center lsa lsa-slide-up no-repeat">
-          Contraindications
-        </h2>
-        <p
-          class="text-lg text-secondary-content md:text-xl text-center mx-auto lsa lsa-slide-up no-repeat"
-        >
+        <h2 class="h1 text-center lsa lsa-slide-up no-repeat">Contraindications</h2>
+        <p class="h4 text-center mx-auto lsa lsa-slide-up no-repeat">
           Although MLD is beneficial to a number of conditions, it is not for everybody. Please note
           that we may need to contact your health care provider for further information on your
           condition. Contraindications include:
@@ -156,44 +152,24 @@ import Layout from '../../layouts/Layout.astro'
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
           <div class="list">
-            <ListItem
-              listItemClass="text-secondary-content"
-              number={1}
-              text="Congestive heart failure"
-            />
-            <ListItem listItemClass="text-secondary-content" number={2} text="DVT" />
-            <ListItem listItemClass="text-secondary-content" number={3} text="Kidney disorders" />
-            <ListItem
-              listItemClass="text-secondary-content"
-              number={4}
-              text="Acute inflammation or infection/malignancies"
-            />
+            <ListItem number={1} text="Congestive heart failure" />
+            <ListItem number={2} text="DVT" />
+            <ListItem number={3} text="Kidney disorders" />
+            <ListItem number={4} text="Acute inflammation or infection/malignancies" />
 
             <!-- Mobile only -->
-            <ListItem
-              listItemClass="md:hidden text-secondary-content"
-              number={5}
-              text="Arteriosclerosis"
-            />
-            <ListItem
-              listItemClass="md:hidden text-secondary-content"
-              number={6}
-              text="Acute cold/flu"
-            />
-            <ListItem listItemClass="md:hidden text-secondary-content" number={7} text="Fever" />
-            <ListItem
-              listItemClass="md:hidden text-secondary-content"
-              number={8}
-              text="Some medications"
-            />
+            <ListItem listItemClass="md:hidden" number={5} text="Arteriosclerosis" />
+            <ListItem listItemClass="md:hidden" number={6} text="Acute cold/flu" />
+            <ListItem listItemClass="md:hidden" number={7} text="Fever" />
+            <ListItem listItemClass="md:hidden" number={8} text="Some medications" />
           </div>
 
           <!-- Desktop only -->
           <div class="list hidden md:block">
-            <ListItem listItemClass="text-secondary-content" number={5} text="Arteriosclerosis" />
-            <ListItem listItemClass="text-secondary-content" number={6} text="Acute cold/flu" />
-            <ListItem listItemClass="text-secondary-content" number={7} text="Fever" />
-            <ListItem listItemClass="text-secondary-content" number={8} text="Some medications" />
+            <ListItem number={5} text="Arteriosclerosis" />
+            <ListItem number={6} text="Acute cold/flu" />
+            <ListItem number={7} text="Fever" />
+            <ListItem number={8} text="Some medications" />
           </div>
         </ul>
       </div>
@@ -203,18 +179,18 @@ import Layout from '../../layouts/Layout.astro'
     <section id="pricing">
       <div class="wrapper container lg:max-w-screen-xl flex flex-col mx-auto">
         <div class="max-w-6xl mx-auto flex flex-col gap-(--site-padding-md)">
-          <h2 class="h1 text-secondary text-center lsa lsa-slide-up no-repeat">Pricing</h2>
+          <h2 class="h1 text-center lsa lsa-slide-up no-repeat">Pricing</h2>
 
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- 30 Minutes -->
             <div class="lsa lsa-slide-up no-repeat flex">
               <Card
                 id="30-minute-session"
-                className="text-center border border-base-300 hover:border-secondary"
+                className="text-center border border-base-300 hover:border-primary"
               >
                 <div class="flex flex-col items-center gap-(--site-padding-base)">
                   <h3>30 Minutes</h3>
-                  <span class="h2 font-bold text-secondary">$65</span>
+                  <span class="h2 font-bold text-primary">$65</span>
                   <p class="h4 font-semibold">Neck and Face only.</p>
                 </div>
                 <div>
@@ -226,7 +202,7 @@ import Layout from '../../layouts/Layout.astro'
                     href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn btn-secondary w-full"
+                    class="btn btn-primary w-full"
                   >
                     Book Now
                   </a>
@@ -237,11 +213,11 @@ import Layout from '../../layouts/Layout.astro'
             <div class="lsa lsa-slide-up no-repeat flex">
               <Card
                 id="60-minute-session"
-                className="text-center scale-[1.02] border-2 border-secondary"
+                className="text-center scale-[1.02] border-2 border-primary"
               >
                 <div class="flex flex-col items-center gap-(--site-padding-base)">
                   <h3>60 Minutes</h3>
-                  <span class="h2 font-bold text-secondary">$130</span>
+                  <span class="h2 font-bold text-primary">$130</span>
                   <p class="h4 font-semibold">Neck, Abdominal and Upper or Lower Extremity.</p>
                 </div>
                 <div>
@@ -255,7 +231,7 @@ import Layout from '../../layouts/Layout.astro'
                     href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn btn-secondary w-full"
+                    class="btn btn-primary w-full"
                   >
                     Book Now
                   </a>
@@ -266,11 +242,11 @@ import Layout from '../../layouts/Layout.astro'
             <div class="lsa lsa-slide-up no-repeat flex">
               <Card
                 id="90-minute-session"
-                className="text-center border border-base-300 hover:border-secondary"
+                className="text-center border border-base-300 hover:border-primary"
               >
                 <div class="flex flex-col items-center gap-(--site-padding-base)">
                   <h3>90 Minutes</h3>
-                  <span class="h2 font-bold text-secondary">$195</span>
+                  <span class="h2 font-bold text-primary">$195</span>
                   <p class="h4 font-semibold">Full Body Sequence.</p>
                 </div>
                 <div>
@@ -285,7 +261,7 @@ import Layout from '../../layouts/Layout.astro'
                     href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn btn-secondary w-full"
+                    class="btn btn-primary w-full"
                   >
                     Book Now
                   </a>
@@ -298,10 +274,7 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section
-      id="manual-lymphatic-drainage-cta"
-      class="bg-gradient-to-br from-primary/10 to-secondary/10"
-    >
+    <section id="manual-lymphatic-drainage-cta" class="bg-primary/5">
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div class="flex flex-col items-center gap-8 max-w-4xl mx-auto text-center">
           <h2 class="lsa lsa-slide-up no-repeat">

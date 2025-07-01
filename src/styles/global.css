@@ -180,7 +180,7 @@
   p,
   li:not(nav li),
   .p {
-    @apply text-sm sm:text-base text-pretty leading-relaxed;
+    @apply max-w-[65ch] text-sm sm:text-base text-pretty leading-relaxed;
   }
 
   button,
