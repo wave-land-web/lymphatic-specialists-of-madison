@@ -27,7 +27,7 @@ const serviceImages: Record<string, any> = {
   <PageHeader>
     <PageTitle>Madison Lymphatics and Manual Therapy</PageTitle>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
-      <div class="prose lg:prose-xl text-neutral-content">
+      <div class="prose text-neutral-content">
         <p class="h3 text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
           Welcome to Madison Lymphatics and Manual Therapy, Madison's first lymphatic-centric
           clinic.
@@ -47,7 +47,7 @@ const serviceImages: Record<string, any> = {
           to help them navigate their health journey.
         </p>
       </div>
-      <div class="prose lg:prose-xl text-neutral-content">
+      <div class="prose text-neutral-content">
         <p class="text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
           For more information on how Madison Lymphatics and Manual Therapy can help you achieve
           your health goals, call us at <a href="tel:6082038550" class="link link-accent"
@@ -91,7 +91,7 @@ const serviceImages: Record<string, any> = {
                 className="h-full border-base-300 hover:border-primary"
               >
                 <h3>{service.title}</h3>
-                <p class="text-base-content/80">{service.description}</p>
+                <p>{service.description}</p>
                 <div class="card-actions justify-end">
                   <a href={service.learnMoreHref} class="btn btn-primary">
                     Learn More
@@ -128,36 +128,36 @@ const serviceImages: Record<string, any> = {
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-(--site-padding-xl) w-full"
         >
           <div class="space-y-4">
-            <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+            <p class="h3 text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
               At Madison Lymphatics and Manual Therapy, we approach our sessions differently than
               other clinics that you may have been to before.
             </p>
-            <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
               We always focus on the patient's individual needs, analyzing a number of different
               aspects of their health, to see how Manual Lymphatic Drainage or Therapeutic Massage
               would be most beneficial. We believe that educating our patients on their lymphatic
               imbalances and what may be causing it is imperative to recovery and health.
             </p>
-            <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
               Our practitioners are graduates of nationally accredited schools and have thorough
               knowledge of the lymphatic system, anatomy, physiology, kinesiology, and an
               understanding of how it all works together.
             </p>
           </div>
           <div class="space-y-4">
-            <p class="text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
               Before each treatment, we do a full intake with the patient asking questions that will
               help formulate a session designed for optimal results. We never do pre-choreographed
               routines and continually strive to provide our patients with unique treatments that
               produce the desired outcome.
             </p>
-            <p class="text-shadow-lg lsa lsa-slide-up delay-500 no-repeat">
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-500 no-repeat">
               Our practitioners at Madison Lymphatics and Manual Therapy use the Vodder Method in
               Manual Lymphatic Drainage sessions. Modalities that may be used during a typical
               massage therapy session include Myofascial Release, Trigger Point Therapy, Deep Tissue
               Massage, Swedish Massage and Cranio-Sacral Therapy.
             </p>
-            <p class="text-shadow-lg lsa lsa-slide-up delay-600 no-repeat">
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-600 no-repeat">
               Sessions at the Madison Lymphatics and Manual Therapy are the perfect compliment to
               any physical therapy, chiropractic, or naturopathic care.
             </p>
@@ -191,8 +191,8 @@ const serviceImages: Record<string, any> = {
                       </svg>
                     ))}
                   </div>
-                  <blockquote class="text-base-content italic">
-                    <p class="text-base-content/80">
+                  <blockquote class="italic">
+                    <p>
                       <em>"{testimonial.text}"</em>
                     </p>
                   </blockquote>
@@ -242,23 +242,34 @@ const serviceImages: Record<string, any> = {
         </div>
 
         <div class="prose lg:prose-xl text-accent-content">
-          <p class="lsa lsa-slide-up no-repeat h3">
+          <p class="h3 text-accent-content lsa lsa-slide-up no-repeat">
             A good analogy for the lymph system and how inflammation affects the lymph system:
           </p>
           <ul class="list">
-            <ListItem number={1} text="Imagine your lymph system as a bathtub shower." />
-            <ListItem number={2} text="Your lymph fluid is shower water." />
-            <ListItem number={3} text="Your body is the tub." />
             <ListItem
+              listItemClass="text-accent-content"
+              number={1}
+              text="Imagine your lymph system as a bathtub shower."
+            />
+            <ListItem
+              listItemClass="text-accent-content"
+              number={2}
+              text="Your lymph fluid is shower water."
+            />
+            <ListItem listItemClass="text-accent-content" number={3} text="Your body is the tub." />
+            <ListItem
+              listItemClass="text-accent-content"
               number={4}
+              listItemClass="text-accent-content"
               text="Your lymph nodes are the drain (imaging lots of little drains - not one big one)."
             />
             <ListItem
+              listItemClass="text-accent-content"
               number={5}
               text="In a normal healthy lymph system - water from the shower comes out as fast as it goes down the drain leaving no standing water behind."
             />
           </ul>
-          <p class="lsa lsa-slide-up no-repeat">
+          <p class="text-accent-content lsa lsa-slide-up no-repeat">
             Now imagine an acute injury or trauma like a sprained ankle - this looks like turning
             the shower water off and putting the bathtub water on full blast for a short period of
             time. Let's say 20 mins. There is standing water but eventually your body (the bathtub
@@ -272,43 +283,67 @@ const serviceImages: Record<string, any> = {
         class="wrapper p-(--site-padding-lg) grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-lg)"
       >
         <div class="order-2 md:order-first prose lg:prose-xl text-accent-content">
-          <p class="h3 lsa lsa-slide-up no-repeat">
+          <p class="h3 text-accent-content lsa lsa-slide-up no-repeat">
             Imagine chronic inflammation, like in the case of an autoimmune disease.
           </p>
-          <p class="lsa lsa-slide-up no-repeat">
+          <p class="text-accent-content lsa lsa-slide-up no-repeat">
             This looks like turning the shower water off and putting the bathtub water on a slow
             steady stream forever. There is always a small amount of standing water in the bathtub
             because this stream is always larger than the amount of shower water and your drains can
             only handle the amount of water produced when the shower is turned on.
           </p>
-          <p class="lsa lsa-slide-up no-repeat">
+          <p class="text-accent-content lsa lsa-slide-up no-repeat">
             Now imagine lymphedema, which can be from lymph node removal, trauma, radiation or scar
             tissue. This is like taking away some of the drains. There is no excess water, just not
             enough drains to allow for no standing water.
           </p>
-          <h3 class="lsa lsa-slide-up no-repeat text-accent-content">What causes inflammation?</h3>
-          <p class="lsa lsa-slide-up no-repeat">
+          <h3 class="h3 text-accent-content lsa lsa-slide-up no-repeat">
+            What causes inflammation?
+          </h3>
+          <p class="text-accent-content lsa lsa-slide-up no-repeat">
             Lymph is a by-product of blood flow. With inflammation, we have more blood flow and then
             more lymph. Therefore, inflammation affects the lymphatic system.
           </p>
-          <p class="lsa lsa-slide-up no-repeat">
+          <p class="text-accent-content lsa lsa-slide-up no-repeat">
             Possible causes of inflammation (although it is different for everyone)
           </p>
           <ul class="list">
             <ListItem
+              listItemClass="text-accent-content"
               number={1}
               text="Diet: eating foods that create an inflammatory/allergic response to or eating too little/too much."
             />
-            <ListItem number={2} text="Exercise: too little or too much." />
-            <ListItem number={3} text="Hormone imbalance." />
             <ListItem
+              listItemClass="text-accent-content"
+              number={2}
+              text="Exercise: too little or too much."
+            />
+            <ListItem listItemClass="text-accent-content" number={3} text="Hormone imbalance." />
+            <ListItem
+              listItemClass="text-accent-content"
               number={4}
               text="Genetics: having a predisposition to something like an autoimmune disease."
             />
-            <ListItem number={5} text="Acute or chronic stress." />
-            <ListItem number={6} text="High Cortisol levels, (caused often by chronic stress)" />
-            <ListItem number={7} text="Environment: allergens or sensitivities." />
-            <ListItem number={8} text="Acute trauma like an ankle sprain." />
+            <ListItem
+              listItemClass="text-accent-content"
+              number={5}
+              text="Acute or chronic stress."
+            />
+            <ListItem
+              listItemClass="text-accent-content"
+              number={6}
+              text="High Cortisol levels, (caused often by chronic stress)"
+            />
+            <ListItem
+              listItemClass="text-accent-content"
+              number={7}
+              text="Environment: allergens or sensitivities."
+            />
+            <ListItem
+              listItemClass="text-accent-content"
+              number={8}
+              text="Acute trauma like an ankle sprain."
+            />
           </ul>
         </div>
 
@@ -320,16 +355,16 @@ const serviceImages: Record<string, any> = {
       </div>
 
       <div class="wrapper p-(--site-padding-lg) prose lg:prose-xl text-accent-content">
-        <p class="lsa lsa-slide-up no-repeat h3">
+        <p class="h3 text-accent-content lsa lsa-slide-up no-repeat">
           We look at all of the above factors that could play a role in inflammation and then assign
           them as either a pebble, rock or boulder.
         </p>
-        <p class="lsa lsa-slide-up no-repeat">
+        <p class="text-accent-content lsa lsa-slide-up no-repeat">
           We imagine a cylindrical vase filled half way with water and start adding in your
           individual inflammatory factors into the vase. We begin to see symptoms of inflammation
           when the vase overflows.
         </p>
-        <p class="lsa lsa-slide-up no-repeat">
+        <p class="text-accent-content lsa lsa-slide-up no-repeat">
           For example, if you have an autoimmune disease (this would be a boulder), have a
           sensitivity to gluten (pebble) and a close relative just passed away (rock), this could be
           enough to tip the water over the edge. We often make referrals to other professionals that

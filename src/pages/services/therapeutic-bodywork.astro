@@ -63,44 +63,34 @@ import Layout from '../../layouts/Layout.astro'
           <div class="list">
             <ListItem
               number={1}
-              listItemClass="text-base-content"
               text="Alleviate low-back pain, sciatica pain and improve range of motion"
             />
-            <ListItem
-              number={2}
-              listItemClass="text-base-content"
-              text="Relieve migraine and headache pain"
-            />
-            <ListItem
-              number={3}
-              listItemClass="text-base-content"
-              text="Exercise and stretch weak, tight, or atrophied muscles"
-            />
+            <ListItem number={2} text="Relieve migraine and headache pain" />
+            <ListItem number={3} text="Exercise and stretch weak, tight, or atrophied muscles" />
             <ListItem
               number={4}
-              listItemClass="text-base-content"
               text="Help athletes of any level prepare for, and recover from, strenuous workouts"
             />
 
             <!-- Mobile only -->
             <ListItem
               number={5}
-              listItemClass="md:hidden text-base-content"
+              listItemClass="md:hidden"
               text="Provide pain relief and facilitate healing after work- and car- related accidents"
             />
             <ListItem
               number={6}
-              listItemClass="md:hidden text-base-content"
+              listItemClass="md:hidden"
               text="Reduce post surgery adhesions and swelling"
             />
             <ListItem
               number={7}
-              listItemClass="md:hidden text-base-content"
+              listItemClass="md:hidden"
               text="Reduce pain and discomfort associated with TMJ, carpal tunnel syndrome, fibromyalgia, and chronic fatigue syndrome"
             />
             <ListItem
               number={8}
-              listItemClass="md:hidden text-base-content"
+              listItemClass="md:hidden"
               text="Provide support for physical therapy sessions"
             />
           </div>
@@ -109,37 +99,26 @@ import Layout from '../../layouts/Layout.astro'
           <div class="list hidden md:block">
             <ListItem
               number={5}
-              listItemClass="text-base-content"
               text="Provide pain relief and facilitate healing after work- and car- related accidents"
             />
-            <ListItem
-              number={6}
-              listItemClass="text-base-content"
-              text="Reduce post surgery adhesions and swelling"
-            />
+            <ListItem number={6} text="Reduce post surgery adhesions and swelling" />
             <ListItem
               number={7}
-              listItemClass="text-base-content"
               text="Reduce pain and discomfort associated with TMJ, carpal tunnel syndrome, fibromyalgia, and chronic fatigue syndrome"
             />
-            <ListItem
-              number={8}
-              listItemClass="text-base-content"
-              text="Provide support for physical therapy sessions"
-            />
+            <ListItem number={8} text="Provide support for physical therapy sessions" />
           </div>
         </ul>
       </div>
     </section>
 
     <!-- Relaxation Massage Section -->
-    <section
-      id="relaxation-massage"
-      class="bg-gradient-to-br from-accent/50 to-accent/70 text-accent-content"
-    >
+    <section id="relaxation-massage" class="bg-gradient-to-br from-accent/50 to-accent/70">
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
-        <h2 class="h1 mb-8 text-center lsa lsa-slide-up no-repeat">Relaxation Massage</h2>
-        <p class="h4 text-center mb-12 mx-auto lsa lsa-slide-up no-repeat">
+        <h2 class="h1 mb-8 text-center text-accent-content lsa lsa-slide-up no-repeat">
+          Relaxation Massage
+        </h2>
+        <p class="h4 text-center text-accent-content mb-12 mx-auto lsa lsa-slide-up no-repeat">
           In contrast, relaxation massage is beneficial to the
           <a href="/blog/parasympathetic-nervous-system/" class="link text-primary"
             >parasympathetic nervous system</a
@@ -150,30 +129,40 @@ import Layout from '../../layouts/Layout.astro'
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
           <div class="list">
-            <ListItem number={1} text="Relax and soften injured, tired, and overused muscles" />
             <ListItem
+              listItemClass="text-accent-content"
+              number={1}
+              text="Relax and soften injured, tired, and overused muscles"
+            />
+            <ListItem
+              listItemClass="text-accent-content"
               number={2}
               text="Pump oxygen and nutrients into tissues and vital organs, improving circulation"
             />
-            <ListItem number={3} text="Lessen depression and anxiety" />
             <ListItem
+              listItemClass="text-accent-content"
+              number={3}
+              text="Lessen depression and anxiety"
+            />
+            <ListItem
+              listItemClass="text-accent-content"
               number={4}
               text="Improve the condition of the body's largest organ—the skin"
             />
 
             <!-- Mobile only -->
             <ListItem
-              listItemClass="md:hidden"
+              listItemClass="md:hidden text-accent-content"
               number={5}
               text="Enhance immunity by stimulating lymph flow—the body's natural defense system"
             />
             <ListItem
-              listItemClass="md:hidden"
+              listItemClass="md:hidden text-accent-content"
               number={6}
               text="Promote tissue regeneration, reducing scar tissue and stretch marks"
             />
             <ListItem
-              listItemClass="md:hidden"
+              listItemClass="md:hidden text-accent-content"
               number={7}
               text="Release endorphins—amino acids that work as the body's natural painkiller"
             />
@@ -182,14 +171,17 @@ import Layout from '../../layouts/Layout.astro'
           <!-- Desktop only -->
           <div class="list hidden md:block">
             <ListItem
+              listItemClass="text-accent-content"
               number={5}
               text="Enhance immunity by stimulating lymph flow—the body's natural defense system"
             />
             <ListItem
+              listItemClass="text-accent-content"
               number={6}
               text="Promote tissue regeneration, reducing scar tissue and stretch marks"
             />
             <ListItem
+              listItemClass="text-accent-content"
               number={7}
               text="Release endorphins—amino acids that work as the body's natural painkiller"
             />

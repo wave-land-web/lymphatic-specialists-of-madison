@@ -1,11 +1,439 @@
 ---
+import { getImage, Image } from 'astro:assets'
+import CourtneyImage from '../assets/images/courtney.jpg'
+import PlaceholderOneImage from '../assets/images/placeholder-1.jpg'
+import SarahImage from '../assets/images/sarah.jpg'
+import ShainaImage from '../assets/images/shaina.jpg'
+import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
+import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
+
+const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
 ---
 
 <Layout title="Careers">
-  <PageHeader>
+  <PageHeader className="items-center mx-auto text-center">
     <PageTitle>Careers</PageTitle>
+    <div class="prose text-neutral-content">
+      <p class="h3 text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+        Experience and Compassion
+      </p>
+      <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+        The therapists at Madison Lymphatics and Bodywork believe that care should always be
+        holistic and we strive to help guide you towards healing with experience and compassion. We
+        have a combined 12 years experience of treating patients with a wide variety of health
+        histories and needs using Manual Lymphatic Drainage. Courtney holds a doctorate in physical
+        therapy. Therapists at our clinic have graduated from Klose Training, a school which
+        educates students how to perform Manual Lymphatic Drainage in a safe, gentle, and effective
+        manner.
+      </p>
+    </div>
+
+    <div class="lsa lsa-slide-up delay-300 no-repeat">
+      <a
+        href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Book Now
+      </a>
+    </div>
   </PageHeader>
+
+  <main>
+    <!-- Team Members Section -->
+    <section id="team-members" class="pt-0">
+      <div
+        class="wrapper container md:max-w-screen-xl flex flex-col gap-(--site-padding-lg) mx-auto"
+      >
+        <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Meet Our Team</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
+          <!-- Courtney Rolnick -->
+          <div class="lsa lsa-slide-up no-repeat">
+            <Card id="courtney-rolnick" className="border-base-300 hover:border-primary">
+              <div class="flex flex-col gap-(--site-padding-md)">
+                <div>
+                  <h3 class="text-primary mb-2">Dr. Courtney Rolnick</h3>
+                  <p class="font-semibold mb-4">PT, DPT, CMLDT - Founder</p>
+                  <div class="avatar">
+                    <div
+                      class="ring-primary hover:ring-accent ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                    >
+                      <Image src={CourtneyImage} alt="Courtney Rolnick" />
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <p>
+                    Hi, I'm Courtney. I am a physical therapist who specializes in Post-Surgical
+                    manual lymphatic drainage, manual lymphatic drainage for chronic health
+                    conditions and scar tissue work.
+                  </p>
+                  <p>
+                    I am extremely passionate about what I do and helping guide my patients towards
+                    their goals with compassion, patience and an understanding of the complexities
+                    of each individual's health journey. I am 100% patient focused, which means I
+                    will ALWAYS do what is best for my patients.
+                  </p>
+                  <p>
+                    I received my Bachelor of Science in Dance from the University of
+                    Wisconsin-Madison in 2006 and taught dance for 10 years after graduating.
+                  </p>
+                  <p>
+                    In 2016 I graduated from Texas State University with my doctorate in Physical
+                    Therapy. My first few years working as a Physical Therapist I was working
+                    primarily with high level athletes and chronic pain patients with a focus on
+                    movement re-education and manual work honing my skills as a hands on
+                    practitioner and learning soft tissue work and scar tissue manipulation.
+                  </p>
+                  <p>
+                    In 2018 I received my Manual Lymphatic Drainage certification (CMLDT) from the
+                    Klose Institute in Seattle, Washington and began working full time as a manual
+                    lymphatic drainage specialist and have been doing that for the past 6 years. I
+                    love working with and have experience with all sorts of post-surgical patients
+                    including: breast augmentation/lift/reduction, abdominoplasty, BBL, DIEP flap,
+                    mastectomy, top surgery, face/neck lift, liposuction, leg/arm/360 lifts, skin
+                    removal, orthopedic surgeries and any other elective or non elective surgery. I
+                    also love and have worked with patients with: lipedema, lymphedema, cancer,
+                    autoimmune, long covid, Lyme and any other chronic inflammatory conditions.
+                    While working with patients I use a mix of manual lymphatic drainage, scar
+                    tissue work, visceral work, breath work and soft tissue work as needed to assure
+                    you are getting the best outcomes as possible.
+                  </p>
+                  <p>
+                    At Madison Lymphatics and Bodywork, my focus is on helping people recovering
+                    from surgery, cancer and supporting those with lymphatic, autoimmune conditions
+                    or chronic inflammation issues. I often refer out to other practitioners in the
+                    community and enjoy working as a team with other members of the health community
+                    for a truly holistic approach to patient care. I enjoy working in this capacity
+                    because it hones in on my love for critical thinking and helping people find the
+                    right direction for complex medical issues.
+                  </p>
+                  <p>
+                    In my other professional life, I own an IG vintage shop. In my free time I enjoy
+                    seeing live music, spending time with friends and family, exploring nature and
+                    hanging out with my partner Chris and our dog Lefty.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <!-- Sarah McMunn -->
+          <div class="lsa lsa-slide-up no-repeat">
+            <Card id="sarah-mcmunn" className="border-base-300 hover:border-primary">
+              <div class="flex flex-col gap-(--site-padding-md)">
+                <div>
+                  <h3 class="text-primary mb-2">Sarah McMunn</h3>
+                  <p class="font-semibold mb-4">LMT, CMLDT</p>
+                  <div class="avatar">
+                    <div
+                      class="ring-primary hover:ring-accent ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                    >
+                      <Image src={SarahImage} alt="Sarah McMunn" />
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <p>
+                    Hi, I'm Sarah. I'm a Licensed Massage Therapist and Bodyworker who believes
+                    massage is for every body. I am deeply committed to my clients and strive to
+                    create a welcoming, affirming and nurturing environment where we can work
+                    together on a personalized approach and treatment plan to get you feeling your
+                    best. As a life-long student, I love learning and researching individual
+                    conditions to facilitate healing in the immediate session, and to promote
+                    life-long wellness through client education.
+                  </p>
+                  <p>
+                    An avid traveler with boundless curiosity, I graduated from the Costa Rica
+                    School of Massage Therapy (CRSMT). Surrounded by natural beauty, this immersive,
+                    accelerated, rigorous program was situated in a barefoot, outdoor classroom
+                    setting, promoting deep and holistic levels of study and healing. Before
+                    embarking on a career as a massage therapist and bodyworker, I built a career at
+                    national non-profits focused on health and wellbeing, social responsibility, and
+                    environmental activism. My work concentrated on the fields of diversity, equity
+                    and inclusion, training and leadership development, and talent management. These
+                    passions were supported by my undergraduate degree from UW-Madison in
+                    Anthropology and Spanish, and my MBA.
+                  </p>
+                  <p>
+                    I value how the power of massage and bodywork can change lives. I enjoy
+                    exploring different modalities to address client concerns and aim to create the
+                    afterglow effect in every single session- the light or radiance that remains;
+                    the euphoric feeling that lingers after a beautiful experience. My clients
+                    describe me as thoughtful, genuine, warm, and creative. I'm grateful for the
+                    opportunity to hold space and restore balance for those who entrust me with
+                    their care.
+                  </p>
+                  <p>
+                    When I'm not at the studio you can find me traveling around the world, doing all
+                    the outdoorsy things, cooking up new recipes, reading, designing, relearning
+                    piano, getting handy with home renovations, playing with my sewing machine,
+                    fostering rescue pups into loving homes, and supporting causes I believe in.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <!-- Shaina Scott -->
+          <div class="lsa lsa-slide-up no-repeat">
+            <Card id="shaina-scott" className="border-base-300 hover:border-primary">
+              <div class="flex flex-col gap-(--site-padding-md) h-full">
+                <div>
+                  <h3 class="text-primary mb-2">Shaina Scott</h3>
+                  <p class="font-semibold mb-4">
+                    Acupuncturist, LAc, Master of Science of Oriental Medicine (MSOM)
+                  </p>
+                  <div class="avatar">
+                    <div
+                      class="ring-primary hover:ring-accent ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                    >
+                      <Image src={ShainaImage} alt="Shaina Scott" />
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <p>
+                    Shaina Scott began her career in the health field after graduating from East
+                    West Healing Arts Institute's massage therapy program in July of 2006. She was
+                    exposed to many different modalities of care in her schooling and became
+                    interested in both Ayurveda and Chinese Medicine. She then went on to study
+                    Ayurvedic medicine, Panchakarma treatments and yoga at the Greens Ayur Hospital,
+                    in Kerala, India, from February-May 2008. She has also attended several births
+                    to provide massage therapy support during labor. She has worked expansively with
+                    people recovering from injuries, athletes, and celebrates people from all walks
+                    of life. She is passionate about the benefits of acupuncture and massage therapy
+                    and feels they should be accessible modalities for everyone.
+                  </p>
+                  <p>
+                    Shaina's commitment to quality care has led her to studying many different forms
+                    of healing including intuitive dowsing and energy work such as reiki. Shaina was
+                    first introduced to the benefits of reiki as a teenager when she obtained her
+                    first reiki 1 certification. Later she felt the calling to further those studies
+                    and began studying reiki again in 2015. She became a Reiki Master Practioner by
+                    February 2018. She then went on to begin studying Acupuncture and Chinese
+                    Medicine in September of 2018. Shaina graduated Summa Cum Laude with a Bachelor
+                    of Science in Nutrition and Masters in Acupuncture and Herbal Medicine in
+                    November of 2022.
+                  </p>
+                  <p>
+                    Shaina is passionate about empowering her patients with the skills and knowledge
+                    needed to take their health into their own hands and become an active
+                    participant in their healing journey. She has seen the many benefits of
+                    acupuncture for a variety of different health concerns whether it is injury
+                    recovery, chronic pain management, mental or emotional issues, insomnia and many
+                    other ailments.
+                  </p>
+                  <p>
+                    In her free time, Shaina enjoys spending quality time with her son, time in
+                    nature, movement arts such as dancing, yoga, and martial arts. She is very
+                    excited to be offering her services to the community and helping to improve the
+                    quality of life for her patients.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Our Team Section -->
+    <section
+      id="join-our-team"
+      class="hero mb-(--site-padding-2xl) p-0 shadow-sm bg-cover bg-center md:bg-fixed"
+      style={`background-image: url(${placeholderOneImage.src});`}
+    >
+      <div class="hero-overlay bg-black/70"></div>
+      <div
+        class="wrapper w-full p-(--site-padding-lg) flex flex-col items-start gap-(--site-padding-md) text-neutral-content"
+      >
+        <h2 class="h1 text-emerald-600 text-shadow-lg lsa lsa-slide-up no-repeat">Join Our Team</h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-(--site-padding-xl) w-full"
+        >
+          <div class="space-y-4">
+            <p class="h3 text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+              Enjoy the freedom of being an independent contractor while working at one of the most
+              well-regarded manual lymphatic drainage and massage clinics in the Madison area.
+            </p>
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+              Madison Lymphatics and Bodywork (formerly Therapeutic Massage Center of Middleton) is
+              looking for at least one bright and talented Licensed Massage Therapist, PT or OT to
+              join our team as an independent contractor. We are switching our focus to manual
+              lymphatic drainage (MLD) and post-op massage care (bodywork will still be offered) and
+              are looking for someone who's excited to embark down that path with us.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+              <strong>No non-compete agreement!</strong> We provide everything you need for a successful
+              career including a clean facility, online booking, advertising, and a supportive environment
+              for growth.
+            </p>
+            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
+              Looking for a commitment of 15-25 hours with full autonomy of scheduled days/hours.
+              Patient load will be built up slowly based on demand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="bg-gradient-to-br from-primary/80 to-primary/90">
+      <div
+        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto text-primary-content"
+      >
+        <h2 class="h1 text-center text-primary-content lsa lsa-slide-up no-repeat">
+          You're a Great Candidate If:
+        </h2>
+        <ul
+          class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
+        >
+          <div class="list">
+            <ListItem
+              listItemClass="text-primary-content"
+              number={1}
+              text="You have at least two years of experience as a LMT, PT or OT (could work with someone with less experience if the fit was right)"
+            />
+            <ListItem
+              listItemClass="text-primary-content"
+              number={2}
+              text="Are interested and excited about broadening your skills into manual lymphatic drainage, scar tissue work and post-op care"
+            />
+            <ListItem
+              number={3}
+              text="Are willing to get certified in MLD (reimbursement negotiable for the right candidate)"
+              listItemClass="md:hidden text-primary-content"
+            />
+            <ListItem
+              number={4}
+              text="Want to work in an environment that is nurturing and would foster career growth"
+              listItemClass="md:hidden text-primary-content"
+            />
+            <ListItem
+              number={5}
+              text="Able to work in the Atwood area of Madison"
+              listItemClass="md:hidden text-primary-content"
+            />
+          </div>
+
+          <div class="list">
+            <ListItem
+              number={3}
+              text="Are willing to get certified in MLD (reimbursement negotiable for the right candidate)"
+              listItemClass="hidden md:flex text-primary-content"
+            />
+            <ListItem
+              number={4}
+              text="Want to work in an environment that is nurturing and would foster career growth"
+              listItemClass="hidden md:flex text-primary-content"
+            />
+            <ListItem
+              number={5}
+              text="Able to work in the Atwood area of Madison"
+              listItemClass="hidden md:flex text-primary-content"
+            />
+          </div>
+        </ul>
+      </div>
+    </section>
+
+    <!-- What We Provide Section -->
+    <section id="what-we-provide">
+      <div
+        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
+      >
+        <h2 class="h1 text-center text-primary lsa lsa-slide-up no-repeat">What We Provide</h2>
+        <p class="h4 text-center mx-auto lsa lsa-slide-up no-repeat">
+          As an independent contractor at our clinic, you are provided everything that you need to
+          have a successful career in massage therapy. This includes, but is not limited to:
+        </p>
+
+        <ul
+          class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-md) w-full max-w-4xl mx-auto"
+        >
+          <div class="list">
+            <ListItem
+              number={1}
+              text="A clean and inviting facility in a very popular commercial district"
+            />
+            <ListItem number={2} text="Online booking, successful advertising, business cards" />
+            <ListItem
+              number={3}
+              listItemClass="md:hidden"
+              text="Supportive environment for you to grow as a therapist"
+            />
+            <ListItem number={4} listItemClass="md:hidden" text="Competitive fee schedule" />
+          </div>
+
+          <div class="list">
+            <ListItem
+              number={3}
+              listItemClass="hidden md:flex"
+              text="Supportive environment for you to grow as a therapist"
+            />
+            <ListItem number={4} listItemClass="hidden md:flex" text="Competitive fee schedule" />
+          </div>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Important Notes Section -->
+    <section id="important-notes" class="bg-primary/5">
+      <div
+        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
+      >
+        <h2 class="h1 text-center lsa lsa-slide-up no-repeat">Important Notes</h2>
+        <div class="prose mx-auto">
+          <p class="h4 text-center mx-auto lsa lsa-slide-up no-repeat">
+            LMTs, PTs, and OTs are responsible for maintaining SOAP notes, accepting payments from
+            clients, and changing sheets between sessions/keeping a clean and orderly treatment
+            room.
+          </p>
+          <p class="text-center mx-auto lsa lsa-slide-up no-repeat">
+            Our clinic focuses on and is known for providing MLD, post-op care and therapeutic
+            massage, so our patient's needs vary greatly. We regularly treat patients with:
+            autoimmune disease, cancer, lipidema, lymphedema, complicated medical histories, other
+            chronic conditions and generalized inflammation. Being comfortable with treating
+            patients from a holistic perspective and being a part of their care team is an essential
+            part of the job. Additional requirements include excellent communications skills, a warm
+            disposition, and the ability to work well with our group of dedicated therapists.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact-us" class="bg-primary/5">
+      <div
+        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-base) mx-auto text-center"
+      >
+        <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Ready to Join Our Team?</h2>
+        <p class="h4 mx-auto lsa lsa-slide-up delay-100 no-repeat">
+          We'd love to hear from you. Get in touch to learn more about opportunities at Madison
+          Lymphatics and Manual Therapy.
+        </p>
+
+        <div class="flex flex-wrap gap-2 justify-center lsa lsa-slide-up delay-200 no-repeat">
+          <a href="/contact" class="btn btn-primary">Contact Us</a>
+          <a href="tel:6082038550" class="btn btn-dash">Call 608-203-8550</a>
+        </div>
+
+        <p class="text-sm mx-auto lsa lsa-slide-up delay-300 no-repeat">
+          <em>
+            <strong class="text-primary">COVID-19 considerations:</strong> All of our clients and therapists
+            have the option to wear masks while in the clinic, including during sessions. All of our
+            staff members have been fully vaccinated.
+          </em>
+        </p>
+      </div>
+    </section>
+  </main>
 </Layout>

@@ -44,7 +44,7 @@ import Layout from '../../layouts/Layout.astro'
         <h2 class="h1 font-bold text-primary lsa lsa-slide-up no-repeat">
           What Is Pre/Post-Surgical Manual Lymphatic Drainage?
         </h2>
-        <div class="prose lg:prose-xl text-base-content">
+        <div class="prose">
           <p class="lsa lsa-slide-up no-repeat">
             Pre/Post-surgical Manual Lymphatic Drainage is a gentle yet powerful form of bodywork
             that is intended to stimulate and encourage the natural movement of the lymph, which
@@ -73,7 +73,7 @@ import Layout from '../../layouts/Layout.astro'
         <h2 class="h1 font-bold text-accent-content lsa lsa-slide-up no-repeat">
           Why choose pre/post-surgical Manual Lymphatic Drainage?
         </h2>
-        <div class="prose lg:prose-xl text-accent-content">
+        <div class="prose text-accent-content">
           <p class="lsa lsa-slide-up no-repeat">
             Oftentimes after surgery, the body will swell with excessive edema both at and proximal
             to the surgical site. This post-operative swelling, while completely normal, can be
@@ -115,48 +115,28 @@ import Layout from '../../layouts/Layout.astro'
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
           <div class="list">
-            <ListItem
-              number={1}
-              listItemClass="text-base-content"
-              text="Brazilian Butt Lift (BBL)"
-            />
-            <ListItem
-              number={2}
-              listItemClass="text-base-content"
-              text="Tummy Tuck/Abdominoplasty"
-            />
-            <ListItem number={3} listItemClass="text-base-content" text="Liposuction" />
-            <ListItem number={4} listItemClass="text-base-content" text="Fat Transfer" />
-            <ListItem number={5} listItemClass="text-base-content" text="Arm/Leg Lift" />
-            <ListItem number={6} listItemClass="text-base-content" text="Facelift" />
+            <ListItem number={1} text="Brazilian Butt Lift (BBL)" />
+            <ListItem number={2} text="Tummy Tuck/Abdominoplasty" />
+            <ListItem number={3} text="Liposuction" />
+            <ListItem number={4} text="Fat Transfer" />
+            <ListItem number={5} text="Arm/Leg Lift" />
+            <ListItem number={6} text="Facelift" />
 
             <!-- Mobile only -->
-            <ListItem
-              number={7}
-              listItemClass="text-base-content md:hidden"
-              text="Breast Implant"
-            />
-            <ListItem
-              number={8}
-              listItemClass="md:hidden text-base-content"
-              text="Chin Liposuction"
-            />
+            <ListItem number={7} listItemClass="md:hidden" text="Breast Implant" />
+            <ListItem number={8} listItemClass="md:hidden" text="Chin Liposuction" />
             <ListItem
               number={9}
-              listItemClass="md:hidden text-base-content"
+              listItemClass="md:hidden"
               text="Mastectomy/Breast Reconstruction"
             />
           </div>
 
           <!-- Desktop only -->
           <div class="list hidden md:block">
-            <ListItem number={7} listItemClass="text-base-content" text="Breast Implant" />
-            <ListItem number={8} listItemClass="text-base-content" text="Chin Liposuction" />
-            <ListItem
-              number={9}
-              listItemClass="text-base-content"
-              text="Mastectomy/Breast Reconstruction"
-            />
+            <ListItem number={7} text="Breast Implant" />
+            <ListItem number={8} text="Chin Liposuction" />
+            <ListItem number={9} text="Mastectomy/Breast Reconstruction" />
           </div>
         </ul>
       </div>
@@ -172,17 +152,17 @@ import Layout from '../../layouts/Layout.astro'
         <h2 class="h1 font-bold text-primary-content lsa lsa-slide-up no-repeat">
           Do you have tissue fibrosis or lumps and bumps after surgery?
         </h2>
-        <div class="prose lg:prose-xl text-primary-content">
-          <p class="h4 lsa lsa-slide-up no-repeat">
+        <div class="prose">
+          <p class="h4 text-primary-content lsa lsa-slide-up no-repeat">
             Fibrosis is a build up of scar tissue that can occur as a result of cosmetic surgery
             which can cause lumps and bumps in the subdermal tissues.
           </p>
-          <p class="lsa lsa-slide-up no-repeat">
+          <p class="text-primary-content lsa lsa-slide-up no-repeat">
             It can sometimes be found in the lateral torso, lower abdomen, and back after
             liposuction. While this consequence of liposuction is not ideal, not to worry. Fibrosis
             can be treated!
           </p>
-          <p class="lsa lsa-slide-up no-repeat">
+          <p class="text-primary-content lsa lsa-slide-up no-repeat">
             Through various techniques, fibrosis and scar tissue can be gently treated causing any
             lumps and bumps that may have settled during the recovery process to get smoothed out.
             Using warm oil and lymphatic cupping, myofascial decompression allows for scarring and
@@ -211,8 +191,8 @@ import Layout from '../../layouts/Layout.astro'
               <p class="h4 font-semibold">Post-Surgical Manual Lymphatic Drainage Session</p>
             </div>
             <div>
-              <p class="text-base-content/80">Indications include:</p>
-              <p class="text-base-content/70">For those within 6 months of surgical proceedure</p>
+              <p>Indications include:</p>
+              <p class="text-base-content/80">For those within 6 months of surgical proceedure</p>
             </div>
             <a
               href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"

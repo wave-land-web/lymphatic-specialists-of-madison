@@ -18,7 +18,7 @@ import { NAVIGATION } from '../../consts'
           <Hamburger class="w-5 h-5" />
         </button>
         <a href="/" class="btn btn-dash rounded-none">
-          <h1 class="text-2xl font-nuckle-semibold pb-0 pt-1">
+          <h1 class="text-2xl font-nuckle-semibold pb-0 pt-1 text-inherit">
             <span class="sr-only">Madison Lymphatics and Manual Therapy</span>
             MLMT
           </h1>
@@ -29,9 +29,7 @@ import { NAVIGATION } from '../../consts'
       <input id="my-drawer-nav" type="checkbox" class="drawer-toggle" />
       <div class="drawer-side">
         <button id="mobile-nav-close" aria-label="close sidebar" class="drawer-overlay"></button>
-        <ul
-          class="menu text-base-content min-h-full w-80 gap-2 border-r-2 border-base-300 bg-base-100"
-        >
+        <ul class="menu min-h-full w-80 gap-2 border-r-2 border-base-300 bg-base-100">
           {
             NAVIGATION.map((link) => {
               if (link.children) {
@@ -40,7 +38,7 @@ import { NAVIGATION } from '../../consts'
                     <span class="a menu-title text-base-content">{link.label}</span>
                     <ul class="menu gap-2">
                       {link.children.map((child) => (
-                        <li>
+                        <li class="text-base-content">
                           <HeaderLink href={child.href} aria-label={child.label}>
                             {child.label}
                           </HeaderLink>
@@ -51,7 +49,7 @@ import { NAVIGATION } from '../../consts'
                 )
               } else {
                 return (
-                  <li>
+                  <li class="text-base-content">
                     <HeaderLink href={link.href} aria-label={link.label}>
                       {link.label}
                     </HeaderLink>
@@ -81,7 +79,7 @@ import { NAVIGATION } from '../../consts'
                     <Chevron class="w-4 h-4 transition-transform duration-200 ease-in-out" />
                   </button>
                   <ul
-                    class="dropdown menu max-w-64 rounded-box shadow-sm bg-base-100/90 backdrop-blur-lg text-base-content"
+                    class="dropdown menu max-w-64 rounded-box shadow-sm bg-base-100/90 backdrop-blur-lg"
                     id={`popover-${index}`}
                     style={`position-anchor:--anchor-${index}`}
                     popover

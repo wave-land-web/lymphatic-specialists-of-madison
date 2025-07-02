@@ -144,7 +144,7 @@
   h4,
   h5,
   h6 {
-    @apply text-balance font-lora-regular font-bold;
+    @apply text-balance font-lora-regular font-bold text-base-content;
   }
 
   h1,
@@ -183,6 +183,12 @@
     @apply max-w-[65ch] text-sm sm:text-base text-pretty leading-relaxed;
   }
 
+  p:not(header p),
+  li:not(nav li),
+  .p:not(header .p) {
+    @apply text-base-content;
+  }
+
   button,
   a,
   .a {
@@ -191,5 +197,9 @@
 
   img {
     @apply w-full h-auto object-cover rounded-box shadow-lg;
+  }
+
+  strong {
+    @apply font-nuckle-semibold;
   }
 }
