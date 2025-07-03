@@ -1,0 +1,112 @@
+---
+import type { SanityDocument } from '@sanity/client'
+import DateAndReadTime from '../../components/text/DateAndReadTime.astro'
+import PageTitle from '../../components/text/PageTitle.astro'
+import PortableText from '../../components/text/PortableText.astro'
+import PageHeader from '../../components/ui/PageHeader.astro'
+import RecentPosts from '../../components/ui/RecentPosts.astro'
+import Layout from '../../layouts/Layout.astro'
+import { loadQuery } from '../../sanity/lib/load-query'
+import { urlForImage } from '../../sanity/lib/urlForImage'
+
+export async function getStaticPaths() {
+  const { data: allPosts } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post"] | order(publishedAt asc)`,
+  })
+
+  return allPosts.map((post) => {
+    return {
+      params: {
+        slug: post.slug.current,
+      },
+      props: {
+        allPosts,
+      },
+    }
+  })
+}
+
+// Get page data and props
+const { params, props } = Astro
+
+// Load the current post
+const { data: currentPost } = await loadQuery<SanityDocument>({
+  query: `*[_type == "post" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    description,
+    mainImage,
+    body,
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 )
+  }`,
+  params,
+})
+
+// Calculate recent posts by filtering out the current post
+const { data: recentPosts } = await loadQuery<SanityDocument[]>({
+  query: `*[_type == "post" && slug.current != $slug] | order(publishedAt desc) [0...3] {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    description,
+    mainImage,
+    body,
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 )
+  }`,
+  params,
+})
+
+// Pagination: previous and next post
+const currentPostIndex = props.allPosts.findIndex((p) => p.slug.current === params.slug)
+const previousPost = props.allPosts[currentPostIndex - 1] || null
+const nextPost = props.allPosts[currentPostIndex + 1] || null
+
+// Generate social image for SEO
+const socialImage = urlForImage(currentPost.mainImage).url()
+---
+
+<Layout title={currentPost.title} description={currentPost.description} socialImage={socialImage}>
+  <PageHeader
+    className="flex flex-col items-center text-center mx-auto"
+    customHeroBackgroundImage={currentPost.mainImage}
+  >
+    <PageTitle>{currentPost.title}</PageTitle>
+    <DateAndReadTime
+      publishedAt={currentPost.publishedAt}
+      estimatedReadingTime={currentPost.estimatedReadingTime}
+      class="lsa lsa-slide-up no-repeat delay-100"
+    />
+  </PageHeader>
+
+  <main id="blog-layout" class="wrapper">
+    <section id="post" class="prose prose-lg prose-a:link-primary mx-auto pt-0">
+      <PortableText portableText={currentPost.body} />
+
+      <!-- Pagination -->
+      <div class="flex flex-wrap gap-8 justify-between">
+        {
+          previousPost && (
+            <a href={`/blog/${previousPost.slug.current}/`} class="link link-primary mr-auto">
+              Previous Post
+            </a>
+          )
+        }
+
+        {
+          nextPost && (
+            <a href={`/blog/${nextPost.slug.current}/`} class="link link-primary ml-auto">
+              Next Post
+            </a>
+          )
+        }
+      </div>
+    </section>
+
+    <section id="recent-posts">
+      <RecentPosts posts={recentPosts} />
+    </section>
+  </main>
+</Layout>

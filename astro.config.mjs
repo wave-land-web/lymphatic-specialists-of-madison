@@ -1,27 +1,44 @@
 // @ts-check
 import netlify from '@astrojs/netlify'
+import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
+import sanity from '@sanity/astro'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
+import { loadEnv } from 'vite'
+
+const SANITY_PROJECT_ID = loadEnv('production', process.cwd(), '').PUBLIC_SANITY_PROJECT_ID
 
 // https://astro.build/config
 export default defineConfig({
   site: 'http://localhost:4321',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap(),
+    sanity({
+      // TODO: replace with ENV variable
+      projectId: SANITY_PROJECT_ID,
+      dataset: 'production',
+      // Set useCdn to false if you're building statically.
+      useCdn: false,
+      apiVersion: '2025-07-02',
+      studioBasePath: '/admin',
+    }),
+    react(),
+  ],
   prefetch: {
     prefetchAll: true,
   },
   vite: {
-    plugins: [
-      tailwindcss(),
-      sitemap({
-        lastmod: new Date(),
-      }),
-    ],
+    plugins: [tailwindcss()],
   },
   image: {
-    responsiveStyles: true,
-    layout: 'full-width',
+    layout: 'constrained',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
   },
   adapter: netlify({
     imageCDN: false,

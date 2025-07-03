@@ -199,6 +199,10 @@
     @apply w-full h-auto object-cover rounded-box shadow-lg;
   }
 
+  em {
+    @apply italic;
+  }
+
   strong {
     @apply font-nuckle-semibold;
   }

@@ -1,0 +1,17 @@
+---
+import { Image, inferRemoteSize } from 'astro:assets'
+import { urlForImage } from '../../sanity/lib/urlForImage'
+
+const { asset, alt, customWidth, customHeight } = Astro.props.node // `.node` is the current node in the PortableText
+
+const url = urlForImage(asset).url()
+const { width, height } = await inferRemoteSize(url)
+---
+
+<Image
+  class="max-h-[clamp(300px,40vw,500px)]"
+  src={url}
+  alt={alt}
+  width={customWidth || width}
+  height={customHeight || height}
+/>

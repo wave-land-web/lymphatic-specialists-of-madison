@@ -1,0 +1,63 @@
+---
+import type { SanityDocument } from '@sanity/client'
+import { createEllipsisText } from '../../sanity/lib/text'
+import DateAndReadTime from '../text/DateAndReadTime.astro'
+import SanityImage from './SanityImage.astro'
+
+export interface Props {
+  post: SanityDocument
+  isRow?: boolean
+  class?: string
+}
+
+const { post, isRow, class: className } = Astro.props
+---
+
+<article class="w-full lsa lsa-slide-up no-repeat">
+  <a
+    class:list={[
+      `${className || ''} card w-full bg-base-100 border border-base-300 hover:border-primary group shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden`,
+      { 'lg:card-side lg:max-h-[250px]': isRow },
+    ]}
+    href=`/blog/${post.slug.current}/`
+  >
+    <figure
+      class:list={[
+        'h-48 border-b-1 border-base-300',
+        {
+          'lg:w-1/3 lg:h-auto flex-shrink-0 border-b-1 lg:border-b-0 lg:border-r-1 border-base-300':
+            isRow,
+        },
+      ]}
+    >
+      <SanityImage
+        image={post.mainImage}
+        alt={post.mainImage.alt}
+        className="filter grayscale-100 group-hover:grayscale-0 transition-all duration-200"
+      />
+    </figure>
+
+    <div class="card-body">
+      <DateAndReadTime
+        publishedAt={post.publishedAt}
+        estimatedReadingTime={post.estimatedReadingTime}
+        class="font-nuckle-regular text-base-content/80 group-hover:text-primary transition duration-200 flex-grow-0"
+      />
+      <h3 class="card-title group-hover:text-primary transition duration-200 flex-grow-0">
+        {post.title}
+      </h3>
+
+      {
+        post.description && (
+          <p class="font-nuckle-regular text-base-content/80 group-hover:text-primary transition duration-200">
+            {createEllipsisText(post.description, 100)}
+          </p>
+        )
+      }
+
+      <div class="card-actions justify-end">
+        <button class="btn btn-dash">Read more</button>
+      </div>
+    </div>
+  </a>
+</article>

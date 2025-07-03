@@ -1,14 +1,22 @@
 ---
+import type { SanityAsset } from '@sanity/image-url/lib/types/types'
 import { getImage } from 'astro:assets'
 import heroBackground from '../../assets/images/placeholder-3.jpg'
+import { urlForImage } from '../../sanity/lib/urlForImage'
 
 export interface Props {
   className?: string
+  customHeroBackgroundImage?: SanityAsset
 }
 
-const { className } = Astro.props
+const { className, customHeroBackgroundImage } = Astro.props
 
-const heroBackgroundImage = await getImage({ src: heroBackground })
+let heroBackgroundImage = await getImage({ src: heroBackground, inferSize: true })
+
+if (customHeroBackgroundImage) {
+  const url = urlForImage(customHeroBackgroundImage).url()
+  heroBackgroundImage = await getImage({ src: url, inferSize: true })
+}
 ---
 
 <header class="hero md:bg-fixed" style={`background-image: url(${heroBackgroundImage.src})`}>

@@ -1,0 +1,21 @@
+---
+export interface Props {
+  publishedAt: string
+  estimatedReadingTime: number
+  class?: string
+}
+
+const { publishedAt, estimatedReadingTime, class: className } = Astro.props
+---
+
+<p class={className}>
+  <time datetime={publishedAt}
+    >{
+      new Date(publishedAt).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+      })
+    }</time
+  > • <time datetime={`PT${estimatedReadingTime}M`}>{estimatedReadingTime} min</time> read
+</p>

@@ -1,0 +1,20 @@
+---
+import type { SanityDocument } from '@sanity/client'
+import BlogCard from './BlogCard.astro'
+
+export interface Posts {
+  posts: SanityDocument[]
+}
+
+const { posts } = Astro.props
+---
+
+<div class="space-y-(--site-padding-base)">
+  <h2>Recent Posts</h2>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center md:justify-items-start gap-(--site-padding-md) lg:gap-(--site-padding-base)"
+  >
+    {posts.map((post: SanityDocument) => <BlogCard post={post} />)}
+  </div>
+  <a href="/blog/" class="btn btn-primary">View All Posts</a>
+</div>
