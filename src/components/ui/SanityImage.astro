@@ -13,7 +13,7 @@ export interface Props {
 
 const { image, alt, className, customWidth, customHeight } = Astro.props
 
-const url = urlForImage(image).url()
+const url = urlForImage(image).width(2000).height(2000).url()
 const { width, height } = await inferRemoteSize(url)
 ---
 

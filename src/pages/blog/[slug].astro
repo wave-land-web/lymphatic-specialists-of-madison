@@ -65,7 +65,7 @@ const previousPost = props.allPosts[currentPostIndex - 1] || null
 const nextPost = props.allPosts[currentPostIndex + 1] || null
 
 // Generate social image for SEO
-const socialImage = urlForImage(currentPost.mainImage).url()
+const socialImage = urlForImage(currentPost.mainImage).auto('format').url()
 ---
 
 <Layout title={currentPost.title} description={currentPost.description} socialImage={socialImage}>

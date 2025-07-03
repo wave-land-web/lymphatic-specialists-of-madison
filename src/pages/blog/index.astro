@@ -59,7 +59,7 @@ const remainingPosts = posts.slice(4)
           <p>Check back soon for new posts.</p>
         </section>
       ) : ( 
-        <section id="recent-blog-posts" class="container lg:max-w-screen-2xl pt-(--site-padding-base)">
+        <section id="recent-blog-posts" class="container lg:max-w-screen-2xl mx-auto pt-(--site-padding-base)">
           <h2 class="mb-8 lsa lsa-slide-up no-repeat">Recent Blog Posts</h2>
 
           <div class="grid lg:grid-cols-2 gap-(--site-padding-md) lg:gap-(--site-padding-base)">
@@ -71,12 +71,12 @@ const remainingPosts = posts.slice(4)
           </div>
         </section>
         
-        <section id="all-blog-posts" class="container lg:max-w-screen-2xl">
+        <section id="all-blog-posts" class="container lg:max-w-screen-2xl mx-auto">
           <div>
             <h2 class="mb-8 lsa lsa-slide-up no-repeat">All Blog Posts</h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-(--site-padding-md) lg:gap-(--site-padding-base)">
-              {remainingPosts.map((post) => <BlogCard post={post} />)}
+              {remainingPosts.map((post) => <BlogCard post={post} class="h-full" />)}
             </div>
           </div>
         </section>

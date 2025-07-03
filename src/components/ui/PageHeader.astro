@@ -14,7 +14,7 @@ const { className, customHeroBackgroundImage } = Astro.props
 let heroBackgroundImage = await getImage({ src: heroBackground, inferSize: true })
 
 if (customHeroBackgroundImage) {
-  const url = urlForImage(customHeroBackgroundImage).url()
+  const url = urlForImage(customHeroBackgroundImage).auto('format').url()
   heroBackgroundImage = await getImage({ src: url, inferSize: true })
 }
 ---
