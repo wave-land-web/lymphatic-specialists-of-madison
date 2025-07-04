@@ -130,6 +130,10 @@
     @apply py-(--site-padding-lg);
   }
 
+  main {
+    @apply pb-0;
+  }
+
   .wrapper {
     @apply w-full max-w-screen-2xl mx-auto px-(--site-padding-base);
   }
