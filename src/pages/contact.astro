@@ -3,7 +3,6 @@ import Card from '../components/ui/Card.astro'
 import PageTitle from '../components/text/PageTitle.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
-import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
 ---
 
 <Layout title="Contact - Madison Lymphatics & Manual Therapy">
@@ -20,10 +19,7 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
     <section
       class="lg:max-w-screen-xl mx-auto pt-(--site-padding-base) border-b border-base-300 lsa lsa-slide-up no-repeat group"
     >
-      <Card
-        id="contact-information"
-        className="max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
-      >
+      <Card id="contact-information">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg)">
           <!-- Left Column - Contact Info -->
           <div class="space-y-6">
@@ -216,10 +212,6 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
           referrerpolicy="no-referrer-when-downgrade"
           title="Madison Lymphatics & Manual Therapy Location"></iframe>
       </div>
-    </section>
-
-    <section id="call-to-action">
-      <NewsletterSubscribe />
     </section>
   </main>
 
