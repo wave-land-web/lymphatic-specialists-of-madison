@@ -6,28 +6,21 @@ export interface Props {
   imageSrc?: any
   imageAlt?: string
   className?: string
-  priority?: boolean // For above-the-fold images
-  quality?: number // Image quality (1-100)
+  priority?: boolean
+  quality?: number
 }
 
-const {
-  id,
-  imageSrc,
-  imageAlt,
-  className = 'border-base-300 hover:border-primary',
-  priority = false,
-  quality = 85,
-} = Astro.props
+const { id, imageSrc, imageAlt, className, priority = false, quality = 85 } = Astro.props
 ---
 
 <article
   id={id}
-  class={`${className} card w-full bg-base-100/90 hover:bg-base-100 backdrop-blur-lg border group shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden`}
+  class={`${className} card group w-full bg-base-100/90 hover:bg-base-100 backdrop-blur-lg border border-base-300 hover:border-primary shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden`}
 >
   {
     imageSrc && (
       <Image
-        class="w-full h-full max-h-[250px] object-cover filter grayscale-100 group-hover:grayscale-0 transition-all duration-200 rounded-b-none shadow-none"
+        class="w-full h-full max-h-[250px] object-cover filter grayscale-100 group-hover:grayscale-0 max-md:group-[.active]:grayscale-0 transition-all duration-200 rounded-b-none shadow-none"
         src={imageSrc}
         alt={imageAlt ?? ''}
         quality={quality}

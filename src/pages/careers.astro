@@ -17,9 +17,9 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
   <PageHeader className="items-center mx-auto text-center">
     <PageTitle>Careers</PageTitle>
     <div class="prose text-neutral-content">
-      <p class="h3 text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+      <h2 class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
         Experience and Compassion
-      </p>
+      </h2>
       <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
         The therapists at Madison Lymphatics and Bodywork believe that care should always be
         holistic and we strive to help guide you towards healing with experience and compassion. We
@@ -47,21 +47,24 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
     <!-- Team Members Section -->
     <section id="team-members" class="pt-0">
       <div
-        class="wrapper container md:max-w-screen-xl flex flex-col gap-(--site-padding-lg) mx-auto"
+        class="wrapper container md:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
         <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Meet Our Team</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
           <!-- Courtney Rolnick -->
-          <div class="lsa lsa-slide-up no-repeat">
-            <Card id="courtney-rolnick" className="border-base-300 hover:border-primary">
+          <div class="lsa lsa-slide-up no-repeat group">
+            <Card
+              id="courtney-rolnick"
+              className="border-base-300 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+            >
               <div class="flex flex-col gap-(--site-padding-md)">
                 <div>
                   <h3 class="text-primary mb-2">Dr. Courtney Rolnick</h3>
                   <p class="font-semibold mb-4">PT, DPT, CMLDT - Founder</p>
                   <div class="avatar">
                     <div
-                      class="ring-primary hover:ring-accent ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                      class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
                     >
                       <Image src={CourtneyImage} alt="Courtney Rolnick" />
                     </div>
@@ -124,15 +127,18 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
           </div>
 
           <!-- Sarah McMunn -->
-          <div class="lsa lsa-slide-up no-repeat">
-            <Card id="sarah-mcmunn" className="border-base-300 hover:border-primary">
+          <div class="lsa lsa-slide-up no-repeat group">
+            <Card
+              id="sarah-mcmunn"
+              className="border-base-300 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+            >
               <div class="flex flex-col gap-(--site-padding-md)">
                 <div>
                   <h3 class="text-primary mb-2">Sarah McMunn</h3>
                   <p class="font-semibold mb-4">LMT, CMLDT</p>
                   <div class="avatar">
                     <div
-                      class="ring-primary hover:ring-accent ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                      class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
                     >
                       <Image src={SarahImage} alt="Sarah McMunn" />
                     </div>
@@ -181,8 +187,11 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
           </div>
 
           <!-- Shaina Scott -->
-          <div class="lsa lsa-slide-up no-repeat">
-            <Card id="shaina-scott" className="border-base-300 hover:border-primary">
+          <div class="lsa lsa-slide-up no-repeat group">
+            <Card
+              id="shaina-scott"
+              className="border-base-300 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+            >
               <div class="flex flex-col gap-(--site-padding-md) h-full">
                 <div>
                   <h3 class="text-primary mb-2">Shaina Scott</h3>
@@ -191,7 +200,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
                   </p>
                   <div class="avatar">
                     <div
-                      class="ring-primary hover:ring-accent ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                      class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
                     >
                       <Image src={ShainaImage} alt="Shaina Scott" />
                     </div>
@@ -246,7 +255,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
     <!-- Join Our Team Section -->
     <section
       id="join-our-team"
-      class="hero mb-(--site-padding-2xl) p-0 shadow-sm bg-cover bg-center md:bg-fixed"
+      class="hero p-0 shadow-sm bg-cover bg-center md:bg-fixed"
       style={`background-image: url(${placeholderOneImage.src});`}
     >
       <div class="hero-overlay bg-black/70"></div>
@@ -413,7 +422,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
     <!-- CTA Section -->
     <section id="contact-us" class="bg-primary/5">
       <div
-        class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-base) mx-auto text-center"
+        class="wrapper container lg:max-w-3xl flex flex-col gap-(--site-padding-base) mx-auto text-center"
       >
         <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Ready to Join Our Team?</h2>
         <p class="h4 mx-auto lsa lsa-slide-up delay-100 no-repeat">

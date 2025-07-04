@@ -18,9 +18,12 @@ import NewsletterSubscribe from '../components/ui/NewsletterSubscribe.astro'
   <main class="wrapper container lg:max-w-screen-2xl mx-auto">
     <!-- Contact Information Section -->
     <section
-      class="lg:max-w-screen-xl mx-auto pt-(--site-padding-base) border-b border-base-300 lsa lsa-slide-up no-repeat"
+      class="lg:max-w-screen-xl mx-auto pt-(--site-padding-base) border-b border-base-300 lsa lsa-slide-up no-repeat group"
     >
-      <Card id="contact-information">
+      <Card
+        id="contact-information"
+        className="max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+      >
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg)">
           <!-- Left Column - Contact Info -->
           <div class="space-y-6">

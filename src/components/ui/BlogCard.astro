@@ -13,10 +13,10 @@ export interface Props {
 const { post, isRow, class: className } = Astro.props
 ---
 
-<article class="w-full lsa lsa-slide-up no-repeat">
+<article class="w-full lsa lsa-slide-up no-repeat group">
   <a
     class:list={[
-      `${className || ''} card w-full bg-base-100 border border-base-300 hover:border-primary group shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden`,
+      `${className || ''} card w-full bg-base-100 border border-base-300 hover:border-primary shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden`,
       { 'lg:card-side lg:max-h-[250px]': isRow },
     ]}
     href=`/blog/${post.slug.current}/`
@@ -33,7 +33,7 @@ const { post, isRow, class: className } = Astro.props
       <SanityImage
         image={post.mainImage}
         alt={post.mainImage.alt}
-        className="filter grayscale-100 group-hover:grayscale-0 transition-all duration-200"
+        className="filter grayscale-100 group-hover:grayscale-0 max-md:group-[.active]:grayscale-0 transition-all duration-200"
       />
     </figure>
 

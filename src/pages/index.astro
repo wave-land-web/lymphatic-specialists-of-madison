@@ -83,7 +83,7 @@ const serviceImages: Record<string, any> = {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
           SERVICES.map((service, index) => (
-            <div class={`lsa lsa-slide-up delay-${index * 100} no-repeat`}>
+            <div class={`lsa lsa-slide-up delay-${index * 100} no-repeat group`}>
               <Card
                 id={service.title}
                 imageSrc={serviceImages[service.imageKey]}
