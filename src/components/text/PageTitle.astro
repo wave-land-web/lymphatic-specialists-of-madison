@@ -1,9 +1,11 @@
 ---
-const { className } = Astro.props
+export interface Props {
+  class?: string
+}
+
+const { class: className = 'text-primary' } = Astro.props
 ---
 
-<h1
-  class={`text-4xl md:text-5xl lg:text-6xl max-w-4xl text-emerald-600 text-shadow-lg lsa lsa-slide-up no-repeat ${className}`}
->
+<h1 class={`text-4xl md:text-5xl lg:text-6xl max-w-4xl lsa lsa-slide-up no-repeat ${className}`}>
   <slot />
 </h1>

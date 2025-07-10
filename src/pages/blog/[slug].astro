@@ -70,19 +70,19 @@ const socialImage = urlForImage(currentPost.mainImage).auto('format').url()
 
 <Layout title={currentPost.title} description={currentPost.description} socialImage={socialImage}>
   <PageHeader
-    className="flex flex-col items-center text-center mx-auto"
+    class="flex flex-col items-center text-center mx-auto"
     customHeroBackgroundImage={currentPost.mainImage}
   >
-    <PageTitle>{currentPost.title}</PageTitle>
+    <PageTitle class="text-base-100 text-shadow-sm">{currentPost.title}</PageTitle>
     <DateAndReadTime
       publishedAt={currentPost.publishedAt}
       estimatedReadingTime={currentPost.estimatedReadingTime}
-      class="text-shadow-lg lsa lsa-slide-up no-repeat delay-100"
+      class="text-base-100 text-shadow-sm lsa lsa-slide-up no-repeat delay-100"
     />
   </PageHeader>
 
   <main id="blog-layout" class="wrapper">
-    <section id="post" class="prose prose-lg prose-a:link-primary mx-auto pt-0">
+    <section id="post" class="prose prose-lg prose-a:link-accent mx-auto pt-0">
       <PortableText portableText={currentPost.body} />
 
       <!-- Pagination -->

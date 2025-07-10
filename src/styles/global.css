@@ -9,26 +9,26 @@
   default: false;
   prefersdark: false;
   color-scheme: 'light';
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: oklch(93% 0 0);
-  --color-base-300: oklch(86% 0 0);
-  --color-base-content: oklch(35.519% 0.032 262.988);
-  --color-primary: oklch(50% 0.118 165.612);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(61.302% 0.202 261.294);
-  --color-secondary-content: oklch(100% 0 0);
-  --color-accent: oklch(72.772% 0.149 33.2);
-  --color-accent-content: oklch(0% 0 0);
+  --color-base-100: #f8f2ec;
+  --color-base-200: #f0e5d8;
+  --color-base-300: #e9d9c5;
+  --color-base-content: #0a0605;
+  --color-primary: #3b6671;
+  --color-primary-content: #f7f3e8;
+  --color-secondary: #e2a880;
+  --color-secondary-content: #0a0605;
+  --color-accent: #b67f3e;
+  --color-accent-content: #f7f3e8;
   --color-neutral: oklch(35.519% 0.032 262.988);
   --color-neutral-content: oklch(98.462% 0.001 247.838);
-  --color-info: oklch(72.06% 0.191 231.6);
-  --color-info-content: oklch(0% 0 0);
-  --color-success: oklch(64.8% 0.15 160);
-  --color-success-content: oklch(0% 0 0);
-  --color-warning: oklch(84.71% 0.199 83.87);
+  --color-info: #c7ddd5;
+  --color-info-content: #0a0605;
+  --color-success: oklch(59% 0.145 163.225);
+  --color-success-content: #f7f3e8;
+  --color-warning: oklch(83% 0.128 66.29);
   --color-warning-content: oklch(0% 0 0);
-  --color-error: oklch(71.76% 0.221 22.18);
-  --color-error-content: oklch(0% 0 0);
+  --color-error: oklch(55% 0.195 38.402);
+  --color-error-content: #f7f3e8;
   --radius-selector: 1rem;
   --radius-field: 2rem;
   --radius-box: 1rem;
@@ -114,7 +114,7 @@
   }
 
   ::selection {
-    @apply bg-primary text-primary-content antialiased;
+    @apply bg-primary text-primary-content;
   }
 
   html {
@@ -122,7 +122,7 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-base-100 to-base-200 font-nuckle-regular;
+    @apply bg-gradient-to-b from-base-100 to-base-200 font-nuckle-regular text-base-content antialiased;
   }
 
   main,
@@ -148,7 +148,7 @@
   h4,
   h5,
   h6 {
-    @apply text-balance font-lora-regular font-bold text-base-content;
+    @apply text-balance font-lora-regular font-bold;
   }
 
   h1,
@@ -184,19 +184,18 @@
   p,
   li:not(nav li),
   .p {
-    @apply max-w-[65ch] text-sm sm:text-base text-pretty leading-relaxed;
-  }
-
-  p:not(header p),
-  li:not(nav li),
-  .p:not(header .p) {
-    @apply text-base-content;
+    @apply max-w-[65ch] text-base-content text-sm sm:text-base text-pretty leading-relaxed;
   }
 
   button,
   a,
   .a {
     @apply text-balance font-nuckle-semibold transition-colors duration-200;
+  }
+
+  img,
+  svg {
+    @apply w-full h-auto;
   }
 
   img {

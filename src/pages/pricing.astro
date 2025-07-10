@@ -6,9 +6,9 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Pricing">
-  <PageHeader className="items-center mx-auto text-center">
+  <PageHeader class="items-center mx-auto text-center">
     <PageTitle>Pricing</PageTitle>
-    <p class="h4 text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+    <p class="h4 lsa lsa-slide-up delay-100 no-repeat">
       We offer a variety of services to help you achieve your health and wellness goals.
     </p>
   </PageHeader>
@@ -25,7 +25,7 @@ import Layout from '../layouts/Layout.astro'
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- 30 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="30-minute-session" className="text-center border-base-300 hover:border-primary">
+          <Card id="30-minute-session" className="text-center border-base-200 hover:border-primary">
             <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>30 Minutes</h3>
               <span class="h2 font-bold text-primary">$65</span>
@@ -90,7 +90,7 @@ import Layout from '../layouts/Layout.astro'
         </div>
         <!-- 90 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="90-minute-session" className="text-center border-base-300 hover:border-primary">
+          <Card id="90-minute-session" className="text-center border-base-200 hover:border-primary">
             <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>90 Minutes</h3>
               <span class="h2 font-bold text-primary">$195</span>
@@ -123,11 +123,11 @@ import Layout from '../layouts/Layout.astro'
 
     <section
       id="pre-post-surgical-manual-lymphatic-drainage"
-      class="mb-(--site-padding-2xl) bg-gradient-to-br from-accent/50 to-accent/70"
+      class="mb-(--site-padding-2xl) border-t-1 border-b-1 border-base-200 bg-accent/5"
     >
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <h2
-          class="h1 max-w-2xl mx-auto mb-(--site-padding-md) text-center text-accent-content lsa lsa-slide-up no-repeat"
+          class="h1 max-w-2xl mx-auto mb-(--site-padding-md) text-center lsa lsa-slide-up no-repeat"
         >
           Pre/Post-Surgical Manual Lymphatic Drainage
         </h2>
@@ -136,7 +136,7 @@ import Layout from '../layouts/Layout.astro'
         <div class="lsa lsa-slide-up no-repeat flex">
           <Card
             id="60-minute-session"
-            className="text-center shadow-lg scale-[1.02] border border-base-300 hover:border-accent max-w-lg mx-auto"
+            className="text-center shadow-lg scale-[1.02] border border-base-200 hover:border-accent max-w-lg mx-auto"
           >
             <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>60 Minutes</h3>
@@ -177,7 +177,7 @@ import Layout from '../layouts/Layout.astro'
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- 30 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="30-minute-session" className="text-center border-base-300 hover:border-accent">
+          <Card id="30-minute-session" className="text-center border-base-200 hover:border-accent">
             <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>30 Minutes</h3>
               <span class="h2 font-bold text-accent">$55</span>
@@ -232,7 +232,7 @@ import Layout from '../layouts/Layout.astro'
         </div>
         <!-- 90 Minutes -->
         <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="90-minute-session" className="text-center border-base-300 hover:border-accent">
+          <Card id="90-minute-session" className="text-center border-base-200 hover:border-accent">
             <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>90 Minutes</h3>
               <span class="h2 font-bold text-accent">$165</span>

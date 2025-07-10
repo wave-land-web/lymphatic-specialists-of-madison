@@ -3,24 +3,27 @@ import HeaderLink from '../text/HeaderLink.astro'
 import Hamburger from '../../assets/icons/hamburger.svg'
 import Chevron from '../../assets/icons/chevron.svg'
 import { NAVIGATION } from '../../consts'
+import LogoFade from '../../assets/images/logo-fade.svg'
 ---
 
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-base-100/80 glass">
   <div class="navbar wrapper h-(--nav-height) px-(--site-padding-base)">
     <!-- Mobile navigation and logo -->
     <div class="navbar-start">
-      <div class="flex items-center gap-(--site-padding-base)">
+      <div class="flex items-center gap-2">
         <button
           id="mobile-nav-open"
           aria-label="open sidebar"
           class="lg:hidden btn btn-square btn-ghost"
         >
-          <Hamburger class="w-5 h-5" />
+          <Hamburger class="w-6 h-6" />
         </button>
-        <a href="/" class="btn btn-dash rounded-none">
-          <h1 class="text-2xl font-nuckle-semibold pb-0 pt-1 text-inherit">
+        <a href="/" aria-label="Home" title="Home">
+          <h1>
             <span class="sr-only">Madison Lymphatics and Manual Therapy</span>
-            MLMT
+
+            <!-- logo -->
+            <LogoFade class="max-w-24 md:max-w-28" />
           </h1>
         </a>
       </div>
@@ -29,7 +32,7 @@ import { NAVIGATION } from '../../consts'
       <input id="my-drawer-nav" type="checkbox" class="drawer-toggle" />
       <div class="drawer-side">
         <button id="mobile-nav-close" aria-label="close sidebar" class="drawer-overlay"></button>
-        <ul class="menu min-h-full w-80 gap-2 border-r-2 border-base-300 bg-base-100">
+        <ul class="menu min-h-full w-80 gap-2 border-r-2 border-base-200 bg-base-100 p-4">
           {
             NAVIGATION.map((link) => {
               if (link.children) {
@@ -79,13 +82,13 @@ import { NAVIGATION } from '../../consts'
                     <Chevron class="w-4 h-4 transition-transform duration-200 ease-in-out" />
                   </button>
                   <ul
-                    class="dropdown menu max-w-64 rounded-box shadow-sm bg-base-100/90 backdrop-blur-lg"
+                    class="dropdown menu max-w-64 rounded-box shadow-sm bg-base-100/80 backdrop-blur-lg"
                     id={`popover-${index}`}
                     style={`position-anchor:--anchor-${index}`}
                     popover
                   >
                     {link.children.map((child) => (
-                      <li class="text-base-content">
+                      <li>
                         <HeaderLink href={child.href}>{child.label}</HeaderLink>
                       </li>
                     ))}
@@ -115,6 +118,7 @@ import { NAVIGATION } from '../../consts'
   // Mobile navigation toggle function
   function toggleMobileNav() {
     const drawerToggle = document.getElementById('my-drawer-nav') as HTMLInputElement
+
     if (drawerToggle) {
       drawerToggle.checked = !drawerToggle.checked
     }
@@ -169,33 +173,6 @@ import { NAVIGATION } from '../../consts'
     }
   })
 
-  // Handle scroll-based navigation transparency
-  function handleNavScroll() {
-    const nav = document.getElementById('main-nav')
-    if (!nav) return
-
-    const scrollThreshold = 20
-    const isScrolled = window.scrollY > scrollThreshold
-
-    if (isScrolled) {
-      // Scrolled past threshold - solid background with primary content text
-      nav.classList.add('bg-base-100/90')
-      nav.classList.add('backdrop-blur-lg')
-      nav.classList.add('text-base-content')
-      nav.classList.remove('text-neutral-content')
-    } else {
-      // At the top - transparent background with neutral content text
-      nav.classList.remove('bg-base-100/90')
-      nav.classList.remove('backdrop-blur-lg')
-      nav.classList.remove('text-base-content')
-      nav.classList.add('text-neutral-content')
-    }
-  }
-
   // Initialize all navigation functionality
   initMobileNav()
-  handleNavScroll()
-
-  // Listen for scroll events
-  window.addEventListener('scroll', handleNavScroll)
 </script>

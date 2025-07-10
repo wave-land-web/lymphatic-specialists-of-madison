@@ -8,10 +8,10 @@ import Layout from '../../layouts/Layout.astro'
 
 <Layout title="Manual Lymphatic Drainage">
   <PageHeader>
-    <PageTitle>Manual Lymphatic Drainage</PageTitle>
+    <PageTitle class="mx-auto text-center text-primary">Manual Lymphatic Drainage</PageTitle>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
-      <div class="prose text-neutral-content">
-        <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+      <div class="prose">
+        <p class="lsa lsa-slide-up delay-100 no-repeat">
           <a href="/blog/manual-lymphatic-drainage-m-l-d" class="link link-accent"
             >Manual Lymphatic Drainage</a
           >, or MLD, is a gentle yet powerful form of bodywork that is intended to stimulate and
@@ -19,7 +19,7 @@ import Layout from '../../layouts/Layout.astro'
           tissues back towards the heart. It is a technique based on gentle, rhythmic and constant
           movements that mimic the rhythm of the body's lymphatic system.
         </p>
-        <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+        <p class="lsa lsa-slide-up delay-200 no-repeat">
           Although lymphatic massage may not be as common as other types of massage modalities, the
           benefits that it provides are numerous. If you are feeling a bit sluggish, experiencing
           mild to moderate swelling, experiencing localized or systemic inflammation, recovering
@@ -27,15 +27,15 @@ import Layout from '../../layouts/Layout.astro'
           therapeutic option for you.
         </p>
       </div>
-      <div class="prose text-neutral-content">
-        <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+      <div class="prose">
+        <p class="lsa lsa-slide-up delay-300 no-repeat">
           Manual Lymphatic Drainage is also extremely effective in treating post-surgical swelling
           caused by liposuction, abdominoplasty, facelift, breast lift/reduction, and many, many
           other elective (and non-elective), reconstructive, and cosmetic surgeries. This treatment
           is also extremely effective in reducing the lumps and bumps that can be associated with
           liposuction.
         </p>
-        <p class="text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
+        <p class="lsa lsa-slide-up delay-400 no-repeat">
           Manual Lymphatic Drainage done at the Madison Lymphatics and Bodywork is performed by
           Courtney Rolnick, PT, DPT, CMLDT. Courtney was trained in the <a
             href="https://www.vodderschool.com/manual_lymph_drainage_overview2"
@@ -124,14 +124,12 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- Contraindications Section -->
-    <section id="contraindications" class="bg-gradient-to-br from-primary/80 to-primary/90">
+    <section id="contraindications" class="border-t-1 border-b-1 border-base-200 bg-primary/5">
       <div
         class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
-        <h2 class="h1 text-center lsa lsa-slide-up no-repeat text-primary-content">
-          Contraindications
-        </h2>
-        <p class="h4 text-center text-primary-content mx-auto lsa lsa-slide-up no-repeat">
+        <h2 class="h1 text-center lsa lsa-slide-up no-repeat">Contraindications</h2>
+        <p class="h4 text-center mx-auto lsa lsa-slide-up no-repeat">
           Although MLD is beneficial to a number of conditions, it is not for everybody. Please note
           that we may need to contact your health care provider for further information on your
           condition. Contraindications include:
@@ -141,44 +139,24 @@ import Layout from '../../layouts/Layout.astro'
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
           <div class="list">
-            <ListItem
-              listItemClass="text-primary-content"
-              number={1}
-              text="Congestive heart failure"
-            />
-            <ListItem listItemClass="text-primary-content" number={2} text="DVT" />
-            <ListItem listItemClass="text-primary-content" number={3} text="Kidney disorders" />
-            <ListItem
-              listItemClass="text-primary-content"
-              number={4}
-              text="Acute inflammation or infection/malignancies"
-            />
+            <ListItem number={1} text="Congestive heart failure" />
+            <ListItem number={2} text="DVT" />
+            <ListItem number={3} text="Kidney disorders" />
+            <ListItem number={4} text="Acute inflammation or infection/malignancies" />
 
             <!-- Mobile only -->
-            <ListItem
-              listItemClass="md:hidden text-primary-content"
-              number={5}
-              text="Arteriosclerosis"
-            />
-            <ListItem
-              listItemClass="md:hidden text-primary-content"
-              number={6}
-              text="Acute cold/flu"
-            />
-            <ListItem listItemClass="md:hidden text-primary-content" number={7} text="Fever" />
-            <ListItem
-              listItemClass="md:hidden text-primary-content"
-              number={8}
-              text="Some medications"
-            />
+            <ListItem listItemClass="md:hidden " number={5} text="Arteriosclerosis" />
+            <ListItem listItemClass="md:hidden " number={6} text="Acute cold/flu" />
+            <ListItem listItemClass="md:hidden " number={7} text="Fever" />
+            <ListItem listItemClass="md:hidden " number={8} text="Some medications" />
           </div>
 
           <!-- Desktop only -->
           <div class="list hidden md:block">
-            <ListItem listItemClass="text-primary-content" number={5} text="Arteriosclerosis" />
-            <ListItem listItemClass="text-primary-content" number={6} text="Acute cold/flu" />
-            <ListItem listItemClass="text-primary-content" number={7} text="Fever" />
-            <ListItem listItemClass="text-primary-content" number={8} text="Some medications" />
+            <ListItem number={5} text="Arteriosclerosis" />
+            <ListItem number={6} text="Acute cold/flu" />
+            <ListItem number={7} text="Fever" />
+            <ListItem number={8} text="Some medications" />
           </div>
         </ul>
       </div>
@@ -195,7 +173,7 @@ import Layout from '../../layouts/Layout.astro'
           <div class="lsa lsa-slide-up no-repeat flex">
             <Card
               id="30-minute-session"
-              className="text-center border border-base-300 hover:border-primary"
+              className="text-center border border-base-200 hover:border-primary"
             >
               <div class="flex flex-col items-center gap-(--site-padding-base)">
                 <h3>30 Minutes</h3>
@@ -251,7 +229,7 @@ import Layout from '../../layouts/Layout.astro'
           <div class="lsa lsa-slide-up no-repeat flex">
             <Card
               id="90-minute-session"
-              className="text-center border border-base-300 hover:border-primary"
+              className="text-center border border-base-200 hover:border-primary"
             >
               <div class="flex flex-col items-center gap-(--site-padding-base)">
                 <h3>90 Minutes</h3>
@@ -282,7 +260,10 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section id="manual-lymphatic-drainage-cta" class="bg-primary/5">
+    <section
+      id="manual-lymphatic-drainage-cta"
+      class="border-t-1 border-b-1 border-base-200 bg-radial-[at_20%_25%] from-primary/15 to-accent/15 to-95%"
+    >
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div
           class="flex flex-col items-center gap-(--site-padding-md) max-w-4xl mx-auto text-center"

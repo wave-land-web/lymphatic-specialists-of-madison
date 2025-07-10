@@ -7,11 +7,11 @@ import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout title="Pre/Post-Surgical Manual Lymphatic Drainage">
-  <PageHeader className="max-w-4xl">
-    <PageTitle>Pre/Post-Surgical Manual Lymphatic Drainage</PageTitle>
-    <p
-      class="prose mr-auto text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat"
+  <PageHeader>
+    <PageTitle class="mx-auto text-center text-primary"
+      >Pre/Post-Surgical Manual Lymphatic Drainage</PageTitle
     >
+    <p class="mx-auto text-center lsa lsa-slide-up delay-100 no-repeat">
       <a href="/blog/post-surgical-manual-lymphatic-drainage" class="link link-accent"
         >Post-surgical manual lymphatic drainage</a
       > helps clear out excess lymph fluid caused by surgical trauma, which assists in faster healing
@@ -21,7 +21,7 @@ import Layout from '../../layouts/Layout.astro'
       orthopedic surgeries, non-elective emergency/non-emergency surgeries, gender affirming surgeries.
       Schedule this type of work if you are 0-6 months post op.
     </p>
-    <div class="lsa lsa-slide-up delay-200 no-repeat">
+    <div class="mx-auto lsa lsa-slide-up delay-200 no-repeat">
       <a
         href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
         target="_blank"
@@ -63,31 +63,28 @@ import Layout from '../../layouts/Layout.astro'
       </div>
     </section>
 
-    <section
-      id="why-choose-pre-post-surgical-manual-lymphatic-drainage"
-      class="bg-gradient-to-br from-accent/50 to-accent/70"
-    >
+    <section id="why-choose-pre-post-surgical-manual-lymphatic-drainage" class="bg-primary/5">
       <div
         class="wrapper container lg:max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg) mx-auto"
       >
-        <h2 class="h1 font-bold text-accent-content lsa lsa-slide-up no-repeat">
+        <h2 class="h1 font-bold lsa lsa-slide-up no-repeat">
           Why choose pre/post-surgical Manual Lymphatic Drainage?
         </h2>
         <div class="prose">
-          <p class="text-accent-content lsa lsa-slide-up no-repeat">
+          <p class="lsa lsa-slide-up no-repeat">
             Oftentimes after surgery, the body will swell with excessive edema both at and proximal
             to the surgical site. This post-operative swelling, while completely normal, can be
             quite uncomfortable. Sluggishness, decreased range of motion, increased sensitivity,
             inability to sleep comfortably, and an overall feeling of puffiness can often occur
             during the surgical recovery process.
           </p>
-          <p class="text-accent-content lsa lsa-slide-up no-repeat">
+          <p class="lsa lsa-slide-up no-repeat">
             Reducing post-surgical swelling is one of the most common ways that Manual Lymphatic
             Drainage is used. Because of its ability to directly move excessive post-surgical edema
             while using the most gentle of touch, Manual Lymphatic Drainage is frequently regarded
             as an imperative part of the surgical recovery process by surgeons worldwide.
           </p>
-          <p class="text-accent-content h4 lsa lsa-slide-up no-repeat">
+          <p class="h4 lsa lsa-slide-up no-repeat">
             Below is a study done by the NIH (National Institutes of Health) showing the benefits of
             post liposuction MLD.
           </p>
@@ -95,7 +92,7 @@ import Layout from '../../layouts/Layout.astro'
             href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4075221/"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-dash text-accent-content">See The Study</a
+            class="btn btn-dash">See The Study</a
           >
         </div>
       </div>
@@ -142,27 +139,24 @@ import Layout from '../../layouts/Layout.astro'
       </div>
     </section>
 
-    <section
-      id="do-you-have-tissue-fibrosis-or-lumps-and-bumps-after-surgery"
-      class="bg-gradient-to-br from-primary/80 to-primary/90"
-    >
+    <section id="do-you-have-tissue-fibrosis-or-lumps-and-bumps-after-surgery" class="bg-accent/5">
       <div
         class="wrapper container lg:max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg) mx-auto"
       >
-        <h2 class="h1 font-bold text-primary-content lsa lsa-slide-up no-repeat">
+        <h2 class="h1 font-bold lsa lsa-slide-up no-repeat">
           Do you have tissue fibrosis or lumps and bumps after surgery?
         </h2>
         <div class="prose">
-          <p class="h4 text-primary-content lsa lsa-slide-up no-repeat">
+          <p class="h4 lsa lsa-slide-up no-repeat">
             Fibrosis is a build up of scar tissue that can occur as a result of cosmetic surgery
             which can cause lumps and bumps in the subdermal tissues.
           </p>
-          <p class="text-primary-content lsa lsa-slide-up no-repeat">
+          <p class="lsa lsa-slide-up no-repeat">
             It can sometimes be found in the lateral torso, lower abdomen, and back after
             liposuction. While this consequence of liposuction is not ideal, not to worry. Fibrosis
             can be treated!
           </p>
-          <p class="text-primary-content lsa lsa-slide-up no-repeat">
+          <p class="lsa lsa-slide-up no-repeat">
             Through various techniques, fibrosis and scar tissue can be gently treated causing any
             lumps and bumps that may have settled during the recovery process to get smoothed out.
             Using warm oil and lymphatic cupping, myofascial decompression allows for scarring and
@@ -183,7 +177,7 @@ import Layout from '../../layouts/Layout.astro'
         <div class="lsa lsa-slide-up no-repeat flex">
           <Card
             id="60-minute-session"
-            className="text-center shadow-lg scale-[1.02] border border-base-300 hover:border-primary max-w-lg mx-auto"
+            className="text-center shadow-lg scale-[1.02] border border-base-200 hover:border-primary max-w-lg mx-auto"
           >
             <div class="flex flex-col items-center gap-(--site-padding-base)">
               <h3>60 Minutes</h3>
@@ -208,7 +202,10 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section id="pre-post-surgical-manual-lymphatic-drainage-cta" class="bg-primary/5">
+    <section
+      id="pre-post-surgical-manual-lymphatic-drainage-cta"
+      class="border-t-1 border-b-1 border-base-200 bg-radial-[at_20%_25%] from-primary/15 to-accent/15 to-95%"
+    >
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div
           class="flex flex-col items-center gap-(--site-padding-md) max-w-4xl mx-auto text-center"

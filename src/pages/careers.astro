@@ -14,13 +14,13 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
 ---
 
 <Layout title="Careers">
-  <PageHeader className="items-center mx-auto text-center">
+  <PageHeader class="items-center mx-auto text-center">
     <PageTitle>Careers</PageTitle>
-    <div class="prose text-neutral-content">
-      <h2 class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+    <div class="prose">
+      <p class="h2 text-center mx-auto lsa lsa-slide-up delay-100 no-repeat">
         Experience and Compassion
-      </h2>
-      <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+      </p>
+      <p class="lsa lsa-slide-up delay-200 no-repeat">
         The therapists at Madison Lymphatics and Bodywork believe that care should always be
         holistic and we strive to help guide you towards healing with experience and compassion. We
         have a combined 12 years experience of treating patients with a wide variety of health
@@ -56,7 +56,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
           <div class="lsa lsa-slide-up no-repeat group">
             <Card
               id="courtney-rolnick"
-              className="border-base-300 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+              className="border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
             >
               <div class="flex flex-col gap-(--site-padding-md)">
                 <div>
@@ -130,7 +130,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
           <div class="lsa lsa-slide-up no-repeat group">
             <Card
               id="sarah-mcmunn"
-              className="border-base-300 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+              className="border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
             >
               <div class="flex flex-col gap-(--site-padding-md)">
                 <div>
@@ -190,7 +190,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
           <div class="lsa lsa-slide-up no-repeat group">
             <Card
               id="shaina-scott"
-              className="border-base-300 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+              className="border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
             >
               <div class="flex flex-col gap-(--site-padding-md) h-full">
                 <div>
@@ -258,20 +258,20 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
       class="hero p-0 shadow-sm bg-cover bg-center md:bg-fixed"
       style={`background-image: url(${placeholderOneImage.src});`}
     >
-      <div class="hero-overlay bg-black/70"></div>
+      <div class="hero-overlay bg-black/60"></div>
       <div
-        class="wrapper w-full p-(--site-padding-lg) flex flex-col items-start gap-(--site-padding-md) text-neutral-content"
+        class="wrapper w-full p-(--site-padding-lg) flex flex-col items-start gap-(--site-padding-md)"
       >
-        <h2 class="h1 text-emerald-600 text-shadow-lg lsa lsa-slide-up no-repeat">Join Our Team</h2>
+        <h2 class="h1 text-primary text-shadow-lg lsa lsa-slide-up no-repeat">Join Our Team</h2>
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-(--site-padding-xl) w-full"
         >
           <div class="space-y-4">
-            <p class="h3 text-neutral-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+            <p class="h3 text-primary-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
               Enjoy the freedom of being an independent contractor while working at one of the most
               well-regarded manual lymphatic drainage and massage clinics in the Madison area.
             </p>
-            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+            <p class="lsa text-primary-content text-shadow-lg lsa-slide-up delay-200 no-repeat">
               Madison Lymphatics and Bodywork (formerly Therapeutic Massage Center of Middleton) is
               looking for at least one bright and talented Licensed Massage Therapist, PT or OT to
               join our team as an independent contractor. We are switching our focus to manual
@@ -280,12 +280,12 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
             </p>
           </div>
           <div class="space-y-4">
-            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+            <p class="lsa text-primary-content text-shadow-lg lsa-slide-up delay-300 no-repeat">
               <strong>No non-compete agreement!</strong> We provide everything you need for a successful
               career including a clean facility, online booking, advertising, and a supportive environment
               for growth.
             </p>
-            <p class="text-neutral-content text-shadow-lg lsa lsa-slide-up delay-400 no-repeat">
+            <p class="lsa text-primary-content text-shadow-lg lsa-slide-up delay-400 no-repeat">
               Looking for a commitment of 15-25 hours with full autonomy of scheduled days/hours.
               Patient load will be built up slowly based on demand.
             </p>
@@ -295,7 +295,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
     </section>
 
     <!-- Requirements Section -->
-    <section id="requirements" class="bg-gradient-to-br from-primary/80 to-primary/90">
+    <section id="requirements" class="bg-primary">
       <div
         class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto text-primary-content"
       >
@@ -395,7 +395,10 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
     </section>
 
     <!-- Important Notes Section -->
-    <section id="important-notes" class="bg-primary/5">
+    <section
+      id="important-notes"
+      class="border-t-1 border-base-200 bg-gradient-to-b from-base-100 to-primary/5"
+    >
       <div
         class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
@@ -420,7 +423,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
     </section>
 
     <!-- CTA Section -->
-    <section id="contact-us" class="bg-primary/5">
+    <section id="contact-us" class="border-b-1 border-base-200 bg-primary/5">
       <div
         class="wrapper container lg:max-w-3xl flex flex-col gap-(--site-padding-base) mx-auto text-center"
       >

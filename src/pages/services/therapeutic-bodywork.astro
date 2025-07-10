@@ -8,22 +8,22 @@ import Layout from '../../layouts/Layout.astro'
 
 <Layout title="Therapeutic Bodywork">
   <PageHeader>
-    <PageTitle>Therapeutic Bodywork</PageTitle>
+    <PageTitle class="text-primary">Therapeutic Bodywork</PageTitle>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
-      <div class="prose text-neutral-content">
-        <p class="text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
+      <div class="prose">
+        <p class="lsa lsa-slide-up delay-100 no-repeat">
           At Madison Lymphatics and Bodywork, we have extensive knowledge and experience treating a
           wide range of musculoskeletal conditions. We always focus on the patient's individual
           needs, analyzing range of motion, looking at posture, and zeroing in on the muscles and
           soft tissues that may be affected.
         </p>
-        <p class="text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
+        <p class="lsa lsa-slide-up delay-200 no-repeat">
           We believe that educating our clients on their pain and what may be causing it is
           imperative to recovery with therapeutic massage.
         </p>
       </div>
-      <div class="prose text-neutral-content">
-        <p class="text-shadow-lg lsa lsa-slide-up delay-300 no-repeat">
+      <div class="prose">
+        <p class="lsa lsa-slide-up delay-300 no-repeat">
           Whether you're seeking relief from chronic pain, recovering from an injury, or simply
           looking to enhance your overall well-being, our therapeutic bodywork services are designed
           to meet your specific needs and promote healing.
@@ -111,16 +111,14 @@ import Layout from '../../layouts/Layout.astro'
       </div>
     </section>
 
-    <section id="relaxation-massage" class="bg-gradient-to-br from-accent/50 to-accent/70">
+    <section id="relaxation-massage" class="border-t-1 border-b-1 border-base-200 bg-primary/5">
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
-        <h2
-          class="h1 mb-(--site-padding-md) text-center text-accent-content lsa lsa-slide-up no-repeat"
-        >
+        <h2 class="h1 mb-(--site-padding-md) text-center lsa lsa-slide-up no-repeat">
           Relaxation Massage
         </h2>
-        <p class="h4 text-center text-accent-content mb-12 mx-auto lsa lsa-slide-up no-repeat">
+        <p class="h4 text-center mb-12 mx-auto lsa lsa-slide-up no-repeat">
           In contrast, relaxation massage is beneficial to the
-          <a href="/blog/parasympathetic-nervous-system/" class="link text-primary"
+          <a href="/blog/parasympathetic-nervous-system/" class="link"
             >parasympathetic nervous system</a
           > and can:
         </p>
@@ -129,40 +127,30 @@ import Layout from '../../layouts/Layout.astro'
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
           <div class="list">
+            <ListItem number={1} text="Relax and soften injured, tired, and overused muscles" />
             <ListItem
-              listItemClass="text-accent-content"
-              number={1}
-              text="Relax and soften injured, tired, and overused muscles"
-            />
-            <ListItem
-              listItemClass="text-accent-content"
               number={2}
               text="Pump oxygen and nutrients into tissues and vital organs, improving circulation"
             />
+            <ListItem number={3} text="Lessen depression and anxiety" />
             <ListItem
-              listItemClass="text-accent-content"
-              number={3}
-              text="Lessen depression and anxiety"
-            />
-            <ListItem
-              listItemClass="text-accent-content"
               number={4}
               text="Improve the condition of the body's largest organ—the skin"
             />
 
             <!-- Mobile only -->
             <ListItem
-              listItemClass="md:hidden text-accent-content"
+              listItemClass="md:hidden "
               number={5}
               text="Enhance immunity by stimulating lymph flow—the body's natural defense system"
             />
             <ListItem
-              listItemClass="md:hidden text-accent-content"
+              listItemClass="md:hidden "
               number={6}
               text="Promote tissue regeneration, reducing scar tissue and stretch marks"
             />
             <ListItem
-              listItemClass="md:hidden text-accent-content"
+              listItemClass="md:hidden "
               number={7}
               text="Release endorphins—amino acids that work as the body's natural painkiller"
             />
@@ -171,17 +159,14 @@ import Layout from '../../layouts/Layout.astro'
           <!-- Desktop only -->
           <div class="list hidden md:block">
             <ListItem
-              listItemClass="text-accent-content"
               number={5}
               text="Enhance immunity by stimulating lymph flow—the body's natural defense system"
             />
             <ListItem
-              listItemClass="text-accent-content"
               number={6}
               text="Promote tissue regeneration, reducing scar tissue and stretch marks"
             />
             <ListItem
-              listItemClass="text-accent-content"
               number={7}
               text="Release endorphins—amino acids that work as the body's natural painkiller"
             />
@@ -194,18 +179,18 @@ import Layout from '../../layouts/Layout.astro'
       <div
         class="wrapper container lg:max-w-screen-xl mx-auto max-w-6xl flex flex-col items-center gap-(--site-padding-md)"
       >
-        <h2 class="h1 text-accent lsa lsa-slide-up no-repeat">Pricing</h2>
+        <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Pricing</h2>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <!-- 30 Minutes -->
           <div class="lsa lsa-slide-up no-repeat flex">
             <Card
               id="30-minute-session"
-              className="text-center border border-base-300 hover:border-accent"
+              className="text-center border border-base-200 hover:border-primary"
             >
               <div class="flex flex-col items-center gap-(--site-padding-base)">
                 <h3>30 Minutes</h3>
-                <span class="h2 font-bold text-accent">$55</span>
+                <span class="h2 font-bold text-primary">$55</span>
               </div>
               <div>
                 <p class="text-base-content/80">
@@ -218,7 +203,7 @@ import Layout from '../../layouts/Layout.astro'
                   href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="btn btn-accent w-full"
+                  class="btn btn-primary w-full"
                 >
                   Book Now
                 </a>
@@ -229,11 +214,11 @@ import Layout from '../../layouts/Layout.astro'
           <div class="lsa lsa-slide-up no-repeat flex">
             <Card
               id="60-minute-session"
-              className="text-center scale-[1.02] border-2 border-accent hover:border-accent"
+              className="text-center scale-[1.02] border-2 border-primary hover:border-primary"
             >
               <div class="flex flex-col items-center gap-(--site-padding-base)">
                 <h3>60 Minutes</h3>
-                <span class="h2 font-bold text-accent">$110</span>
+                <span class="h2 font-bold text-primary">$110</span>
               </div>
               <div>
                 <p class="text-base-content/80">
@@ -246,7 +231,7 @@ import Layout from '../../layouts/Layout.astro'
                   href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="btn btn-accent w-full"
+                  class="btn btn-primary w-full"
                 >
                   Book Now
                 </a>
@@ -257,11 +242,11 @@ import Layout from '../../layouts/Layout.astro'
           <div class="lsa lsa-slide-up no-repeat flex">
             <Card
               id="90-minute-session"
-              className="text-center border border-base-300 hover:border-accent"
+              className="text-center border border-base-200 hover:border-primary"
             >
               <div class="flex flex-col items-center gap-(--site-padding-base)">
                 <h3>90 Minutes</h3>
-                <span class="h2 font-bold text-accent">$165</span>
+                <span class="h2 font-bold text-primary">$165</span>
               </div>
               <div>
                 <p class="text-base-content/80">
@@ -274,7 +259,7 @@ import Layout from '../../layouts/Layout.astro'
                   href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="btn btn-accent w-full"
+                  class="btn btn-primary w-full"
                 >
                   Book Now
                 </a>
@@ -285,7 +270,10 @@ import Layout from '../../layouts/Layout.astro'
       </div>
     </section>
 
-    <section id="therapeutic-bodywork-cta" class="bg-accent/5">
+    <section
+      id="therapeutic-bodywork-cta"
+      class="border-t-1 border-b-1 border-base-200 bg-radial-[at_20%_25%] from-primary/15 to-accent/15 to-95%"
+    >
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div
           class="flex flex-col items-center gap-(--site-padding-md) max-w-4xl mx-auto text-center"
@@ -298,7 +286,7 @@ import Layout from '../../layouts/Layout.astro'
                 href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn-accent"
+                class="btn btn-primary"
               >
                 Book Now
               </a>
