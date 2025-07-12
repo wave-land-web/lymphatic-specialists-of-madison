@@ -1,6 +1,8 @@
 ---
 import type { SanityAsset } from '@sanity/image-url/lib/types/types'
 import { getImage } from 'astro:assets'
+import Hills from '../../assets/images/hills.svg'
+import defaultHeroBackgroundImage from '../../assets/images/noisy-background.jpg'
 import { urlForImage } from '../../sanity/lib/urlForImage'
 
 export interface Props {
@@ -16,17 +18,32 @@ if (customHeroBackgroundImage) {
   // Get the URL for the image
   const url = urlForImage(customHeroBackgroundImage).auto('format').url()
   heroBackgroundImage = await getImage({ src: url, inferSize: true })
+} else {
+  // Use the default hero background image
+  heroBackgroundImage = defaultHeroBackgroundImage
 }
 ---
 
-<header
-  class:list={[
-    'bg-base-100 hero border-b-1 border-base-200 bg-fixed bg-contain bg-center',
-    { 'md:bg-fixed': heroBackgroundImage },
-  ]}
-  style={heroBackgroundImage ? `background-image: url(${heroBackgroundImage.src})` : undefined}
->
-  {heroBackgroundImage && <div class="hero-overlay bg-black/50" />}
+<header class="relative overflow-hidden bg-base-100 hero border-b-1 border-base-200">
+  {
+    customHeroBackgroundImage ? (
+      <>
+        <div class="hero-overlay absolute bg-black/50" />
+        <div
+          class="hero-overlay md:bg-fixed bg-cover bg-center"
+          style={`background-image: url(${heroBackgroundImage.src})`}
+        />
+      </>
+    ) : (
+      <>
+        <Hills class="absolute bottom-0 left-0 w-full h-auto opacity-15" />
+        <div
+          class="hero-overlay bg-cover bg-center opacity-10"
+          style={`background-image: url(${heroBackgroundImage.src})`}
+        />
+      </>
+    )
+  }
 
   <div class="wrapper">
     <div

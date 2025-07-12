@@ -9,6 +9,43 @@
   default: false;
   prefersdark: false;
   color-scheme: 'light';
+  --color-base-100: oklch(0.9893 0.0025 48.72);
+  --color-base-200: oklch(0.9494 0.0093 62.58);
+  --color-base-300: oklch(0.8952 0.019 62.43);
+  --color-base-content: oklch(0.1281 0.0091 37.83);
+  --color-primary: oklch(0.4274 0.0562 214.27);
+  --color-primary-content: var(--color-base-100);
+  --color-secondary: oklch(0.8492 0.1115 82.96);
+  --color-secondary-content: var(--color-base-content);
+  --color-accent: oklch(0.6583 0.1116 40.72);
+  --color-accent-content: var(--color-base-100);
+  --color-neutral: oklch(35.519% 0.032 262.988);
+  --color-neutral-content: oklch(98.462% 0.001 247.838);
+  --color-info: oklch(0.8789 0.0259 171.88);
+  --color-info-content: var(--color-base-content);
+  --color-success: oklch(0.6211 0.0644 144.04);
+  --color-success-content: var(--color-base-100);
+  --color-warning: oklch(83% 0.128 66.29);
+  --color-warning-content: var(--color-base-content);
+  --color-error: oklch(0.3616 0.119 25.98);
+  --color-error-content: var(--color-base-100);
+  --radius-selector: 1rem;
+  --radius-field: 2rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.28125rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 1;
+}
+
+/* 
+OLD THEME
+@plugin "daisyui/theme" {
+  name: 'emerald';
+  default: false;
+  prefersdark: false;
+  color-scheme: 'light';
   --color-base-100: #f8f2ec;
   --color-base-200: #f0e5d8;
   --color-base-300: #e9d9c5;
@@ -23,7 +60,7 @@
   --color-neutral-content: oklch(98.462% 0.001 247.838);
   --color-info: #c7ddd5;
   --color-info-content: #0a0605;
-  --color-success: oklch(59% 0.145 163.225);
+  --color-success: #6f916e;
   --color-success-content: #f7f3e8;
   --color-warning: oklch(83% 0.128 66.29);
   --color-warning-content: oklch(0% 0 0);
@@ -37,7 +74,7 @@
   --border: 1px;
   --depth: 0;
   --noise: 1;
-}
+} */
 
 @theme {
   --site-padding-base: clamp(1rem, 2vw, 2rem);
@@ -54,8 +91,8 @@
   --font-nuckle-medium: var(--font-nuckle-medium);
   --font-nuckle-semibold: var(--font-nuckle-semibold);
   --font-nuckle-bold: var(--font-nuckle-bold);
-  --font-lora-italic: var(--font-lora-italic);
-  --font-lora-regular: var(--font-lora-regular);
+  --font-copernicus-italic: var(--font-copernicus-italic);
+  --font-copernicus-regular: var(--font-copernicus-regular);
 
   --nav-height: 5rem;
 }
@@ -148,7 +185,7 @@
   h4,
   h5,
   h6 {
-    @apply text-balance font-lora-regular font-bold;
+    @apply text-balance font-copernicus-regular font-bold;
   }
 
   h1,

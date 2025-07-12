@@ -62,8 +62,8 @@
       y2="1411"
       gradientUnits="userSpaceOnUse"
     >
-      <stop stop-color="var(--color-primary)" stop-opacity="0.4"></stop>
-      <stop offset="1" stop-color="var(--color-primary)"></stop>
+      <stop stop-color="var(--color-error)" stop-opacity="0.4"></stop>
+      <stop offset="1" stop-color="var(--color-error)"></stop>
     </linearGradient>
     <linearGradient
       id="paint4_linear_31_44"

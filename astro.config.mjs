@@ -161,21 +161,27 @@ export default defineConfig({
       },
       {
         provider: 'local',
-        name: 'Lora Italic',
-        cssVariable: '--font-lora-italic',
+        name: 'Copernicus Italic',
+        cssVariable: '--font-copernicus-italic',
         variants: [
           {
-            src: ['./src/assets/fonts/lora-italic.woff', './src/assets/fonts/lora-italic.woff2'],
+            src: [
+              './src/assets/fonts/copernicus-italic.woff',
+              './src/assets/fonts/copernicus-italic.woff2',
+            ],
           },
         ],
       },
       {
         provider: 'local',
-        name: 'Lora Regular',
-        cssVariable: '--font-lora-regular',
+        name: 'Copernicus Regular',
+        cssVariable: '--font-copernicus-regular',
         variants: [
           {
-            src: ['./src/assets/fonts/lora-regular.woff', './src/assets/fonts/lora-regular.woff2'],
+            src: [
+              './src/assets/fonts/copernicus-regular.woff',
+              './src/assets/fonts/copernicus-regular.woff2',
+            ],
             weight: '400',
             style: 'normal',
           },
