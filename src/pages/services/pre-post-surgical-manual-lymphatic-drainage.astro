@@ -3,6 +3,7 @@ import ListItem from '../../components/text/ListItem.astro'
 import PageTitle from '../../components/text/PageTitle.astro'
 import Card from '../../components/ui/Card.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
+import ThemedSection from '../../components/ui/ThemedSection.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 
@@ -63,7 +64,7 @@ import Layout from '../../layouts/Layout.astro'
       </div>
     </section>
 
-    <section id="why-choose-pre-post-surgical-manual-lymphatic-drainage" class="bg-primary/5">
+    <ThemedSection id="why-choose-pre-post-surgical-manual-lymphatic-drainage" class="bg-primary/5">
       <div
         class="wrapper container lg:max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg) mx-auto"
       >
@@ -96,7 +97,7 @@ import Layout from '../../layouts/Layout.astro'
           >
         </div>
       </div>
-    </section>
+    </ThemedSection>
 
     <section id="surgical-procedures-we-treat">
       <div class="wrapper container flex flex-col gap-(--site-padding-md) mx-auto">
@@ -139,7 +140,10 @@ import Layout from '../../layouts/Layout.astro'
       </div>
     </section>
 
-    <section id="do-you-have-tissue-fibrosis-or-lumps-and-bumps-after-surgery" class="bg-accent/5">
+    <ThemedSection
+      id="do-you-have-tissue-fibrosis-or-lumps-and-bumps-after-surgery"
+      class="bg-accent/5"
+    >
       <div
         class="wrapper container lg:max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-lg) mx-auto"
       >
@@ -165,7 +169,7 @@ import Layout from '../../layouts/Layout.astro'
           </p>
         </div>
       </div>
-    </section>
+    </ThemedSection>
 
     <section id="pre-post-surgical-manual-lymphatic-drainage-pricing">
       <div
@@ -202,7 +206,7 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section
+    <ThemedSection
       id="pre-post-surgical-manual-lymphatic-drainage-cta"
       class="border-t-1 border-b-1 border-base-200 bg-radial-[at_20%_25%] from-primary/15 to-accent/15 to-95%"
     >
@@ -231,6 +235,6 @@ import Layout from '../../layouts/Layout.astro'
           </div>
         </div>
       </div>
-    </section>
+    </ThemedSection>
   </main>
 </Layout>

@@ -8,6 +8,7 @@ import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
+import ThemedSection from '../components/ui/ThemedSection.astro'
 import Layout from '../layouts/Layout.astro'
 
 const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
@@ -355,7 +356,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
     </section>
 
     <!-- What We Provide Section -->
-    <section id="what-we-provide">
+    <ThemedSection id="what-we-provide">
       <div
         class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
@@ -392,7 +393,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
           </div>
         </ul>
       </div>
-    </section>
+    </ThemedSection>
 
     <!-- Important Notes Section -->
     <section

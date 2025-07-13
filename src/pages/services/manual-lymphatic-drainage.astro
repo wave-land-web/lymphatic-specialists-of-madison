@@ -3,6 +3,7 @@ import ListItem from '../../components/text/ListItem.astro'
 import PageTitle from '../../components/text/PageTitle.astro'
 import Card from '../../components/ui/Card.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
+import ThemedSection from '../../components/ui/ThemedSection.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 
@@ -122,7 +123,7 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- Contraindications Section -->
-    <section id="contraindications" class="border-t-1 border-b-1 border-base-200 bg-primary/5">
+    <ThemedSection id="contraindications" class="bg-primary/5">
       <div
         class="wrapper container lg:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
@@ -158,7 +159,7 @@ import Layout from '../../layouts/Layout.astro'
           </div>
         </ul>
       </div>
-    </section>
+    </ThemedSection>
 
     <section id="pricing">
       <div
@@ -258,9 +259,9 @@ import Layout from '../../layouts/Layout.astro'
     </section>
 
     <!-- CTA Section -->
-    <section
+    <ThemedSection
       id="manual-lymphatic-drainage-cta"
-      class="border-t-1 border-b-1 border-base-200 bg-radial-[at_20%_25%] from-primary/15 to-accent/15 to-95%"
+      class="bg-radial-[at_20%_25%] from-primary/15 to-accent/15 to-95%"
     >
       <div class="wrapper container lg:max-w-screen-xl mx-auto">
         <div
@@ -301,6 +302,6 @@ import Layout from '../../layouts/Layout.astro'
           </p>
         </div>
       </div>
-    </section>
+    </ThemedSection>
   </main>
 </Layout>

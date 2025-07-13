@@ -9,6 +9,7 @@ import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
+import ThemedSection from '../components/ui/ThemedSection.astro'
 import { SERVICES, TESTIMONIALS } from '../consts'
 import Layout from '../layouts/Layout.astro'
 
@@ -127,9 +128,7 @@ const serviceImages: Record<string, any> = {
       <div
         class="wrapper w-full p-(--site-padding-md) md:p-(--site-padding-lg) flex flex-col items-start gap-(--site-padding-md)"
       >
-        <h2 class="h1 text-accent text-shadow-lg lsa lsa-slide-up no-repeat">
-          What Sets Us Apart
-        </h2>
+        <h2 class="h1 text-accent text-shadow-lg lsa lsa-slide-up no-repeat">What Sets Us Apart</h2>
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-(--site-padding-xl) w-full"
         >
@@ -224,10 +223,7 @@ const serviceImages: Record<string, any> = {
       </div>
     </section>
 
-    <section
-      id="what-is-the-lymphatic-system"
-      class="border-t-1 border-b-1 border-base-200 bg-primary/5"
-    >
+    <ThemedSection id="what-is-the-lymphatic-system" class="bg-primary/5">
       <div
         class="wrapper p-(--site-padding-md) md:p-(--site-padding-lg) grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-lg)"
       >
@@ -354,6 +350,6 @@ const serviceImages: Record<string, any> = {
           treat the overflow of inflammation (i.e. lymphatic fluid) that we see.
         </p>
       </div>
-    </section>
+    </ThemedSection>
   </main>
 </Layout>

@@ -1,0 +1,19 @@
+---
+import containerBackgroundImage from '../../assets/images/noisy-background.jpg'
+
+interface Props {
+  id?: string
+  class?: string
+}
+
+const { id, class: className } = Astro.props
+---
+
+<section id={id} class={`relative border-t-1 border-b-1 border-base-200 ${className}`}>
+  <div
+    class="absolute inset-0 bg-contain bg-center opacity-10"
+    style={`background-image: url(${containerBackgroundImage.src})`}
+  >
+  </div>
+  <slot />
+</section>
