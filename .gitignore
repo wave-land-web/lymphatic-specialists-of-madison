@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -8,6 +9,12 @@ node_modules/
 
 # netlify
 .netlify/
+
+# vscode
+.vscode/
+
+# Copilot 
+.github/
 
 # logs
 npm-debug.log*
