@@ -17,24 +17,28 @@ import Layout from '../layouts/Layout.astro'
     <section class="pt-(--site-padding-base)">
       <div class="wrapper container lg:max-w-4xl mx-auto">
         <div class="join join-vertical w-full lsa lsa-slide-up no-repeat shadow-sm rounded-4xl">
-          <!-- FAQ 1: How can I book an appointment -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" checked="checked" />
-            <div class="collapse-title text-lg font-semibold">
+          <details
+            id="how-can-i-book-an-appointment"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">
               How can I book an appointment for a session at your clinic?
-            </div>
-            <div class="collapse-content prose">
+            </summary>
+            <div class="collapse-content prose cursor-default">
               <p>
                 Appointments can be scheduled by either booking online or by calling/texting us at
                 608.203.8550. You can also access our waitlist through the Booksy app.
               </p>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 2: What is the Lymphatic System -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">What is the Lymphatic System?</div>
+          <details
+            id="what-is-the-lymphatic-system"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold"
+              >What is the Lymphatic System?</summary
+            >
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -67,14 +71,15 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 3: How does the Lymphatic System work -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">
+          <details
+            id="how-does-the-lymphatic-system-work"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">
               How does the Lymphatic System work?
-            </div>
+            </summary>
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -156,14 +161,15 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 4: What should I expect during my visit -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">
+          <details
+            id="what-should-i-expect-during-my-visit"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">
               What should I expect during my visit?
-            </div>
+            </summary>
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -197,12 +203,15 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 5: Where will treatment take place -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">Where will treatment take place?</div>
+          <details
+            id="where-will-treatment-take-place"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold"
+              >Where will treatment take place?</summary
+            >
             <div class="collapse-content">
               <p>
                 Your session will take place in a warm, comfortable, quiet room. Soft music will be
@@ -211,14 +220,15 @@ import Layout from '../layouts/Layout.astro'
                 your personal liking.
               </p>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 6: What do I wear during treatment -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">
+          <details
+            id="what-do-i-wear-during-my-treatment-session"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">
               What do I wear during my treatment session?
-            </div>
+            </summary>
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -235,14 +245,15 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 7: What should I expect after MLD session -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">
+          <details
+            id="what-should-i-expect-after-mld-session"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">
               What should I expect afterward my MLD session?
-            </div>
+            </summary>
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -264,12 +275,13 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 8: Does Acupuncture hurt -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">Does Acupuncture hurt?</div>
+          <details
+            id="does-acupuncture-hurt"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">Does Acupuncture hurt?</summary>
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -286,14 +298,15 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 9: Should I come in with cold or flu -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">
+          <details
+            id="should-i-come-in-with-cold-or-flu"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">
               Should I come in for a session if I have a cold or the flu?
-            </div>
+            </summary>
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -322,26 +335,30 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 10: Are practitioners certified -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">
+          <details
+            id="are-practitioners-certified"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold">
               Are your practitioners certified and licensed?
-            </div>
+            </summary>
             <div class="collapse-content">
               <p>
                 Yes, all practitioners at Madison Lymphatics and Bodywork are fully certified in
                 their professions and are licensed by the State of Wisconsin.
               </p>
             </div>
-          </div>
+          </details>
 
-          <!-- FAQ 11: Tipping policy -->
-          <div class="collapse collapse-plus join-item bg-base-100 border-base-200 border">
-            <input type="radio" name="faq-accordion" />
-            <div class="collapse-title text-lg font-semibold">What is your policy on tipping?</div>
+          <details
+            id="tipping-policy"
+            class="collapse collapse-arrow join-item bg-base-100 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold"
+              >What is your policy on tipping?</summary
+            >
             <div class="collapse-content">
               <div class="prose">
                 <p>
@@ -357,7 +374,7 @@ import Layout from '../layouts/Layout.astro'
                 </p>
               </div>
             </div>
-          </div>
+          </details>
         </div>
       </div>
     </section>
