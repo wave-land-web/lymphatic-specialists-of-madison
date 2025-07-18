@@ -2,8 +2,6 @@
 import { getImage, Image } from 'astro:assets'
 import CourtneyImage from '../assets/images/courtney.jpg'
 import PlaceholderOneImage from '../assets/images/placeholder-1.jpg'
-import SarahImage from '../assets/images/sarah.jpg'
-import ShainaImage from '../assets/images/shaina.jpg'
 import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
@@ -22,7 +20,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
         Experience and Compassion
       </p>
       <p class="lsa lsa-slide-up delay-200 no-repeat">
-        The therapists at Madison Lymphatics and Bodywork believe that care should always be
+        The therapists at Madison Lymphatics and Manual Therapy believe that care should always be
         holistic and we strive to help guide you towards healing with experience and compassion. We
         have a combined 12 years experience of treating patients with a wide variety of health
         histories and needs using Manual Lymphatic Drainage. Courtney holds a doctorate in physical
@@ -50,205 +48,87 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
       <div
         class="wrapper container md:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
-        <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Meet Our Team</h2>
+        <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Meet the Founder</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
-          <!-- Courtney Rolnick -->
-          <div class="lsa lsa-slide-up no-repeat group">
-            <Card
-              id="courtney-rolnick"
-              className="border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
+        <div class="lsa lsa-slide-up no-repeat group">
+          <Card
+            id="courtney-rolnick"
+            className="p-(--site-padding-base) border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg md:overflow-visible"
+          >
+            <div
+              class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) md:items-start"
             >
-              <div class="flex flex-col gap-(--site-padding-md)">
-                <div>
-                  <h3 class="text-primary mb-2">Dr. Courtney Rolnick</h3>
-                  <p class="font-semibold mb-4">PT, DPT, CMLDT - Founder</p>
-                  <div class="avatar">
-                    <div
-                      class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
-                    >
-                      <Image src={CourtneyImage} alt="Courtney Rolnick" />
-                    </div>
+              <aside
+                class="md:sticky md:top-[calc(var(--nav-height)+var(--site-padding-base))] md:self-start md:flex-shrink-0"
+              >
+                <h3 class="text-primary mb-2">Dr. Courtney Rolnick</h3>
+                <p class="font-semibold mb-4">PT, DPT, CMLDT - Founder</p>
+                <div class="avatar">
+                  <div
+                    class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                  >
+                    <Image src={CourtneyImage} alt="Courtney Rolnick" />
                   </div>
                 </div>
-                <div class="space-y-4">
-                  <p>
-                    Hi, I'm Courtney. I am a physical therapist who specializes in Post-Surgical
-                    manual lymphatic drainage, manual lymphatic drainage for chronic health
-                    conditions and scar tissue work.
-                  </p>
-                  <p>
-                    I am extremely passionate about what I do and helping guide my patients towards
-                    their goals with compassion, patience and an understanding of the complexities
-                    of each individual's health journey. I am 100% patient focused, which means I
-                    will ALWAYS do what is best for my patients.
-                  </p>
-                  <p>
-                    I received my Bachelor of Science in Dance from the University of
-                    Wisconsin-Madison in 2006 and taught dance for 10 years after graduating.
-                  </p>
-                  <p>
-                    In 2016 I graduated from Texas State University with my doctorate in Physical
-                    Therapy. My first few years working as a Physical Therapist I was working
-                    primarily with high level athletes and chronic pain patients with a focus on
-                    movement re-education and manual work honing my skills as a hands on
-                    practitioner and learning soft tissue work and scar tissue manipulation.
-                  </p>
-                  <p>
-                    In 2018 I received my Manual Lymphatic Drainage certification (CMLDT) from the
-                    Klose Institute in Seattle, Washington and began working full time as a manual
-                    lymphatic drainage specialist and have been doing that for the past 6 years. I
-                    love working with and have experience with all sorts of post-surgical patients
-                    including: breast augmentation/lift/reduction, abdominoplasty, BBL, DIEP flap,
-                    mastectomy, top surgery, face/neck lift, liposuction, leg/arm/360 lifts, skin
-                    removal, orthopedic surgeries and any other elective or non elective surgery. I
-                    also love and have worked with patients with: lipedema, lymphedema, cancer,
-                    autoimmune, long covid, Lyme and any other chronic inflammatory conditions.
-                    While working with patients I use a mix of manual lymphatic drainage, scar
-                    tissue work, visceral work, breath work and soft tissue work as needed to assure
-                    you are getting the best outcomes as possible.
-                  </p>
-                  <p>
-                    At Madison Lymphatics and Bodywork, my focus is on helping people recovering
-                    from surgery, cancer and supporting those with lymphatic, autoimmune conditions
-                    or chronic inflammation issues. I often refer out to other practitioners in the
-                    community and enjoy working as a team with other members of the health community
-                    for a truly holistic approach to patient care. I enjoy working in this capacity
-                    because it hones in on my love for critical thinking and helping people find the
-                    right direction for complex medical issues.
-                  </p>
-                  <p>
-                    In my other professional life, I own an IG vintage shop. In my free time I enjoy
-                    seeing live music, spending time with friends and family, exploring nature and
-                    hanging out with my partner Chris and our dog Lefty.
-                  </p>
-                </div>
+              </aside>
+              <div class="space-y-4">
+                <p class="h3">Hi, I'm Courtney.</p>
+                <p>
+                  I am a physical therapist who specializes in Post-Surgical manual lymphatic
+                  drainage, manual lymphatic drainage for chronic health conditions and scar tissue
+                  work.
+                </p>
+                <p>
+                  I am extremely passionate about what I do and helping guide my patients towards
+                  their goals with compassion, patience and an understanding of the complexities of
+                  each individual's health journey. I am 100% patient focused, which means I will
+                  ALWAYS do what is best for my patients.
+                </p>
+                <p>
+                  I received my Bachelor of Science in Dance from the University of
+                  Wisconsin-Madison in 2006 and taught dance for 10 years after graduating.
+                </p>
+                <p>
+                  In 2016 I graduated from Texas State University with my doctorate in Physical
+                  Therapy. My first few years working as a Physical Therapist I was working
+                  primarily with high level athletes and chronic pain patients with a focus on
+                  movement re-education and manual work honing my skills as a hands on practitioner
+                  and learning soft tissue work and scar tissue manipulation.
+                </p>
+                <p>
+                  In 2018 I received my Manual Lymphatic Drainage certification (CMLDT) from the
+                  Klose Institute in Seattle, Washington and began working full time as a manual
+                  lymphatic drainage specialist and have been doing that for the past 6 years. I
+                  love working with and have experience with all sorts of post-surgical patients
+                  including: breast augmentation/lift/reduction, abdominoplasty, BBL, DIEP flap,
+                  mastectomy, top surgery, face/neck lift, liposuction, leg/arm/360 lifts, skin
+                  removal, orthopedic surgeries and any other elective or non elective surgery. I
+                  also love and have worked with patients with: lipedema, lymphedema, cancer,
+                  autoimmune, long covid, Lyme and any other chronic inflammatory conditions. While
+                  working with patients I use a mix of manual lymphatic drainage, scar tissue work,
+                  visceral work, breath work and soft tissue work as needed to assure you are
+                  getting the best outcomes as possible.
+                </p>
+                <p class="h3">
+                  At Madison Lymphatics and Bodywork, my focus is on helping people recovering from
+                  surgery, cancer and supporting those with lymphatic, autoimmune conditions or
+                  chronic inflammation issues.
+                </p>
+                <p>
+                  I often refer out to other practitioners in the community and enjoy working as a
+                  team with other members of the health community for a truly holistic approach to
+                  patient care. I enjoy working in this capacity because it hones in on my love for
+                  critical thinking and helping people find the right direction for complex medical
+                  issues.
+                </p>
+                <p>
+                  In my other professional life, I own an IG vintage shop. In my free time I enjoy
+                  seeing live music, spending time with friends and family, exploring nature and
+                  hanging out with my partner Chris and our dog Lefty.
+                </p>
               </div>
-            </Card>
-          </div>
-
-          <!-- Sarah McMunn -->
-          <div class="lsa lsa-slide-up no-repeat group">
-            <Card
-              id="sarah-mcmunn"
-              className="border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
-            >
-              <div class="flex flex-col gap-(--site-padding-md)">
-                <div>
-                  <h3 class="text-primary mb-2">Sarah McMunn</h3>
-                  <p class="font-semibold mb-4">LMT, CMLDT</p>
-                  <div class="avatar">
-                    <div
-                      class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
-                    >
-                      <Image src={SarahImage} alt="Sarah McMunn" />
-                    </div>
-                  </div>
-                </div>
-                <div class="space-y-4">
-                  <p>
-                    Hi, I'm Sarah. I'm a Licensed Massage Therapist and Bodyworker who believes
-                    massage is for every body. I am deeply committed to my clients and strive to
-                    create a welcoming, affirming and nurturing environment where we can work
-                    together on a personalized approach and treatment plan to get you feeling your
-                    best. As a life-long student, I love learning and researching individual
-                    conditions to facilitate healing in the immediate session, and to promote
-                    life-long wellness through client education.
-                  </p>
-                  <p>
-                    An avid traveler with boundless curiosity, I graduated from the Costa Rica
-                    School of Massage Therapy (CRSMT). Surrounded by natural beauty, this immersive,
-                    accelerated, rigorous program was situated in a barefoot, outdoor classroom
-                    setting, promoting deep and holistic levels of study and healing. Before
-                    embarking on a career as a massage therapist and bodyworker, I built a career at
-                    national non-profits focused on health and wellbeing, social responsibility, and
-                    environmental activism. My work concentrated on the fields of diversity, equity
-                    and inclusion, training and leadership development, and talent management. These
-                    passions were supported by my undergraduate degree from UW-Madison in
-                    Anthropology and Spanish, and my MBA.
-                  </p>
-                  <p>
-                    I value how the power of massage and bodywork can change lives. I enjoy
-                    exploring different modalities to address client concerns and aim to create the
-                    afterglow effect in every single session- the light or radiance that remains;
-                    the euphoric feeling that lingers after a beautiful experience. My clients
-                    describe me as thoughtful, genuine, warm, and creative. I'm grateful for the
-                    opportunity to hold space and restore balance for those who entrust me with
-                    their care.
-                  </p>
-                  <p>
-                    When I'm not at the studio you can find me traveling around the world, doing all
-                    the outdoorsy things, cooking up new recipes, reading, designing, relearning
-                    piano, getting handy with home renovations, playing with my sewing machine,
-                    fostering rescue pups into loving homes, and supporting causes I believe in.
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-
-          <!-- Shaina Scott -->
-          <div class="lsa lsa-slide-up no-repeat group">
-            <Card
-              id="shaina-scott"
-              className="border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg"
-            >
-              <div class="flex flex-col gap-(--site-padding-md) h-full">
-                <div>
-                  <h3 class="text-primary mb-2">Shaina Scott</h3>
-                  <p class="font-semibold mb-4">
-                    Acupuncturist, LAc, Master of Science of Oriental Medicine (MSOM)
-                  </p>
-                  <div class="avatar">
-                    <div
-                      class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
-                    >
-                      <Image src={ShainaImage} alt="Shaina Scott" />
-                    </div>
-                  </div>
-                </div>
-                <div class="space-y-4">
-                  <p>
-                    Shaina Scott began her career in the health field after graduating from East
-                    West Healing Arts Institute's massage therapy program in July of 2006. She was
-                    exposed to many different modalities of care in her schooling and became
-                    interested in both Ayurveda and Chinese Medicine. She then went on to study
-                    Ayurvedic medicine, Panchakarma treatments and yoga at the Greens Ayur Hospital,
-                    in Kerala, India, from February-May 2008. She has also attended several births
-                    to provide massage therapy support during labor. She has worked expansively with
-                    people recovering from injuries, athletes, and celebrates people from all walks
-                    of life. She is passionate about the benefits of acupuncture and massage therapy
-                    and feels they should be accessible modalities for everyone.
-                  </p>
-                  <p>
-                    Shaina's commitment to quality care has led her to studying many different forms
-                    of healing including intuitive dowsing and energy work such as reiki. Shaina was
-                    first introduced to the benefits of reiki as a teenager when she obtained her
-                    first reiki 1 certification. Later she felt the calling to further those studies
-                    and began studying reiki again in 2015. She became a Reiki Master Practioner by
-                    February 2018. She then went on to begin studying Acupuncture and Chinese
-                    Medicine in September of 2018. Shaina graduated Summa Cum Laude with a Bachelor
-                    of Science in Nutrition and Masters in Acupuncture and Herbal Medicine in
-                    November of 2022.
-                  </p>
-                  <p>
-                    Shaina is passionate about empowering her patients with the skills and knowledge
-                    needed to take their health into their own hands and become an active
-                    participant in their healing journey. She has seen the many benefits of
-                    acupuncture for a variety of different health concerns whether it is injury
-                    recovery, chronic pain management, mental or emotional issues, insomnia and many
-                    other ailments.
-                  </p>
-                  <p>
-                    In her free time, Shaina enjoys spending quality time with her son, time in
-                    nature, movement arts such as dancing, yoga, and martial arts. She is very
-                    excited to be offering her services to the community and helping to improve the
-                    quality of life for her patients.
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
+            </div>
+          </Card>
         </div>
       </div>
     </section>
