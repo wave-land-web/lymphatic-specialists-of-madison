@@ -40,6 +40,7 @@
 }
 
 @theme {
+  --site-padding-sm: clamp(0.5rem, 1vw, 1rem);
   --site-padding-base: clamp(1rem, 2vw, 2rem);
   --site-padding-md: clamp(2rem, 3vw, 3rem);
   --site-padding-lg: clamp(3rem, 4vw, 4rem);
