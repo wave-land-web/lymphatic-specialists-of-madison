@@ -57,6 +57,7 @@
   --font-nuckle-bold: var(--font-nuckle-bold);
   --font-copernicus-italic: var(--font-copernicus-italic);
   --font-copernicus-regular: var(--font-copernicus-regular);
+  --font-copernicus-regular-2: var(--font-copernicus-regular-2);
 
   --nav-height: 5rem;
 }
