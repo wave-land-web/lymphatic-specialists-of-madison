@@ -1,6 +1,6 @@
 ---
-import Card from '../components/ui/Card.astro'
 import PageTitle from '../components/text/PageTitle.astro'
+import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
 ---
@@ -101,7 +101,7 @@ import Layout from '../layouts/Layout.astro'
             <form
               class="flex flex-col gap-(--site-padding-base)"
               method="POST"
-              action="#"
+              action="/api/forms/contact"
               id="contact-form"
             >
               <p>
@@ -223,44 +223,64 @@ import Layout from '../layouts/Layout.astro'
       </div>
     </section>
   </main>
+</Layout>
 
-  <script>
-    // Basic form handling (frontend only as requested)
-    const contactForm = document.getElementById('contact-form') as HTMLFormElement
-    contactForm?.addEventListener('submit', function (e) {
-      e.preventDefault()
+<script>
+  // Handle form submission with API submission
+  const contactForm = document.getElementById('contact-form') as HTMLFormElement
+  contactForm?.addEventListener('submit', async function (e) {
+    e.preventDefault()
 
+    // Get submit button and show loading state
+    const submitButton = this.querySelector('button[type="submit"]') as HTMLButtonElement
+    const originalText = submitButton.textContent
+    submitButton.disabled = true
+    submitButton.textContent = 'Submitting...'
+
+    try {
       // Get form data
       const formData = new FormData(this)
-      const data: Record<string, string> = {}
-
-      // Convert FormData to object with proper typing
-      formData.forEach((value, key) => {
-        if (typeof value === 'string') {
-          data[key] = value
-        }
-      })
 
       // Basic validation
-      if (!data['first-name'] || !data['last-name'] || !data['email-address']) {
-        alert('Please fill in all required fields.')
-        return
+      const firstName = formData.get('first-name') as string
+      const lastName = formData.get('last-name') as string
+      const emailAddress = formData.get('email-address') as string
+
+      if (!firstName || !lastName || !emailAddress) {
+        throw new Error('Please fill in all required fields.')
       }
 
       // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(data['email-address'])) {
-        alert('Please enter a valid email address.')
-        return
+      if (!emailRegex.test(emailAddress)) {
+        throw new Error('Please enter a valid email address.')
       }
 
-      // Show success message (since this is frontend only)
-      alert(
-        'Thank you for your message! We will get back to you soon. For immediate assistance, please call (608) 203-8550.'
-      )
+      // Submit to API
+      const response = await fetch('/api/forms/contact', {
+        method: 'POST',
+        body: formData,
+      })
 
-      // Reset form
-      this.reset()
-    })
-  </script>
-</Layout>
+      const result = await response.json()
+
+      if (result.success) {
+        // Show success message
+        alert(result.message)
+        // Reset form
+        this.reset()
+      } else {
+        // Show error message
+        throw new Error(result.error || 'An error occurred while submitting the form.')
+      }
+    } catch (error) {
+      // Show error message
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred.'
+      alert(errorMessage + '\n\nFor immediate assistance, please call (608) 203-8550.')
+    } finally {
+      // Reset button state
+      submitButton.disabled = false
+      submitButton.textContent = originalText
+    }
+  })
+</script>

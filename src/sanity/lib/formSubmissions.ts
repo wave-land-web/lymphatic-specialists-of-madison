@@ -1,4 +1,3 @@
-// TODO: match current Sanity schema exactly
 // Types for form submissions matching the exact Sanity schema structures
 
 export interface UserData {
@@ -50,7 +49,9 @@ export interface MedicalConditions {
   gastroIntestinal?: {
     crohnsDisease?: boolean
     abdominalPain?: boolean
+    surgicalImplant?: boolean
     giInflammation?: boolean
+    diverticulitisOrDiverticulosis?: boolean
     other?: boolean
     na?: boolean
     otherSpecify?: string
@@ -67,6 +68,7 @@ export interface MedicalConditions {
   femaleReproductive?: {
     currentlyPregnant?: boolean
     currentlyMenstruating?: boolean
+    fibrocysticBreastDisease?: boolean
     iud?: boolean
     other?: boolean
     na?: boolean
@@ -91,6 +93,8 @@ export interface MedicalConditions {
     otherSpecify?: string
   }
   hematologicLymphatic?: {
+    cutsThatDoNotStopBleeding?: boolean
+    enlargedLymphNodes?: boolean
     lymphNodesRemoved?: boolean
     frequentBruising?: boolean
     hivAids?: boolean
@@ -102,7 +106,6 @@ export interface MedicalConditions {
   neurological?: {
     strokes?: boolean
     seizures?: boolean
-    headaches?: boolean
     other?: boolean
     na?: boolean
     otherSpecify?: string
@@ -205,7 +208,7 @@ export interface ContactFormData {
   emailAddress: string
   phoneNumber?: string
 
-  // Form fields (matching contactForm.ts schema exactly)
+  // Form-specific fields (matching contactForm.ts schema exactly)
   messageBody?: string
   subscribeToNewsletter?: boolean
 }
@@ -313,12 +316,7 @@ export async function createContactFormSubmission(
       _type: 'reference',
       _ref: userId,
     },
-    firstName: formData.firstName,
-    lastName: formData.lastName,
-    phoneNumber: formData.phoneNumber,
-    emailAddress: formData.emailAddress,
     messageBody: formData.messageBody,
-    subscribeToNewsletter: formData.subscribeToNewsletter || false,
     status: 'new',
   })
 
@@ -388,9 +386,21 @@ export async function createContactFormSubmission(
  *       cancerTreatment: true,
  *       na: false,
  *     },
+ *     gastroIntestinal: {
+ *       crohnsDisease: false,
+ *       surgicalImplant: true,
+ *       diverticulitisOrDiverticulosis: false,
+ *       na: false,
+ *     },
  *     cardiovascular: {
  *       swellingOfLegs: true,
  *       other: false,
+ *       na: false,
+ *     },
+ *     hematologicLymphatic: {
+ *       cutsThatDoNotStopBleeding: false,
+ *       enlargedLymphNodes: true,
+ *       lymphNodesRemoved: true,
  *       na: false,
  *     },
  *   },
