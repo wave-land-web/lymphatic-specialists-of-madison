@@ -9,14 +9,6 @@ export const prerender = false // Enable server-side rendering for form handling
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    // Debug: Check environment variables (using Astro's import.meta.env)
-    console.log('Environment check:', {
-      projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
-      dataset: import.meta.env.PUBLIC_SANITY_DATASET || 'production',
-      writeToken: import.meta.env.SANITY_WRITE_TOKEN,
-      authToken: import.meta.env.SANITY_AUTH_TOKEN?.length || 0,
-    })
-
     // Parse form data from the request
     const formData = await request.formData()
 

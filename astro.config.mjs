@@ -4,12 +4,34 @@ import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import sanity from '@sanity/astro'
 import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
   // TODO: replace with prod site URL
   site: 'http://localhost:4321',
+  env: {
+    schema: {
+      PUBLIC_SANITY_PROJECT_ID: envField.string({
+        context: 'client',
+        access: 'public',
+        default: 'hr4xqyhv',
+      }),
+      PUBLIC_SANITY_DATASET: envField.string({
+        context: 'client',
+        access: 'public',
+        default: 'production',
+      }),
+      SANITY_STUDIO_WRITE_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+      }),
+      SANITY_STUDIO_AUTH_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+      }),
+    },
+  },
   integrations: [
     sitemap(),
     sanity({
