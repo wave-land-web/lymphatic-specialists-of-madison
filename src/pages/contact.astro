@@ -97,6 +97,7 @@ import Layout from '../layouts/Layout.astro'
               we'll get back to you as soon as possible.
             </p>
 
+            <!-- TODO: Implement form submission -->
             <form
               class="flex flex-col gap-(--site-padding-base)"
               method="POST"
@@ -167,10 +168,10 @@ import Layout from '../layouts/Layout.astro'
 
               <!-- Message -->
               <fieldset class="flex flex-col gap-2">
-                <label for="message-body">Message</label>
+                <label for="message">Message</label>
                 <textarea
-                  id="message-body"
-                  name="message-body"
+                  id="message"
+                  name="message"
                   class="textarea h-32 w-full rounded-box"
                   placeholder="Tell us about your needs or ask any questions you have about our services."
                 ></textarea>
@@ -180,8 +181,16 @@ import Layout from '../layouts/Layout.astro'
               <button type="submit" class="btn btn-primary w-full">Submit</button>
 
               <fieldset>
-                <label class="label cursor-pointer justify-center whitespace-normal">
-                  <input type="checkbox" class="checkbox checkbox-primary mr-2" />
+                <label
+                  for="newsletter-subscribe"
+                  class="label cursor-pointer justify-center whitespace-normal"
+                >
+                  <input
+                    id="newsletter-subscribe"
+                    name="newsletter-subscribe"
+                    type="checkbox"
+                    class="checkbox checkbox-primary mr-2"
+                  />
                   <span>Subscribe to our newsletter for updates and wellness tips</span>
                 </label>
               </fieldset>
