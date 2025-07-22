@@ -11,6 +11,7 @@ const SANITY_PROJECT_ID = loadEnv('production', process.cwd(), '').PUBLIC_SANITY
 
 // https://astro.build/config
 export default defineConfig({
+  // TODO: replace with prod site URL
   site: 'http://localhost:4321',
   integrations: [
     sitemap(),
@@ -20,7 +21,6 @@ export default defineConfig({
       dataset: 'production',
       // Set useCdn to false if you're building statically.
       useCdn: false,
-      apiVersion: '2025-07-02',
       studioBasePath: '/admin',
     }),
     react(),

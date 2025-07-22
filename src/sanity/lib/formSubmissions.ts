@@ -1,3 +1,4 @@
+// TODO: match current Sanity schema exactly
 // Types for form submissions matching the exact Sanity schema structures
 
 export interface UserData {

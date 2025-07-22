@@ -74,11 +74,7 @@ import LogoFade from '../../assets/images/logo-fade.svg'
               return (
                 <li>
                   <details class="dropdown">
-                    <summary
-                      class="flex items-center gap-1 list-none font-nuckle-semibold"
-                      role="button"
-                      aria-expanded="false"
-                    >
+                    <summary class="flex items-center gap-1 list-none font-nuckle-semibold">
                       {link.label}
                       <Chevron
                         class="w-4 h-4 transition-transform duration-200 ease-in-out"
@@ -147,14 +143,8 @@ import LogoFade from '../../assets/images/logo-fade.svg'
   function openDropdown(details: HTMLDetailsElement) {
     const content = details.querySelector('.dropdown-content') as HTMLElement
     const chevron = details.querySelector('svg')
-    const summary = details.querySelector('summary')
 
     details.open = true
-
-    // Update accessibility attributes
-    if (summary) {
-      summary.setAttribute('aria-expanded', 'true')
-    }
 
     if (content) {
       // Force a reflow to ensure the element is visible before animating
@@ -175,12 +165,6 @@ import LogoFade from '../../assets/images/logo-fade.svg'
   function closeDropdown(details: HTMLDetailsElement) {
     const content = details.querySelector('.dropdown-content') as HTMLElement
     const chevron = details.querySelector('svg')
-    const summary = details.querySelector('summary')
-
-    // Update accessibility attributes
-    if (summary) {
-      summary.setAttribute('aria-expanded', 'false')
-    }
 
     if (content) {
       content.style.opacity = '0'
