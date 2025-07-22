@@ -5,9 +5,6 @@ import sitemap from '@astrojs/sitemap'
 import sanity from '@sanity/astro'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
-import { loadEnv } from 'vite'
-
-const SANITY_PROJECT_ID = loadEnv('production', process.cwd(), '').PUBLIC_SANITY_PROJECT_ID
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +14,7 @@ export default defineConfig({
     sitemap(),
     sanity({
       // TODO: replace with ENV variable
-      projectId: SANITY_PROJECT_ID,
+      projectId: 'hr4xqyhv',
       dataset: 'production',
       // Set useCdn to false if you're building statically.
       useCdn: false,

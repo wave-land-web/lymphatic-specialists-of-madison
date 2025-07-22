@@ -276,7 +276,7 @@ import Layout from '../layouts/Layout.astro'
     } catch (error) {
       // Show error message
       const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred.'
-      alert(errorMessage + '\n\nFor immediate assistance, please call (608) 203-8550.')
+      console.error(errorMessage)
     } finally {
       // Reset button state
       submitButton.disabled = false
