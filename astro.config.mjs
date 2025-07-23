@@ -25,10 +25,9 @@ export default defineConfig({
       SANITY_STUDIO_SECRET_TOKEN: envField.string({
         context: 'server',
         access: 'secret',
-        default:
-          'skYyPEHhL9kYuAcPBgSeEoBHKCZWQbFdIdJjjpVdnyZgIUHYLlGST6JNF1pG1fZe54nruUtYLgvg12ItgPkx7r3kOs5zx7JhrJIeRvufHLyr6sfxDGKxtscBNHshJPltU6FZyi0tVJ9tgdT040qGG0HBEo0Q3wfgM3p3823QaWuXtcVbB9gY',
       }),
     },
+    validateSecrets: true,
   },
   integrations: [
     sitemap(),
