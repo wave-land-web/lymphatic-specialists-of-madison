@@ -25,10 +25,14 @@ export default defineConfig({
       SANITY_STUDIO_WRITE_TOKEN: envField.string({
         context: 'server',
         access: 'secret',
+        default:
+          'kl3cCkuNZ9G3yCFQ3RRG5NcXXxa1ptJiNX1uCZZJOIvoEvMDmDMf7nEsOXn5PipwPXYAbo6AG0ilmftry8wUTBVu4ixbuY8HpjeAMwxayxjzMizZg3CVE6NpLrvGUfe4xpALlnPQLVas6CHLfknfrBglUIc2vbmsF2PThkErFDuCGfQ32wL',
       }),
       SANITY_STUDIO_AUTH_TOKEN: envField.string({
         context: 'server',
         access: 'secret',
+        default:
+          'skEvngLWwT2JbuSwkUWgnkiyH96NKo3IM350OBuGfOp1fMqgtqWmuxg5g8ijeSrcPFVNRkI5ikg18BQVRXQkxr705JXW6oKH5RRTpMBqxos2sugvoYFwtRClnxY5LsGAs0A3IPjw1FDeIaUitapt0doF7UMeIUA0s7bTvZ6Upw65h7Mi0F41',
       }),
     },
   },

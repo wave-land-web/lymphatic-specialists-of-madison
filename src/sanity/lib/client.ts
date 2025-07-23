@@ -1,14 +1,16 @@
 import { createClient } from '@sanity/client'
+import { PUBLIC_SANITY_STUDIO_DATASET, PUBLIC_SANITY_STUDIO_PROJECT_ID } from 'astro:env/client'
+import { SANITY_STUDIO_WRITE_TOKEN } from 'astro:env/server'
 
-/**
- * Sanity client configured for both read and write operations
- */
+const isProd = import.meta.env.PROD
+
 export const sanityClient = createClient({
-  projectId: import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID,
-  dataset: import.meta.env.PUBLIC_SANITY_STUDIO_DATASET || 'production',
-  token: import.meta.env.SANITY_STUDIO_WRITE_TOKEN,
-  useCdn: false,
-  apiVersion: '2025-07-01', // Use the latest API version for compatibility
+  projectId: PUBLIC_SANITY_STUDIO_PROJECT_ID,
+  dataset: PUBLIC_SANITY_STUDIO_DATASET || 'production',
+  token: SANITY_STUDIO_WRITE_TOKEN,
+  // Use CDN in production for performance, fresh data in development
+  useCdn: isProd,
+  apiVersion: '2025-07-01',
 })
 
 export default sanityClient
