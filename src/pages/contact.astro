@@ -195,6 +195,11 @@ import Layout from '../layouts/Layout.astro'
                 </label>
               </fieldset>
             </form>
+
+            <div id="form-messages">
+              <!-- Success message will be displayed here -->
+              <p id="form-message-text"></p>
+            </div>
           </div>
         </div>
       </Card>
@@ -228,6 +233,8 @@ import Layout from '../layouts/Layout.astro'
 <script>
   // Handle form submission with API submission
   const contactForm = document.getElementById('contact-form') as HTMLFormElement
+  const messageText = document.getElementById('form-message-text') as HTMLParagraphElement
+
   contactForm?.addEventListener('submit', async function (e) {
     e.preventDefault()
 
@@ -265,17 +272,31 @@ import Layout from '../layouts/Layout.astro'
       const result = await response.json()
 
       if (result.success) {
+        // Log success message
+        console.log('Form submitted successfully:', result.message)
+
         // Show success message
-        alert(result.message)
+        messageText.innerHTML = `<strong>${result.message || 'Thank you for contacting us! We will get back to you shortly.'}</strong>`
+        messageText.classList.remove('text-error')
+        messageText.classList.add('text-success')
+
         // Reset form
         this.reset()
       } else {
         // Show error message
+        messageText.innerHTML = `<strong>${result.error || 'An error occurred while submitting the form.'}</strong>`
+        messageText.classList.remove('text-success')
+        messageText.classList.add('text-error')
+
         throw new Error(result.error || 'An error occurred while submitting the form.')
       }
     } catch (error) {
       // Show error message
       const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred.'
+      messageText.innerHTML = `<strong>${errorMessage || 'An unexpected error occurred.'}</strong>`
+      messageText.classList.remove('text-success')
+      messageText.classList.add('text-error')
+
       console.error(errorMessage)
     } finally {
       // Reset button state

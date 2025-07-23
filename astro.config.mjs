@@ -12,12 +12,12 @@ export default defineConfig({
   site: 'http://localhost:4321',
   env: {
     schema: {
-      PUBLIC_SANITY_PROJECT_ID: envField.string({
+      PUBLIC_SANITY_STUDIO_PROJECT_ID: envField.string({
         context: 'client',
         access: 'public',
         default: 'hr4xqyhv',
       }),
-      PUBLIC_SANITY_DATASET: envField.string({
+      PUBLIC_SANITY_STUDIO_DATASET: envField.string({
         context: 'client',
         access: 'public',
         default: 'production',
@@ -41,6 +41,7 @@ export default defineConfig({
       // Set useCdn to false if you're building statically.
       useCdn: false,
       studioBasePath: '/admin',
+      apiVersion: '2025-07-01',
     }),
     react(),
   ],

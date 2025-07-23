@@ -9,6 +9,13 @@ export const prerender = false // Enable server-side rendering for form handling
 
 export const POST: APIRoute = async ({ request }) => {
   try {
+    // Log the .env variables for debugging
+    console.log({
+      PUBLIC_SANITY_PROJECT_ID: import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID || process.env.SANITY_STUDIO_PROJECT_ID,
+      PUBLIC_SANITY_DATASET: import.meta.env.PUBLIC_SANITY_STUDIO_DATASET || process.env.SANITY_STUDIO_DATASET,
+      SANITY_STUDIO_WRITE_TOKEN: import.meta.env.SANITY_STUDIO_WRITE_TOKEN || process.env.SANITY_STUDIO_WRITE_TOKEN,
+    })
+
     // Parse form data from the request
     const formData = await request.formData()
 
