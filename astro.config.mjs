@@ -22,30 +22,22 @@ export default defineConfig({
         access: 'public',
         default: 'production',
       }),
-      SANITY_STUDIO_WRITE_TOKEN: envField.string({
+      SANITY_STUDIO_SECRET_TOKEN: envField.string({
         context: 'server',
         access: 'secret',
         default:
-          'kl3cCkuNZ9G3yCFQ3RRG5NcXXxa1ptJiNX1uCZZJOIvoEvMDmDMf7nEsOXn5PipwPXYAbo6AG0ilmftry8wUTBVu4ixbuY8HpjeAMwxayxjzMizZg3CVE6NpLrvGUfe4xpALlnPQLVas6CHLfknfrBglUIc2vbmsF2PThkErFDuCGfQ32wL',
-      }),
-      SANITY_STUDIO_AUTH_TOKEN: envField.string({
-        context: 'server',
-        access: 'secret',
-        default:
-          'skEvngLWwT2JbuSwkUWgnkiyH96NKo3IM350OBuGfOp1fMqgtqWmuxg5g8ijeSrcPFVNRkI5ikg18BQVRXQkxr705JXW6oKH5RRTpMBqxos2sugvoYFwtRClnxY5LsGAs0A3IPjw1FDeIaUitapt0doF7UMeIUA0s7bTvZ6Upw65h7Mi0F41',
+          'skYyPEHhL9kYuAcPBgSeEoBHKCZWQbFdIdJjjpVdnyZgIUHYLlGST6JNF1pG1fZe54nruUtYLgvg12ItgPkx7r3kOs5zx7JhrJIeRvufHLyr6sfxDGKxtscBNHshJPltU6FZyi0tVJ9tgdT040qGG0HBEo0Q3wfgM3p3823QaWuXtcVbB9gY',
       }),
     },
   },
   integrations: [
     sitemap(),
     sanity({
-      // TODO: replace with ENV variable
       projectId: 'hr4xqyhv',
       dataset: 'production',
-      // Set useCdn to false if you're building statically.
       useCdn: false,
       studioBasePath: '/admin',
-      apiVersion: '2025-07-01',
+      apiVersion: '2025-07-23',
     }),
     react(),
   ],
