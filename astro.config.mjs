@@ -44,6 +44,7 @@ export default defineConfig({
     prefetchAll: true,
   },
   vite: {
+    // @ts-ignore - Type compatibility with Tailwind CSS v4 plugin
     plugins: [tailwindcss()],
   },
   image: {

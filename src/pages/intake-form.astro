@@ -16,7 +16,12 @@ import Layout from '../layouts/Layout.astro'
 
   <main class="wrapper">
     <section class="pt-(--site-padding-base)">
-      <form class="container lg:max-w-6xl mx-auto flex flex-col gap-8">
+      <form
+        id="intake-form"
+        class="container lg:max-w-6xl mx-auto flex flex-col gap-8"
+        method="POST"
+        action="/api/forms/intake"
+      >
         <p>
           <span class="text-accent">*</span> indicates required fields
         </p>
@@ -34,6 +39,7 @@ import Layout from '../layouts/Layout.astro'
                   <label for="first-name">First Name <span class="text-accent">*</span></label>
                   <input
                     id="first-name"
+                    name="first-name"
                     type="text"
                     placeholder="Jane"
                     class="input input-bordered w-full"
@@ -44,6 +50,7 @@ import Layout from '../layouts/Layout.astro'
                   <label for="last-name">Last Name <span class="text-accent">*</span></label>
                   <input
                     id="last-name"
+                    name="last-name"
                     type="text"
                     placeholder="Doe"
                     class="input input-bordered w-full"
@@ -58,6 +65,7 @@ import Layout from '../layouts/Layout.astro'
                   <label for="phone-day">Phone (day)</label>
                   <input
                     id="phone-day"
+                    name="phone-day"
                     type="tel"
                     placeholder="(123) 456-7890"
                     class="input input-bordered w-full"
@@ -70,6 +78,7 @@ import Layout from '../layouts/Layout.astro'
                   </label>
                   <input
                     id="phone-evening"
+                    name="phone-evening"
                     type="tel"
                     placeholder="(123) 456-7890"
                     class="input input-bordered w-full"
@@ -86,6 +95,7 @@ import Layout from '../layouts/Layout.astro'
                   </label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="your.email@example.com"
                     class="input input-bordered w-full"
@@ -99,6 +109,7 @@ import Layout from '../layouts/Layout.astro'
                   </label>
                   <input
                     id="date-of-birth"
+                    name="date-of-birth"
                     type="date"
                     class="input input-bordered w-full"
                     required
@@ -111,6 +122,7 @@ import Layout from '../layouts/Layout.astro'
                 <label for="pronouns">What are your pronouns?</label>
                 <input
                   id="pronouns"
+                  name="pronouns"
                   type="text"
                   placeholder="e.g., she/her, he/him, they/them"
                   class="input input-bordered w-full"
@@ -128,6 +140,7 @@ import Layout from '../layouts/Layout.astro'
                   >
                   <input
                     id="street-address"
+                    name="street-address"
                     type="text"
                     placeholder="123 Main St"
                     class="input input-bordered w-full"
@@ -139,6 +152,7 @@ import Layout from '../layouts/Layout.astro'
                   <label for="address-line-2">Address Line 2</label>
                   <input
                     id="address-line-2"
+                    name="address-line-2"
                     type="text"
                     placeholder="Apt 1"
                     class="input input-bordered w-full"
@@ -150,6 +164,7 @@ import Layout from '../layouts/Layout.astro'
                     <label for="city">City <span class="text-accent">*</span></label>
                     <input
                       id="city"
+                      name="city"
                       type="text"
                       placeholder="New York"
                       class="input input-bordered w-full"
@@ -161,6 +176,7 @@ import Layout from '../layouts/Layout.astro'
                     <label for="state">State <span class="text-accent">*</span></label>
                     <input
                       id="state"
+                      name="state"
                       type="text"
                       placeholder="NY"
                       class="input input-bordered w-full"
@@ -172,6 +188,7 @@ import Layout from '../layouts/Layout.astro'
                     <label for="zip-code">ZIP Code <span class="text-accent">*</span></label>
                     <input
                       id="zip-code"
+                      name="zip-code"
                       type="text"
                       placeholder="12345"
                       class="input input-bordered w-full"
@@ -182,7 +199,12 @@ import Layout from '../layouts/Layout.astro'
 
                 <div class="flex flex-col gap-2">
                   <label for="country">Country <span class="text-accent">*</span></label>
-                  <select id="country" class="select select-bordered w-full" required>
+                  <select
+                    id="country"
+                    name="country"
+                    class="select select-bordered w-full"
+                    required
+                  >
                     <option value="" disabled selected>Select Country</option>
                     <option value="Afghanistan">Afghanistan</option><option value="Albania"
                       >Albania</option
@@ -423,6 +445,7 @@ import Layout from '../layouts/Layout.astro'
                   </label>
                   <input
                     id="emergency-contact-name"
+                    name="emergency-contact-name"
                     type="text"
                     placeholder="Contact Name"
                     class="input input-bordered w-full"
@@ -436,6 +459,7 @@ import Layout from '../layouts/Layout.astro'
                   </label>
                   <input
                     id="emergency-contact-phone"
+                    name="emergency-contact-phone"
                     type="tel"
                     placeholder="(555) 123-4567"
                     class="input input-bordered w-full"
@@ -452,6 +476,7 @@ import Layout from '../layouts/Layout.astro'
                 </label>
                 <input
                   id="emergency-contact-physician"
+                  name="emergency-contact-physician"
                   type="text"
                   placeholder="Dr. Name and Clinic Name"
                   class="input input-bordered w-full"
@@ -580,6 +605,7 @@ import Layout from '../layouts/Layout.astro'
               <label for="hear-about-other-specify">Please Specify</label>
               <input
                 id="hear-about-other-specify"
+                name="hear-about-other-specify"
                 type="text"
                 placeholder="Facebook, Instagram, etc."
                 class="input input-bordered w-full"
@@ -648,6 +674,7 @@ import Layout from '../layouts/Layout.astro'
               </label>
               <input
                 id="reason-for-seeking-mld-medical-start"
+                name="reason-for-seeking-mld-medical-start"
                 type="text"
                 placeholder="Please describe when the problem began"
                 class="input input-bordered w-full"
@@ -662,6 +689,7 @@ import Layout from '../layouts/Layout.astro'
               </label>
               <textarea
                 id="reason-for-seeking-mld-medical-description"
+                name="reason-for-seeking-mld-medical-description"
                 class="textarea textarea-bordered h-32 w-full rounded-box"
                 placeholder="Please provide detailed description..."
                 required></textarea>
@@ -693,6 +721,7 @@ import Layout from '../layouts/Layout.astro'
                       <div class="flex items-center gap-2">
                         <input
                           type="checkbox"
+                          name="medical-conditions-general-fever"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-fever"
                         />
@@ -701,6 +730,7 @@ import Layout from '../layouts/Layout.astro'
                       <div class="flex items-center gap-2">
                         <input
                           type="checkbox"
+                          name="medical-conditions-general-cancer-treatment"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-cancer-treatment"
                         />
@@ -711,6 +741,7 @@ import Layout from '../layouts/Layout.astro'
                       <div class="flex items-center gap-2">
                         <input
                           type="checkbox"
+                          name="medical-conditions-general-last-chemotherapy-session"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-last-chemotherapy-session"
                         />
@@ -723,6 +754,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-arteriosclerosis"
+                          name="medical-conditions-general-arteriosclerosis"
                         />
                         <label for="medical-conditions-general-arteriosclerosis"
                           >Arteriosclerosis</label
@@ -733,6 +765,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-carotid-sinus-issues"
+                          name="medical-conditions-general-carotid-sinus-issues"
                         />
                         <label for="medical-conditions-general-carotid-sinus-issues"
                           >Carotid sinus issues</label
@@ -743,6 +776,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-hyperthyroidism"
+                          name="medical-conditions-general-hyperthyroidism"
                         />
                         <label for="medical-conditions-general-hyperthyroidism"
                           >Hyperthyroidism</label
@@ -753,6 +787,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-liver-cirrhosis"
+                          name="medical-conditions-general-liver-cirrhosis"
                         />
                         <label for="medical-conditions-general-liver-cirrhosis"
                           >Liver Cirrhosis</label
@@ -763,6 +798,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-other"
+                          name="medical-conditions-general-other"
                         />
                         <label for="medical-conditions-general-other">Other</label>
                       </div>
@@ -771,6 +807,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-general-na"
+                          name="medical-conditions-general-na"
                         />
                         <label for="medical-conditions-general-na">N/A</label>
                       </div>
@@ -781,6 +818,7 @@ import Layout from '../layouts/Layout.astro'
                       >
                       <input
                         id="medical-conditions-general-other-specify"
+                        name="medical-conditions-general-other-specify"
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
@@ -802,6 +840,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-ears-nose-throat-ringing-in-ears"
+                          name="medical-conditions-ears-nose-throat-ringing-in-ears"
                         />
                         <label for="medical-conditions-ears-nose-throat-ringing-in-ears"
                           >Ringing in ears</label
@@ -812,6 +851,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-ears-nose-throat-sinus-problems"
+                          name="medical-conditions-ears-nose-throat-sinus-problems"
                         />
                         <label for="medical-conditions-ears-nose-throat-sinus-problems"
                           >Sinus problems</label
@@ -822,6 +862,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-ears-nose-throat-earaches"
+                          name="medical-conditions-ears-nose-throat-earaches"
                         />
                         <label for="medical-conditions-ears-nose-throat-earaches">Earaches</label>
                       </div>
@@ -830,6 +871,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-ears-nose-throat-other"
+                          name="medical-conditions-ears-nose-throat-other"
                         />
                         <label for="medical-conditions-ears-nose-throat-other">Other</label>
                       </div>
@@ -838,6 +880,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-ears-nose-throat-na"
+                          name="medical-conditions-ears-nose-throat-na"
                         />
                         <label for="medical-conditions-ears-nose-throat-na">N/A</label>
                       </div>
@@ -848,6 +891,7 @@ import Layout from '../layouts/Layout.astro'
                       >
                       <input
                         id="medical-conditions-ears-nose-throat-other-specify"
+                        name="medical-conditions-ears-nose-throat-other-specify"
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
@@ -869,6 +913,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-chest-pain-or-pressure"
+                          name="medical-conditions-cardiovascular-chest-pain-or-pressure"
                         />
                         <label for="medical-conditions-cardiovascular-chest-pain-or-pressure"
                           >Chest pain or pressure</label
@@ -879,6 +924,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-swelling-of-legs"
+                          name="medical-conditions-cardiovascular-swelling-of-legs"
                         />
                         <label for="medical-conditions-cardiovascular-swelling-of-legs"
                           >Swelling of legs</label
@@ -889,6 +935,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-palpitations"
+                          name="medical-conditions-cardiovascular-palpitations"
                         />
                         <label for="medical-conditions-cardiovascular-palpitations"
                           >Palpitations</label
@@ -899,6 +946,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-varicose-veins"
+                          name="medical-conditions-cardiovascular-varicose-veins"
                         />
                         <label for="medical-conditions-cardiovascular-varicose-veins"
                           >Varicose veins</label
@@ -909,6 +957,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-dizziness"
+                          name="medical-conditions-cardiovascular-dizziness"
                         />
                         <label for="medical-conditions-cardiovascular-dizziness">Dizziness</label>
                       </div>
@@ -917,6 +966,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-acute-deep-vein-thrombosis"
+                          name="medical-conditions-cardiovascular-acute-deep-vein-thrombosis"
                         />
                         <label for="medical-conditions-cardiovascular-acute-deep-vein-thrombosis"
                           >Acute deep vein thrombosis</label
@@ -927,6 +977,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-congestive-heart-failure"
+                          name="medical-conditions-cardiovascular-congestive-heart-failure"
                         />
                         <label for="medical-conditions-cardiovascular-congestive-heart-failure"
                           >Congestive heart failure</label
@@ -937,6 +988,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-heart-attack"
+                          name="medical-conditions-cardiovascular-heart-attack"
                         />
                         <label for="medical-conditions-cardiovascular-heart-attack"
                           >Heart attack</label
@@ -947,6 +999,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-high-low-blood-pressure"
+                          name="medical-conditions-cardiovascular-high-low-blood-pressure"
                         />
                         <label for="medical-conditions-cardiovascular-high-low-blood-pressure"
                           >High/Low blood pressure</label
@@ -957,6 +1010,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-aneurysm"
+                          name="medical-conditions-cardiovascular-aneurysm"
                         />
                         <label for="medical-conditions-cardiovascular-aneurysm">Aneurysm</label>
                       </div>
@@ -965,6 +1019,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-cardiac-arrhythmia"
+                          name="medical-conditions-cardiovascular-cardiac-arrhythmia"
                         />
                         <label for="medical-conditions-cardiovascular-cardiac-arrhythmia"
                           >Cardiac arrhythmia</label
@@ -975,6 +1030,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-other"
+                          name="medical-conditions-cardiovascular-other"
                         />
                         <label for="medical-conditions-cardiovascular-other">Other</label>
                       </div>
@@ -983,6 +1039,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-cardiovascular-na"
+                          name="medical-conditions-cardiovascular-na"
                         />
                         <label for="medical-conditions-cardiovascular-na">N/A</label>
                       </div>
@@ -996,6 +1053,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-cardiovascular-other-specify"
                       />
                     </div>
                   </div>
@@ -1014,6 +1072,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-gastro-intestinal-crohns-disease"
+                          name="medical-conditions-gastro-intestinal-crohns-disease"
                         />
                         <label for="medical-conditions-gastro-intestinal-crohns-disease"
                           >Crohn's disease</label
@@ -1024,6 +1083,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-gastro-intestinal-abdominal-pain"
+                          name="medical-conditions-gastro-intestinal-abdominal-pain"
                         />
                         <label for="medical-conditions-gastro-intestinal-abdominal-pain"
                           >Abdominal pain</label
@@ -1034,6 +1094,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-gastro-intestinal-surgical-implant-mesh-or-other"
+                          name="medical-conditions-gastro-intestinal-surgical-implant-mesh-or-other"
                         />
                         <label
                           for="medical-conditions-gastro-intestinal-surgical-implant-mesh-or-other"
@@ -1045,6 +1106,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-gastro-intestinal-gi-inflammation"
+                          name="medical-conditions-gastro-intestinal-gi-inflammation"
                         />
                         <label for="medical-conditions-gastro-intestinal-gi-inflammation"
                           >GI inflammation</label
@@ -1055,6 +1117,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-gastro-intestinal-diverticulitis-diverticulosis"
+                          name="medical-conditions-gastro-intestinal-diverticulitis-diverticulosis"
                         />
                         <label
                           for="medical-conditions-gastro-intestinal-diverticulitis-diverticulosis"
@@ -1066,6 +1129,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-gastro-intestinal-other"
+                          name="medical-conditions-gastro-intestinal-other"
                         />
                         <label for="medical-conditions-gastro-intestinal-other">Other</label>
                       </div>
@@ -1074,6 +1138,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-gastro-intestinal-na"
+                          name="medical-conditions-gastro-intestinal-na"
                         />
                         <label for="medical-conditions-gastro-intestinal-na">N/A</label>
                       </div>
@@ -1087,6 +1152,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-gastro-intestinal-other-specify"
                       />
                     </div>
                   </div>
@@ -1105,6 +1171,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-urinary-kidney-failure"
+                          name="medical-conditions-urinary-kidney-failure"
                         />
                         <label for="medical-conditions-urinary-kidney-failure">Kidney failure</label
                         >
@@ -1114,6 +1181,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-urinary-kidney-stones"
+                          name="medical-conditions-urinary-kidney-stones"
                         />
                         <label for="medical-conditions-urinary-kidney-stones">Kidney stones</label>
                       </div>
@@ -1122,6 +1190,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-urinary-urinary-tract-infection"
+                          name="medical-conditions-urinary-urinary-tract-infection"
                         />
                         <label for="medical-conditions-urinary-urinary-tract-infection"
                           >Urinary tract infection</label
@@ -1132,6 +1201,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-urinary-dialysis"
+                          name="medical-conditions-urinary-dialysis"
                         />
                         <label for="medical-conditions-urinary-dialysis">Dialysis</label>
                       </div>
@@ -1140,6 +1210,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-urinary-other"
+                          name="medical-conditions-urinary-other"
                         />
                         <label for="medical-conditions-urinary-other">Other</label>
                       </div>
@@ -1148,6 +1219,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-urinary-na"
+                          name="medical-conditions-urinary-na"
                         />
                         <label for="medical-conditions-urinary-na">N/A</label>
                       </div>
@@ -1161,6 +1233,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-urinary-other-specify"
                       />
                     </div>
                   </div>
@@ -1182,6 +1255,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-female-reproductive-currently-pregnant"
+                          name="medical-conditions-female-reproductive-currently-pregnant"
                         />
                         <label for="medical-conditions-female-reproductive-currently-pregnant"
                           >Currently pregnant</label
@@ -1192,6 +1266,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-female-reproductive-currently-menstruating"
+                          name="medical-conditions-female-reproductive-currently-menstruating"
                         />
                         <label for="medical-conditions-female-reproductive-currently-menstruating"
                           >Currently menstruating</label
@@ -1202,6 +1277,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-female-reproductive-fibrocystic-breast-disease"
+                          name="medical-conditions-female-reproductive-fibrocystic-breast-disease"
                         />
                         <label
                           for="medical-conditions-female-reproductive-fibrocystic-breast-disease"
@@ -1213,6 +1289,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-female-reproductive-iud"
+                          name="medical-conditions-female-reproductive-iud"
                         />
                         <label for="medical-conditions-female-reproductive-iud">IUD</label>
                       </div>
@@ -1221,6 +1298,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-female-reproductive-other"
+                          name="medical-conditions-female-reproductive-other"
                         />
                         <label for="medical-conditions-female-reproductive-other">Other</label>
                       </div>
@@ -1229,6 +1307,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-female-reproductive-na"
+                          name="medical-conditions-female-reproductive-na"
                         />
                         <label for="medical-conditions-female-reproductive-na">N/A</label>
                       </div>
@@ -1242,6 +1321,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-female-reproductive-other-specify"
                       />
                     </div>
                   </div>
@@ -1260,6 +1340,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-musculoskeletal-osteoporosis"
+                          name="medical-conditions-musculoskeletal-osteoporosis"
                         />
                         <label for="medical-conditions-musculoskeletal-osteoporosis"
                           >Osteoporosis</label
@@ -1270,6 +1351,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-musculoskeletal-osteoarthritis"
+                          name="medical-conditions-musculoskeletal-osteoarthritis"
                         />
                         <label for="medical-conditions-musculoskeletal-osteoarthritis"
                           >Osteoarthritis</label
@@ -1280,6 +1362,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-musculoskeletal-hernia"
+                          name="medical-conditions-musculoskeletal-hernia"
                         />
                         <label for="medical-conditions-musculoskeletal-hernia">Hernia</label>
                       </div>
@@ -1288,6 +1371,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-musculoskeletal-rheumatoid-arthritis"
+                          name="medical-conditions-musculoskeletal-rheumatoid-arthritis"
                         />
                         <label for="medical-conditions-musculoskeletal-rheumatoid-arthritis"
                           >Rheumatoid arthritis</label
@@ -1298,6 +1382,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-musculoskeletal-other"
+                          name="medical-conditions-musculoskeletal-other"
                         />
                         <label for="medical-conditions-musculoskeletal-other">Other</label>
                       </div>
@@ -1306,6 +1391,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-musculoskeletal-na"
+                          name="medical-conditions-musculoskeletal-na"
                         />
                         <label for="medical-conditions-musculoskeletal-na">N/A</label>
                       </div>
@@ -1319,6 +1405,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-musculoskeletal-other-specify"
                       />
                     </div>
                   </div>
@@ -1337,6 +1424,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-skin-cellulitis-bacterial-skin-infection"
+                          name="medical-conditions-skin-cellulitis-bacterial-skin-infection"
                         />
                         <label for="medical-conditions-skin-cellulitis-bacterial-skin-infection"
                           >Cellulitis (bacterial skin infection)</label
@@ -1347,6 +1435,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-skin-rash"
+                          name="medical-conditions-skin-rash"
                         />
                         <label for="medical-conditions-skin-rash">Rash</label>
                       </div>
@@ -1355,6 +1444,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-skin-major-scars"
+                          name="medical-conditions-skin-major-scars"
                         />
                         <label for="medical-conditions-skin-major-scars">Major scars</label>
                       </div>
@@ -1363,6 +1453,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-skin-lumps"
+                          name="medical-conditions-skin-lumps"
                         />
                         <label for="medical-conditions-skin-lumps">Lumps</label>
                       </div>
@@ -1371,6 +1462,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-skin-other"
+                          name="medical-conditions-skin-other"
                         />
                         <label for="medical-conditions-skin-other">Other</label>
                       </div>
@@ -1379,6 +1471,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-skin-na"
+                          name="medical-conditions-skin-na"
                         />
                         <label for="medical-conditions-skin-na">N/A</label>
                       </div>
@@ -1392,6 +1485,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-skin-other-specify"
                       />
                     </div>
                   </div>
@@ -1410,6 +1504,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding"
+                          name="medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding"
                         />
                         <label
                           for="medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding"
@@ -1421,6 +1516,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes-glands"
+                          name="medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes-glands"
                         />
                         <label
                           for="medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes-glands"
@@ -1432,6 +1528,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-lymph-nodes-removed"
+                          name="medical-conditions-hematologic-lymphatic-lymph-nodes-removed"
                         />
                         <label for="medical-conditions-hematologic-lymphatic-lymph-nodes-removed"
                           >Lymph nodes removed</label
@@ -1442,6 +1539,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-frequent-bruising"
+                          name="medical-conditions-hematologic-lymphatic-frequent-bruising"
                         />
                         <label for="medical-conditions-hematologic-lymphatic-frequent-bruising"
                           >Frequent bruising</label
@@ -1452,6 +1550,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-hiv-aids"
+                          name="medical-conditions-hematologic-lymphatic-hiv-aids"
                         />
                         <label for="medical-conditions-hematologic-lymphatic-hiv-aids"
                           >HIV/AIDS</label
@@ -1462,6 +1561,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-factor-v-leiden"
+                          name="medical-conditions-hematologic-lymphatic-factor-v-leiden"
                         />
                         <label for="medical-conditions-hematologic-lymphatic-factor-v-leiden"
                           >Factor V Leiden</label
@@ -1472,6 +1572,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-clotting-issues"
+                          name="medical-conditions-hematologic-lymphatic-clotting-issues"
                         />
                         <label for="medical-conditions-hematologic-lymphatic-clotting-issues"
                           >Clotting issues</label
@@ -1482,6 +1583,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-hematologic-lymphatic-na"
+                          name="medical-conditions-hematologic-lymphatic-na"
                         />
                         <label for="medical-conditions-hematologic-lymphatic-na">N/A</label>
                       </div>
@@ -1495,6 +1597,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-hematologic-lymphatic-other-specify"
                       />
                     </div>
                   </div>
@@ -1513,6 +1616,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-neurological-strokes"
+                          name="medical-conditions-neurological-strokes"
                         />
                         <label for="medical-conditions-neurological-strokes">Strokes</label>
                       </div>
@@ -1521,6 +1625,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-neurological-seizures"
+                          name="medical-conditions-neurological-seizures"
                         />
                         <label for="medical-conditions-neurological-seizures">Seizures</label>
                       </div>
@@ -1529,6 +1634,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-neurological-other"
+                          name="medical-conditions-neurological-other"
                         />
                         <label for="medical-conditions-neurological-other">Other</label>
                       </div>
@@ -1537,6 +1643,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-neurological-na"
+                          name="medical-conditions-neurological-na"
                         />
                         <label for="medical-conditions-neurological-na">N/A</label>
                       </div>
@@ -1550,6 +1657,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-neurological-other-specify"
                       />
                     </div>
                   </div>
@@ -1568,6 +1676,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-allergies-ear-fullness"
+                          name="medical-conditions-allergies-ear-fullness"
                         />
                         <label for="medical-conditions-allergies-ear-fullness">Ear fullness</label>
                       </div>
@@ -1576,6 +1685,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-allergies-sinus-congestion"
+                          name="medical-conditions-allergies-sinus-congestion"
                         />
                         <label for="medical-conditions-allergies-sinus-congestion"
                           >Sinus congestion</label
@@ -1586,6 +1696,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-allergies-recent-sinus-surgery"
+                          name="medical-conditions-allergies-recent-sinus-surgery"
                         />
                         <label for="medical-conditions-allergies-recent-sinus-surgery"
                           >Recent sinus surgery</label
@@ -1596,6 +1707,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-allergies-other"
+                          name="medical-conditions-allergies-other"
                         />
                         <label for="medical-conditions-allergies-other">Other</label>
                       </div>
@@ -1604,6 +1716,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-allergies-na"
+                          name="medical-conditions-allergies-na"
                         />
                         <label for="medical-conditions-allergies-na">N/A</label>
                       </div>
@@ -1617,6 +1730,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-allergies-other-specify"
                       />
                     </div>
                   </div>
@@ -1635,6 +1749,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-emotional-stress"
+                          name="medical-conditions-emotional-stress"
                         />
                         <label for="medical-conditions-emotional-stress">Stress</label>
                       </div>
@@ -1643,6 +1758,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-emotional-anxiety"
+                          name="medical-conditions-emotional-anxiety"
                         />
                         <label for="medical-conditions-emotional-anxiety">Anxiety</label>
                       </div>
@@ -1651,6 +1767,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-emotional-difficulty-sleeping"
+                          name="medical-conditions-emotional-difficulty-sleeping"
                         />
                         <label for="medical-conditions-emotional-difficulty-sleeping"
                           >Difficulty sleeping</label
@@ -1661,6 +1778,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-emotional-depression"
+                          name="medical-conditions-emotional-depression"
                         />
                         <label for="medical-conditions-emotional-depression">Depression</label>
                       </div>
@@ -1669,6 +1787,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-emotional-other"
+                          name="medical-conditions-emotional-other"
                         />
                         <label for="medical-conditions-emotional-other">Other</label>
                       </div>
@@ -1677,6 +1796,7 @@ import Layout from '../layouts/Layout.astro'
                           type="checkbox"
                           class="checkbox checkbox-primary"
                           id="medical-conditions-emotional-na"
+                          name="medical-conditions-emotional-na"
                         />
                         <label for="medical-conditions-emotional-na">N/A</label>
                       </div>
@@ -1690,6 +1810,7 @@ import Layout from '../layouts/Layout.astro'
                         type="text"
                         placeholder="Please describe your condition"
                         class="input input-bordered w-full"
+                        name="medical-conditions-emotional-other-specify"
                       />
                     </div>
                   </div>
@@ -1703,26 +1824,33 @@ import Layout from '../layouts/Layout.astro'
         <Card id="surgeries">
           <h2 class="card-title text-2xl mb-6">Surgeries</h2>
 
-          <fieldshet id="surgeries-container" class="space-y-8">
+          <fieldset id="surgeries-container" class="space-y-8">
             <legend class="p whitespace-normal"
               >Please list all surgeries (including Cesarean section).</legend
             >
             <div
               class="surgery-entry grid grid-cols-1 md:grid-cols-3 gap-(--site-padding-base) mb-(--site-padding-base)"
             >
-              <label class="sr-only" for="surgery-name">Surgery</label>
+              <label class="sr-only" for="surgery-0-name">Surgery</label>
               <input
-                id="surgery-name"
+                id="surgery-0-name"
+                name="surgery-0-name"
                 type="text"
                 placeholder="Surgery"
                 class="input input-bordered w-full"
               />
-              <label class="sr-only" for="surgery-date">Date</label>
-              <input id="surgery-date" type="date" class="input input-bordered w-full" />
-              <label class="sr-only" for="surgery-hospital-and-surgeon">Hospital and Surgeon</label>
+              <label class="sr-only" for="surgery-0-date">Date</label>
+              <input
+                id="surgery-0-date"
+                name="surgery-0-date"
+                type="date"
+                class="input input-bordered w-full"
+              />
               <div class="flex gap-2">
+                <label class="sr-only" for="surgery-0-hospital">Hospital and Surgeon</label>
                 <input
-                  id="surgery-hospital-and-surgeon"
+                  id="surgery-0-hospital"
+                  name="surgery-0-hospital"
                   type="text"
                   placeholder="Hospital and Surgeon"
                   class="input input-bordered w-full flex-1"
@@ -1747,7 +1875,7 @@ import Layout from '../layouts/Layout.astro'
                 </button>
               </div>
             </div>
-          </fieldshet>
+          </fieldset>
 
           <button id="add-surgery-button" type="button" class="btn btn-outline btn-primary">
             <svg
@@ -1779,17 +1907,19 @@ import Layout from '../layouts/Layout.astro'
             <div
               class="medication-entry grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) mb-(--site-padding-base)"
             >
-              <label class="sr-only" for="medication-name">Medication</label>
+              <label class="sr-only" for="medication-0-name">Medication</label>
               <input
-                id="medication-name"
+                id="medication-0-name"
+                name="medication-0-name"
                 type="text"
                 placeholder="Medication"
                 class="input input-bordered w-full"
               />
               <div class="flex gap-2">
-                <label class="sr-only" for="medication-reason">Reason</label>
+                <label class="sr-only" for="medication-0-reason">Reason</label>
                 <input
-                  id="medication-reason"
+                  id="medication-0-reason"
+                  name="medication-0-reason"
                   type="text"
                   placeholder="Reason"
                   class="input input-bordered w-full flex-1"
@@ -1846,6 +1976,7 @@ import Layout from '../layouts/Layout.astro'
             <label class="sr-only" for="additional-information">Additional Information</label>
             <textarea
               id="additional-information"
+              name="additional-information"
               class="textarea h-32 w-full rounded-box"
               placeholder="Please provide any additional information..."></textarea>
           </fieldset>
@@ -1884,6 +2015,7 @@ import Layout from '../layouts/Layout.astro'
             <label class="p whitespace-normal">
               <input
                 id="treatment-consent"
+                name="treatment-consent"
                 type="checkbox"
                 class="checkbox checkbox-primary"
                 required
@@ -1906,6 +2038,7 @@ import Layout from '../layouts/Layout.astro'
             <label class="flex flex-col gap-2">
               <span class="p whitespace-normal">Signature of Parent or Guardian</span>
               <input
+                name="minor-consent-signature"
                 type="text"
                 placeholder="Type your full name to sign"
                 class="input input-bordered w-full"
@@ -1913,6 +2046,12 @@ import Layout from '../layouts/Layout.astro'
             </label>
           </div>
         </Card>
+
+        <!-- Form Messages -->
+        <div id="form-messages">
+          <!-- Success message will be displayed here -->
+          <p id="form-message-text"></p>
+        </div>
 
         <!-- Submit Button -->
         <button type="submit" class="btn btn-lg btn-primary w-fit"> Submit Intake Form </button>
@@ -1932,6 +2071,10 @@ import Layout from '../layouts/Layout.astro'
     const container = document.getElementById('surgeries-container')
     if (!container) return
 
+    // Get the current count of surgery entries to generate proper name attributes
+    const existingEntries = container.querySelectorAll('.surgery-entry')
+    const index = existingEntries.length
+
     const newEntry = document.createElement('div')
     newEntry.classList.add(
       'surgery-entry',
@@ -1942,18 +2085,26 @@ import Layout from '../layouts/Layout.astro'
       'mb-(--site-padding-base)'
     )
     newEntry.innerHTML = /* HTML */ `
-      <label class="sr-only" for="surgery-name">Surgery</label>
+      <label class="sr-only" for="surgery-${index}-name">Surgery</label>
       <input
-        id="surgery-name"
+        id="surgery-${index}-name"
+        name="surgery-${index}-name"
         type="text"
         placeholder="Surgery"
         class="input input-bordered w-full"
       />
-      <label class="sr-only" for="surgery-date">Date</label>
-      <input id="surgery-date" type="date" class="input input-bordered w-full" />
+      <label class="sr-only" for="surgery-${index}-date">Date</label>
+      <input
+        id="surgery-${index}-date"
+        name="surgery-${index}-date"
+        type="date"
+        class="input input-bordered w-full"
+      />
       <div class="flex gap-2">
-        <label class="sr-only" for="surgery-hospital-and-surgeon">Hospital and Surgeon</label>
+        <label class="sr-only" for="surgery-${index}-hospital">Hospital and Surgeon</label>
         <input
+          id="surgery-${index}-hospital"
+          name="surgery-${index}-hospital"
           type="text"
           placeholder="Hospital and Surgeon"
           class="input input-bordered w-full flex-1"
@@ -1993,6 +2144,10 @@ import Layout from '../layouts/Layout.astro'
     const container = document.getElementById('medications-container')
     if (!container) return
 
+    // Get the current count of medication entries to generate proper name attributes
+    const existingEntries = container.querySelectorAll('.medication-entry')
+    const index = existingEntries.length
+
     const newEntry = document.createElement('div')
     newEntry.classList.add(
       'medication-entry',
@@ -2003,17 +2158,19 @@ import Layout from '../layouts/Layout.astro'
       'mb-(--site-padding-base)'
     )
     newEntry.innerHTML = /* HTML */ `
-      <label class="sr-only" for="medication-name">Medication</label>
+      <label class="sr-only" for="medication-${index}-name">Medication</label>
       <input
-        id="medication-name"
+        id="medication-${index}-name"
+        name="medication-${index}-name"
         type="text"
         placeholder="Medication"
         class="input input-bordered w-full"
       />
       <div class="flex gap-2">
-        <label class="sr-only" for="medication-reason">Reason</label>
+        <label class="sr-only" for="medication-${index}-reason">Reason</label>
         <input
-          id="medication-reason"
+          id="medication-${index}-reason"
+          name="medication-${index}-reason"
           type="text"
           placeholder="Reason"
           class="input input-bordered w-full flex-1"
@@ -2069,4 +2226,96 @@ import Layout from '../layouts/Layout.astro'
   // Add event listeners to the add surgery and medication buttons
   addSurgeryButton?.addEventListener('click', addSurgeryEntry)
   addMedicationButton?.addEventListener('click', addMedicationEntry)
+
+  // Handle form submission with API submission
+  const intakeForm = document.getElementById('intake-form') as HTMLFormElement
+  const messageText = document.getElementById('form-message-text') as HTMLParagraphElement
+
+  intakeForm?.addEventListener('submit', async function (e) {
+    e.preventDefault()
+
+    // Get submit button and show loading state
+    const submitButton = this.querySelector('button[type="submit"]') as HTMLButtonElement
+    const originalText = submitButton.textContent
+    submitButton.disabled = true
+    submitButton.textContent = 'Submitting...'
+
+    try {
+      // Get form data
+      const formData = new FormData(this)
+
+      // Basic validation for required fields
+      const firstName = formData.get('first-name') as string
+      const lastName = formData.get('last-name') as string
+      const email = formData.get('email') as string
+      const emergencyContactName = formData.get('emergency-contact-name') as string
+      const emergencyContactPhone = formData.get('emergency-contact-phone') as string
+      const reason = formData.get('reason') as string
+      const problemDescription = formData.get(
+        'reason-for-seeking-mld-medical-description'
+      ) as string
+
+      if (!firstName || !lastName || !email) {
+        throw new Error('Please fill in all required personal information fields.')
+      }
+
+      if (!emergencyContactName || !emergencyContactPhone) {
+        throw new Error('Please fill in all required emergency contact fields.')
+      }
+
+      if (!reason) {
+        throw new Error('Please select a reason for seeking Manual Lymphatic Drainage.')
+      }
+
+      if (!problemDescription) {
+        throw new Error('Please describe your problem/reason for seeking treatment.')
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!emailRegex.test(email)) {
+        throw new Error('Please enter a valid email address.')
+      }
+
+      // Submit to API
+      const response = await fetch('/api/forms/intake', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        // Show success message
+        messageText.innerHTML = `<strong>${result.message || 'Thank you for submitting your intake form! We will review it and get back to you soon.'}</strong>`
+        messageText.classList.remove('text-error')
+        messageText.classList.add('text-success')
+
+        // Reset form
+        this.reset()
+
+        // Scroll to the top to show the success message
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else {
+        // Show error message
+        messageText.innerHTML = `<strong>${result.error || 'An error occurred while submitting the form.'}</strong>`
+        messageText.classList.remove('text-success')
+        messageText.classList.add('text-error')
+
+        throw new Error(result.error || 'An error occurred while submitting the form.')
+      }
+    } catch (error) {
+      // Show error message
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred.'
+      messageText.innerHTML = `<strong>${errorMessage || 'An unexpected error occurred.'}</strong>`
+      messageText.classList.remove('text-success')
+      messageText.classList.add('text-error')
+
+      throw new Error(errorMessage || 'An unexpected error occurred.')
+    } finally {
+      // Reset button state
+      submitButton.disabled = false
+      submitButton.textContent = originalText
+    }
+  })
 </script>

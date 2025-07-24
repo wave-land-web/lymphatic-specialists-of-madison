@@ -183,12 +183,14 @@ export interface IntakeFormData {
     name?: string
     date?: string
     hospitalAndSurgeon?: string
+    _key?: string // Added for Sanity array item identification
   }>
 
   // Medications
   medications?: Array<{
     name?: string
     reason?: string
+    _key?: string // Added for Sanity array item identification
   }>
 
   // Additional Information
@@ -270,6 +272,19 @@ export async function createIntakeFormSubmission(
 
   const userId = await createOrUpdateUser(client, userData)
 
+  // Add _key properties to array items for Sanity
+  // Sanity requires unique _key properties for all array items when created via API client
+  // Without these, you'll get "Missing keys" warnings in Sanity Studio
+  const surgeriesWithKeys = formData.surgeries?.map((surgery, index) => ({
+    ...surgery,
+    _key: `surgery-${Date.now()}-${index}`,
+  }))
+
+  const medicationsWithKeys = formData.medications?.map((medication, index) => ({
+    ...medication,
+    _key: `medication-${Date.now()}-${index}`,
+  }))
+
   // Create intake form submission with exact schema structure
   const submission = await client.create({
     _type: 'intakeForm',
@@ -282,8 +297,8 @@ export async function createIntakeFormSubmission(
     howDidYouHear: formData.howDidYouHear,
     reasonForSeeking: formData.reasonForSeeking,
     medicalConditions: formData.medicalConditions,
-    surgeries: formData.surgeries,
-    medications: formData.medications,
+    surgeries: surgeriesWithKeys,
+    medications: medicationsWithKeys,
     additionalInformation: formData.additionalInformation,
     consent: formData.consent,
   })
