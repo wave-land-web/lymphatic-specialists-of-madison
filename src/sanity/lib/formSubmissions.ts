@@ -292,6 +292,7 @@ export async function createIntakeFormSubmission(
       _type: 'reference',
       _ref: userId,
     },
+    submittedAt: new Date().toISOString(),
     personalInfo: formData.personalInfo,
     emergencyContact: formData.emergencyContact,
     howDidYouHear: formData.howDidYouHear,
