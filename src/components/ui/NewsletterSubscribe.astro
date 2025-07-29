@@ -7,8 +7,7 @@
 
   <!-- Email Subscribe Form -->
   <div class="mb-(--site-padding-md) max-w-md mx-auto lsa lsa-slide-up delay-200 no-repeat">
-    <!-- TODO: hook up to something -->
-    <form class="join w-full" method="POST" action="/">
+    <form id="newsletter-form" class="join w-full">
       <input
         id="email"
         type="email"
@@ -18,9 +17,16 @@
         required
       />
       <label class="sr-only" for="email">Email</label>
-      <button type="submit" class="btn btn-accent join-item">Subscribe</button>
+      <button type="submit" class="btn btn-accent join-item" id="submit-btn">
+        <span id="submit-text">Subscribe</span>
+        <span id="loading-spinner" class="loading loading-spinner loading-sm hidden"></span>
+      </button>
     </form>
-    <p class="text-sm">No spam, unsubscribe anytime. We respect your privacy.</p>
+
+    <!-- Success/Error Messages -->
+    <div id="form-message" class="mt-4 text-sm" role="alert" aria-live="polite"></div>
+
+    <p class="text-sm mt-2">No spam, unsubscribe anytime. We respect your privacy.</p>
   </div>
 
   <!-- Primary and Secondary CTAs -->
@@ -51,3 +57,79 @@
     </a>
   </div>
 </div>
+
+<script>
+  // Newsletter subscription form handling
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletter-form') as HTMLFormElement
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement
+    const submitText = document.getElementById('submit-text') as HTMLSpanElement
+    const loadingSpinner = document.getElementById('loading-spinner') as HTMLSpanElement
+    const messageDiv = document.getElementById('form-message') as HTMLDivElement
+    const emailInput = document.getElementById('email') as HTMLInputElement
+
+    if (!form || !submitBtn || !submitText || !loadingSpinner || !messageDiv || !emailInput) {
+      console.error('Newsletter form elements not found')
+      return
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+
+      // Reset messages
+      messageDiv.textContent = ''
+      messageDiv.className = 'mt-4 text-sm'
+
+      // Get form data
+      const formData = new FormData(form)
+
+      // Show loading state
+      setLoadingState(true)
+
+      try {
+        const response = await fetch('/api/forms/subscribe.json', {
+          method: 'POST',
+          body: formData,
+        })
+
+        const result = await response.json()
+
+        if (result.success) {
+          showMessage(result.message || 'Successfully subscribed!', 'success')
+          emailInput.value = '' // Clear the input
+        } else {
+          showMessage(result.error || 'Failed to subscribe. Please try again.', 'error')
+        }
+      } catch (error) {
+        console.error('Subscription error:', error)
+        showMessage('Network error. Please check your connection and try again.', 'error')
+      } finally {
+        setLoadingState(false)
+      }
+    })
+
+    function setLoadingState(loading: boolean) {
+      if (loading) {
+        submitText.classList.add('hidden')
+        loadingSpinner.classList.remove('hidden')
+        submitBtn.disabled = true
+        emailInput.disabled = true
+      } else {
+        submitText.classList.remove('hidden')
+        loadingSpinner.classList.add('hidden')
+        submitBtn.disabled = false
+        emailInput.disabled = false
+      }
+    }
+
+    function showMessage(message: string, type: 'success' | 'error') {
+      messageDiv.textContent = message
+
+      if (type === 'success') {
+        messageDiv.className = 'mt-4 text-sm font-bold text-success'
+      } else {
+        messageDiv.className = 'mt-4 text-sm text-error'
+      }
+    }
+  })
+</script>

@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = 'Madison Lymphatic and Manual Therapy'
 export const SITE_DESCRIPTION =
-  "Madison Lymphatics and Manual Therapy is Madison's first lymphatic-centric clinic. We specialize in Manual Lymphatic Drainage (MLD)." // TODO: change to production description
+  "Lymphatic Specialists of Madison is Madison's first lymphatic-centric clinic. We specialize in Manual Lymphatic Drainage (MLD)." // TODO: change to production description
 export const SITE_URL = 'http://localhost:4321' // TODO: change to production url
 export const NAVIGATION = [
   {

@@ -11,18 +11,19 @@ export default defineType({
       name: 'firstName',
       title: 'First Name',
       type: 'string',
-      validation: (Rule) => Rule.required().error('First name is required'),
+      description: 'Optional first name',
     }),
     defineField({
       name: 'lastName',
       title: 'Last Name',
       type: 'string',
-      validation: (Rule) => Rule.required().error('Last name is required'),
+      description: 'Optional last name',
     }),
     defineField({
       name: 'email',
       title: 'Email Address',
       type: 'email',
+      description: 'Required email address',
       validation: (Rule) => Rule.required().error('A valid email address is required'),
     }),
     defineField({
