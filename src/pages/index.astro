@@ -1,10 +1,9 @@
 ---
 import { getImage, Image } from 'astro:assets'
+import lymphaticDrainageImage from '../assets/images/lymphatic-drainage.jpg'
 import LymphaticSystemImage from '../assets/images/lymphatic-system.png'
-import PlaceholderTwoImage from '../assets/images/placeholder-2.jpg'
-import PlaceholderThreeImage from '../assets/images/placeholder-3.jpg'
-import PlaceholderFourImage from '../assets/images/placeholder-4.jpg'
-import PlaceholderFiveImage from '../assets/images/placeholder-5.jpg'
+import message from '../assets/images/message.jpg'
+import postSurgicalImage from '../assets/images/post-surgical.jpg'
 import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
@@ -13,13 +12,12 @@ import ThemedSection from '../components/ui/ThemedSection.astro'
 import { SERVICES, TESTIMONIALS } from '../consts'
 import Layout from '../layouts/Layout.astro'
 
-const placeholderThreeImage = await getImage({ src: PlaceholderThreeImage })
+const messageImage = await getImage({ src: message })
 
 // Create a mapping of image keys to actual image imports
 const serviceImages: Record<string, any> = {
-  placeholderTwo: PlaceholderTwoImage,
-  placeholderFour: PlaceholderFourImage,
-  placeholderFive: PlaceholderFiveImage,
+  lympaticDrainage: lymphaticDrainageImage,
+  postSurgical: postSurgicalImage,
 }
 ---
 
@@ -30,7 +28,7 @@ const serviceImages: Record<string, any> = {
       Lymphatic Specialists of Madison</PageTitle
     >
     <p class="h2 text-center mx-auto lsa lsa-slide-up delay-100">
-      Madison's First Lymphatic-Centric Clinic
+      Madison's Best Lymphatic Care Clinic
     </p>
     <div class="grid
       grid-cols-1
@@ -39,25 +37,26 @@ const serviceImages: Record<string, any> = {
       <div class="prose">
         <p class="lsa lsa-slide-up delay-200 no-repeat">
           We are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD) and
-          have experience and comfort treating: post-surgical patients, cancer patients, chronic
+          have experience and comfort treating: post-surgical patients, cancer patients,
+          post-mastectomy, DIEP flap reconstruction, post-plastic surgery patients, chronic
           lymphatic conditions such as lymphedema and lipedema, as well as those with generalized
-          inflammation, chronic immune impaired conditions (Lyme disease, Ehlors Danlos Syndrome,
-          rheumatoid arthritis, etc), long/post-COVID symptoms and hypersensitivity.
+          inflammation, chronic immune impaired conditions (Lyme disease, Ehlers-Danlos Syndrome,
+          rheumatoid arthritis, etc), long/post-COVID symptoms, and hypersensitivity.
         </p>
         <p class="lsa lsa-slide-up delay-300 no-repeat">
-          Established in 2023, Lymphatic Specialists of Madison is owned and operated by Courtney
-          Rolnick, PT, DPT, CMLDT, who has 12+ years of MLD specific experience treating a wide
-          array of patients with complex health histories. Formerly known as Therapeutic Massage
-          Center of Middleton, <br /><span class="mt-4 block h3"
-            >we strive to empower patients with knowledge and information to help them navigate
-            their health journey.</span
+          Established in 2025, Lymphatic Specialists of Madison is owned and operated by Courtney
+          Rolnick, PT, DPT, CMLDT, who has been a practicing PT for 9 years and has specialized in
+          lymphatics for 7 years.<br /><span class="mt-4 block h3"
+            >Courtney is deeply passionate about lymphatic work and building a team of compassionate
+            providers who are highly educated and skilled to help you on your health journey.</span
           >
         </p>
       </div>
       <div class="prose">
         <p class="lsa lsa-slide-up delay-400 no-repeat">
           For more information on how Lymphatic Specialists of Madison can help you achieve your
-          health goals, call us at <a href="tel:6082038550" class="link link-accent">608-203-8550</a
+          health goals, call us at <a href="tel:6083582082" class="link link-accent"
+            >(608) 358-2082</a
           >.
         </p>
         <p class="text-sm lsa lsa-slide-up delay-500 no-repeat">
@@ -68,18 +67,17 @@ const serviceImages: Record<string, any> = {
             farther out - we use our cancellation list as a means to get patients in sooner. Thank you.
           </em>
         </p>
+        <div class="lsa lsa-slide-up delay-600 no-repeat">
+          <a
+            href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Book Now
+          </a>
+        </div>
       </div>
-    </div>
-
-    <div class="lsa lsa-slide-up delay-500 no-repeat">
-      <a
-        href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-primary"
-      >
-        Book Now
-      </a>
     </div>
   </PageHeader>
 
@@ -118,10 +116,61 @@ const serviceImages: Record<string, any> = {
       </div>
     </section>
 
+    <ThemedSection id="what-is-the-lymphatic-system" class="bg-primary/5">
+      <div
+        class="wrapper w-full p-(--site-padding-md) md:p-(--site-padding-lg) flex flex-col items-start gap-(--site-padding-md)"
+      >
+        <h2 class="h1 lsa lsa-slide-up no-repeat">What is Scar Tissue Work?</h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) md:gap-(--site-padding-xl) w-full"
+        >
+          <div class="space-y-4">
+            <p class="h3 lsa lsa-slide-up delay-100 no-repeat">
+              Scar tissue is fibrous tissue that replaces normal skin or other tissue after an
+              injury, wound, or trauma.
+            </p>
+            <p class="lsa lsa-slide-up delay-200 no-repeat">
+              Scar tissue is composed of collagen, the same as the tissue it replaces, but the fiber
+              composition of the protein is different — instead of a random basketweave formation
+              found in normal tissue, the collagen fibers in scar tissue are cross-linked and form a
+              pronounced alignment in a single direction. This difference causes a lack of
+              elasticity, making scars more taut, which in turn can affect the movement and function
+              of surrounding tissues.
+            </p>
+            <p class="lsa lsa-slide-up delay-300 no-repeat">
+              In addition, scar tissue can form adhesions to tissues underneath, causing puckering,
+              pain, tethering, and other more serious issues. Superficial or deep nerve entrapments
+              can also occur, causing pain and dysfunction. Normal scars appear as a thin white line
+              and are flat.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <p class="lsa lsa-slide-up delay-400 no-repeat">
+              Other types of scar development that aren't considered normal and tend to cause issues
+              are hypertrophic, keloid, adhered, and contracted scars. We use manual techniques
+              along with cupping in practice at LSOM to help remodel scar tissue to help prevent
+              issues from arising in newly formed scar tissue and to help already formed scars that
+              are problematic, improving both appearance, mobility, and function.
+            </p>
+            <p class="lsa lsa-slide-up delay-500 no-repeat">
+              A great analogy for how we remodel scar tissue is to think about kneading dough. When
+              beginning the kneading process, the dough will bounce back to its original shape, and
+              it takes continual molding to make the dough flatten out over time and then keep this
+              flattened shape.
+            </p>
+            <p class="lsa lsa-slide-up delay-600 no-repeat">
+              We are doing the same thing with scar tissue — just enabling increased elasticity and
+              movement through constant hands-on reinforcement and remodeling.
+            </p>
+          </div>
+        </div>
+      </div>
+    </ThemedSection>
+
     <section
       id="about"
       class="hero mb-(--site-padding-2xl) p-0 shadow-sm bg-cover bg-center md:bg-fixed"
-      style={`background-image: url(${placeholderThreeImage.src});`}
+      style={`background-image: url(${messageImage.src});`}
     >
       <div class="hero-overlay bg-black/70"></div>
       <div
@@ -133,43 +182,38 @@ const serviceImages: Record<string, any> = {
         >
           <div class="space-y-4">
             <p class="h3 text-primary-content text-shadow-lg lsa lsa-slide-up delay-100 no-repeat">
-              At Lymphatic Specialists of Madison, we approach our sessions differently than other
+              At Lymphatic Specialists of Madison, we approach our sessions differently from other
               clinics that you may have been to before.
             </p>
             <p class="text-primary-content text-shadow-lg lsa lsa-slide-up delay-200 no-repeat">
               We always focus on the patient's individual needs, analyzing a number of different
-              aspects of their health, to see how Manual Lymphatic Drainage or Therapeutic Massage
-              would be most beneficial. We believe that educating our patients on their lymphatic
-              imbalances and what may be causing it is imperative to recovery and health.
+              aspects of their health, to see how Manual Lymphatic Drainage would be most
+              beneficial. We believe that educating our patients on the lymphatic system and looking
+              at each individual holistically greatly improves one's understanding of their body and
+              health, and in turn allows them to feel empowered and supported.
             </p>
             <p class="lsa text-primary-content text-shadow-lg lsa-slide-up delay-300 no-repeat">
-              Our practitioners are graduates of nationally accredited schools and have thorough
-              knowledge of the lymphatic system, anatomy, physiology, kinesiology, and an
-              understanding of how it all works together.
+              Our practitioners hold master's and doctorate degrees, making them experts in their
+              fields. Their education provided them with exceptional knowledge of the lymphatic
+              system, anatomy, physiology, kinesiology, and an understanding of how it all works
+              together. This ensures that you, the patient, are getting the best treatment possible.
             </p>
           </div>
           <div class="space-y-4">
             <p class="lsa text-primary-content text-shadow-lg lsa-slide-up delay-400 no-repeat">
-              Before each treatment, we do a full intake with the patient asking questions that will
-              help formulate a session designed for optimal results. We never do pre-choreographed
-              routines and continually strive to provide our patients with unique treatments that
-              produce the desired outcome.
+              Before each treatment, we do an assessment with the patient, asking questions that
+              will help formulate a treatment plan for the session that is designed for optimal
+              results. All of our practitioners at Lymphatic Specialists of Madison use the Vodder
+              Method in Manual Lymphatic Drainage sessions. In addition, we will use any of the
+              “tools in our toolbox” to help in the treatment session if we feel that something is
+              blocking or inhibiting our ability to drain the lymph system properly. That can look
+              like doing soft tissue work, myofascial work, scar tissue work, deep breathing, or
+              cupping.
             </p>
-            <p class="lsa text-primary-content text-shadow-lg lsa-slide-up delay-500 no-repeat">
-              Our practitioners at Lymphatic Specialists of Madison use the Vodder Method in Manual
-              Lymphatic Drainage sessions. Modalities that may be used during a typical massage
-              therapy session include Myofascial Release, Trigger Point Therapy, Deep Tissue
-              Massage, Swedish Massage and Cranio-Sacral Therapy.
-            </p>
-            <p class="lsa text-primary-content text-shadow-lg lsa-slide-up delay-600 no-repeat">
-              Sessions at the Lymphatic Specialists of Madison are the perfect compliment to any
-              physical therapy, chiropractic, or naturopathic care.
-            </p>
+            <div class="lsa lsa-slide-up delay-700 no-repeat">
+              <a href="/careers" class="btn btn-accent">About Our Team</a>
+            </div>
           </div>
-        </div>
-
-        <div class="lsa lsa-slide-up delay-700 no-repeat">
-          <a href="/careers" class="btn btn-accent">About Our Team</a>
         </div>
       </div>
     </section>
@@ -250,26 +294,26 @@ const serviceImages: Record<string, any> = {
               number={1}
               text="Imagine your lymph system as a bathtub shower."
             />
-            <ListItem listItemClass="" number={2} text="Your lymph fluid is shower water." />
-            <ListItem listItemClass="" number={3} text="Your body is the tub." />
+            <ListItem number={2} text="Your lymph fluid is shower water." />
+            <ListItem number={3} text="Your body is the tub." />
             <ListItem
-              listItemClass=""
               number={4}
-              listItemClass=""
-              text="Your lymph nodes are the drain (imaging lots of little drains - not one big one)."
+              text="Your lymph nodes are the drain (imagine a hair catcher on top of the drain so lots of little holes )"
             />
             <ListItem
-              listItemClass=""
               number={5}
               text="In a normal healthy lymph system - water from the shower comes out as fast as it goes down the drain leaving no standing water behind."
             />
           </ul>
           <p class="lsa lsa-slide-up no-repeat">
-            Now imagine an acute injury or trauma like a sprained ankle - this looks like turning
-            the shower water off and putting the bathtub water on full blast for a short period of
-            time. Let's say 20 mins. There is standing water but eventually your body (the bathtub
-            drains) are able to move this excess fluid through, leaving no standing water after a
-            couple of days.
+            Now imagine an acute injury or trauma like a sprained ankle (in the health field, acute
+            means there is a beginning and an end) — this looks like letting the shower water run,
+            but also turning on the bathtub water at the same time. The amount of time and intensity
+            at which the bathtub water turns on varies based on the acute trauma, but it is more
+            than normal. Now there is standing water, but hopefully and usually eventually your body
+            (the bathtub drains) can move this excess fluid through, leaving no standing water after
+            a couple of days. Sometimes this doesn't happen, and that's where we step in - to help
+            move along that excess fluid back into the drain!
           </p>
         </div>
       </div>
@@ -279,18 +323,21 @@ const serviceImages: Record<string, any> = {
       >
         <div class="order-2 md:order-first prose lg:prose-xl">
           <p class="h3 lsa lsa-slide-up no-repeat">
-            Imagine chronic inflammation, like in the case of an autoimmune disease.
+            Now imagine chronic inflammation, like in the case of an autoimmune disease.
           </p>
           <p class="lsa lsa-slide-up no-repeat">
-            This looks like turning the shower water off and putting the bathtub water on a slow
-            steady stream forever. There is always a small amount of standing water in the bathtub
-            because this stream is always larger than the amount of shower water and your drains can
-            only handle the amount of water produced when the shower is turned on.
+            This looks like leaving the shower water on AND putting the bathtub water on at the same
+            time forever. Again, the intensity can vary — but there is always more water. This
+            leaves a constant amount of standing water in the bathtub because this amount is always
+            larger than the amount of shower water, and your drains can only handle the amount of
+            water produced when the shower is turned on. Our job is not to let that standing water
+            accumulate on the bottom of the bathtub, but to chip away at it each session to get your
+            body in a more manageable, functional, and optimal place.
           </p>
           <p class="lsa lsa-slide-up no-repeat">
-            Now imagine lymphedema, which can be from lymph node removal, trauma, radiation or scar
+            Now imagine lymphedema, which can be from lymph node removal, trauma, radiation, or scar
             tissue. This is like taking away some of the drains. There is no excess water, just not
-            enough drains to allow for no standing water.
+            enough drains to allow the water to go down the drain without any issues.
           </p>
           <h3 class="h3 lsa lsa-slide-up no-repeat">What causes inflammation?</h3>
           <p class="lsa lsa-slide-up no-repeat">
@@ -302,25 +349,19 @@ const serviceImages: Record<string, any> = {
           </p>
           <ul class="list">
             <ListItem
-              listItemClass=""
               number={1}
-              text="Diet: eating foods that create an inflammatory/allergic response to or eating too little/too much."
+              text="Diet: eating foods that create an inflammatory/allergic response to, or eating too little/too much."
             />
-            <ListItem listItemClass="" number={2} text="Exercise: too little or too much." />
-            <ListItem listItemClass="" number={3} text="Hormone imbalance." />
+            <ListItem number={2} text="Exercise: too little or too much." />
+            <ListItem number={3} text="Hormone imbalance." />
             <ListItem
-              listItemClass=""
               number={4}
               text="Genetics: having a predisposition to something like an autoimmune disease."
             />
-            <ListItem listItemClass="" number={5} text="Acute or chronic stress." />
-            <ListItem
-              listItemClass=""
-              number={6}
-              text="High Cortisol levels, (caused often by chronic stress)"
-            />
-            <ListItem listItemClass="" number={7} text="Environment: allergens or sensitivities." />
-            <ListItem listItemClass="" number={8} text="Acute trauma like an ankle sprain." />
+            <ListItem number={5} text="Acute or chronic stress." />
+            <ListItem number={6} text="High Cortisol levels (caused often by chronic stress)" />
+            <ListItem number={7} text="Environment: allergens or sensitivities." />
+            <ListItem number={8} text="Acute trauma" />
           </ul>
         </div>
 
@@ -333,20 +374,24 @@ const serviceImages: Record<string, any> = {
 
       <div class="wrapper p-(--site-padding-md) md:p-(--site-padding-lg) prose lg:prose-xl">
         <p class="h3 lsa lsa-slide-up no-repeat">
-          We look at all of the above factors that could play a role in inflammation and then assign
-          them as either a pebble, rock or boulder.
+          We look at all of the above factors that could play a role in excess inflammation and then
+          assign them as either a pebble, a rock, or a boulder, and decide which variables are
+          contributing to your particular situation and which variables can be changed, and which
+          cannot.
         </p>
         <p class="lsa lsa-slide-up no-repeat">
-          We imagine a cylindrical vase filled half way with water and start adding in your
-          individual inflammatory factors into the vase. We begin to see symptoms of inflammation
-          when the vase overflows.
+          We imagine a cylindrical vase filled halfway with water, and start adding in your
+          inflammatory factors into the vase. We begin to SEE/FEEL symptoms of inflammation when the
+          vase overflows.
         </p>
         <p class="lsa lsa-slide-up no-repeat">
           For example, if you have an autoimmune disease (this would be a boulder), have a
-          sensitivity to gluten (pebble) and a close relative just passed away (rock), this could be
-          enough to tip the water over the edge. We often make referrals to other professionals that
-          can help manage your pebbles, rocks and boulders so we can focus on what we do, which is
-          treat the overflow of inflammation (i.e. lymphatic fluid) that we see.
+          sensitivity to gluten (pebble), and a close relative just passed away (rock), this could
+          be enough to tip the water over the edge. This is where the interdisciplinary, holistic
+          approach to patient care comes in. We often make referrals to other professionals who can
+          help address your changeable pebbles, rocks, and boulders, so we can focus on what we
+          specialize in, which is to treat the overflow of inflammation (i.e., lymphatic fluid) that
+          we see.
         </p>
       </div>
     </ThemedSection>

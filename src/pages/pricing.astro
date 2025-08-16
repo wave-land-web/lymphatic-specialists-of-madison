@@ -15,110 +15,43 @@ import Layout from '../layouts/Layout.astro'
   </PageHeader>
 
   <main>
-    <section
-      id="manual-lymphatic-drainage"
-      class="wrapper container lg:max-w-screen-xl mx-auto mb-(--site-padding-2xl) pt-(--site-padding-base)"
-    >
+    <section id="manual-lymphatic-drainage" class="wrapper container max-w-xl mx-auto">
       <h2 class="h1 mb-(--site-padding-md) text-center text-primary lsa lsa-slide-up no-repeat">
         Manual Lymphatic Drainage
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 30 Minutes -->
-        <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="30-minute-session" className="text-center border-base-200 hover:border-primary">
-            <div class="flex flex-col items-center gap-(--site-padding-base)">
-              <h3>30 Minutes</h3>
-              <span class="h2 text-primary">$65</span>
-              <p class="h4 font-semibold">Neck and Face only.</p>
-            </div>
-            <div>
-              <p>Indications include:</p>
-              <p class="text-base-content/80">
-                Sinus/Tension Headache/Migraine, Puffy Eyes. Not all practitioners offer 30 min
-                sessions.
-              </p>
-            </div>
-            <div class="card-actions justify-center mt-auto">
-              <a
-                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary w-full"
-              >
-                Book Now
-              </a>
-              <a href="/services/manual-lymphatic-drainage" class="btn btn-dash w-full">
-                More Info
-              </a>
-            </div>
-          </Card>
-        </div>
-        <!-- 60 Minutes -->
-        <div class="lsa lsa-slide-up no-repeat flex">
-          <Card
-            id="60-minute-session"
-            className="text-center shadow-lg scale-[1.02] border-2 border-primary"
-          >
-            <div class="flex flex-col items-center gap-(--site-padding-base)">
-              <h3>60 Minutes</h3>
-              <span class="h2 text-primary">$130</span>
-              <p class="h4 font-semibold">Neck, Abdominal and Upper or Lower Extremity.</p>
-            </div>
-            <div>
-              <p>Indications include:</p>
-              <p class="text-base-content/80">
-                Lymphedema/Lipidema, Chronic Health Issues, Post-Traumatic Injury Edema, autoimmune
-                conditions, post-cancer, systemic inflammation, systemic inflammatory conditions
-                such as Lyme, PCOS, endometrios, gender affirming surgery and more. This is the
-                length of time we recommend for most patients.
-              </p>
-            </div>
-            <div class="card-actions justify-center mt-auto">
-              <a
-                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary w-full"
-              >
-                Book Now
-              </a>
-              <a href="/services/manual-lymphatic-drainage" class="btn btn-dash w-full">
-                More Info
-              </a>
-            </div>
-          </Card>
-        </div>
-        <!-- 90 Minutes -->
-        <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="90-minute-session" className="text-center border-base-200 hover:border-primary">
-            <div class="flex flex-col items-center gap-(--site-padding-base)">
-              <h3>90 Minutes</h3>
-              <span class="h2 text-primary">$195</span>
-              <p class="h4 font-semibold">Full Body Sequence.</p>
-            </div>
-            <div>
-              <p>Indications include:</p>
-              <p class="text-base-content/80">
-                Appropriate for those who feel they need more than the 60 mins session or for more
-                involved cases. Not all practitioners offer 90 min session.
-              </p>
-            </div>
-            <div class="card-actions justify-center mt-auto">
-              <a
-                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary w-full"
-              >
-                Book Now
-              </a>
-              <a href="/services/manual-lymphatic-drainage" class="btn btn-dash w-full">
-                More Info
-              </a>
-            </div>
-          </Card>
-        </div>
+      <!-- 60 Minutes -->
+      <div class="lsa lsa-slide-up no-repeat flex">
+        <Card
+          id="60-minute-session"
+          className="text-center shadow-lg scale-[1.02] border border-base-200 hover:border-primary max-w-lg mx-auto"
+        >
+          <div class="flex flex-col items-center gap-(--site-padding-base)">
+            <h3>60 Minutes</h3>
+            <span class="h2 text-primary">$130</span>
+            <p class="h4 font-semibold">
+              Full body sequence including neck, chest, abdomen, legs, arms, face
+            </p>
+          </div>
+          <div>
+            <p>Indications include:</p>
+            <p class="text-base-content/80">
+              Lymphedema, Lipedema, Chronic Health Issues, Post-Traumatic Injury Edema,
+              post-surgical edema from DIEP flap reconstruction, mastectomy, lumpectomy,
+              gender-affirming surgery, and any other surgeries that are cancer-related.
+            </p>
+          </div>
+          <div class="card-actions justify-center mt-auto">
+            <a
+              href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary w-full"
+            >
+              Book Now
+            </a>
+          </div>
+        </Card>
       </div>
     </section>
 
@@ -126,7 +59,7 @@ import Layout from '../layouts/Layout.astro'
       id="pre-post-surgical-manual-lymphatic-drainage"
       class="mb-(--site-padding-2xl) bg-accent/5"
     >
-      <div class="wrapper container lg:max-w-screen-xl mx-auto">
+      <div class="wrapper container max-w-xl mx-auto">
         <h2
           class="h1 max-w-2xl mx-auto mb-(--site-padding-md) text-center lsa lsa-slide-up no-repeat"
         >
@@ -169,95 +102,5 @@ import Layout from '../layouts/Layout.astro'
         </div>
       </div>
     </ThemedSection>
-
-    <section id="therapeutic-bodywork" class="wrapper container lg:max-w-screen-xl mx-auto">
-      <h2 class="h1 mb-(--site-padding-md) text-center lsa lsa-slide-up no-repeat">
-        Therapeutic Bodywork
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 30 Minutes -->
-        <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="30-minute-session" className="text-center border-base-200 hover:border-accent">
-            <div class="flex flex-col items-center gap-(--site-padding-base)">
-              <h3>30 Minutes</h3>
-              <span class="h2 text-accent">$55</span>
-            </div>
-            <div>
-              <p class="text-base-content/80">
-                The perfect session length for working on a specific area only, i.e.:
-                headache/migraine relief, tense neck and shoulder muscles.
-              </p>
-            </div>
-            <div class="card-actions justify-center mt-auto">
-              <a
-                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-accent w-full"
-              >
-                Book Now
-              </a>
-              <a href="/services/therapeutic-bodywork" class="btn btn-dash w-full"> More Info </a>
-            </div>
-          </Card>
-        </div>
-        <!-- 60 Minutes -->
-        <div class="lsa lsa-slide-up no-repeat flex">
-          <Card
-            id="60-minute-session"
-            className="text-center shadow-lg scale-[1.02] border-2 border-accent"
-          >
-            <div class="flex flex-col items-center gap-(--site-padding-base)">
-              <h3>60 Minutes</h3>
-              <span class="h2 text-accent">$110</span>
-            </div>
-            <div>
-              <p class="text-base-content/80">
-                A good choice for those seeking 2-3 areas of focus, i.e.: neck/shoulder/back pain,
-                lower back/hip tension, or more chronic issues like sciatica.
-              </p>
-            </div>
-            <div class="card-actions justify-center mt-auto">
-              <a
-                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-accent w-full"
-              >
-                Book Now
-              </a>
-              <a href="/services/therapeutic-bodywork" class="btn btn-dash w-full"> More Info </a>
-            </div>
-          </Card>
-        </div>
-        <!-- 90 Minutes -->
-        <div class="lsa lsa-slide-up no-repeat flex">
-          <Card id="90-minute-session" className="text-center border-base-200 hover:border-accent">
-            <div class="flex flex-col items-center gap-(--site-padding-base)">
-              <h3>90 Minutes</h3>
-              <span class="h2 text-accent">$165</span>
-            </div>
-            <div>
-              <p class="text-base-content/80">
-                A full body massage can be done thoroughly with the therapist concentrating on
-                several specific areas of tension.
-              </p>
-            </div>
-            <div class="card-actions justify-center mt-auto">
-              <a
-                href="https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-accent w-full"
-              >
-                Book Now
-              </a>
-              <a href="/services/therapeutic-bodywork" class="btn btn-dash w-full">More Info</a>
-            </div>
-          </Card>
-        </div>
-      </div>
-    </section>
   </main>
 </Layout>

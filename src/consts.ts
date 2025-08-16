@@ -1,9 +1,9 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Madison Lymphatic and Manual Therapy'
+export const SITE_TITLE = 'Lymphatic Specialists of Madison'
 export const SITE_DESCRIPTION =
-  "Lymphatic Specialists of Madison is Madison's first lymphatic-centric clinic. We specialize in Manual Lymphatic Drainage (MLD)." // TODO: change to production description
+  "Lymphatic Specialists of Madison is Madison's best lymphatic-centric clinic. We are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD)."
 export const SITE_URL = 'http://localhost:4321' // TODO: change to production url
 export const NAVIGATION = [
   {
@@ -21,10 +21,6 @@ export const NAVIGATION = [
       {
         label: 'Pre/Post-Surgical Manual Lymphatic Drainage',
         href: '/services/pre-post-surgical-manual-lymphatic-drainage',
-      },
-      {
-        label: 'Therapeutic Bodywork',
-        href: '/services/therapeutic-bodywork',
       },
     ],
   },
@@ -63,29 +59,20 @@ export const SERVICES = [
   {
     title: 'Manual Lymphatic Drainage',
     description:
-      'A gentle form of bodywork that stimulates the lymphatic system to reduce edema/systemic inflammation, remove toxins and waste, and encourage a healthy immune system. This type of treatment is appropriate for most (see contraindications). Very beneficial for patients: post-cancer, with lipidema/lymphedema, dealing with autoimmune conditions, with long COVID, with systemic inflammatory conditions such as Lyme, PCOS, endometriosis and many more.',
+      'A gentle form of bodywork that stimulates the lymphatic system to reduce edema/excess inflammation, remove toxins and waste, and encourage a healthy immune system. This type of treatment is appropriate for most (see contraindications). Very beneficial for patients: post-cancer, with lipidema/lymphedema, post-surgical, living with autoimmune conditions, with long COVID, with systemic inflammatory conditions such as Lyme, PCOS, endometriosis, and many more.',
     learnMoreHref: '/services/manual-lymphatic-drainage',
     bookNowHref:
       'https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison',
-    imageKey: 'placeholderTwo',
+    imageKey: 'lympaticDrainage',
   },
   {
     title: 'Post-Surgical Manual Lymphatic Drainage',
     description:
-      'Post-surgical manual lymphatic drainage helps clear out excess lymph fluid caused by surgical trauma, which assists in faster healing and pain reduction. Scar tissue work is also performed when appropriate to help reduce adhesions after surgery which will help with overall appearance of surgical site and surrounding areas, increased lymphatic flow and help reduce future scar adhesion complications.',
+      'Post-surgical manual lymphatic drainage helps clear out excess lymph fluid caused by surgical trauma, which assists in faster healing and pain reduction. Scar tissue work is also performed when indicated to help reduce adhesions after surgery which will help with overall appearance of surgical site and surrounding areas, increased lymphatic flow and help reduce future scar adhesion complications.',
     learnMoreHref: '/services/pre-post-surgical-manual-lymphatic-drainage',
     bookNowHref:
       'https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison',
-    imageKey: 'placeholderFour',
-  },
-  {
-    title: 'Therapeutic Bodywork',
-    description:
-      "An effective way to treat a wide array of tension and soft-tissue injury related conditions. Massage therapy sessions are designed for the client's individual needs in order to provide the optimal outcome. Massage therapy can be beneficial for not only relaxing tense muscle tissue, but also can help to calm an over active sympathetic nervous system.",
-    learnMoreHref: '/services/therapeutic-bodywork',
-    bookNowHref:
-      'https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison',
-    imageKey: 'placeholderFive',
+    imageKey: 'postSurgical',
   },
 ]
 
