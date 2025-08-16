@@ -1,1 +1,1 @@
-# Madison Lympthatics and Manual Therapy
+# Lymphatic Specialists of Madison
