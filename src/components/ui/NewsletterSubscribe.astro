@@ -7,7 +7,7 @@
 
   <!-- Email Subscribe Form -->
   <div class="mb-(--site-padding-md) max-w-md mx-auto lsa lsa-slide-up delay-200 no-repeat">
-    <form id="newsletter-form" class="join w-full">
+    <form id="newsletter-form" method="POST" action="/api/forms/subscribe" class="join w-full">
       <input
         id="email"
         type="email"
@@ -87,9 +87,12 @@
       setLoadingState(true)
 
       try {
-        const response = await fetch('/api/forms/subscribe.json', {
+        const response = await fetch('/api/forms/subscribe', {
           method: 'POST',
           body: formData,
+          headers: {
+            Accept: 'application/json',
+          },
         })
 
         const result = await response.json()
@@ -102,7 +105,7 @@
         }
       } catch (error) {
         console.error('Subscription error:', error)
-        showMessage('Network error. Please check your connection and try again.', 'error')
+        showMessage('Failed to subscribe. Please try again.', 'error')
       } finally {
         setLoadingState(false)
       }

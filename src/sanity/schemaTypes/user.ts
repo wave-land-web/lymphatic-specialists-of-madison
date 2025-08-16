@@ -47,6 +47,20 @@ export default defineType({
       initialValue: () => new Date().toISOString(),
       readOnly: true,
     }),
+    defineField({
+      name: 'updatedAt',
+      title: 'Updated At',
+      type: 'datetime',
+      description: 'When the user was last updated',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'unsubscribedAt',
+      title: 'Unsubscribed At',
+      type: 'datetime',
+      description: 'When the user unsubscribed from the newsletter',
+      readOnly: true,
+    }),
   ],
 
   preview: {

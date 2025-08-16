@@ -2293,9 +2293,6 @@ import Layout from '../layouts/Layout.astro'
 
         // Reset form
         this.reset()
-
-        // Scroll to the top to show the success message
-        window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
         // Show error message
         messageText.innerHTML = `<strong>${result.error || 'An error occurred while submitting the form.'}</strong>`

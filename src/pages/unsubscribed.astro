@@ -1,0 +1,42 @@
+---
+import PageTitle from '../components/text/PageTitle.astro'
+import PageHeader from '../components/ui/PageHeader.astro'
+import ThemedSection from '../components/ui/ThemedSection.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+  title="Unsubscribed"
+  description="You have been successfully unsubscribed from our newsletter."
+>
+  <PageHeader class="items-center mx-auto text-center">
+    <PageTitle>Unsubscribed</PageTitle>
+    <p class="h4 lsa lsa-slide-up delay-100 no-repeat">
+      You have been successfully unsubscribed from our newsletter.
+    </p>
+  </PageHeader>
+
+  <ThemedSection class="py-16">
+    <div class="relative z-10 max-w-2xl mx-auto wrapper container text-center prose">
+      <h2>We're sorry to see you go!</h2>
+
+      <p>
+        You have been successfully unsubscribed from our newsletter. You will no longer receive
+        emails from Lymphatic Specialists of Madison.
+      </p>
+
+      <p>
+        If you change your mind, you can always subscribe again using the newsletter form on our
+        website.
+      </p>
+
+      <div class="space-y-4">
+        <a href="/" class="btn btn-primary">Return to Homepage</a>
+
+        <div>
+          <a href="/contact" class="link link-accent">Contact us if you have any questions</a>
+        </div>
+      </div>
+    </div>
+  </ThemedSection>
+</Layout>
