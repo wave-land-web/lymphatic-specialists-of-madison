@@ -3,9 +3,9 @@ import {
   Button,
   Container,
   Head,
+  Heading,
   Hr,
   Html,
-  Img,
   Link,
   Preview,
   Section,
@@ -29,13 +29,7 @@ export default function Welcome({ email, isSubscribed = true }: WelcomeProps) {
       </Preview>
       <Body style={main}>
         <Container style={container}>
-          <Img
-            src={`${SITE_URL}/logo.svg`}
-            width="320"
-            height="auto"
-            alt="Lymphatic Specialists of Madison Logo"
-            style={logo}
-          />
+          <Heading style={heading}>Lymphatic Specialists of Madison</Heading>
 
           <Hr style={hr} />
 
@@ -93,9 +87,12 @@ const container = {
   margin: '0 auto',
   padding: '20px 0 48px',
 }
-
-const logo = {
-  margin: '0 auto',
+const heading = {
+  fontSize: '24px',
+  lineHeight: '28px',
+  fontWeight: 'bold',
+  color: '#1a1a1a',
+  marginBottom: '20px',
 }
 
 const paragraph = {

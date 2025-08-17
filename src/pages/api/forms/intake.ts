@@ -1,4 +1,8 @@
+import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
+import IntakeNotification from '../../../components/emails/IntakeNotification'
+import UserIntakeNotification from '../../../components/emails/UserIntakeNotification'
+import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
   createIntakeFormSubmission,
@@ -320,12 +324,115 @@ export const POST: APIRoute = async ({ request }) => {
     // Create intake form submission in Sanity
     const submission = await createIntakeFormSubmission(client, intakeData)
 
+    // Prepare emails to send using batch API
+    const emailsToSend = []
+
+    // Send user confirmation email
+    try {
+      console.log('Preparing user confirmation email for intake form submission...')
+
+      // Generate HTML version of user confirmation
+      const userConfirmationHtml = await render(
+        UserIntakeNotification({
+          firstName,
+        })
+      )
+
+      // Generate text version of user confirmation
+      const userConfirmationText = await render(
+        UserIntakeNotification({
+          firstName,
+        }),
+        {
+          plainText: true,
+        }
+      )
+
+      emailsToSend.push({
+        from: 'Lymphatic Specialists of Madison <test@wavelandweb.com>',
+        to: [email],
+        subject: 'Thank you for completing your intake form',
+        html: userConfirmationHtml,
+        text: userConfirmationText,
+      })
+    } catch (userEmailError) {
+      console.error('Failed to prepare user confirmation email:', userEmailError)
+      // Continue execution - admin notification can still be sent
+    }
+
+    // Send admin notification email
+    try {
+      console.log('Preparing admin notification for intake form submission...')
+
+      // Generate HTML version of admin notification
+      const notificationHtml = await render(
+        IntakeNotification({
+          firstName,
+          lastName,
+          email,
+          phoneDaytime: personalInfo.phoneDaytime,
+          phoneEvening: personalInfo.phoneEvening,
+          dateOfBirth: personalInfo.dateOfBirth,
+          emergencyContactName: emergencyContact.name,
+          emergencyContactPhone: emergencyContact.phone,
+          reasonForSeeking,
+          additionalInformation,
+        })
+      )
+
+      // Generate text version of admin notification
+      const notificationText = await render(
+        IntakeNotification({
+          firstName,
+          lastName,
+          email,
+          phoneDaytime: personalInfo.phoneDaytime,
+          phoneEvening: personalInfo.phoneEvening,
+          dateOfBirth: personalInfo.dateOfBirth,
+          emergencyContactName: emergencyContact.name,
+          emergencyContactPhone: emergencyContact.phone,
+          reasonForSeeking,
+          additionalInformation,
+        }),
+        {
+          plainText: true,
+        }
+      )
+
+      emailsToSend.push({
+        from: 'Lymphatic Specialists Website <test@wavelandweb.com>',
+        to: ['josh@wavelandweb.com'],
+        subject: `New intake form submission from ${firstName} ${lastName}`,
+        html: notificationHtml,
+        text: notificationText,
+      })
+    } catch (adminEmailError) {
+      console.error('Failed to prepare admin notification email:', adminEmailError)
+      // Continue execution - user confirmation can still be sent
+    }
+
+    // Send all emails in batch
+    if (emailsToSend.length > 0) {
+      try {
+        const { data: batchData, error: batchError } = await resend.batch.send(emailsToSend)
+
+        if (batchError) {
+          console.error('Error sending batch emails:', batchError)
+        } else {
+          console.log(`Successfully sent ${emailsToSend.length} emails:`, batchData)
+        }
+      } catch (emailError) {
+        console.error('Email send error:', emailError)
+        // Continue execution - form submission succeeded even if email failed
+      }
+    }
+
     // Return success response
     return new Response(
       JSON.stringify({
         success: true,
         message:
-          'Thank you for submitting your intake form! We will review it and get back to you soon.',
+          'Thank you for submitting your intake form! We will review it and get back to you soon. Please check your email for a confirmation.',
         submissionId: submission._id,
       }),
       {

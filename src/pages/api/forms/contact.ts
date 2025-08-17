@@ -1,6 +1,7 @@
 import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
 import ContactNotification from '../../../components/emails/ContactNotification'
+import UserContactNotification from '../../../components/emails/UserContactNotification'
 import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
@@ -72,9 +73,45 @@ export const POST: APIRoute = async ({ request }) => {
     // Create contact form submission in Sanity
     const submission = await createContactFormSubmission(client, contactData)
 
+    // Prepare emails to send using batch API
+    const emailsToSend = []
+
+    // Send user confirmation email
+    try {
+      console.log('Preparing user confirmation email for contact form submission...')
+
+      // Generate HTML version of user confirmation
+      const userConfirmationHtml = await render(
+        UserContactNotification({
+          firstName,
+        })
+      )
+
+      // Generate text version of user confirmation
+      const userConfirmationText = await render(
+        UserContactNotification({
+          firstName,
+        }),
+        {
+          plainText: true,
+        }
+      )
+
+      emailsToSend.push({
+        from: 'Lymphatic Specialists of Madison <test@wavelandweb.com>',
+        to: [emailAddress],
+        subject: 'Thank you for contacting Lymphatic Specialists of Madison',
+        html: userConfirmationHtml,
+        text: userConfirmationText,
+      })
+    } catch (userEmailError) {
+      console.error('Failed to prepare user confirmation email:', userEmailError)
+      // Continue execution - admin notification can still be sent
+    }
+
     // Send admin notification email
     try {
-      console.log('Sending admin notification for contact form submission...')
+      console.log('Preparing admin notification for contact form submission...')
 
       // Generate HTML version of admin notification
       const notificationHtml = await render(
@@ -103,30 +140,40 @@ export const POST: APIRoute = async ({ request }) => {
         }
       )
 
-      // Send admin notification email
-      const { data: emailData, error: emailError } = await resend.emails.send({
+      emailsToSend.push({
         from: 'Lymphatic Specialists Website <test@wavelandweb.com>',
         to: ['josh@wavelandweb.com'],
         subject: `New contact form submission from ${firstName} ${lastName}`,
         html: notificationHtml,
         text: notificationText,
       })
+    } catch (adminEmailError) {
+      console.error('Failed to prepare admin notification email:', adminEmailError)
+      // Continue execution - user confirmation can still be sent
+    }
 
-      if (emailError) {
-        console.error('Error sending admin notification:', emailError)
-      } else {
-        console.log('Successfully sent admin notification:', emailData)
+    // Send all emails in batch
+    if (emailsToSend.length > 0) {
+      try {
+        const { data: batchData, error: batchError } = await resend.batch.send(emailsToSend)
+
+        if (batchError) {
+          console.error('Error sending batch emails:', batchError)
+        } else {
+          console.log(`Successfully sent ${emailsToSend.length} emails:`, batchData)
+        }
+      } catch (emailError) {
+        console.error('Email send error:', emailError)
+        // Continue execution - form submission succeeded even if email failed
       }
-    } catch (emailError) {
-      console.error('Failed to send admin notification:', emailError)
-      // Continue execution - form submission succeeded even if email failed
     }
 
     // Return success response
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Thank you for your message! We will get back to you as soon as possible.',
+        message:
+          'Thank you for your message! We will get back to you as soon as possible. Please check your email for a confirmation.',
         submissionId: submission._id,
       }),
       {

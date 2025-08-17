@@ -3,6 +3,7 @@ import {
   Button,
   Container,
   Head,
+  Heading,
   Hr,
   Html,
   Preview,
@@ -39,7 +40,7 @@ export default function Notification({
       <Body style={main}>
         <Container style={container}>
           <Section style={container}>
-            <Text style={heading}>New Contact Form Submission</Text>
+            <Heading style={heading}>New Contact Form Submission</Heading>
 
             <Text style={paragraph}>
               Someone has sent you a message through your website contact form!

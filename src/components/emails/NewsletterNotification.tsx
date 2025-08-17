@@ -8,6 +8,7 @@ import {
   Preview,
   Section,
   Text,
+  Heading
 } from '@react-email/components'
 import { SITE_URL } from '../../consts'
 
@@ -32,7 +33,7 @@ export default function NewsletterNotification({
       <Body style={main}>
         <Container style={container}>
           <Section style={container}>
-            <Text style={heading}>New Newsletter Subscription</Text>
+            <Heading style={heading}>New Newsletter Subscription</Heading>
 
             <Text style={paragraph}>
               Someone has subscribed to your newsletter through your website!

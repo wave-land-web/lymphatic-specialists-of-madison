@@ -6,24 +6,22 @@ import {
   Heading,
   Hr,
   Html,
+  Link,
   Preview,
   Section,
   Text,
 } from '@react-email/components'
 import { SITE_URL } from '../../consts'
 
-interface UnsubscribeProps {
-  email: string
+interface UserContactNotificationProps {
+  firstName: string
 }
 
-export default function Unsubscribe({ email }: UnsubscribeProps) {
+export default function UserContactNotification({ firstName }: UserContactNotificationProps) {
   return (
     <Html>
       <Head />
-      <Preview>
-        {email || 'You'} have been unsubscribed from Lymphatic Specialists of Madison. You will no
-        longer receive any emails from us.
-      </Preview>
+      <Preview>Thank you for contacting Lymphatic Specialists of Madison, {firstName}</Preview>
       <Body style={main}>
         <Container style={container}>
           <Heading style={heading}>Lymphatic Specialists of Madison</Heading>
@@ -31,15 +29,40 @@ export default function Unsubscribe({ email }: UnsubscribeProps) {
           <Hr style={hr} />
 
           <Section style={container}>
+            <Text style={paragraph}>Hi {firstName},</Text>
+
             <Text style={paragraph}>
-              Hi {email || 'there'}, you have been unsubscribed from Lymphatic Specialists of
-              Madison. You will no longer receive any emails from us.
+              Thank you for reaching out to Lymphatic Specialists of Madison! We've received your
+              message and will get back to you as soon as possible.
             </Text>
-            <Text style={paragraph}>Come back anytime!</Text>
+
+            <Text style={paragraph}>
+              In the meantime, feel free to{' '}
+              <Link href={`${SITE_URL}`} style={link}>
+                explore our website
+              </Link>{' '}
+              to learn more about our services and how manual lymphatic drainage therapy can benefit
+              you.
+            </Text>
+
+            <Text style={paragraph}>
+              If you have any urgent questions or concerns, please don't hesitate to{' '}
+              <Link href={`${SITE_URL}/contact`} style={link}>
+                contact us directly.
+              </Link>
+            </Text>
+
+            <Text style={paragraph}>We look forward to connecting with you soon!</Text>
+
+            <Text style={paragraph}>
+              Warm regards,
+              <br />
+              The Lymphatic Specialists of Madison Team
+            </Text>
 
             <Section>
               <Button style={button} href={`${SITE_URL}`} target="_blank">
-                Back to Lymphatic Specialists of Madison
+                Visit Our Website
               </Button>
             </Section>
           </Section>
@@ -87,6 +110,11 @@ const button = {
   textAlign: 'center' as const,
   display: 'inline-block',
   padding: '12px',
+}
+
+const link = {
+  color: '#2b86a5',
+  textDecoration: 'none',
 }
 
 const hr = {
