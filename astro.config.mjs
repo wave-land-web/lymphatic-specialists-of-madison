@@ -32,7 +32,7 @@ export default defineConfig({
       }),
       RESEND_AUDIENCE_ID: envField.string({
         context: 'server',
-        access: 'public',
+        access: 'secret',
       }),
     },
     validateSecrets: true,
