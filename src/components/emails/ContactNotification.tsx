@@ -15,7 +15,6 @@ import { capitalize } from '../../lib/text'
 interface NotificationProps {
   firstName: string
   lastName: string
-  businessName: string
   email: string
   phone: string
   message?: string
@@ -25,7 +24,6 @@ interface NotificationProps {
 export default function Notification({
   firstName,
   lastName,
-  businessName,
   email,
   phone,
   message,
@@ -53,8 +51,6 @@ export default function Notification({
             <Text style={paragraph}>
               <strong>Name:</strong> {fullName}
               <br />
-              <strong>Business:</strong> {businessName}
-              <br />
               <strong>Email:</strong> {email}
               <br />
               <strong>Phone:</strong> {phone}
@@ -78,7 +74,7 @@ export default function Notification({
             </Section>
 
             <Text style={footer}>
-              This notification was sent from your JTBI website contact form.
+              This notification was sent from your Lymphatic Specialists website contact form.
             </Text>
           </Section>
         </Container>

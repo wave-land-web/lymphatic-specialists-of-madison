@@ -1,4 +1,7 @@
+import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
+import ContactNotification from '../../../components/emails/ContactNotification'
+import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
   createContactFormSubmission,
@@ -68,6 +71,56 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Create contact form submission in Sanity
     const submission = await createContactFormSubmission(client, contactData)
+
+    // Send admin notification email
+    try {
+      console.log('Sending admin notification for contact form submission...')
+
+      // Generate HTML version of admin notification
+      const notificationHtml = await render(
+        ContactNotification({
+          firstName,
+          lastName,
+          email: emailAddress,
+          phone: phoneNumber || '',
+          message: messageBody,
+          isSubscribed: subscribeToNewsletter,
+        })
+      )
+
+      // Generate text version of admin notification
+      const notificationText = await render(
+        ContactNotification({
+          firstName,
+          lastName,
+          email: emailAddress,
+          phone: phoneNumber || '',
+          message: messageBody,
+          isSubscribed: subscribeToNewsletter,
+        }),
+        {
+          plainText: true,
+        }
+      )
+
+      // Send admin notification email
+      const { data: emailData, error: emailError } = await resend.emails.send({
+        from: 'Lymphatic Specialists Website <test@wavelandweb.com>',
+        to: ['josh@wavelandweb.com'],
+        subject: `New contact form submission from ${firstName} ${lastName}`,
+        html: notificationHtml,
+        text: notificationText,
+      })
+
+      if (emailError) {
+        console.error('Error sending admin notification:', emailError)
+      } else {
+        console.log('Successfully sent admin notification:', emailData)
+      }
+    } catch (emailError) {
+      console.error('Failed to send admin notification:', emailError)
+      // Continue execution - form submission succeeded even if email failed
+    }
 
     // Return success response
     return new Response(

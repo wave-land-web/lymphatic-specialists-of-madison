@@ -2,7 +2,7 @@ export const prerender = false
 
 import { render } from '@react-email/render'
 import type { APIContext, APIRoute } from 'astro'
-import { RESEND_API_KEY, RESEND_AUDIENCE_ID } from 'astro:env/server'
+import { RESEND_AUDIENCE_ID } from 'astro:env/server'
 import NewsletterNotification from '../../../components/emails/NewsletterNotification'
 import Welcome from '../../../components/emails/Welcome'
 import { resend } from '../../../lib/resend'
@@ -11,29 +11,10 @@ import { sanityClient } from '../../../sanity/lib/client'
 export const POST: APIRoute = async (context: APIContext) => {
   const { request } = context
 
-  // Add early validation for required environment variables
-  if (!RESEND_API_KEY || !RESEND_AUDIENCE_ID) {
-    console.error('Missing required environment variables: RESEND_API_KEY or RESEND_AUDIENCE_ID')
-    return new Response(
-      JSON.stringify({
-        success: false,
-        error: 'Server configuration error. Please try again later.',
-      }),
-      {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      }
-    )
-  }
-
   try {
-    console.log('Newsletter subscription request started')
-
     // Parse form data
     const formData = await request.formData()
     const email = formData.get('email')?.toString()
-
-    console.log('Email received:', email)
 
     // Validate email
     if (!email) {
@@ -52,15 +33,11 @@ export const POST: APIRoute = async (context: APIContext) => {
 
     // Normalize email
     const normalizedEmail = email.trim().toLowerCase()
-    console.log('Normalized email:', normalizedEmail)
 
     // Check if user already exists in Sanity
-    console.log('Checking for existing user in Sanity...')
     const existingUser = await sanityClient.fetch(`*[_type == "user" && email == $email][0]`, {
       email: normalizedEmail,
     })
-    console.log('Existing user:', existingUser ? 'found' : 'not found')
-
     let isNewUser = false
     let result
 
@@ -89,8 +66,6 @@ export const POST: APIRoute = async (context: APIContext) => {
 
     // Add contact to Resend audience (for email campaigns)
     try {
-      console.log('Adding contact to Resend audience...')
-
       const createResponse = await resend.contacts.create({
         email: normalizedEmail,
         firstName: '', // We don't have this info from the newsletter form
@@ -117,9 +92,7 @@ export const POST: APIRoute = async (context: APIContext) => {
     const emailsToSend = []
 
     if (isNewUser) {
-      console.log('Preparing emails for new user...')
-
-      // Welcome email for new user using React Email template
+      // Welcome HTML email for new user using React Email template
       const welcomeHtml = await render(
         Welcome({
           email: normalizedEmail,
@@ -127,7 +100,7 @@ export const POST: APIRoute = async (context: APIContext) => {
         })
       )
 
-      // Generate text version of welcome email
+      // Generate text version of Welcome email
       const welcomeText = await render(
         Welcome({
           email: normalizedEmail,
@@ -181,8 +154,6 @@ export const POST: APIRoute = async (context: APIContext) => {
     // Send all emails in batch
     if (emailsToSend.length > 0) {
       try {
-        console.log(`Sending ${emailsToSend.length} emails in batch...`)
-
         const { data: batchData, error: batchError } = await resend.batch.send(emailsToSend)
 
         if (batchError) {
@@ -195,7 +166,7 @@ export const POST: APIRoute = async (context: APIContext) => {
         // Continue execution - user is subscribed even if email fails
       }
     }
-    console.log('Preparing success response...')
+
     // Return success response
     return new Response(
       JSON.stringify({
