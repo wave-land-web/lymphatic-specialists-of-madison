@@ -9,7 +9,7 @@ import { defineConfig, envField } from 'astro/config'
 // https://astro.build/config
 export default defineConfig({
   // TODO: replace with prod site URL
-  site: 'http://localhost:4321',
+  site: 'https://lymphatic-specialists-of-madison.netlify.app/',
   env: {
     schema: {
       PUBLIC_SANITY_STUDIO_PROJECT_ID: envField.string({

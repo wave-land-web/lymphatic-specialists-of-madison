@@ -15,17 +15,14 @@ import { SITE_URL } from '../../consts'
 
 interface WelcomeProps {
   email: string
-  isSubscribed?: boolean
 }
 
-export default function Welcome({ email, isSubscribed = true }: WelcomeProps) {
+export default function Welcome({ email }: WelcomeProps) {
   return (
     <Html>
       <Head />
       <Preview>
-        {isSubscribed
-          ? `Welcome to Lymphatic Specialists of Madison, ${email}`
-          : `Thank you for contacting Lymphatic Specialists of Madison, ${email}`}
+        Welcome to our newsletter, ${email}! Get ready for expert lymphatic health tips.
       </Preview>
       <Body style={main}>
         <Container style={container}>
@@ -34,40 +31,33 @@ export default function Welcome({ email, isSubscribed = true }: WelcomeProps) {
           <Hr style={hr} />
 
           <Section style={container}>
-            <Text style={paragraph}>Hi {email || 'there'},</Text>
+            <Text style={paragraph}>Hi {email},</Text>
+
+            <Text style={paragraph}>Welcome to the Lymphatic Specialists of Madison!</Text>
 
             <Text style={paragraph}>
-              {isSubscribed
-                ? 'Thank you for subscribing to Lymphatic Specialists of Madison'
-                : 'Thank you for contacting Lymphatic Specialists of Madison'}
+              We only send a few emails per year, and we'll never share your information with anyone
+              else.
             </Text>
 
             <Text style={paragraph}>
-              {isSubscribed
-                ? "We've received your information and will get back to you shortly. You've also been added to our mailing list. We limit our emails to only a few a year, and we never sell your information to others. If you ever find that these emails no longer fit your fancy, you can unsubscribe anytime."
-                : "We've received your information and will get back to you shortly."}
-            </Text>
-
-            <Text style={paragraph}>
-              Sincerely,
+              Thanks for joining our community,
               <br />
               The Lymphatic Specialists of Madison Team
             </Text>
 
             <Section>
               <Button style={button} href={`${SITE_URL}`} target="_blank">
-                Learn More
+                Explore Our Website
               </Button>
             </Section>
           </Section>
 
           <Hr style={hr} />
 
-          {isSubscribed && (
-            <Link style={link} href={`${SITE_URL}/api/forms/unsubscribe/${email}`} target="_blank">
-              unsubscribe
-            </Link>
-          )}
+          <Link style={link} href={`${SITE_URL}/api/forms/unsubscribe/${email}`} target="_blank">
+            unsubscribe
+          </Link>
 
           <Text style={footer}>Lymphatic Specialists of Madison</Text>
           <Text style={footer}>Madison, WI</Text>

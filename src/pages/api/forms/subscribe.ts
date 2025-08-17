@@ -96,7 +96,6 @@ export const POST: APIRoute = async (context: APIContext) => {
       const welcomeHtml = await render(
         Welcome({
           email: normalizedEmail,
-          isSubscribed: true,
         })
       )
 
@@ -104,7 +103,6 @@ export const POST: APIRoute = async (context: APIContext) => {
       const welcomeText = await render(
         Welcome({
           email: normalizedEmail,
-          isSubscribed: true,
         }),
         {
           plainText: true,
