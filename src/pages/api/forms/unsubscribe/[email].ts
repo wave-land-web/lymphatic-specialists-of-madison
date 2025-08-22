@@ -59,7 +59,7 @@ export const GET: APIRoute = async ({ params, redirect }) => {
 
   // Send an email to the user confirming their unsubscription
   const { data: unsubscribeEmailData, error: unsubscribeEmailError } = await resend.emails.send({
-    from: 'Lymphatic Specialists of Madison <hello@madisonlymphatics.com>',
+    from: 'Lymphatic Specialists of Madison <test@wavelandweb.com>',
     to: sanitizedEmail,
     subject: 'You have been unsubscribed from Lymphatic Specialists of Madison',
     react: Unsubscribe({
