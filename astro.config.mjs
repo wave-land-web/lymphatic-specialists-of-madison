@@ -5,11 +5,11 @@ import sitemap from '@astrojs/sitemap'
 import sanity from '@sanity/astro'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, envField } from 'astro/config'
+import { SITE_URL } from './src/consts'
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: replace with prod site URL
-  site: 'https://lymphatic-specialists-of-madison.netlify.app/',
+  site: SITE_URL,
   env: {
     schema: {
       PUBLIC_SANITY_STUDIO_PROJECT_ID: envField.string({

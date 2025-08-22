@@ -4,7 +4,7 @@
 export const SITE_TITLE = 'Lymphatic Specialists of Madison'
 export const SITE_DESCRIPTION =
   "Lymphatic Specialists of Madison is Madison's best lymphatic-centric clinic. We are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD)."
-export const SITE_URL = 'https://lymphatic-specialists-of-madison.netlify.app/' // TODO: change to production url
+export const SITE_URL = 'https://lymphaticspecialistsofmadison.com'
 export const NAVIGATION = [
   {
     label: 'Home',
@@ -32,8 +32,8 @@ export const NAVIGATION = [
     label: 'About',
     children: [
       {
-        label: 'Careers',
-        href: '/careers',
+        label: 'Our Team',
+        href: '/our-team',
       },
       {
         label: 'FAQ',
