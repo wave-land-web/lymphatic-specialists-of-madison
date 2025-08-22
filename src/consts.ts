@@ -59,7 +59,7 @@ export const SERVICES = [
   {
     title: 'Manual Lymphatic Drainage',
     description:
-      'A gentle form of bodywork that stimulates the lymphatic system to reduce edema/excess inflammation, remove toxins and waste, and encourage a healthy immune system. This type of treatment is appropriate for most (see contraindications). Very beneficial for patients: post-cancer, with lipidema/lymphedema, post-surgical, living with autoimmune conditions, with long COVID, with systemic inflammatory conditions such as Lyme, PCOS, endometriosis, and many more.',
+      'A gentle form of bodywork that stimulates the lymphatic system to reduce edema/excess inflammation, remove toxins and waste, and encourage a healthy immune system. This type of treatment is appropriate for most people (see contraindications). Very beneficial for patients: post-cancer, with lipidema/lymphedema, post-surgical, with autoimmune conditions, long COVID, with systemic inflammatory conditions such as Lyme, PCOS, endometriosis, and many more.',
     learnMoreHref: '/services/manual-lymphatic-drainage',
     bookNowHref:
       'https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison',
@@ -68,7 +68,7 @@ export const SERVICES = [
   {
     title: 'Post-Surgical Manual Lymphatic Drainage',
     description:
-      'Post-surgical manual lymphatic drainage helps clear out excess lymph fluid caused by surgical trauma, which assists in faster healing and pain reduction. Scar tissue work is also performed when indicated to help reduce adhesions after surgery which will help with overall appearance of surgical site and surrounding areas, increased lymphatic flow and help reduce future scar adhesion complications.',
+      'Post-surgical manual lymphatic drainage helps clear out excess lymph fluid caused by surgical trauma, which assists in faster healing and pain reduction. Scar tissue work is also performed when indicated to help increase mobility of scar and reduce adhesions after surgery which will help with overall appearance of surgical site and surrounding areas, increased lymphatic flow and help reduce future scar adhesion complications.',
     learnMoreHref: '/services/pre-post-surgical-manual-lymphatic-drainage',
     bookNowHref:
       'https://booksy.com/en-us/689566_madison-lymphatics-and-bodywork_massage_39663_madison',
