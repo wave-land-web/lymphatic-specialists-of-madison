@@ -5,7 +5,10 @@ import PageHeader from '../components/ui/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Contact - Lymphatic Specialists of Madison">
+<Layout
+  title="Contact - Lymphatic Specialists of Madison"
+  description="Get in touch with Lymphatic Specialists of Madison. We're here to answer your questions andhelp you schedule your appointment."
+>
   <PageHeader class="items-center mx-auto text-center">
     <PageTitle>Contact Us</PageTitle>
     <p class="h4 lsa lsa-slide-up delay-100 no-repeat">
@@ -97,7 +100,6 @@ import Layout from '../layouts/Layout.astro'
               we'll get back to you as soon as possible.
             </p>
 
-            <!-- TODO: Implement form submission -->
             <form
               class="flex flex-col gap-(--site-padding-base)"
               method="POST"
