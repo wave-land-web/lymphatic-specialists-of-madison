@@ -349,7 +349,7 @@ export const POST: APIRoute = async ({ request }) => {
       )
 
       emailsToSend.push({
-        from: 'Lymphatic Specialists of Madison <test@wavelandweb.com>',
+        from: 'Lymphatic Specialists of Madison <hello@lymphaticspecialistsofmadison.com>',
         to: [email],
         subject: 'Thank you for completing your intake form',
         html: userConfirmationHtml,
@@ -400,8 +400,8 @@ export const POST: APIRoute = async ({ request }) => {
       )
 
       emailsToSend.push({
-        from: 'Lymphatic Specialists Website <test@wavelandweb.com>',
-        to: ['josh@wavelandweb.com'],
+        from: 'Lymphatic Specialists Website <hello@lymphaticspecialistsofmadison.com>',
+        to: ['cnrolnick@gmail.com'],
         subject: `New intake form submission from ${firstName} ${lastName}`,
         html: notificationHtml,
         text: notificationText,

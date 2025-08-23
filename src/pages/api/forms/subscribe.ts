@@ -110,7 +110,7 @@ export const POST: APIRoute = async (context: APIContext) => {
       )
 
       emailsToSend.push({
-        from: 'Lymphatic Specialists of Madison <test@wavelandweb.com>',
+        from: 'Lymphatic Specialists of Madison <hello@lymphaticspecialistsofmadison.com>',
         to: [normalizedEmail],
         subject: 'Welcome to Lymphatic Specialists of Madison!',
         html: welcomeHtml,
@@ -140,8 +140,8 @@ export const POST: APIRoute = async (context: APIContext) => {
     )
 
     emailsToSend.push({
-      from: 'Lymphatic Specialists Website <test@wavelandweb.com>',
-      to: ['josh@wavelandweb.com'],
+      from: 'Lymphatic Specialists Website <hello@lymphaticspecialistsofmadison.com>',
+      to: ['cnrolnick@gmail.com'],
       subject: isNewUser
         ? `New newsletter subscription from ${normalizedEmail}`
         : `Newsletter subscription updated for ${normalizedEmail}`,

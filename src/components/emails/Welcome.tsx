@@ -22,7 +22,7 @@ export default function Welcome({ email }: WelcomeProps) {
     <Html>
       <Head />
       <Preview>
-        Welcome to our newsletter, ${email}! Get ready for expert lymphatic health tips.
+        Welcome to our newsletter, {email}! Get ready for expert lymphatic health tips.
       </Preview>
       <Body style={main}>
         <Container style={container}>

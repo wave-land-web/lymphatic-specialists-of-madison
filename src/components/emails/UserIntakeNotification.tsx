@@ -37,8 +37,11 @@ export default function UserIntakeNotification({ firstName }: UserIntakeNotifica
             </Text>
 
             <Text style={paragraph}>
-              In the meantime, please feel free to review our FAQ page if you have any questions
-              about what to expect during your visit.
+              In the meantime, please feel free to review our{' '}
+              <Link href={`${SITE_URL}/faq`} style={link}>
+                FAQ
+              </Link>{' '}
+              page if you have any questions about what to expect during your visit.
             </Text>
 
             <Text style={paragraph}>

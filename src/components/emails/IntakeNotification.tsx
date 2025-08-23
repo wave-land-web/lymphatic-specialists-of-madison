@@ -103,7 +103,7 @@ export default function IntakeNotification({
               </>
             )}
 
-            <Text style={subheading}>Treatment Information:</Text>
+            <Text style={subheading}>Treatment Inquiry:</Text>
             <Text style={paragraph}>
               <strong>Purpose:</strong> {purposeText}
             </Text>
