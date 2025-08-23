@@ -38,7 +38,16 @@ export default defineConfig({
     validateSecrets: true,
   },
   integrations: [
-    sitemap(),
+    sitemap({
+      lastmod: new Date(),
+      filter: (page) =>
+        page !== 'https://lymphaticspecialistsofmadison.com/subscribed/' &&
+        page !== 'https://lymphaticspecialistsofmadison.com/unsubscribed/' &&
+        page !== 'https://lymphaticspecialistsofmadison.com/privacy-policy/' &&
+        page !== 'https://lymphaticspecialistsofmadison.com/terms-of-use/' &&
+        page !== 'https://lymphaticspecialistsofmadison.com/cookie-policy/' &&
+        page !== 'https://lymphaticspecialistsofmadison.com/404/',
+    }),
     sanity({
       projectId: 'hr4xqyhv',
       dataset: 'production',
