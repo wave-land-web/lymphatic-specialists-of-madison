@@ -14,7 +14,7 @@ export interface Props {
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION, socialImage } = Astro.props
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-const socialImageURL = new URL(socialImage || '/images/og.png', canonicalURL)
+const socialImageURL = new URL(socialImage || '/images/og.jpg', canonicalURL)
 ---
 
 <html lang="en" data-theme="emerald">
