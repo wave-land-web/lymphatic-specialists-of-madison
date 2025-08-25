@@ -2,11 +2,12 @@
 import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
+import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-  title="Contact"
+  title={`Contact | ${SITE_TITLE}`}
   description="Get in touch with Lymphatic Specialists of Madison. We're here to answer your questions andhelp you schedule your appointment."
 >
   <PageHeader class="items-center mx-auto text-center">

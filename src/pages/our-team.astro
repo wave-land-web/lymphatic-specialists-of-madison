@@ -1,19 +1,20 @@
 ---
 import { getImage, Image } from 'astro:assets'
-import CourtneyImage from '../assets/images/courtney.jpg'
+import CourtneyImage from '../assets/images/courtney-square.jpg'
 import PlaceholderOneImage from '../assets/images/placeholder-1.jpg'
 import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import ThemedSection from '../components/ui/ThemedSection.astro'
+import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
 
 const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
 ---
 
 <Layout
-  title="Our Team"
+  title={`Our Team | ${SITE_TITLE}`}
   description="Meet the compassionate and experienced team at Lymphatic Specialists of Madison."
 >
   <PageHeader class="items-center mx-auto text-center">
@@ -121,7 +122,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
                 <p>
                   I often refer to other practitioners in the community and enjoy working as a team
                   with other members of the health community for a truly holistic approach to
-                  patient care. I enjoy working in this capacity because it hones in on my love for
+                  patient care. I enjoy working in this capacity because it engages my love for
                   critical thinking and helping people find the right direction for complex medical
                   issues.
                 </p>

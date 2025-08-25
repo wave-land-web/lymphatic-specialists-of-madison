@@ -1,10 +1,11 @@
 ---
 import PageTitle from '../components/text/PageTitle.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
+import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Privacy Policy">
+<Layout title={`Privacy Policy | ${SITE_TITLE}`}>
   <PageHeader>
     <PageTitle>Privacy Policy</PageTitle>
   </PageHeader>

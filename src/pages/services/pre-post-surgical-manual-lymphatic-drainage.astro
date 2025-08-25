@@ -4,11 +4,12 @@ import PageTitle from '../../components/text/PageTitle.astro'
 import Card from '../../components/ui/Card.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
 import ThemedSection from '../../components/ui/ThemedSection.astro'
+import { SITE_TITLE } from '../../consts'
 import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout
-  title="Pre/Post-Surgical Manual Lymphatic Drainage"
+  title={`Pre/Post-Surgical Manual Lymphatic Drainage | ${SITE_TITLE}`}
   description="Learn about Pre/Post-Surgical Manual Lymphatic Drainage, its benefits, and how it can assist in your recovery process."
 >
   <PageHeader>

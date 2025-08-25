@@ -5,6 +5,7 @@ import PageTitle from '../../components/text/PageTitle.astro'
 import PortableText from '../../components/text/PortableText.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
 import RecentPosts from '../../components/ui/RecentPosts.astro'
+import { SITE_TITLE } from '../../consts'
 import Layout from '../../layouts/Layout.astro'
 import { loadQuery } from '../../sanity/lib/load-query'
 import { urlForImage } from '../../sanity/lib/urlForImage'
@@ -68,7 +69,11 @@ const nextPost = props.allPosts[currentPostIndex + 1] || null
 const socialImage = urlForImage(currentPost.mainImage).auto('format').url()
 ---
 
-<Layout title={currentPost.title} description={currentPost.description} socialImage={socialImage}>
+<Layout
+  title={`${currentPost.title} | ${SITE_TITLE}`}
+  description={currentPost.description}
+  socialImage={socialImage}
+>
   <PageHeader
     class="flex flex-col items-center text-center mx-auto"
     customHeroBackgroundImage={currentPost.mainImage}

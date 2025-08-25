@@ -4,11 +4,12 @@ import PageTitle from '../../components/text/PageTitle.astro'
 import Card from '../../components/ui/Card.astro'
 import PageHeader from '../../components/ui/PageHeader.astro'
 import ThemedSection from '../../components/ui/ThemedSection.astro'
+import { SITE_TITLE } from '../../consts'
 import Layout from '../../layouts/Layout.astro'
 ---
 
 <Layout
-  title="Manual Lymphatic Drainage"
+  title={`Manual Lymphatic Drainage | ${SITE_TITLE}`}
   description="Learn about Manual Lymphatic Drainage (MLD), its indications, contraindications, and pricing at Lymphatic Specialists of Madison. Book your session today!"
 >
   <PageHeader>

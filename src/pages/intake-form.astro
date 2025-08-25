@@ -2,11 +2,12 @@
 import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
+import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-  title="Manual Lymphatic Drainage Intake Form"
+  title={`Intake Form | ${SITE_TITLE}`}
   description="Please fill out the form below to the best of your ability. If you have any questions, please contact us."
 >
   <PageHeader class="items-center mx-auto text-center">

@@ -5,6 +5,7 @@ import PageHeader from '../../components/ui/PageHeader.astro'
 import Layout from '../../layouts/Layout.astro'
 import { sanityClient } from 'sanity:client'
 import BlogCard from '../../components/ui/BlogCard.astro'
+import { SITE_TITLE } from '../../consts'
 
 // Fetch all posts
 const posts = (await sanityClient.fetch(
@@ -25,7 +26,7 @@ const recentPosts = posts.slice(1, 4)
 const remainingPosts = posts.slice(4)
 ---
 
-<Layout title="Blog" description="Explore our blog for the latest news and insights on lymphatic health and manual therapy.">
+<Layout title={`Blog | ${SITE_TITLE}`} description="Explore our blog for the latest news and insights on lymphatic health and manual therapy.">
   <PageHeader>
     <PageTitle>Blog</PageTitle>
     <p class="h4 max-w-lg lsa lsa-slide-up delay-100 no-repeat">

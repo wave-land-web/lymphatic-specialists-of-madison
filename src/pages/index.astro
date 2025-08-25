@@ -9,7 +9,7 @@ import PageTitle from '../components/text/PageTitle.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import ThemedSection from '../components/ui/ThemedSection.astro'
-import { SERVICES, TESTIMONIALS } from '../consts'
+import { SERVICES, SITE_TITLE, TESTIMONIALS } from '../consts'
 import Layout from '../layouts/Layout.astro'
 
 const messageImage = await getImage({ src: message })
@@ -21,7 +21,7 @@ const serviceImages: Record<string, any> = {
 }
 ---
 
-<Layout>
+<Layout title={`Home | ${SITE_TITLE}`}>
   <PageHeader>
     <!-- TODO: remove duplicate H1s -->
     <PageTitle class="text-center max-w-none text-primary">
@@ -291,7 +291,8 @@ const serviceImages: Record<string, any> = {
 
         <div class="prose lg:prose-xl">
           <p class="h3 lsa lsa-slide-up no-repeat">
-            A good analogy for the lymph system and how inflammation affects the lymph system:
+            A good analogy for the lymph system and how excess inflammation affects the lymph
+            system:
           </p>
           <ul class="list">
             <ListItem
@@ -307,18 +308,19 @@ const serviceImages: Record<string, any> = {
             />
             <ListItem
               number={5}
-              text="In a normal healthy lymph system - water from the shower comes out as fast as it goes down the drain leaving no standing water behind."
+              text="In a normal healthy lymph system - water goes down the drain as fast as it comes out of the shower, leaving no standing water behind."
             />
           </ul>
           <p class="lsa lsa-slide-up no-repeat">
             Now imagine an acute injury or trauma like a sprained ankle (in the health field, acute
-            means there is a beginning and an end) — this looks like letting the shower water run,
-            but also turning on the bathtub water at the same time. The amount of time and intensity
-            at which the bathtub water turns on varies based on the acute trauma, but it is more
-            than normal. Now there is standing water, but hopefully and usually eventually, your
-            body's lymph nodes (the bathtub drains) can move this excess fluid through, leaving no
-            standing water after a couple of days. Sometimes this doesn't happen, and that's where
-            we step in - to help move along that excess fluid back into the drain!
+            means there is a beginning and an end, as opposed to chronic) — this looks like letting
+            the shower water run, but also turning on the bathtub water at the same time. The amount
+            of time and intensity at which the bathtub water turns on varies based on the acute
+            trauma, but it is more than normal. Now there is standing water, but hopefully and
+            usually eventually, your body's lymph nodes (the bathtub drains) can move this excess
+            fluid through, leaving no standing water after a couple of days. Sometimes this doesn't
+            happen, and that's where we step in - to help move along that excess fluid back into the
+            drain!
           </p>
         </div>
       </div>
@@ -328,14 +330,14 @@ const serviceImages: Record<string, any> = {
       >
         <div class="order-2 md:order-first prose lg:prose-xl">
           <p class="h3 lsa lsa-slide-up no-repeat">
-            Now imagine chronic inflammation, like in the case of an autoimmune disease.
+            Now imagine chronic excess inflammation, like in the case of an autoimmune disease.
           </p>
           <p class="lsa lsa-slide-up no-repeat">
             This leaves a constant amount of standing water in the bathtub because this amount is
             always larger than the amount of shower water (the amount your body is programmed to
             manage), and your drains can only handle the amount of water produced from the shower
-            water. Our job is not to let that standing water accumulate on the bottom of the
-            bathtub, but to chip away at it each session to get your body in a more manageable,
+            water. Our job is to not let that standing water accumulate on the bottom of the
+            bathtub, and to chip away at it each session to get your body in a more manageable,
             functional, and optimal place.
           </p>
           <p class="lsa lsa-slide-up no-repeat">
@@ -354,7 +356,7 @@ const serviceImages: Record<string, any> = {
           <ul class="list">
             <ListItem
               number={1}
-              text="Diet: eating foods that create an inflammatory/allergic response to, or eating too little/too much."
+              text="Diet: eating foods that create an inflammatory/allergic response, or eating too little/too much"
             />
             <ListItem number={2} text="Exercise: too little or too much." />
             <ListItem number={3} text="Hormone imbalance." />

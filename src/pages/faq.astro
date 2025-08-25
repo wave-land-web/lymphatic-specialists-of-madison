@@ -1,10 +1,11 @@
 ---
 import PageTitle from '../components/text/PageTitle.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
+import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="FAQ" description="Frequently Asked Questions about our services">
+<Layout title={`FAQ | ${SITE_TITLE}`} description="Frequently Asked Questions about our services">
   <PageHeader class="items-center mx-auto text-center">
     <PageTitle>FAQs</PageTitle>
     <p class="h4 lsa lsa-slide-up delay-100 no-repeat">
@@ -406,8 +407,9 @@ import Layout from '../layouts/Layout.astro'
                   patients.
                 </p>
                 <p class="group-hover:text-base-100">
-                  We use the honor code when cancellation is at no charge due to illness, so please
-                  do not abuse this. Our practitioners are busy, and their time is valued.
+                  We use the honor code in regards to our no-charge policy with late cancellations
+                  due to illness, so please do not abuse this. Our practitioners are busy, and their
+                  time is valued.
                 </p>
               </div>
             </div>
@@ -425,6 +427,28 @@ import Layout from '../layouts/Layout.astro'
                 Yes, all practitioners at Lymphatic Specialists of Madison are fully certified in
                 their professions and are licensed by the State of Wisconsin.
               </p>
+            </div>
+          </details>
+
+          <details
+            id="cancellation-policy"
+            class="group collapse collapse-arrow join-item p-(--site-padding-sm) bg-base-transparent hover:bg-primary transition-all duration-200 border-base-200 border"
+          >
+            <summary class="collapse-title text-lg font-semibold group-hover:text-base-100">
+              What is your cancellation policy?
+            </summary>
+            <div class="collapse-content">
+              <div class="prose">
+                <p class="group-hover:text-base-100">
+                  <strong class="group-hover:text-base-100"
+                    >All appointments must be canceled with at least 24 hours' notice, except in
+                    cases of illness.</strong
+                  > Cancellations made with less than 24 hours' notice (for reasons other than illness)
+                  will incur a fee equal to 100% of the appointment cost. In such cases, an invoice will
+                  be issued within 24 hours, and payment is expected within 24 hours of receipt. We appreciate
+                  your understanding in this matter.
+                </p>
+              </div>
             </div>
           </details>
 
