@@ -1,6 +1,8 @@
 ---
 import { getImage, Image } from 'astro:assets'
+import AnnaImage from '../assets/images/anna-square.jpg'
 import CourtneyImage from '../assets/images/courtney-square.jpg'
+import ElizabethImage from '../assets/images/elizabeth-square.jpg'
 import PlaceholderOneImage from '../assets/images/placeholder-1.jpg'
 import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
@@ -52,8 +54,9 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
       <div
         class="wrapper container md:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
       >
-        <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Meet the Founder</h2>
+        <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Meet the Team</h2>
 
+        <!-- Courtney Rolnick -->
         <div class="lsa lsa-slide-up no-repeat group">
           <Card
             id="courtney-rolnick"
@@ -131,6 +134,176 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
                   seeing live music, spending time with friends and family, exploring nature, and
                   hanging out with my partner Chris and our dog Lefty.
                 </p>
+                <div class="mt-6">
+                  <a
+                    href="https://booksy.com/en-us/1554807_lymphatic-specialists-of-madison_massage_39663_madison#ba_s=sh_1"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer">Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <!-- Anna Zins -->
+        <div class="lsa lsa-slide-up no-repeat group">
+          <Card
+            id="anna-zins"
+            className="p-(--site-padding-base) border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg md:overflow-visible"
+          >
+            <div
+              class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) md:items-start"
+            >
+              <aside
+                class="md:sticky md:top-[calc(var(--nav-height)+var(--site-padding-base))] md:self-start md:flex-shrink-0"
+              >
+                <h3 class="text-primary mb-2">Anna Zins</h3>
+                <p class="font-semibold mb-4">OTR/L, CNS, CDP, CMLDT - Practitioner</p>
+                <div class="avatar">
+                  <div
+                    class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                  >
+                    <Image src={AnnaImage} alt="Anna Smith" />
+                  </div>
+                </div>
+              </aside>
+              <div class="space-y-4">
+                <p class="h3">Hello, I'm Anna.</p>
+                <p>
+                  I'm an occupational therapist with nearly 10 years of experience helping adults
+                  live their lives to the fullest—no matter their circumstances. I have worked
+                  across a variety of rehab settings, including hospitals, home health, and nursing
+                  homes, and I am a certified neurology specialist and certified dementia
+                  practitioner.
+                </p>
+                <p>
+                  I received my bachelor's and master's degrees in 4 1/2 years from Concordia
+                  University Wisconsin.
+                </p>
+                <p>
+                  Over the years, I've developed a special passion for lymphatic drainage massage
+                  and edema management. My interest began early in my training when I saw the
+                  remarkable difference an OT made in her patients' lives through lymphatic work.
+                  Since then, I've pursued extensive continuing education in lymphatic drainage,
+                  lymphedema and lipedema management, as well as compression techniques—all with the
+                  goal of improving comfort, mobility, and independence for my patients.
+                </p>
+                <p>
+                  My approach is patient-centered and collaborative. I meet each person where they
+                  are, tailoring treatment plans to their unique goals and needs, and ensuring they
+                  feel comfortable and supported throughout the process. I also emphasize
+                  education—empowering patients with the tools and knowledge to manage their
+                  conditions independently, long after discharge.
+                </p>
+                <p class="h3">
+                  For me, great care means working as a team—patient, therapist, and other
+                  providers—to create the best possible outcomes. I am committed to giving my very
+                  best so that every patient I serve feels confident, cared for, and capable of
+                  living life to the fullest.
+                </p>
+                <p>
+                  In my spare time, I love going to concerts, spending time outside, playing with
+                  and getting cuddles from my dog, Meeko, and trying new foods and exploring new
+                  places with my significant other, Kabeer.
+                </p>
+                <p>
+                  I look forward to partnering with you on your journey to better health and
+                  well-being.
+                </p>
+                <div class="mt-6">
+                  <a
+                    href="https://booksy.com/en-us/1554807_lymphatic-specialists-of-madison_massage_39663_madison#ba_s=sh_1"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer">Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <!-- Elizabeth Gaffron -->
+        <div class="lsa lsa-slide-up no-repeat group">
+          <Card
+            id="elizabeth-gaffron"
+            className="p-(--site-padding-base) border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg md:overflow-visible"
+          >
+            <div
+              class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) md:items-start"
+            >
+              <aside
+                class="md:sticky md:top-[calc(var(--nav-height)+var(--site-padding-base))] md:self-start md:flex-shrink-0"
+              >
+                <h3 class="text-primary mb-2">Elizabeth Gaffron</h3>
+                <p class="font-semibold mb-4">MS, OTR/L, CMLDT - Practitioner</p>
+                <div class="avatar">
+                  <div
+                    class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
+                  >
+                    <Image src={ElizabethImage} alt="Elizabeth Gaffron" />
+                  </div>
+                </div>
+              </aside>
+              <div class="space-y-4">
+                <p class="h3">Hi, I'm Elizabeth.</p>
+                <p>
+                  I am a licensed occupational therapist with 16 years of experience treating
+                  patient populations across the lifespan living with persistent pain due to a
+                  variety of health challenges and medical conditions. Drawing from my previous
+                  background in massage therapy and social work, I utilize a wholistic approach
+                  while collaborating with patients to determine a plan of care based on the unique
+                  needs of each individual client. I am committed to building strong partnerships
+                  with my patients offering personalized manual therapy and pain management
+                  strategies to support pain reduction, management of swelling and inflammation,
+                  enhanced mobility and support overall well-being.
+                </p>
+                <p class="h3">
+                  My interest and passion for lymphatics comes from seeing how functionally
+                  debilitating living with medical conditions that result in persistent inflammation
+                  and swelling may be for an individual as well as an overall lack of effective
+                  treatment options across healthcare environments.
+                </p>
+                <p>
+                  I developed a strong desire and commitment to learn effective treatment
+                  interventions for people experiencing lymphatic dysfunction and partner with
+                  community healthcare providers who share a similar vision to improve patient
+                  outcomes. I pursued additional manual therapy training in the areas of Manual
+                  Lymphatic Drainage, Myofascial Trigger Point Release, Scar Massage, and
+                  Craniosacral Therapy to enhance my abilities to help patients find relief and
+                  return to meaningful activities. I received my Manual Lymphatic Drainage
+                  certification (CMLDT) from the Klose Institute in Lafayette, CO in 2025.
+                </p>
+                <p>
+                  After earning my Master's of Occupational Therapy degree from the University of
+                  New Mexico in 2008, I relocated to Chicago to join the interdisciplinary pain
+                  management team at the Shirley Ryan Ability Lab, Center for Pain Management,
+                  formally known as the Rehabilitation Institute of Chicago. I have presented
+                  lectures and conducted workshops nationally and internationally on the role of
+                  occupational therapy in the treatment of pain management. Additionally, I pursued
+                  specialized training in the areas of pain neuroscience education, graded motor
+                  imagery, pain reprocessing therapy, functional desensitization,
+                  ergonomic/environmental assessment, pacing training, postural/body mechanics,
+                  sensory integration methods, Mindfulness and adaptive movement-based therapies
+                  including Yoga, QiGong, and Tai Chi. Prior to becoming an occupational therapist,
+                  I provided case management services to support individuals living with chronic
+                  mental health and substance use challenges in a variety of diverse settings.
+                </p>
+                <p>
+                  My family and I recently relocated to the Madison area as we are long-time lovers
+                  of the Driftless region. Beyond my work, I find fulfillment in hiking, yoga,
+                  horseback riding, cooking, gardening and spending time with family and friends.
+                </p>
+                <div class="mt-6">
+                  <a
+                    href="https://booksy.com/en-us/1554807_lymphatic-specialists-of-madison_massage_39663_madison#ba_s=sh_1"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer">Book Now</a
+                  >
+                </div>
               </div>
             </div>
           </Card>
