@@ -17,6 +17,8 @@
         required
       />
       <label class="sr-only" for="email">Email</label>
+      <!-- Honeypot field - hidden from users -->
+      <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
       <button type="submit" class="btn btn-accent join-item" id="submit-btn">
         <span id="submit-text">Subscribe</span>
         <span id="loading-spinner" class="loading loading-spinner loading-sm hidden"></span>
@@ -82,6 +84,13 @@
 
       // Get form data
       const formData = new FormData(form)
+
+      // Honeypot check - if bot-field has any value, it's likely spam
+      if (formData.get('bot-field')) {
+        // Silently drop the submission without showing an error
+        console.log('Spam submission detected via honeypot')
+        return
+      }
 
       // Show loading state
       setLoadingState(true)
