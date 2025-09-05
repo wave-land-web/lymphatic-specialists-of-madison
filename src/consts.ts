@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = 'Lymphatic Specialists of Madison'
 export const SITE_DESCRIPTION =
-  "Lymphatic Specialists of Madison is Madison's best lymphatic-centric clinic. We are a patient-focused environment specializing in Manual Lymphatic Drainage (MLD)."
+  'Lymphatic Specialists of Madison provides expert lymphatic massage and manual lymphatic drainage in Madison, WI. Support healing, reduce swelling, and restore balance.'
 export const SITE_URL = 'https://lymphaticspecialistsofmadison.com'
 export const NAVIGATION = [
   {
