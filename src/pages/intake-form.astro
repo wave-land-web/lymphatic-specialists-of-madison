@@ -2056,6 +2056,9 @@ import Layout from '../layouts/Layout.astro'
           </div>
         </Card>
 
+        <!-- Honeypot field - hidden from users -->
+        <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
+
         <!-- Form Messages -->
         <div id="form-messages">
           <!-- Success message will be displayed here -->
@@ -2252,6 +2255,13 @@ import Layout from '../layouts/Layout.astro'
     try {
       // Get form data
       const formData = new FormData(this)
+
+      // Honeypot check - if bot-field has any value, it's likely spam
+      if (formData.get('bot-field')) {
+        // Silently drop the submission without showing an error
+        console.log('Spam submission detected via honeypot')
+        return
+      }
 
       // Basic validation for required fields
       const firstName = formData.get('first-name') as string
