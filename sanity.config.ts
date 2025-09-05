@@ -9,5 +9,5 @@ export default defineConfig({
   dataset: 'production',
   plugins: [structureTool({ structure }), visionTool()],
   schema,
-  name: 'madison-lymphatics-and-manual-therapy',
+  name: 'lymphatic-specialists-of-madison',
 })
