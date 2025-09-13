@@ -19,12 +19,7 @@ import LogoFade from '../../assets/images/logo-fade.svg'
           <Hamburger class="w-6 h-6" />
         </button>
         <a href="/" aria-label="Home" title="Home">
-          <h1>
-            <span class="sr-only">Lymphatic Specialists of Madison</span>
-
-            <!-- logo -->
-            <LogoFade class="max-w-24 md:max-w-28" />
-          </h1>
+          <LogoFade class="max-w-24 md:max-w-28" />
         </a>
       </div>
 
@@ -119,6 +114,30 @@ import LogoFade from '../../assets/images/logo-fade.svg'
     </div>
   </div>
 </nav>
+
+<style>
+  /* Hide default markers and ensure content is hidden when closed */
+  details.dropdown summary::-webkit-details-marker,
+  details.dropdown summary::marker,
+  details.dropdown summary::after,
+  details.dropdown summary::before {
+    display: none;
+  }
+
+  details.dropdown:not([open]) .dropdown-content {
+    display: none;
+  }
+
+  /* Dropdown content transitions */
+  details.dropdown .dropdown-content {
+    transition:
+      opacity 0.2s ease-out,
+      transform 0.2s ease-out;
+    transform-origin: top center;
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+</style>
 
 <script>
   // Mobile navigation toggle function
@@ -229,27 +248,3 @@ import LogoFade from '../../assets/images/logo-fade.svg'
   initMobileNav()
   initDropdownChevrons()
 </script>
-
-<style>
-  /* Hide default markers and ensure content is hidden when closed */
-  details.dropdown summary::-webkit-details-marker,
-  details.dropdown summary::marker,
-  details.dropdown summary::after,
-  details.dropdown summary::before {
-    display: none;
-  }
-
-  details.dropdown:not([open]) .dropdown-content {
-    display: none;
-  }
-
-  /* Dropdown content transitions */
-  details.dropdown .dropdown-content {
-    transition:
-      opacity 0.2s ease-out,
-      transform 0.2s ease-out;
-    transform-origin: top center;
-    opacity: 0;
-    transform: translateY(-8px) scale(0.95);
-  }
-</style>
