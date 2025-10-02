@@ -47,7 +47,7 @@ if (customHeroBackgroundImage) {
 
   <div class="wrapper">
     <div
-      class={`${className} flex flex-col gap-(--site-padding-md) pt-[calc(var(--site-padding-lg)+var(--nav-height))] pb-(--site-padding-lg)`}
+      class={`${className || ''} flex flex-col gap-(--site-padding-md) pt-[calc(var(--site-padding-lg)+var(--nav-height))] pb-(--site-padding-lg)`}
     >
       <slot />
     </div>
