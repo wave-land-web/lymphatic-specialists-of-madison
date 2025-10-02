@@ -1,8 +1,9 @@
 ---
 import { getImage, Image } from 'astro:assets'
-import AnnaImage from '../assets/images/anna-square.jpg'
-import CourtneyImage from '../assets/images/courtney-square.jpg'
-import ElizabethImage from '../assets/images/elizabeth-square.jpg'
+import AnnaImage from '../assets/images/lsom-anna.jpg'
+import CourtneyImage from '../assets/images/lsom-courtney.jpg'
+import ElizabethImage from '../assets/images/lsom-elizabeth.jpg'
+import GroupImage from '../assets/images/lsom-group.jpg'
 import PlaceholderOneImage from '../assets/images/placeholder-1.jpg'
 import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
@@ -11,6 +12,7 @@ import PageHeader from '../components/ui/PageHeader.astro'
 import ThemedSection from '../components/ui/ThemedSection.astro'
 import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
+import TeamBioCard from '../components/ui/TeamBioCard.astro'
 
 const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
 ---
@@ -19,41 +21,61 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
   title={`Our Team | ${SITE_TITLE}`}
   description="Meet the compassionate and experienced team at Lymphatic Specialists of Madison."
 >
-  <PageHeader class="items-center mx-auto text-center">
-    <PageTitle>Our Team</PageTitle>
-    <div class="prose">
-      <p class="h2 text-center mx-auto lsa lsa-slide-up delay-100 no-repeat">
-        Experience and Compassion
-      </p>
-      <p class="lsa lsa-slide-up delay-200 no-repeat">
-        The therapists at Lymphatic Specialists of Madison believe that care should always be
-        holistic and interdisciplinary, and we strive to help guide you towards healing with
-        experience and compassion. Dr. Rolnick has 9 years of experience in treating patients with a
-        wide variety of health histories and needs and uses Manual Lymphatic Drainage, scar tissue
-        work, her extensive knowledge of anatomy and physiology, and her manual skills to carefully
-        treat each patient. Courtney holds a doctorate in physical therapy and a certification from
-        Klose in the Vodder technique of manual lymphatic drainage.
-      </p>
-    </div>
+  <PageHeader>
+    <div
+      class="wrapper container w-full grid grid-cols-1 lg:grid-cols-2 gap-(--site-padding-md) lg:gap-(--site-padding-lg) mx-auto"
+    >
+      <div class="flex flex-col items-start gap-(--site-padding-sm) max-w-[550px] text-left">
+        <PageTitle>Our Team</PageTitle>
+        <p class="h2 mb-(--site-padding-sm) lsa lsa-slide-up delay-100 no-repeat">
+          Experience and Compassion
+        </p>
+        <p class="lsa mb-(--site-padding-sm) lsa-slide-up delay-200 no-repeat">
+          The therapists at Lymphatic Specialists of Madison believe that care should always be
+          holistic and interdisciplinary, and we strive to help guide you towards healing with
+          experience and compassion. Dr. Rolnick has 9 years of experience in treating patients with
+          a wide variety of health histories and needs and uses Manual Lymphatic Drainage, scar
+          tissue work, her extensive knowledge of anatomy and physiology, and her manual skills to
+          carefully treat each patient. Courtney holds a doctorate in physical therapy and a
+          certification from Klose in the Vodder technique of manual lymphatic drainage.
+        </p>
+        <div class="hidden md:block lsa lsa-slide-up delay-300 no-repeat">
+          <a
+            href="https://booksy.com/en-us/1554807_lymphatic-specialists-of-madison_massage_39663_madison#ba_s=sh_1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Book Now
+          </a>
+        </div>
+      </div>
 
-    <div class="lsa lsa-slide-up delay-300 no-repeat">
-      <a
-        href="https://booksy.com/en-us/1554807_lymphatic-specialists-of-madison_massage_39663_madison#ba_s=sh_1"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-primary"
-      >
-        Book Now
-      </a>
+      <Image
+        width={GroupImage.width}
+        height={GroupImage.height}
+        src={GroupImage.src}
+        alt="Lymphatic Specialists of Madison Team"
+        class="h-full w-auto lsa lsa-slide-up delay-400 no-repeat"
+      />
+
+      <div class="block md:hidden lsa lsa-slide-up delay-500 no-repeat">
+        <a
+          href="https://booksy.com/en-us/1554807_lymphatic-specialists-of-madison_massage_39663_madison#ba_s=sh_1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          Book Now
+        </a>
+      </div>
     </div>
   </PageHeader>
 
   <main>
     <!-- Team Members Section -->
     <section id="team-members" class="pt-0">
-      <div
-        class="wrapper container md:max-w-screen-xl flex flex-col gap-(--site-padding-md) mx-auto"
-      >
+      <div class="wrapper container flex flex-col gap-(--site-padding-md) mx-auto">
         <h2 class="h1 text-primary lsa lsa-slide-up no-repeat">Meet the Team</h2>
 
         <!-- Courtney Rolnick -->
@@ -65,19 +87,11 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
             <div
               class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) md:items-start"
             >
-              <aside
-                class="md:sticky md:top-[calc(var(--nav-height)+var(--site-padding-base))] md:self-start md:flex-shrink-0"
-              >
-                <h3 class="text-primary mb-2">Dr. Courtney Rolnick</h3>
-                <p class="font-semibold mb-4">PT, DPT, CMLDT - Founder</p>
-                <div class="avatar">
-                  <div
-                    class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
-                  >
-                    <Image src={CourtneyImage} alt="Courtney Rolnick" />
-                  </div>
-                </div>
-              </aside>
+              <TeamBioCard
+                name="Dr. Courtney Rolnick"
+                jobTitle="PT, DPT, CMLDT - Founder"
+                image={CourtneyImage}
+              />
               <div class="space-y-4">
                 <p class="h3">Hi, I'm Courtney.</p>
                 <p>
@@ -156,19 +170,11 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
             <div
               class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) md:items-start"
             >
-              <aside
-                class="md:sticky md:top-[calc(var(--nav-height)+var(--site-padding-base))] md:self-start md:flex-shrink-0"
-              >
-                <h3 class="text-primary mb-2">Anna Zins</h3>
-                <p class="font-semibold mb-4">OTR/L, CNS, CDP, CMLDT - Practitioner</p>
-                <div class="avatar">
-                  <div
-                    class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
-                  >
-                    <Image src={AnnaImage} alt="Anna Smith" />
-                  </div>
-                </div>
-              </aside>
+              <TeamBioCard
+                name="Anna Zins"
+                jobTitle="OTR/L, CNS, CDP, CMLDT - Practitioner"
+                image={AnnaImage}
+              />
               <div class="space-y-4">
                 <p class="h3">Hello, I'm Anna.</p>
                 <p>
@@ -234,19 +240,11 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
             <div
               class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) md:items-start"
             >
-              <aside
-                class="md:sticky md:top-[calc(var(--nav-height)+var(--site-padding-base))] md:self-start md:flex-shrink-0"
-              >
-                <h3 class="text-primary mb-2">Elizabeth Gaffron</h3>
-                <p class="font-semibold mb-4">MS, OTR/L, CMLDT - Practitioner</p>
-                <div class="avatar">
-                  <div
-                    class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-24 md:w-32 rounded-full ring-2 ring-offset-2 transition-all duration-200"
-                  >
-                    <Image src={ElizabethImage} alt="Elizabeth Gaffron" />
-                  </div>
-                </div>
-              </aside>
+              <TeamBioCard
+                name="Elizabeth Gaffron"
+                jobTitle="MS, OTR/L, CMLDT - Practitioner"
+                image={ElizabethImage}
+              />
               <div class="space-y-4">
                 <p class="h3">Hi, I'm Elizabeth.</p>
                 <p>
