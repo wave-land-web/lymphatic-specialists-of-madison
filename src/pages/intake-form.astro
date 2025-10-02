@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro'
   description="Please fill out the form below to the best of your ability. If you have any questions, please contact us."
 >
   <PageHeader class="items-center mx-auto text-center">
-    <PageTitle>Manual Lymphatic Drainage Intake Form</PageTitle>
+    <PageTitle>Manual Lymphatic Drainage Massage Intake Form</PageTitle>
     <p class="h4 lsa lsa-slide-up delay-100 no-repeat">
       Please fill out the form below to the best of your ability. If you have any questions, please
       contact us.
@@ -622,12 +622,14 @@ import Layout from '../layouts/Layout.astro'
 
         <!-- Reason for Seeking MLD Section -->
         <Card id="reason-for-seeking-mld">
-          <h2 class="card-title text-2xl mb-6">Reason for Seeking Manual Lymphatic Drainage</h2>
+          <h2 class="card-title text-2xl mb-6">
+            Reason for Seeking Manual Lymphatic Drainage Massage
+          </h2>
 
           <fieldset class="flex flex-col gap-(--site-padding-base)">
             <legend class="p whitespace-normal mb-2">
-              For what reason are you seeking Manual Lymphatic Drainage? <span class="text-accent"
-                >*</span
+              For what reason are you seeking Manual Lymphatic Drainage Massage? <span
+                class="text-accent">*</span
               >
             </legend>
 
@@ -1994,11 +1996,11 @@ import Layout from '../layouts/Layout.astro'
 
           <div class="prose">
             <p>
-              I understand that the Manual Lymphatic Drainage/scar tissue work I receive is provided
-              for the basic purpose of improving the flow of my lymphatic system, to prevent scar
-              tissue adhesions, increase scar tissue mobility and also for relaxation. If I
-              experience any pain or discomfort during this session, I will immediately inform the
-              practitioner so that the pressure and/or strokes may be adjusted to my level of
+              I understand that the Manual Lymphatic Drainage Massage/scar tissue work I receive is
+              provided for the basic purpose of improving the flow of my lymphatic system, to
+              prevent scar tissue adhesions, increase scar tissue mobility and also for relaxation.
+              If I experience any pain or discomfort during this session, I will immediately inform
+              the practitioner so that the pressure and/or strokes may be adjusted to my level of
               comfort. I further understand that massage or bodywork should not be construed as a
               substitute for medical examination, diagnosis, or treatment and that I should see a
               physician, or other qualified medical specialist for any mental or physical ailment of
@@ -2015,8 +2017,8 @@ import Layout from '../layouts/Layout.astro'
             </p>
             <p>
               <em
-                >*Please Note: Manual Lymphatic Drainage (MLD) is a very powerful modality and
-                certain medical conditions are contraindicated and determine if and when you can
+                >*Please Note: Manual Lymphatic Drainage Massage (MLDM) is a very powerful modality
+                and certain medical conditions are contraindicated and determine if and when you can
                 receive a session. After the consultation and review of the information you have
                 provided on this form, it will be determined if MLD should be administered to you
                 today. Some conditions will require a note from your doctor before proceeding.
@@ -2284,7 +2286,7 @@ import Layout from '../layouts/Layout.astro'
       }
 
       if (!reason) {
-        throw new Error('Please select a reason for seeking Manual Lymphatic Drainage.')
+        throw new Error('Please select a reason for seeking Manual Lymphatic Drainage Massage.')
       }
 
       if (!problemDescription) {

@@ -61,7 +61,7 @@ export default function IntakeNotification({
             <Heading style={heading}>New Intake Form Submission</Heading>
 
             <Text style={paragraph}>
-              Someone has submitted an intake form for Manual Lymphatic Drainage treatment!
+              Someone has submitted an intake form for Manual Lymphatic Drainage Massage treatment!
             </Text>
 
             <Hr style={hr} />

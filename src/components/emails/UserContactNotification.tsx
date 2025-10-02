@@ -41,8 +41,8 @@ export default function UserContactNotification({ firstName }: UserContactNotifi
               <Link href={`${SITE_URL}`} style={link}>
                 explore our website
               </Link>{' '}
-              to learn more about our services and how manual lymphatic drainage therapy can benefit
-              you.
+              to learn more about our services and how Manual Lymphatic Drainage Massage therapy can
+              benefit you.
             </Text>
 
             <Text style={paragraph}>
