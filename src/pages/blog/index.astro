@@ -38,10 +38,11 @@ const remainingPosts = posts.slice(4)
       <form class="join w-full mb-4" method="POST" action="/blog">
         <input
           id="email"
+          class="input input-bordered input-primary text-base-content join-item flex-1"
           type="email"
           name="email"
           placeholder="Enter your email address"
-          class="input input-bordered input-primary text-base-content join-item flex-1"
+          data-netlify="true"
           required
         />
         <label class="sr-only" for="email">Email</label>

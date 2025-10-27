@@ -102,10 +102,11 @@ import Layout from '../layouts/Layout.astro'
             </p>
 
             <form
+              id="contact-form"
               class="flex flex-col gap-(--site-padding-base)"
               method="POST"
               action="/api/forms/contact"
-              id="contact-form"
+              data-netlify="true"
             >
               <p>
                 <span class="text-accent">*</span> indicates required fields
