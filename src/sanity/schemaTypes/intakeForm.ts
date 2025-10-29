@@ -87,7 +87,7 @@ export default defineType({
             ],
           },
         },
-        { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+        { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
       ],
     }),
 
@@ -134,7 +134,7 @@ export default defineType({
             { name: 'liverCirrhosis', title: 'Liver Cirrhosis', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -147,7 +147,7 @@ export default defineType({
             { name: 'earaches', title: 'Earaches', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -172,7 +172,7 @@ export default defineType({
             { name: 'cardiacArrhythmia', title: 'Cardiac arrhythmia', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -195,7 +195,7 @@ export default defineType({
             },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -209,7 +209,7 @@ export default defineType({
             { name: 'dialysis', title: 'Dialysis', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -227,7 +227,7 @@ export default defineType({
             { name: 'iud', title: 'IUD', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -241,7 +241,7 @@ export default defineType({
             { name: 'rheumatoidArthritis', title: 'Rheumatoid arthritis', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -259,7 +259,7 @@ export default defineType({
             { name: 'lumps', title: 'Lumps', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -279,7 +279,7 @@ export default defineType({
             { name: 'factorVLeiden', title: 'Factor V Leiden', type: 'boolean' },
             { name: 'clottingIssues', title: 'Clotting issues', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -291,7 +291,7 @@ export default defineType({
             { name: 'seizures', title: 'Seizures', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -304,7 +304,7 @@ export default defineType({
             { name: 'recentSinusInjury', title: 'Recent Sinus Injury', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
         {
@@ -318,7 +318,7 @@ export default defineType({
             { name: 'depression', title: 'Depression', type: 'boolean' },
             { name: 'other', title: 'Other', type: 'boolean' },
             { name: 'na', title: 'N/A', type: 'boolean' },
-            { name: 'otherSpecify', title: 'Other Specify', type: 'string' },
+            { name: 'otherSpecify', title: 'Other Specify', type: 'text' },
           ],
         },
       ],
