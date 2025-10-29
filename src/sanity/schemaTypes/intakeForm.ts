@@ -109,7 +109,7 @@ export default defineType({
             ],
           },
         },
-        { name: 'medicalStartDate', title: 'When did medical problem start?', type: 'string' },
+        { name: 'medicalStartDate', title: 'When did medical problem start?', type: 'text' },
         { name: 'problemDescription', title: 'Problem Description', type: 'text' },
       ],
     }),
