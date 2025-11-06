@@ -16,6 +16,24 @@ export const POST: APIRoute = async ({ request }) => {
     // Parse form data from the request
     const formData = await request.formData()
 
+    // Check honeypot field (spam protection)
+    const botField = formData.get('bot-field') as string
+    if (botField) {
+      console.log('Spam submission detected via honeypot field')
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'An error occurred while processing your request.',
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
     // Extract form fields and validate required fields
     const firstName = formData.get('first-name') as string
     const lastName = formData.get('last-name') as string
@@ -55,6 +73,38 @@ export const POST: APIRoute = async ({ request }) => {
           },
         }
       )
+    }
+
+    // Simple spam detection for obvious random character patterns
+    const randomPatterns = [
+      // Very long strings without spaces (20+ chars, likely random)
+      /^[A-Za-z]{20,}$/,
+      // Multiple punctuation marks in a row
+      /[;,:!@#$%^&*()_+=\[\]{}\|\\<>?\/~`]{3,}/,
+    ]
+
+    // Check text fields for obvious random patterns
+    const fieldsToCheck = [firstName, lastName, messageBody].filter(Boolean) as string[]
+
+    for (const fieldValue of fieldsToCheck) {
+      const trimmed = fieldValue.trim()
+
+      // Check for random character patterns
+      if (randomPatterns.some((pattern) => pattern.test(trimmed))) {
+        console.log('Spam detected: random character pattern:', trimmed)
+        return new Response(
+          JSON.stringify({
+            success: false,
+            error: 'Please use real names and information.',
+          }),
+          {
+            status: 400,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        )
+      }
     }
 
     // Use Sanity client (automatically optimizes for read/write operations)

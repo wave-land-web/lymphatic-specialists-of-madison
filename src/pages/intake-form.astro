@@ -25,7 +25,6 @@ import Layout from '../layouts/Layout.astro'
         class="container lg:max-w-6xl mx-auto flex flex-col gap-8"
         method="POST"
         action="/api/forms/intake"
-        data-netlify="true"
       >
         <p>
           <span class="text-accent">*</span> indicates required fields
@@ -2259,13 +2258,6 @@ import Layout from '../layouts/Layout.astro'
     try {
       // Get form data
       const formData = new FormData(this)
-
-      // Honeypot check - if bot-field has any value, it's likely spam
-      if (formData.get('bot-field')) {
-        // Silently drop the submission without showing an error
-        console.log('Spam submission detected via honeypot')
-        return
-      }
 
       // Basic validation for required fields
       const firstName = formData.get('first-name') as string

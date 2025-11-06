@@ -86,13 +86,6 @@
       // Get form data
       const formData = new FormData(form)
 
-      // Honeypot check - if bot-field has any value, it's likely spam
-      if (formData.get('bot-field')) {
-        // Silently drop the submission without showing an error
-        console.log('Spam submission detected via honeypot')
-        return
-      }
-
       // Show loading state
       setLoadingState(true)
 

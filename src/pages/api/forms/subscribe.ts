@@ -14,6 +14,25 @@ export const POST: APIRoute = async (context: APIContext) => {
   try {
     // Parse form data
     const formData = await request.formData()
+
+    // Check honeypot field (spam protection)
+    const botField = formData.get('bot-field') as string
+    if (botField) {
+      console.log('Spam submission detected via honeypot field')
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'An error occurred while processing your request.',
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
     const email = formData.get('email')?.toString()
 
     // Validate email
