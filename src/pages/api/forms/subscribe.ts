@@ -53,6 +53,60 @@ export const POST: APIRoute = async (context: APIContext) => {
     // Normalize email
     const normalizedEmail = email.trim().toLowerCase()
 
+    // Block disposable/temporary email domains commonly used by spammers
+    const disposableEmailDomains = [
+      'tempmail.com',
+      'throwaway.email',
+      'guerrillamail.com',
+      'mailinator.com',
+      '10minutemail.com',
+      'trashmail.com',
+      'fakeinbox.com',
+      'spam4.me',
+      'getnada.com',
+      'temp-mail.org',
+    ]
+
+    const emailDomain = normalizedEmail.split('@')[1]
+    if (disposableEmailDomains.some((domain) => emailDomain === domain)) {
+      console.log('Disposable email domain detected:', emailDomain)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Disposable email addresses are not allowed, please use a valid email.',
+        }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      )
+    }
+
+    // Block emails with suspicious patterns (random characters before @)
+    const emailLocalPart = normalizedEmail.split('@')[0]
+    const suspiciousPatterns = [
+      // Very long local part (35+ chars) with no dots/underscores - likely spam
+      /^[a-z0-9]{35,}$/,
+      // Random gibberish: 9+ consecutive consonants with no vowels (extremely rare in real names)
+      /[bcdfghjklmnpqrstvwxyz]{9,}/i,
+      // Short prefix + lots of numbers (e.g., "dgl3906464") - 1-4 letters then 8+ digits
+      /^[a-z]{1,4}[0-9]{8,}$/,
+    ]
+
+    if (suspiciousPatterns.some((pattern) => pattern.test(emailLocalPart))) {
+      console.log('Suspicious email pattern detected:', normalizedEmail)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Suspicious email pattern detected, please provide a valid email address.',
+        }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      )
+    }
+
     // Check if user already exists in Sanity
     const existingUser = await sanityClient.fetch(`*[_type == "user" && email == $email][0]`, {
       email: normalizedEmail,
