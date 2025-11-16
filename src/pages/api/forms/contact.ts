@@ -75,23 +75,77 @@ export const POST: APIRoute = async ({ request }) => {
       )
     }
 
-    // Simple spam detection for obvious random character patterns
+    // Spam detection: random character patterns and marketing spam
     const randomPatterns = [
-      // Very long strings without spaces (20+ chars, likely random)
+      // Very long strings without spaces (20+ chars for names, 15+ for messages)
       /^[A-Za-z]{20,}$/,
       // Multiple punctuation marks in a row
       /[;,:!@#$%^&*()_+=\[\]{}\|\\<>?\/~`]{3,}/,
     ]
 
-    // Check text fields for obvious random patterns
-    const fieldsToCheck = [firstName, lastName, messageBody].filter(Boolean) as string[]
+    // More aggressive pattern for message body (catches shorter gibberish)
+    const messageRandomPatterns = [/^[A-Za-z]{15,}$/, /[;,:!@#$%^&*()_+=\[\]{}\|\\<>?\/~`]{3,}/]
 
-    for (const fieldValue of fieldsToCheck) {
+    // Spam keywords commonly found in marketing/SEO spam
+    const spamKeywords = [
+      /reply\s+stop\s+to\s+unsubscribe/i,
+      /google\s+map(s)?\s+optimization/i,
+      /\bseo\b.*\bpricing\b/i,
+      /increase.*traffic/i,
+      /boost.*ranking/i,
+      /affordable.*fast.*optimization/i,
+      /reply to see pricing/i,
+      /schedule a quick call/i,
+      /\bcompetitors\b.*\bgearing up\b/i,
+    ]
+
+    // Check message body for spam
+    if (messageBody) {
+      const trimmed = messageBody.trim()
+
+      // Check for random character patterns (use more aggressive patterns for messages)
+      if (messageRandomPatterns.some((pattern) => pattern.test(trimmed))) {
+        console.log('Spam detected: random character pattern in message:', trimmed)
+        return new Response(
+          JSON.stringify({
+            success: false,
+            error: 'Your message appears to be spam, please revise and try again.',
+          }),
+          {
+            status: 400,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        )
+      }
+
+      // Check for spam keywords
+      if (spamKeywords.some((pattern) => pattern.test(trimmed))) {
+        console.log('Spam detected: marketing/SEO keywords in message:', trimmed.substring(0, 100))
+        return new Response(
+          JSON.stringify({
+            success: false,
+            error:
+              'Your message includes keywords that are flagged as spam, please revise and try again.',
+          }),
+          {
+            status: 400,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        )
+      }
+    }
+
+    // Check names for random patterns only (not spam keywords) - use 20+ char threshold
+    const nameFields = [firstName, lastName].filter(Boolean) as string[]
+    for (const fieldValue of nameFields) {
       const trimmed = fieldValue.trim()
 
-      // Check for random character patterns
       if (randomPatterns.some((pattern) => pattern.test(trimmed))) {
-        console.log('Spam detected: random character pattern:', trimmed)
+        console.log('Spam detected: random character pattern in name:', trimmed)
         return new Response(
           JSON.stringify({
             success: false,
