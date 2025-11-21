@@ -2061,6 +2061,9 @@ import Layout from '../layouts/Layout.astro'
 
         <!-- Honeypot field - hidden from users -->
         <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
+        
+        <!-- Timing protection - hidden timestamp -->
+        <input type="hidden" name="form-load-time" id="form-load-time" />
 
         <!-- Form Messages -->
         <div id="form-messages">
@@ -2076,6 +2079,14 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <script>
+  // Set form load timestamp for spam protection
+  document.addEventListener('DOMContentLoaded', function() {
+    const formLoadTimeInput = document.getElementById('form-load-time') as HTMLInputElement
+    if (formLoadTimeInput) {
+      formLoadTimeInput.value = Date.now().toString()
+    }
+  })
+
   const addSurgeryButton = document.getElementById('add-surgery-button')
   const addMedicationButton = document.getElementById('add-medication-button')
 

@@ -6,6 +6,7 @@ import { RESEND_AUDIENCE_ID } from 'astro:env/server'
 import NewsletterNotification from '../../../components/emails/NewsletterNotification'
 import Welcome from '../../../components/emails/Welcome'
 import { resend } from '../../../lib/resend'
+import { checkSpamProtection } from '../../../lib/spamProtection'
 import { sanityClient } from '../../../sanity/lib/client'
 
 export const POST: APIRoute = async (context: APIContext) => {
@@ -28,6 +29,25 @@ export const POST: APIRoute = async (context: APIContext) => {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
+    // Enhanced spam protection (rate limiting, timing, content analysis)
+    const spamCheck = checkSpamProtection(request, formData)
+    if (spamCheck.isSpam) {
+      console.log('Enhanced spam protection triggered:', spamCheck.reason)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: spamCheck.reason || 'Please try again later.',
+        }),
+        {
+          status: 429, // Too Many Requests
+          headers: {
+            'Content-Type': 'application/json',
+            'Retry-After': '600', // 10 minutes
           },
         }
       )

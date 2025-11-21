@@ -188,6 +188,13 @@ import Layout from '../layouts/Layout.astro'
                 tabindex="-1"
                 autocomplete="off"
               />
+              
+              <!-- Timing protection - hidden timestamp -->
+              <input
+                type="hidden"
+                name="form-load-time"
+                id="form-load-time"
+              />
 
               <!-- Submit Button -->
               <button type="submit" class="btn btn-primary w-full">Submit</button>
@@ -243,6 +250,14 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <script>
+  // Set form load timestamp for spam protection
+  document.addEventListener('DOMContentLoaded', function() {
+    const formLoadTimeInput = document.getElementById('form-load-time') as HTMLInputElement
+    if (formLoadTimeInput) {
+      formLoadTimeInput.value = Date.now().toString()
+    }
+  })
+
   // Handle form submission with API submission
   const contactForm = document.getElementById('contact-form') as HTMLFormElement
   const messageText = document.getElementById('form-message-text') as HTMLParagraphElement

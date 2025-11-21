@@ -3,6 +3,7 @@ import type { APIRoute } from 'astro'
 import ContactNotification from '../../../components/emails/ContactNotification'
 import UserContactNotification from '../../../components/emails/UserContactNotification'
 import { resend } from '../../../lib/resend'
+import { checkSpamProtection } from '../../../lib/spamProtection'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
   createContactFormSubmission,
@@ -29,6 +30,25 @@ export const POST: APIRoute = async ({ request }) => {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
+    // Enhanced spam protection (rate limiting, timing, content analysis)
+    const spamCheck = checkSpamProtection(request, formData)
+    if (spamCheck.isSpam) {
+      console.log('Enhanced spam protection triggered:', spamCheck.reason)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: spamCheck.reason || 'Please try again later.',
+        }),
+        {
+          status: 429, // Too Many Requests
+          headers: {
+            'Content-Type': 'application/json',
+            'Retry-After': '600', // 10 minutes
           },
         }
       )

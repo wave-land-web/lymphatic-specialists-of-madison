@@ -20,6 +20,9 @@
       <label class="sr-only" for="email">Email</label>
       <!-- Honeypot field - hidden from users -->
       <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
+      
+      <!-- Timing protection - hidden timestamp -->
+      <input type="hidden" name="form-load-time" id="newsletter-form-load-time" />
       <button type="submit" class="btn btn-accent join-item" id="submit-btn">
         <span id="submit-text">Subscribe</span>
         <span id="loading-spinner" class="loading loading-spinner loading-sm hidden"></span>
@@ -64,6 +67,12 @@
 <script>
   // Newsletter subscription form handling
   document.addEventListener('DOMContentLoaded', function () {
+    // Set form load timestamp for spam protection
+    const formLoadTimeInput = document.getElementById('newsletter-form-load-time') as HTMLInputElement
+    if (formLoadTimeInput) {
+      formLoadTimeInput.value = Date.now().toString()
+    }
+
     const form = document.getElementById('newsletter-form') as HTMLFormElement
     const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement
     const submitText = document.getElementById('submit-text') as HTMLSpanElement
