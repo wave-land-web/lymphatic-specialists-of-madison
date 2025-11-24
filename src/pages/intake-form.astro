@@ -2062,8 +2062,13 @@ import Layout from '../layouts/Layout.astro'
         <!-- Honeypot field - hidden from users -->
         <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
         
-        <!-- Timing protection - hidden timestamp -->
-        <input type="hidden" name="form-load-time" id="form-load-time" />
+        <!-- Altcha Security Challenge -->
+        <altcha-widget
+          id="altcha-intake"
+          challengeurl="/api/altcha/challenge"
+          name="altcha"
+          required
+        ></altcha-widget>
 
         <!-- Form Messages -->
         <div id="form-messages">
@@ -2078,15 +2083,10 @@ import Layout from '../layouts/Layout.astro'
   </main>
 </Layout>
 
-<script>
-  // Set form load timestamp for spam protection
-  document.addEventListener('DOMContentLoaded', function() {
-    const formLoadTimeInput = document.getElementById('form-load-time') as HTMLInputElement
-    if (formLoadTimeInput) {
-      formLoadTimeInput.value = Date.now().toString()
-    }
-  })
+<!-- Altcha Widget Script -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/altcha@0.7.0/dist/altcha.min.js"></script>
 
+<script>
   const addSurgeryButton = document.getElementById('add-surgery-button')
   const addMedicationButton = document.getElementById('add-medication-button')
 
