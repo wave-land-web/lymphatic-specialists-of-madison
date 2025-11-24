@@ -9,7 +9,8 @@ export const GET: APIRoute = async () => {
     const challenge = await createChallenge({
       algorithm: 'SHA-256',
       maxnumber: 100000, // Adjust difficulty as needed
-      saltLength: 12
+      saltLength: 12,
+      hmacKey: 'lymphatic-specialists-key-' + Date.now() // Simple key generation
     })
 
     return new Response(JSON.stringify(challenge), {
