@@ -21,7 +21,7 @@ export async function verifyAltcha(altchaPayload: string): Promise<AltchaVerific
     const payload = JSON.parse(altchaPayload)
     
     // Verify the solution using the correct API
-    const isValid = await verifySolution(payload, undefined)
+    const isValid = await verifySolution(payload, '')
 
     if (!isValid) {
       return {
