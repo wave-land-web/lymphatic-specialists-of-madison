@@ -20,14 +20,8 @@ export async function verifyAltcha(altchaPayload: string): Promise<AltchaVerific
     // Parse the Altcha payload
     const payload = JSON.parse(altchaPayload)
     
-    // Verify the solution
-    const isValid = await verifySolution(
-      payload.algorithm,
-      payload.challenge,
-      payload.number,
-      payload.salt,
-      payload.signature
-    )
+    // Verify the solution using the correct API
+    const isValid = await verifySolution(payload, undefined)
 
     if (!isValid) {
       return {
@@ -51,7 +45,6 @@ export async function verifyAltcha(altchaPayload: string): Promise<AltchaVerific
  * Combined spam protection check including Altcha
  */
 export async function checkSpamProtectionWithAltcha(
-  request: Request, 
   formData: FormData
 ): Promise<{ isSpam: boolean; reason?: string }> {
   // First verify Altcha

@@ -189,12 +189,15 @@ import Layout from '../layouts/Layout.astro'
                 autocomplete="off"
               />
               
-              <!-- Timing protection - hidden timestamp -->
-              <input
-                type="hidden"
-                name="form-load-time"
-                id="form-load-time"
-              />
+              <!-- Altcha Security Challenge -->
+              <fieldset class="flex flex-col gap-2">
+                <altcha-widget
+                  id="altcha-contact"
+                  challengeurl="/api/altcha/challenge"
+                  name="altcha"
+                  required
+                ></altcha-widget>
+              </fieldset>
 
               <!-- Submit Button -->
               <button type="submit" class="btn btn-primary w-full">Submit</button>
