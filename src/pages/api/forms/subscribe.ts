@@ -6,6 +6,7 @@ import { RESEND_AUDIENCE_ID } from 'astro:env/server'
 import NewsletterNotification from '../../../components/emails/NewsletterNotification'
 import Welcome from '../../../components/emails/Welcome'
 import { resend } from '../../../lib/resend'
+import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
 import { sanityClient } from '../../../sanity/lib/client'
 
 export const POST: APIRoute = async (context: APIContext) => {
@@ -23,6 +24,24 @@ export const POST: APIRoute = async (context: APIContext) => {
         JSON.stringify({
           success: false,
           error: 'An error occurred while processing your request.',
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
+    // Altcha spam protection  
+    const spamCheck = await checkSpamProtectionWithAltcha(formData)
+    if (spamCheck.isSpam) {
+      console.log('Altcha spam protection triggered:', spamCheck.reason)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: spamCheck.reason || 'Please complete the security challenge.',
         }),
         {
           status: 400,

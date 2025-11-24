@@ -3,6 +3,7 @@ import type { APIRoute } from 'astro'
 import ContactNotification from '../../../components/emails/ContactNotification'
 import UserContactNotification from '../../../components/emails/UserContactNotification'
 import { resend } from '../../../lib/resend'
+import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
   createContactFormSubmission,
@@ -24,6 +25,24 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({
           success: false,
           error: 'An error occurred while processing your request.',
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
+    // Altcha spam protection
+    const spamCheck = await checkSpamProtectionWithAltcha(formData)
+    if (spamCheck.isSpam) {
+      console.log('Altcha spam protection triggered:', spamCheck.reason)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: spamCheck.reason || 'Please complete the security challenge.',
         }),
         {
           status: 400,
