@@ -208,13 +208,12 @@
     @apply text-balance font-nuckle-semibold transition-colors duration-200;
   }
 
-  img,
-  svg {
-    @apply w-full h-auto;
-  }
-
   img {
     @apply w-full h-auto object-cover rounded-box shadow-lg;
+  }
+
+  svg {
+    @apply max-w-full h-auto;
   }
 
   em {
