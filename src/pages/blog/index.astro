@@ -48,7 +48,17 @@ const remainingPosts = posts.slice(4)
         <label class="sr-only" for="email">Email</label>
         <button type="submit" class="btn btn-primary join-item">Subscribe</button>
       </form>
-      <p class="text-sm">No spam, unsubscribe anytime. We respect your privacy.</p>
+
+      <!-- Altcha Security Challenge -->
+      <altcha-widget
+        id="altcha-newsletter"
+        challengeurl="/api/altcha/challenge"
+        name="Blog Altcha"
+        style="--altcha-color-base: transparent; --altcha-max-width: 100%;"
+        hidefooter
+        required></altcha-widget>
+
+      <p class="text-sm  mt-2">No spam, unsubscribe anytime. We respect your privacy.</p>
     </div>
   </PageHeader>
 
@@ -85,3 +95,7 @@ const remainingPosts = posts.slice(4)
     }
   </main>
 </Layout>
+
+<script>
+  import 'altcha'
+</script>

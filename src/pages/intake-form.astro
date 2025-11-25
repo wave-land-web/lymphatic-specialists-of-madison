@@ -2057,18 +2057,17 @@ import Layout from '../layouts/Layout.astro'
               />
             </label>
           </div>
+
+          <!-- Altcha Security Challenge -->
+          <altcha-widget
+            id="altcha-intake"
+            name="Intake Form Altcha"
+            challengeurl="/api/altcha/challenge"
+            required></altcha-widget>
         </Card>
 
         <!-- Honeypot field - hidden from users -->
         <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
-        
-        <!-- Altcha Security Challenge -->
-        <altcha-widget
-          id="altcha-intake"
-          challengeurl="/api/altcha/challenge"
-          name="altcha"
-          required
-        ></altcha-widget>
 
         <!-- Form Messages -->
         <div id="form-messages">
@@ -2082,9 +2081,6 @@ import Layout from '../layouts/Layout.astro'
     </section>
   </main>
 </Layout>
-
-<!-- Altcha Widget Script -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/altcha@0.7.0/dist/altcha.min.js"></script>
 
 <script>
   const addSurgeryButton = document.getElementById('add-surgery-button')
@@ -2295,12 +2291,6 @@ import Layout from '../layouts/Layout.astro'
 
       if (!problemDescription) {
         throw new Error('Please describe your problem/reason for seeking treatment.')
-      }
-
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(email)) {
-        throw new Error('Please enter a valid email address.')
       }
 
       // Submit to API

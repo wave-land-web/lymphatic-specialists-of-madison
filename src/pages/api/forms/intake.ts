@@ -75,23 +75,6 @@ export const POST: APIRoute = async ({ request }) => {
       )
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          error: 'Invalid email address format.',
-        }),
-        {
-          status: 400,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-    }
-
     // Extract personal information
     const personalInfo = {
       firstName: firstName,

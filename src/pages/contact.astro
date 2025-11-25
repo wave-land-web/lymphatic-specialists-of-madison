@@ -188,16 +188,13 @@ import Layout from '../layouts/Layout.astro'
                 tabindex="-1"
                 autocomplete="off"
               />
-              
+
               <!-- Altcha Security Challenge -->
-              <fieldset class="flex flex-col gap-2">
-                <altcha-widget
-                  id="altcha-contact"
-                  challengeurl="/api/altcha/challenge"
-                  name="altcha"
-                  required
-                ></altcha-widget>
-              </fieldset>
+              <altcha-widget
+                id="altcha-contact"
+                name="Contact Altcha"
+                challengeurl="/api/altcha/challenge"
+                required></altcha-widget>
 
               <!-- Submit Button -->
               <button type="submit" class="btn btn-primary w-full">Submit</button>
@@ -252,11 +249,9 @@ import Layout from '../layouts/Layout.astro'
   </main>
 </Layout>
 
-<!-- Altcha Widget Script -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/altcha@0.7.0/dist/altcha.min.js"></script>
-
 <script>
   // Handle form submission with API submission
+  import 'altcha'
   const contactForm = document.getElementById('contact-form') as HTMLFormElement
   const messageText = document.getElementById('form-message-text') as HTMLParagraphElement
 
@@ -280,12 +275,6 @@ import Layout from '../layouts/Layout.astro'
 
       if (!firstName || !lastName || !emailAddress) {
         throw new Error('Please fill in all required fields.')
-      }
-
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(emailAddress)) {
-        throw new Error('Please enter a valid email address.')
       }
 
       // Submit to API

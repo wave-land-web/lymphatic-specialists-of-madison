@@ -5,6 +5,9 @@ interface AltchaVerificationResult {
   error?: string
 }
 
+// IMPORTANT: Must match the key in challenge.ts
+const HMAC_KEY = import.meta.env.ALTCHA_API_KEY
+
 /**
  * Verifies Altcha challenge solution
  */
@@ -12,31 +15,30 @@ export async function verifyAltcha(altchaPayload: string): Promise<AltchaVerific
   if (!altchaPayload) {
     return {
       isValid: false,
-      error: 'Please complete the security challenge.'
+      error: 'Please complete the security challenge.',
     }
   }
 
   try {
-    // Parse the Altcha payload
-    const payload = JSON.parse(altchaPayload)
-    
-    // Verify the solution using the correct API
-    const isValid = await verifySolution(payload, '')
+    // Verify the solution with the HMAC key
+    // Note: verifySolution accepts either Base64-encoded string or object
+    const isValid = await verifySolution(altchaPayload, HMAC_KEY)
+
+    console.log('Altcha verification result:', isValid)
 
     if (!isValid) {
       return {
         isValid: false,
-        error: 'Security challenge verification failed. Please try again.'
+        error: 'Security challenge verification failed. Please try again.',
       }
     }
 
     return { isValid: true }
-    
   } catch (error) {
     console.error('Altcha verification error:', error)
     return {
       isValid: false,
-      error: 'Security challenge verification failed. Please try again.'
+      error: 'Security challenge verification failed. Please try again.',
     }
   }
 }
@@ -50,11 +52,11 @@ export async function checkSpamProtectionWithAltcha(
   // First verify Altcha
   const altchaPayload = formData.get('altcha') as string
   const altchaResult = await verifyAltcha(altchaPayload)
-  
+
   if (!altchaResult.isValid) {
     return {
       isSpam: true,
-      reason: altchaResult.error || 'Please complete the security challenge.'
+      reason: altchaResult.error || 'Please complete the security challenge.',
     }
   }
 
