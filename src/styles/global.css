@@ -110,6 +110,19 @@
 }
 
 @layer base {
+  :root {
+    /* Altcha Styles */
+    --altcha-border-width: 1px;
+    --altcha-border-radius: var(--radius-box);
+    --altcha-color-base: var(--color-base-100);
+    --altcha-color-border: #cccac9;
+    --altcha-color-text: var(--color-base-content);
+    --altcha-color-border-focus: var(--color-primary);
+    --altcha-color-error-text: var(--color-error);
+    --altcha-color-footer-bg: transparent;
+    --altcha-max-width: 100%;
+  }
+
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--color-neutral) var(--color-base-200) !important;
@@ -210,5 +223,9 @@
 
   strong {
     @apply font-nuckle-semibold;
+  }
+
+  altcha-widget {
+    @apply text-sm;
   }
 }

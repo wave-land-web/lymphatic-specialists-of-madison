@@ -7,7 +7,7 @@
 
   <!-- Email Subscribe Form -->
   <div class="mb-(--site-padding-md) max-w-md mx-auto lsa lsa-slide-up delay-200 no-repeat">
-    <form id="newsletter-form" method="POST" action="/api/forms/subscribe" class="join w-full">
+    <form id="newsletter-form" method="POST" action="/api/forms/subscribe" class="join w-full mb-4">
       <input
         id="email"
         class="input input-bordered input-accent join-item flex-1"
@@ -25,6 +25,15 @@
         <span id="loading-spinner" class="loading loading-spinner loading-sm hidden"></span>
       </button>
     </form>
+
+    <!-- Altcha Security Challenge -->
+    <altcha-widget
+      id="altcha-newsletter"
+      challengeurl="/api/altcha/challenge"
+      name="Newsletter Subscribe Altcha"
+      style="--altcha-color-base: transparent;"
+      hidefooter
+      required></altcha-widget>
 
     <!-- Success/Error Messages -->
     <div id="form-message" class="mt-4 text-sm" role="alert" aria-live="polite"></div>
@@ -62,6 +71,8 @@
 </div>
 
 <script>
+  import 'altcha'
+
   // Newsletter subscription form handling
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('newsletter-form') as HTMLFormElement

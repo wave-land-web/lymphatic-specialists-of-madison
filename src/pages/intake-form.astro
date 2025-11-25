@@ -2057,6 +2057,13 @@ import Layout from '../layouts/Layout.astro'
               />
             </label>
           </div>
+
+          <!-- Altcha Security Challenge -->
+          <altcha-widget
+            id="altcha-intake"
+            name="Intake Form Altcha"
+            challengeurl="/api/altcha/challenge"
+            required></altcha-widget>
         </Card>
 
         <!-- Honeypot field - hidden from users -->
@@ -2284,12 +2291,6 @@ import Layout from '../layouts/Layout.astro'
 
       if (!problemDescription) {
         throw new Error('Please describe your problem/reason for seeking treatment.')
-      }
-
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(email)) {
-        throw new Error('Please enter a valid email address.')
       }
 
       // Submit to API

@@ -3,6 +3,7 @@ import type { APIRoute } from 'astro'
 import IntakeNotification from '../../../components/emails/IntakeNotification'
 import UserIntakeNotification from '../../../components/emails/UserIntakeNotification'
 import { resend } from '../../../lib/resend'
+import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
   createIntakeFormSubmission,
@@ -35,6 +36,24 @@ export const POST: APIRoute = async ({ request }) => {
       )
     }
 
+    // Altcha spam protection
+    const spamCheck = await checkSpamProtectionWithAltcha(formData)
+    if (spamCheck.isSpam) {
+      console.log('Altcha spam protection triggered:', spamCheck.reason)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: spamCheck.reason || 'Please complete the security challenge.',
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
     // Extract required personal information fields
     const firstName = formData.get('first-name') as string
     const lastName = formData.get('last-name') as string
@@ -46,23 +65,6 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({
           success: false,
           error: 'Missing required fields: firstName, lastName, and email are required.',
-        }),
-        {
-          status: 400,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          error: 'Invalid email address format.',
         }),
         {
           status: 400,
