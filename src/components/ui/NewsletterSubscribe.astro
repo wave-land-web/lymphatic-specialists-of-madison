@@ -7,33 +7,35 @@
 
   <!-- Email Subscribe Form -->
   <div class="mb-(--site-padding-md) max-w-md mx-auto lsa lsa-slide-up delay-200 no-repeat">
-    <form id="newsletter-form" method="POST" action="/api/forms/subscribe" class="join w-full mb-4">
-      <input
-        id="email"
-        class="input input-bordered input-accent join-item flex-1"
-        type="email"
-        name="email"
-        placeholder="Enter your email address"
-        data-netlify="true"
-        required
-      />
-      <label class="sr-only" for="email">Email</label>
-      <!-- Honeypot field - hidden from users -->
-      <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
-      <button type="submit" class="btn btn-accent join-item" id="submit-btn">
-        <span id="submit-text">Subscribe</span>
-        <span id="loading-spinner" class="loading loading-spinner loading-sm hidden"></span>
-      </button>
-    </form>
+    <form id="newsletter-form" method="POST" action="/api/forms/subscribe" class="w-full">
+      <div class="join w-full mb-4">
+        <input
+          id="email"
+          class="input input-bordered input-accent join-item flex-1"
+          type="email"
+          name="email"
+          placeholder="Enter your email address"
+          data-netlify="true"
+          required
+        />
+        <label class="sr-only" for="email">Email</label>
+        <!-- Honeypot field - hidden from users -->
+        <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
+        <button type="submit" class="btn btn-accent join-item" id="submit-btn">
+          <span id="submit-text">Subscribe</span>
+          <span id="loading-spinner" class="loading loading-spinner loading-sm hidden"></span>
+        </button>
+      </div>
 
-    <!-- Altcha Security Challenge -->
-    <altcha-widget
-      id="altcha-newsletter"
-      challengeurl="/api/altcha/challenge"
-      name="Newsletter Subscribe Altcha"
-      style="--altcha-color-base: transparent;"
-      hidefooter
-      required></altcha-widget>
+      <!-- Altcha Security Challenge -->
+      <altcha-widget
+        id="altcha-newsletter"
+        challengeurl="/api/altcha/challenge"
+        name="altcha"
+        style="--altcha-color-base: transparent;"
+        hidefooter
+        required></altcha-widget>
+    </form>
 
     <!-- Success/Error Messages -->
     <div id="form-message" class="mt-4 text-sm" role="alert" aria-live="polite"></div>
