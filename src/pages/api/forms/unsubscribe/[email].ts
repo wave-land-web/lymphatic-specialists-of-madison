@@ -1,4 +1,4 @@
-export const prerender = false
+export const prerender = false // Enable server-side rendering for form handling
 
 import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'

@@ -1,3 +1,5 @@
+export const prerender = false // Enable server-side rendering for form handling
+
 import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
 import ContactNotification from '../../../components/emails/ContactNotification'
@@ -9,8 +11,6 @@ import {
   createContactFormSubmission,
   type ContactFormData,
 } from '../../../sanity/lib/formSubmissions'
-
-export const prerender = false // Enable server-side rendering for form handling
 
 export const POST: APIRoute = async ({ request }) => {
   try {

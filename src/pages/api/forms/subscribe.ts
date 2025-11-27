@@ -1,4 +1,4 @@
-export const prerender = false
+export const prerender = false // Enable server-side rendering for form handling
 
 import { render } from '@react-email/render'
 import type { APIContext, APIRoute } from 'astro'
@@ -34,24 +34,6 @@ export const POST: APIRoute = async (context: APIContext) => {
       )
     }
 
-    // Altcha spam protection
-    const spamCheck = await checkSpamProtectionWithAltcha(formData)
-    if (spamCheck.isSpam) {
-      console.log('Altcha spam protection triggered:', spamCheck.reason)
-      return new Response(
-        JSON.stringify({
-          success: false,
-          error: spamCheck.reason || 'Please complete the security challenge.',
-        }),
-        {
-          status: 400,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-    }
-
     const email = formData.get('email')?.toString()
 
     // Validate email
@@ -71,6 +53,65 @@ export const POST: APIRoute = async (context: APIContext) => {
 
     // Normalize email
     const normalizedEmail = email.trim().toLowerCase()
+
+    // Altcha spam protection
+    const spamCheck = await checkSpamProtectionWithAltcha(formData)
+    if (spamCheck.isSpam) {
+      console.log('Altcha spam protection triggered:', spamCheck.reason)
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: spamCheck.reason || 'Please complete the security challenge.',
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+    }
+
+    // Additional Email Spam Checks
+    // Check for disposable email domains
+    const disposableDomains = [
+      'tempmail.com',
+      'throwawaymail.com',
+      'mailinator.com',
+      'guerrillamail.com',
+      'yopmail.com',
+      '10minutemail.com',
+      'sharklasers.com',
+      'getnada.com',
+      'maildrop.cc',
+      'dispostable.com',
+      'fakeinbox.com',
+      'trashmail.com',
+      'mintemail.com',
+      'spamgourmet.com',
+      'mytemp.email',
+      'disposablemail.com',
+      'easytrashmail.com',
+      'temp-mail.org',
+      'mail-temporaire.fr',
+      'spambox.us',
+      'mailcatch.com',
+      'tempinbox.com',
+      'throwawayemailaddress.com',
+      'emailondeck.com',
+      'trashmail.net',
+    ]
+
+    if (disposableDomains.some((domain) => normalizedEmail.endsWith(`@${domain}`))) {
+      console.log('Spam detected: Disposable email domain')
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Please use a valid email address.',
+        }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      )
+    }
 
     // Check if user already exists in Sanity
     const existingUser = await sanityClient.fetch(`*[_type == "user" && email == $email][0]`, {
