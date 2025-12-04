@@ -198,21 +198,6 @@ import Layout from '../layouts/Layout.astro'
 
               <!-- Submit Button -->
               <button type="submit" class="btn btn-primary w-full">Submit</button>
-
-              <fieldset>
-                <label
-                  for="newsletter-subscribe"
-                  class="label cursor-pointer justify-center whitespace-normal"
-                >
-                  <input
-                    id="newsletter-subscribe"
-                    name="newsletter-subscribe"
-                    type="checkbox"
-                    class="checkbox checkbox-primary mr-2"
-                  />
-                  <span>Subscribe to our newsletter for updates and wellness tips</span>
-                </label>
-              </fieldset>
             </form>
 
             <div id="form-messages">
@@ -251,7 +236,6 @@ import Layout from '../layouts/Layout.astro'
 
 <script>
   // Handle form submission with API submission
-  import 'altcha'
   const contactForm = document.getElementById('contact-form') as HTMLFormElement
   const messageText = document.getElementById('form-message-text') as HTMLParagraphElement
 

@@ -66,27 +66,25 @@ import Layout from '../layouts/Layout.astro'
               <!-- Phone Numbers -->
               <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base)">
                 <div class="flex flex-col gap-2">
-                  <label for="phone-day">Phone (day)</label>
+                  <label for="phone-day">Phone (day) <span class="text-accent">*</span></label>
                   <input
                     id="phone-day"
                     name="phone-day"
                     type="tel"
                     placeholder="(123) 456-7890"
                     class="input input-bordered w-full"
+                    required
                   />
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <label for="phone-evening">
-                    Phone (evening) <span class="text-accent">*</span>
-                  </label>
+                  <label for="phone-evening"> Phone (evening) </label>
                   <input
                     id="phone-evening"
                     name="phone-evening"
                     type="tel"
                     placeholder="(123) 456-7890"
                     class="input input-bordered w-full"
-                    required
                   />
                 </div>
               </fieldset>

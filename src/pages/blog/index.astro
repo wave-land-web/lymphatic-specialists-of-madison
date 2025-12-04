@@ -32,34 +32,6 @@ const remainingPosts = posts.slice(4)
     <p class="h4 max-w-lg lsa lsa-slide-up delay-100 no-repeat">
       Explore our blog for the latest news and insights on lymphatic health and manual therapy.
     </p>
-    
-    <!-- Email Subscribe Form -->
-    <div class="max-w-md lsa lsa-slide-up delay-200 no-repeat">
-      <form class="join w-full mb-4" method="POST" action="/blog">
-        <input
-          id="email"
-          class="input input-bordered input-primary text-base-content join-item flex-1"
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          data-netlify="true"
-          required
-        />
-        <label class="sr-only" for="email">Email</label>
-        <button type="submit" class="btn btn-primary join-item">Subscribe</button>
-      </form>
-
-      <!-- Altcha Security Challenge -->
-      <altcha-widget
-        id="altcha-newsletter"
-        challengeurl="/api/altcha/challenge"
-        name="Blog Altcha"
-        style="--altcha-color-base: transparent; --altcha-max-width: 100%;"
-        hidefooter
-        required></altcha-widget>
-
-      <p class="text-sm  mt-2">No spam, unsubscribe anytime. We respect your privacy.</p>
-    </div>
   </PageHeader>
 
   <main class="wrapper">
@@ -95,7 +67,3 @@ const remainingPosts = posts.slice(4)
     }
   </main>
 </Layout>
-
-<script>
-  import 'altcha'
-</script>

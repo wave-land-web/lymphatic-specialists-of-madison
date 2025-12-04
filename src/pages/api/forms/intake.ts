@@ -79,7 +79,7 @@ export const POST: APIRoute = async ({ request }) => {
     const personalInfo = {
       firstName: firstName,
       lastName: lastName,
-      phoneDaytime: (formData.get('phone-day') as string) || undefined,
+      phoneDaytime: formData.get('phone-day') as string,
       phoneEvening: (formData.get('phone-evening') as string) || undefined,
       email: email,
       dateOfBirth: (formData.get('date-of-birth') as string) || undefined,
