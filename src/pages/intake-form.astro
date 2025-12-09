@@ -1,5 +1,6 @@
 ---
 import PageTitle from '../components/text/PageTitle.astro'
+import Alert from '../components/ui/Alert.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import { SITE_TITLE } from '../consts'
@@ -29,6 +30,16 @@ import Layout from '../layouts/Layout.astro'
         <p>
           <span class="text-accent">*</span> indicates required fields
         </p>
+
+        <Alert type="info" class="w-fit">
+          <p class="font-semibold">
+            If you're undergoing cancer treatment or have an active infection, please contact us
+            about your appointment at 608-358-2082 or at <a
+              href="mailto:lymphaticspecialists@gmail.com"
+              class="link link-accent">lymphaticspecialists@gmail.com</a
+            >.
+          </p>
+        </Alert>
 
         <!-- Personal Information Section -->
         <Card id="personal-information">

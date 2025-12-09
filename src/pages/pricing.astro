@@ -1,5 +1,6 @@
 ---
 import PageTitle from '../components/text/PageTitle.astro'
+import Alert from '../components/ui/Alert.astro'
 import Card from '../components/ui/Card.astro'
 import PageHeader from '../components/ui/PageHeader.astro'
 import ThemedSection from '../components/ui/ThemedSection.astro'
@@ -19,7 +20,17 @@ import Layout from '../layouts/Layout.astro'
   </PageHeader>
 
   <main>
-    <section id="manual-lymphatic-drainage-massage" class="wrapper container max-w-xl mx-auto">
+    <section id="manual-lymphatic-drainage-massage" class="wrapper container max-w-xl mx-auto pt-0">
+      <Alert type="info" class="mb-(--site-padding-lg) w-full">
+        <p class="font-semibold">
+          If you're undergoing cancer treatment or have an active infection, please contact us about
+          your appointment at 608-358-2082 or at <a
+            href="mailto:lymphaticspecialists@gmail.com"
+            class="link link-accent">lymphaticspecialists@gmail.com</a
+          >.
+        </p>
+      </Alert>
+
       <h2 class="h1 mb-(--site-padding-md) text-center text-primary lsa lsa-slide-up no-repeat">
         Manual Lymphatic Drainage Massage
       </h2>
