@@ -1,12 +1,13 @@
 export const prerender = false // Enable server-side rendering for form handling
 
-import { render } from '@react-email/render'
-import type { APIContext, APIRoute } from 'astro'
 import { RESEND_AUDIENCE_ID } from 'astro:env/server'
+import { render } from '@react-email/render'
+import type { SanityDocument } from '@sanity/client'
+import type { APIContext, APIRoute } from 'astro'
 import NewsletterNotification from '../../../components/emails/NewsletterNotification'
 import Welcome from '../../../components/emails/Welcome'
-import { resend } from '../../../lib/resend'
 import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
+import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
 
 export const POST: APIRoute = async (context: APIContext) => {
@@ -30,7 +31,7 @@ export const POST: APIRoute = async (context: APIContext) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -47,7 +48,7 @@ export const POST: APIRoute = async (context: APIContext) => {
         {
           status: 400,
           headers: { 'Content-Type': 'application/json' },
-        }
+        },
       )
     }
 
@@ -68,7 +69,7 @@ export const POST: APIRoute = async (context: APIContext) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -109,7 +110,7 @@ export const POST: APIRoute = async (context: APIContext) => {
           success: false,
           error: 'Please use a valid email address.',
         }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+        { status: 400, headers: { 'Content-Type': 'application/json' } },
       )
     }
 
@@ -118,7 +119,7 @@ export const POST: APIRoute = async (context: APIContext) => {
       email: normalizedEmail,
     })
     let isNewUser = false
-    let result
+    let result: SanityDocument
 
     if (existingUser) {
       // Update existing user's subscription status
@@ -157,7 +158,7 @@ export const POST: APIRoute = async (context: APIContext) => {
         // Contact might already exist, that's okay
         console.log(
           'Contact already exists in Resend audience or other error:',
-          createResponse.error
+          createResponse.error,
         )
       } else {
         console.log('Successfully added contact to Resend audience:', createResponse.data?.id)
@@ -175,7 +176,7 @@ export const POST: APIRoute = async (context: APIContext) => {
       const welcomeHtml = await render(
         Welcome({
           email: normalizedEmail,
-        })
+        }),
       )
 
       // Generate text version of Welcome email
@@ -185,7 +186,7 @@ export const POST: APIRoute = async (context: APIContext) => {
         }),
         {
           plainText: true,
-        }
+        },
       )
 
       emailsToSend.push({
@@ -203,7 +204,7 @@ export const POST: APIRoute = async (context: APIContext) => {
         email: normalizedEmail,
         isSubscribed: true,
         isNewUser,
-      })
+      }),
     )
 
     // Generate text version of admin notification email
@@ -215,7 +216,7 @@ export const POST: APIRoute = async (context: APIContext) => {
       }),
       {
         plainText: true,
-      }
+      },
     )
 
     emailsToSend.push({
@@ -258,7 +259,7 @@ export const POST: APIRoute = async (context: APIContext) => {
       {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
-      }
+      },
     )
   } catch (error) {
     console.error('Newsletter subscription error:', error)
@@ -271,7 +272,7 @@ export const POST: APIRoute = async (context: APIContext) => {
       {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
-      }
+      },
     )
   }
 }

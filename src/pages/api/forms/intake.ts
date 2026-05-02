@@ -4,8 +4,8 @@ import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
 import IntakeNotification from '../../../components/emails/IntakeNotification'
 import UserIntakeNotification from '../../../components/emails/UserIntakeNotification'
-import { resend } from '../../../lib/resend'
 import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
+import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
   createIntakeFormSubmission,
@@ -32,7 +32,7 @@ export const POST: APIRoute = async ({ request }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -50,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -71,7 +71,7 @@ export const POST: APIRoute = async ({ request }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -241,7 +241,7 @@ export const POST: APIRoute = async ({ request }) => {
       hematologicLymphatic: {
         cutsThatDoNotStopBleeding:
           formData.get(
-            'medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding'
+            'medical-conditions-hematologic-lymphatic-cuts-that-do-not-stop-bleeding',
           ) === 'on',
         enlargedLymphNodes:
           formData.get('medical-conditions-hematologic-lymphatic-enlarged-lymph-nodes') === 'on',
@@ -291,7 +291,11 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // Extract surgeries - handling multiple dynamic entries
-    const surgeries: Array<{ name?: string; date?: string; hospitalAndSurgeon?: string }> = []
+    const surgeries: Array<{
+      name?: string
+      date?: string
+      hospitalAndSurgeon?: string
+    }> = []
     let surgeryIndex = 0
     while (formData.get(`surgery-${surgeryIndex}-name`)) {
       surgeries.push({
@@ -355,7 +359,7 @@ export const POST: APIRoute = async ({ request }) => {
       const userConfirmationHtml = await render(
         UserIntakeNotification({
           firstName,
-        })
+        }),
       )
 
       // Generate text version of user confirmation
@@ -365,7 +369,7 @@ export const POST: APIRoute = async ({ request }) => {
         }),
         {
           plainText: true,
-        }
+        },
       )
 
       emailsToSend.push({
@@ -397,7 +401,7 @@ export const POST: APIRoute = async ({ request }) => {
           emergencyContactPhone: emergencyContact.phone,
           reasonForSeeking,
           additionalInformation,
-        })
+        }),
       )
 
       // Generate text version of admin notification
@@ -416,7 +420,7 @@ export const POST: APIRoute = async ({ request }) => {
         }),
         {
           plainText: true,
-        }
+        },
       )
 
       emailsToSend.push({
@@ -460,7 +464,7 @@ export const POST: APIRoute = async ({ request }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     )
   } catch (error) {
     console.error('Intake form submission error:', error)
@@ -475,7 +479,7 @@ export const POST: APIRoute = async ({ request }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     )
   }
 }

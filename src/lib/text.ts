@@ -29,7 +29,7 @@ export function formatDate(dateString: string): string {
     const date = new Date(dateString)
 
     // Check if the date is valid
-    if (isNaN(date.getTime())) {
+    if (Number.isNaN(date.getTime())) {
       return dateString // Return original if invalid
     }
 
@@ -39,8 +39,7 @@ export function formatDate(dateString: string): string {
     const year = date.getFullYear()
 
     return `${month}-${day}-${year}`
-  } catch (error) {
-    // Return original string if parsing fails
+  } catch {
     return dateString
   }
 }

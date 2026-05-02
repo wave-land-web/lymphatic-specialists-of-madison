@@ -1,5 +1,7 @@
 // Types for form submissions matching the exact Sanity schema structures
 
+import type { SanityClient, SanityDocument } from '@sanity/client'
+
 export interface UserData {
   firstName: string
   lastName: string
@@ -220,7 +222,10 @@ export interface ContactFormData {
 /**
  * Create or update a user in Sanity
  */
-export async function createOrUpdateUser(client: any, userData: UserData): Promise<string> {
+export async function createOrUpdateUser(
+  client: SanityClient,
+  userData: UserData,
+): Promise<string> {
   // Check if user already exists by email
   const existingUser = await client.fetch(`*[_type == "user" && email == $email][0]`, {
     email: userData.email,
@@ -258,9 +263,9 @@ export async function createOrUpdateUser(client: any, userData: UserData): Promi
  * Create an intake form submission
  */
 export async function createIntakeFormSubmission(
-  client: any,
-  formData: IntakeFormData
-): Promise<any> {
+  client: SanityClient,
+  formData: IntakeFormData,
+): Promise<SanityDocument> {
   // Create or update user first - extract user data from form data
   const userData: UserData = {
     firstName: formData.firstName,
@@ -311,9 +316,9 @@ export async function createIntakeFormSubmission(
  * Create a contact form submission
  */
 export async function createContactFormSubmission(
-  client: any,
-  formData: ContactFormData
-): Promise<any> {
+  client: SanityClient,
+  formData: ContactFormData,
+): Promise<SanityDocument> {
   // Create or update user first - map contact form fields to user data
   const userData: UserData = {
     firstName: formData.firstName,

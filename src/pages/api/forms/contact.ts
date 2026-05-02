@@ -4,12 +4,12 @@ import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
 import ContactNotification from '../../../components/emails/ContactNotification'
 import UserContactNotification from '../../../components/emails/UserContactNotification'
-import { resend } from '../../../lib/resend'
 import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
+import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
-  createContactFormSubmission,
   type ContactFormData,
+  createContactFormSubmission,
 } from '../../../sanity/lib/formSubmissions'
 
 export const POST: APIRoute = async ({ request }) => {
@@ -31,7 +31,7 @@ export const POST: APIRoute = async ({ request }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -49,7 +49,7 @@ export const POST: APIRoute = async ({ request }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -73,7 +73,7 @@ export const POST: APIRoute = async ({ request }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
     }
 
@@ -104,7 +104,7 @@ export const POST: APIRoute = async ({ request }) => {
       const userConfirmationHtml = await render(
         UserContactNotification({
           firstName,
-        })
+        }),
       )
 
       // Generate text version of user confirmation
@@ -114,7 +114,7 @@ export const POST: APIRoute = async ({ request }) => {
         }),
         {
           plainText: true,
-        }
+        },
       )
 
       emailsToSend.push({
@@ -142,7 +142,7 @@ export const POST: APIRoute = async ({ request }) => {
           phone: phoneNumber || '',
           message: messageBody,
           isSubscribed: subscribeToNewsletter,
-        })
+        }),
       )
 
       // Generate text version of admin notification
@@ -157,7 +157,7 @@ export const POST: APIRoute = async ({ request }) => {
         }),
         {
           plainText: true,
-        }
+        },
       )
 
       emailsToSend.push({
@@ -201,7 +201,7 @@ export const POST: APIRoute = async ({ request }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     )
   } catch (error) {
     console.error('Contact form submission error:', error)
@@ -216,7 +216,7 @@ export const POST: APIRoute = async ({ request }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     )
   }
 }

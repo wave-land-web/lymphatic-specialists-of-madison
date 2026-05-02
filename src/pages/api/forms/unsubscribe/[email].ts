@@ -1,8 +1,8 @@
 export const prerender = false // Enable server-side rendering for form handling
 
+import { RESEND_AUDIENCE_ID } from 'astro:env/server'
 import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
-import { RESEND_AUDIENCE_ID } from 'astro:env/server'
 import Unsubscribe from '../../../../components/emails/Unsubscribe'
 import { resend } from '../../../../lib/resend'
 import { sanityClient } from '../../../../sanity/lib/client'
@@ -30,7 +30,9 @@ export const GET: APIRoute = async ({ params, redirect }) => {
 
   // Check if user exists in Sanity and update subscription status
   const query = '*[_type == "user" && email == $email][0]'
-  const existingUser = await sanityClient.fetch(query, { email: sanitizedEmail })
+  const existingUser = await sanityClient.fetch(query, {
+    email: sanitizedEmail,
+  })
 
   if (existingUser) {
     await sanityClient
@@ -77,7 +79,7 @@ export const GET: APIRoute = async ({ params, redirect }) => {
       JSON.stringify({
         error: `There was an error unsubscribing ${sanitizedEmail}. Please try again later. Error: ${unsubscribeError.message}`,
       }),
-      { status: 500 }
+      { status: 500 },
     )
   }
 
@@ -87,7 +89,7 @@ export const GET: APIRoute = async ({ params, redirect }) => {
       JSON.stringify({
         error: `There was an error sending the unsubscription email to ${sanitizedEmail}. Please try again later. Error: ${unsubscribeEmailError.message}`,
       }),
-      { status: 500 }
+      { status: 500 },
     )
   }
 

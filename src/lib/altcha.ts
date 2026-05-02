@@ -114,7 +114,7 @@ function checkMessageContent(message: string): { isSpam: boolean; reason?: strin
  */
 function checkNameContent(
   firstName: string,
-  lastName: string
+  lastName: string,
 ): { isSpam: boolean; reason?: string } {
   // Check first name for gibberish (e.g. "PgTiKTEVJkUicgMmEQHtl")
   // Checks for strings > 15 chars with no spaces or punctuation
@@ -136,7 +136,7 @@ function checkNameContent(
  * Combined spam protection check including Altcha
  */
 export async function checkSpamProtectionWithAltcha(
-  formData: FormData
+  formData: FormData,
 ): Promise<{ isSpam: boolean; reason?: string }> {
   // First verify Altcha
   const altchaPayload = formData.get('altcha') as string
