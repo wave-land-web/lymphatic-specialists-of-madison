@@ -15,7 +15,7 @@ import Layout from '../layouts/Layout.astro'
 const messageImage = await getImage({ src: message })
 
 // Create a mapping of image keys to actual image imports
-const serviceImages: Record<string, any> = {
+const serviceImages: Record<string, ImageMetadata> = {
   lympaticDrainage: lymphaticDrainageImage,
   postSurgical: postSurgicalImage,
 }
