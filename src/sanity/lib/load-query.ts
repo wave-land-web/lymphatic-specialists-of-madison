@@ -1,4 +1,4 @@
-import { sanityClient } from 'sanity:client'
+import { sanityClient } from './client'
 import type { QueryParams } from 'sanity'
 
 export async function loadQuery<QueryResponse>({
