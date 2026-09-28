@@ -73,26 +73,7 @@ export const GET: APIRoute = async ({ params, redirect }) => {
   // Log the response from Resend
   console.log(unsubscribeEmailData, unsubscribeEmailError)
 
-  // If there was an error unsubscribing the user >> return an error
-  if (unsubscribeError?.message) {
-    return new Response(
-      JSON.stringify({
-        error: `There was an error unsubscribing ${sanitizedEmail}. Please try again later. Error: ${unsubscribeError.message}`,
-      }),
-      { status: 500 },
-    )
-  }
-
-  // If there was an error sending the unsubscription email >> return an error
-  if (unsubscribeEmailError?.message) {
-    return new Response(
-      JSON.stringify({
-        error: `There was an error sending the unsubscription email to ${sanitizedEmail}. Please try again later. Error: ${unsubscribeEmailError.message}`,
-      }),
-      { status: 500 },
-    )
-  }
-
-  // If unsubscription was successful >> redirect to the `/unsubscribed` page
+  // Resend errors are logged above but not fatal: Sanity is the source of truth, so always
+  // show the `/unsubscribed` page
   return redirect('/unsubscribed', 303)
 }
