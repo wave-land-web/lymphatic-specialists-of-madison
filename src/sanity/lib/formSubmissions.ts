@@ -2,6 +2,13 @@
 
 import type { SanityClient, SanityDocument } from '@sanity/client'
 
+/**
+ * Sanity never serves documents whose ID contains a dot to anonymous requests, even in a
+ * public dataset (the same rule that hides `drafts.*`). Form submissions hold patient
+ * information, so every one is created under the `private.` path.
+ */
+const privateDocumentId = () => `private.${crypto.randomUUID()}`
+
 export interface UserData {
   firstName: string
   lastName: string
@@ -247,6 +254,7 @@ export async function createOrUpdateUser(
   } else {
     // Create new user
     const newUser = await client.create({
+      _id: privateDocumentId(),
       _type: 'user',
       firstName: userData.firstName,
       lastName: userData.lastName,
@@ -292,6 +300,7 @@ export async function createIntakeFormSubmission(
 
   // Create intake form submission with exact schema structure
   const submission = await client.create({
+    _id: privateDocumentId(),
     _type: 'intakeForm',
     user: {
       _type: 'reference',
@@ -332,6 +341,7 @@ export async function createContactFormSubmission(
 
   // Create contact form submission with exact schema structure
   const submission = await client.create({
+    _id: privateDocumentId(),
     _type: 'contactForm',
     user: {
       _type: 'reference',
