@@ -1,10 +1,7 @@
 export const prerender = false // Enable server-side rendering for form handling
 
-import { RESEND_AUDIENCE_ID } from 'astro:env/server'
-import { render } from '@react-email/render'
+import { RESEND_API_KEY } from 'astro:env/server'
 import type { APIRoute } from 'astro'
-import Unsubscribe from '../../../../components/emails/Unsubscribe'
-import { resend } from '../../../../lib/resend'
 import { sanityClient } from '../../../../sanity/lib/client'
 
 /**
@@ -44,36 +41,29 @@ export const GET: APIRoute = async ({ params, redirect }) => {
       .commit()
   }
 
-  // Handle unsubscription from the Resend audience
-  const { data: unsubscribeData, error: unsubscribeError } = await resend.contacts.update({
-    email: sanitizedEmail,
-    audienceId: RESEND_AUDIENCE_ID,
-    unsubscribed: true,
-  })
+  // Unsubscribe the contact in Resend so Broadcasts skip them too. This uses the
+  // account-wide contacts endpoint directly because the installed SDK (v4) requires an
+  // audience ID. A 404 just means they were never imported into Resend.
+  const resendResponse = await fetch(
+    `https://api.resend.com/contacts/${encodeURIComponent(sanitizedEmail)}`,
+    {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ unsubscribed: true }),
+    },
+  ).catch((error: unknown) => error)
 
-  // Log the response from Resend
-  console.log(unsubscribeData, unsubscribeError)
+  if (
+    !(resendResponse instanceof Response) ||
+    (!resendResponse.ok && resendResponse.status !== 404)
+  ) {
+    console.error('Resend unsubscribe failed:', resendResponse)
+  }
 
-  // Render the Unsubscribe email as plain text
-  const text = await render(Unsubscribe({ email: sanitizedEmail }), {
-    plainText: true,
-  })
-
-  // Send an email to the user confirming their unsubscription
-  const { data: unsubscribeEmailData, error: unsubscribeEmailError } = await resend.emails.send({
-    from: 'Lymphatic Specialists of Madison <hello@lymphaticspecialistsofmadison.com>',
-    to: sanitizedEmail,
-    subject: 'You have been unsubscribed from Lymphatic Specialists of Madison',
-    react: Unsubscribe({
-      email: sanitizedEmail,
-    }),
-    text,
-  })
-
-  // Log the response from Resend
-  console.log(unsubscribeEmailData, unsubscribeEmailError)
-
-  // Resend errors are logged above but not fatal: Sanity is the source of truth, so always
+  // Resend errors are logged but not fatal: Sanity is the source of truth, so always
   // show the `/unsubscribed` page
   return redirect('/unsubscribed', 303)
 }
