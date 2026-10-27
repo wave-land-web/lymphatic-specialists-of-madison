@@ -208,6 +208,7 @@ export interface IntakeFormData {
   // Consent flags
   consent?: {
     treatmentConsent?: boolean
+    cancellationPolicyConsent?: boolean
     minorConsentSignature?: string
   }
 }

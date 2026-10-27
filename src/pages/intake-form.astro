@@ -2034,15 +2034,47 @@ import Layout from '../layouts/Layout.astro'
                 Please understand this is for your safety and well-being.</em
               >
             </p>
-            <label class="p whitespace-normal">
+            <label class="p whitespace-normal flex items-start gap-3">
               <input
                 id="treatment-consent"
                 name="treatment-consent"
                 type="checkbox"
-                class="checkbox checkbox-primary"
+                class="checkbox checkbox-primary shrink-0"
                 required
               />
-              I understand and agree to the above terms <span class="text-accent">*</span>
+              <span>I understand and agree to the above terms <span class="text-accent">*</span></span>
+            </label>
+          </div>
+        </Card>
+
+        <!-- Cancellation Policy Section -->
+        <Card id="cancellation-policy">
+          <h2 class="card-title text-h3 mb-6">Cancellation and Illness Policy</h2>
+
+          <div class="prose">
+            <p>
+              Cancellations or rescheduling requests made with less than 24 hours' notice will incur
+              a charge of 100% of the scheduled service fee. We understand that illness can be
+              unexpected and will waive this fee for illness-related cancellations on an honor
+              system. However, to protect the health and safety of our practitioners and clients,
+              anyone who arrives for an appointment while sick on more than one occasion will be
+              charged the full service fee for the second and any subsequent occurrences.
+            </p>
+            <h3>Acknowledgment and Authorization</h3>
+            <label class="p whitespace-normal flex items-start gap-3">
+              <input
+                id="cancellation-policy-consent"
+                name="cancellation-policy-consent"
+                type="checkbox"
+                class="checkbox checkbox-primary shrink-0"
+                required
+              />
+              <span>
+                By checking this box, I acknowledge that I have read and understand the cancellation
+                and illness policy and authorize Lymphatic Specialists of Madison to charge the card
+                on file for the full service fee when applicable under this policy.
+                <span class="text-accent">*</span>
+              </span>
             </label>
           </div>
         </Card>

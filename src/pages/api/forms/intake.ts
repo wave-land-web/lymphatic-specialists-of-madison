@@ -75,6 +75,27 @@ export const POST: APIRoute = async ({ request }) => {
       )
     }
 
+    // The browser enforces these too, but a page cached from before the cancellation policy
+    // was added (or a direct POST) would skip them
+    if (
+      formData.get('treatment-consent') !== 'on' ||
+      formData.get('cancellation-policy-consent') !== 'on'
+    ) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error:
+            'Please refresh the page, then accept the consent terms and the cancellation and illness policy.',
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+    }
+
     // Extract personal information
     const personalInfo = {
       firstName: firstName,
@@ -322,6 +343,7 @@ export const POST: APIRoute = async ({ request }) => {
     const additionalInformation = (formData.get('additional-information') as string) || undefined
     const consent = {
       treatmentConsent: formData.get('treatment-consent') === 'on',
+      cancellationPolicyConsent: formData.get('cancellation-policy-consent') === 'on',
       minorConsentSignature: (formData.get('minor-consent-signature') as string) || undefined,
     }
 

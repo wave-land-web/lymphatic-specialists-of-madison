@@ -378,6 +378,13 @@ export default defineType({
           description: 'Consent to treatment terms',
         },
         {
+          name: 'cancellationPolicyConsent',
+          title: 'Cancellation & Illness Policy',
+          type: 'boolean',
+          description:
+            'Acknowledged the cancellation and illness policy and authorized card charges',
+        },
+        {
           name: 'minorConsentSignature',
           title: 'Consent to Treatment of Minor',
           type: 'string',
