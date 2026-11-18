@@ -2,8 +2,8 @@ export const prerender = false // Enable server-side rendering for form handling
 
 import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
-import ContactNotification from '../../../components/emails/ContactNotification'
 import UserContactNotification from '../../../components/emails/UserContactNotification'
+import { buildAdminNotification } from '../../../lib/adminNotification'
 import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
 import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
@@ -133,40 +133,7 @@ export const POST: APIRoute = async ({ request }) => {
     try {
       console.log('Preparing admin notification for contact form submission...')
 
-      // Generate HTML version of admin notification
-      const notificationHtml = await render(
-        ContactNotification({
-          firstName,
-          lastName,
-          email: emailAddress,
-          phone: phoneNumber || '',
-          message: messageBody,
-          isSubscribed: subscribeToNewsletter,
-        }),
-      )
-
-      // Generate text version of admin notification
-      const notificationText = await render(
-        ContactNotification({
-          firstName,
-          lastName,
-          email: emailAddress,
-          phone: phoneNumber || '',
-          message: messageBody,
-          isSubscribed: subscribeToNewsletter,
-        }),
-        {
-          plainText: true,
-        },
-      )
-
-      emailsToSend.push({
-        from: 'Lymphatic Specialists Website <hello@lymphaticspecialistsofmadison.com>',
-        to: ['cnrolnick@gmail.com'],
-        subject: `New contact form submission from ${firstName} ${lastName}`,
-        html: notificationHtml,
-        text: notificationText,
-      })
+      emailsToSend.push(await buildAdminNotification('contact', submission))
     } catch (adminEmailError) {
       console.error('Failed to prepare admin notification email:', adminEmailError)
       // Continue execution - user confirmation can still be sent
