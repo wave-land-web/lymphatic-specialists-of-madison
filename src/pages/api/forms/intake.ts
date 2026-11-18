@@ -410,45 +410,14 @@ export const POST: APIRoute = async ({ request }) => {
     try {
       console.log('Preparing admin notification for intake form submission...')
 
-      // Generate HTML version of admin notification
-      const notificationHtml = await render(
-        IntakeNotification({
-          firstName,
-          lastName,
-          email,
-          phoneDaytime: personalInfo.phoneDaytime,
-          phoneEvening: personalInfo.phoneEvening,
-          dateOfBirth: personalInfo.dateOfBirth,
-          emergencyContactName: emergencyContact.name,
-          emergencyContactPhone: emergencyContact.phone,
-          reasonForSeeking,
-          additionalInformation,
-        }),
-      )
-
-      // Generate text version of admin notification
-      const notificationText = await render(
-        IntakeNotification({
-          firstName,
-          lastName,
-          email,
-          phoneDaytime: personalInfo.phoneDaytime,
-          phoneEvening: personalInfo.phoneEvening,
-          dateOfBirth: personalInfo.dateOfBirth,
-          emergencyContactName: emergencyContact.name,
-          emergencyContactPhone: emergencyContact.phone,
-          reasonForSeeking,
-          additionalInformation,
-        }),
-        {
-          plainText: true,
-        },
-      )
+      // The admin alert carries no patient details; they stay in Sanity behind the Studio login
+      const notificationHtml = await render(IntakeNotification())
+      const notificationText = await render(IntakeNotification(), { plainText: true })
 
       emailsToSend.push({
         from: 'Lymphatic Specialists Website <hello@lymphaticspecialistsofmadison.com>',
         to: ['cnrolnick@gmail.com'],
-        subject: `New intake form submission from ${firstName} ${lastName}`,
+        subject: 'New intake form submission',
         html: notificationHtml,
         text: notificationText,
       })

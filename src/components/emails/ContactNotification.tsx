@@ -4,80 +4,37 @@ import {
   Container,
   Head,
   Heading,
-  Hr,
   Html,
   Preview,
   Section,
   Text,
 } from '@react-email/components'
 import { SITE_URL } from '../../consts'
-import { capitalize } from '../../lib/text'
 
-interface NotificationProps {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  message?: string
-  isSubscribed: boolean
-}
-
-export default function Notification({
-  firstName,
-  lastName,
-  email,
-  phone,
-  message,
-  isSubscribed,
-}: NotificationProps) {
-  const fullName = `${capitalize(firstName)} ${capitalize(lastName)}`
-  const subscriptionStatus = isSubscribed ? 'subscribed to newsletter' : 'did not subscribe'
-
+// Deliberately carries no personal details: the sender's name, contact info and
+// message stay in Sanity, behind the Studio login.
+export default function ContactNotification() {
   return (
     <Html>
       <Head />
-      <Preview>New contact form submission from {fullName}</Preview>
+      <Preview>New contact form submission</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Section style={container}>
-            <Heading style={heading}>New Contact Form Submission</Heading>
+          <Heading style={heading}>New Contact Form Submission</Heading>
 
-            <Text style={paragraph}>
-              Someone has sent you a message through your website contact form!
-            </Text>
+          <Text style={paragraph}>
+            Someone just sent you a message through your website. Log in to read it.
+          </Text>
 
-            <Hr style={hr} />
-
-            <Text style={subheading}>Contact Details:</Text>
-            <Text style={paragraph}>
-              <strong>Name:</strong> {fullName}
-              <br />
-              <strong>Email:</strong> {email}
-              <br />
-              <strong>Phone:</strong> {phone}
-              <br />
-              <strong>Newsletter:</strong> {subscriptionStatus}
-            </Text>
-
-            {message && (
-              <>
-                <Text style={subheading}>Message:</Text>
-                <Text style={messageBox}>{message}</Text>
-              </>
-            )}
-
-            <Hr style={hr} />
-
-            <Section style={buttonContainer}>
-              <Button style={button} href={`${SITE_URL}/admin`} target="_blank">
-                View in CMS
-              </Button>
-            </Section>
-
-            <Text style={footer}>
-              This notification was sent from your Lymphatic Specialists website contact form.
-            </Text>
+          <Section style={buttonContainer}>
+            <Button style={button} href={`${SITE_URL}/admin`} target="_blank">
+              Log in to view
+            </Button>
           </Section>
+
+          <Text style={footer}>
+            This notification was sent from your Lymphatic Specialists website contact form.
+          </Text>
         </Container>
       </Body>
     </Html>
@@ -104,30 +61,10 @@ const heading = {
   marginBottom: '20px',
 }
 
-const subheading = {
-  fontSize: '18px',
-  lineHeight: '22px',
-  fontWeight: 'bold',
-  color: '#1a1a1a',
-  marginTop: '20px',
-  marginBottom: '10px',
-}
-
 const paragraph = {
   fontSize: '16px',
   lineHeight: '26px',
   color: '#1a1a1a',
-}
-
-const messageBox = {
-  fontSize: '16px',
-  lineHeight: '24px',
-  color: '#1a1a1a',
-  backgroundColor: '#f8f9fa',
-  padding: '16px',
-  borderRadius: '8px',
-  border: '1px solid #e9ecef',
-  marginTop: '10px',
 }
 
 const buttonContainer = {
@@ -144,11 +81,6 @@ const button = {
   textAlign: 'center' as const,
   display: 'inline-block',
   padding: '12px',
-}
-
-const hr = {
-  borderColor: '#cccccc',
-  margin: '20px 0',
 }
 
 const footer = {

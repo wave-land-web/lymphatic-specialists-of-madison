@@ -133,37 +133,14 @@ export const POST: APIRoute = async ({ request }) => {
     try {
       console.log('Preparing admin notification for contact form submission...')
 
-      // Generate HTML version of admin notification
-      const notificationHtml = await render(
-        ContactNotification({
-          firstName,
-          lastName,
-          email: emailAddress,
-          phone: phoneNumber || '',
-          message: messageBody,
-          isSubscribed: subscribeToNewsletter,
-        }),
-      )
-
-      // Generate text version of admin notification
-      const notificationText = await render(
-        ContactNotification({
-          firstName,
-          lastName,
-          email: emailAddress,
-          phone: phoneNumber || '',
-          message: messageBody,
-          isSubscribed: subscribeToNewsletter,
-        }),
-        {
-          plainText: true,
-        },
-      )
+      // The admin alert carries no personal details; they stay in Sanity behind the Studio login
+      const notificationHtml = await render(ContactNotification())
+      const notificationText = await render(ContactNotification(), { plainText: true })
 
       emailsToSend.push({
         from: 'Lymphatic Specialists Website <hello@lymphaticspecialistsofmadison.com>',
         to: ['cnrolnick@gmail.com'],
-        subject: `New contact form submission from ${firstName} ${lastName}`,
+        subject: 'New contact form submission',
         html: notificationHtml,
         text: notificationText,
       })
