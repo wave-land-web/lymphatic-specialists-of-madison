@@ -9,31 +9,45 @@ import {
   Section,
   Text,
 } from '@react-email/components'
-import { SITE_URL } from '../../consts'
 
-// Deliberately carries no personal details: the sender's name, contact info and
-// message stay in Sanity, behind the Studio login.
-export default function ContactNotification() {
+interface AdminFormNotificationProps {
+  title: string
+  message: string
+  formName: string
+  submittedAt: string
+  studioUrl: string
+}
+
+// Deliberately carries no personal details: names, contact info, messages and health
+// answers stay in Sanity, behind the Studio login.
+export default function AdminFormNotification({
+  title,
+  message,
+  formName,
+  submittedAt,
+  studioUrl,
+}: AdminFormNotificationProps) {
   return (
     <Html>
       <Head />
-      <Preview>New contact form submission</Preview>
+      <Preview>
+        {title} · {submittedAt}
+      </Preview>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={heading}>New Contact Form Submission</Heading>
+          <Heading style={heading}>{title}</Heading>
 
-          <Text style={paragraph}>
-            Someone just sent you a message through your website. Log in to read it.
-          </Text>
+          <Text style={paragraph}>{message}</Text>
+          <Text style={meta}>Submitted {submittedAt}</Text>
 
           <Section style={buttonContainer}>
-            <Button style={button} href={`${SITE_URL}/admin`} target="_blank">
+            <Button style={button} href={studioUrl} target="_blank">
               Log in to view
             </Button>
           </Section>
 
           <Text style={footer}>
-            This notification was sent from your Lymphatic Specialists website contact form.
+            This notification was sent from your Lymphatic Specialists website {formName} form.
           </Text>
         </Container>
       </Body>
@@ -65,6 +79,12 @@ const paragraph = {
   fontSize: '16px',
   lineHeight: '26px',
   color: '#1a1a1a',
+}
+
+const meta = {
+  fontSize: '14px',
+  lineHeight: '22px',
+  color: '#525f7f',
 }
 
 const buttonContainer = {

@@ -2,8 +2,8 @@ export const prerender = false // Enable server-side rendering for form handling
 
 import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
-import IntakeNotification from '../../../components/emails/IntakeNotification'
 import UserIntakeNotification from '../../../components/emails/UserIntakeNotification'
+import { buildAdminNotification } from '../../../lib/adminNotification'
 import { checkSpamProtectionWithAltcha } from '../../../lib/altcha'
 import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
@@ -410,17 +410,7 @@ export const POST: APIRoute = async ({ request }) => {
     try {
       console.log('Preparing admin notification for intake form submission...')
 
-      // The admin alert carries no patient details; they stay in Sanity behind the Studio login
-      const notificationHtml = await render(IntakeNotification())
-      const notificationText = await render(IntakeNotification(), { plainText: true })
-
-      emailsToSend.push({
-        from: 'Lymphatic Specialists Website <hello@lymphaticspecialistsofmadison.com>',
-        to: ['cnrolnick@gmail.com'],
-        subject: 'New intake form submission',
-        html: notificationHtml,
-        text: notificationText,
-      })
+      emailsToSend.push(await buildAdminNotification('intake', submission))
     } catch (adminEmailError) {
       console.error('Failed to prepare admin notification email:', adminEmailError)
       // Continue execution - user confirmation can still be sent
