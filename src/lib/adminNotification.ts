@@ -32,7 +32,9 @@ export async function buildAdminNotification(
     dateStyle: 'medium',
     timeStyle: 'short',
   }).format(new Date())
-  const studioUrl = `${SITE_URL}/admin/intent/edit/id=${submission._id};type=${submission._type}`
+  // The embedded Studio uses hash routing; this is the Forms > <type> > <document> pane path
+  // from src/sanity/structure.ts (list item IDs come from their titles).
+  const studioUrl = `${SITE_URL}/admin/#/structure/forms;${submission._type};${submission._id}`
 
   const email = AdminFormNotification({ title, message, formName: form, submittedAt, studioUrl })
 
